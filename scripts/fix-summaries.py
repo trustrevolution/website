@@ -116,7 +116,7 @@ def main():
     episodes = parse_rss(rss_content)
     print(f"Found {len(episodes)} episodes with summaries")
 
-    episodes_dir = Path('/home/shawn/Work/trustrevolution-co/content/episodes')
+    episodes_dir = Path(__file__).resolve().parent.parent / 'content' / 'episodes'
 
     updated = 0
     for filepath in sorted(episodes_dir.glob('*.md')):

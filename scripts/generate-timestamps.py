@@ -192,7 +192,7 @@ def process_episode(episode_path):
         return None
 
 def main():
-    episodes_dir = Path('/home/shawn/Work/trustrevolution-co/content/episodes')
+    episodes_dir = Path(__file__).resolve().parent.parent / 'content' / 'episodes'
 
     if len(sys.argv) > 1:
         episode_file = episodes_dir / sys.argv[1]
