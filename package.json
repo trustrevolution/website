@@ -1,5 +1,5 @@
 {
-  "name": "trustrevolution-co",
+  "name": "trustrevolution-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,18 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shawnyeager/trustrevolution-co.git"
+    "url": "git+https://github.com/trustrevolution/website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/shawnyeager/trustrevolution-co/issues"
+    "url": "https://github.com/trustrevolution/website/issues"
   },
-  "homepage": "https://github.com/shawnyeager/trustrevolution-co#readme",
+  "homepage": "https://github.com/trustrevolution/website#readme",
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "rss-parser": "^3.13.0",
     "sharp": "^0.34.5"
   }
 }
