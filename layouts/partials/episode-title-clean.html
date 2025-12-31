@@ -1,0 +1,12 @@
+{{/*
+  Episode Title Clean Partial
+
+  Removes the "S##E## Guest Name — " prefix from episode titles to display just the title.
+
+  Usage:
+    {{ partial "episode-title-clean.html" .Title }}
+
+  Input: Full episode title string
+  Returns: Cleaned title without episode number prefix
+*/}}
+{{- return (. | replaceRE "^[^–]+– " "") -}}

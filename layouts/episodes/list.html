@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-header-intro fade-in">
+      <h1>All Episodes</h1>
+      <p>{{ len .Pages }} and counting</p>
+    </header>
+
+    <div class="episode-grid fade-in delay-1">
+      {{ range .Pages }}
+      {{ partial "episode-card.html" (dict "RelPermalink" .RelPermalink "Params" .Params "Title" .Title "headingLevel" "h2") }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ partial "email-signup.html" . }}
+{{ end }}

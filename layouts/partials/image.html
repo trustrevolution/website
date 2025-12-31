@@ -1,0 +1,26 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $width := .width | default 800 -}}
+{{- $sizes := .sizes | default "(max-width: 768px) 100vw, 50vw" -}}
+
+{{- $image := resources.Get $src -}}
+{{- if $image -}}
+  {{- $small := $image.Resize (printf "%dx webp" (div $width 2)) -}}
+  {{- $medium := $image.Resize (printf "%dx webp" $width) -}}
+  {{- $large := $image.Resize (printf "%dx webp" (mul $width 2)) -}}
+  <img
+    src="{{ $medium.RelPermalink }}"
+    srcset="{{ $small.RelPermalink }} {{ div $width 2 }}w, {{ $medium.RelPermalink }} {{ $width }}w, {{ $large.RelPermalink }} {{ mul $width 2 }}w"
+    sizes="{{ $sizes }}"
+    alt="{{ $alt }}"
+    {{ with $class }}class="{{ . }}"{{ end }}
+    width="{{ $medium.Width }}"
+    height="{{ $medium.Height }}"
+    loading="lazy"
+    decoding="async"
+  >
+{{- else -}}
+  {{- warnf "Image not found in resources: %s (falling back to static reference)" $src -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" {{ with $class }}class="{{ . }}"{{ end }}>
+{{- end -}}

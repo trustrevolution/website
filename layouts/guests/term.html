@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="section" data-pagefind-body>
+  <div class="container">
+    <header class="episode-header fade-in">
+      <nav class="breadcrumb">
+        <a href="/guests/">{{ partial "arrow.html" "back" }}All Guests</a>
+      </nav>
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    {{ $firstEpisode := index .Pages 0 }}
+    <div class="guest-term-bio fade-in delay-1">
+      {{ partial "guest-bio.html" (dict "guest" $firstEpisode.Params.guest "showHeader" false) }}
+    </div>
+
+    <h2 class="guest-term-episodes fade-in delay-2">Episodes</h2>
+    <div class="episode-grid fade-in delay-3">
+      {{ range .Pages }}
+      {{ partial "episode-card.html" (dict "RelPermalink" .RelPermalink "Params" .Params "Title" .Title "headingLevel" "h3") }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

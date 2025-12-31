@@ -1,0 +1,58 @@
+{{/*
+  Fountain CTA Partial
+
+  Unified call-to-action button for Fountain podcast links.
+  Handles episode-specific URLs or falls back to show URL.
+
+  Usage:
+    {{ partial "fountain-cta.html" . }}                                    (sidebar variant, "Listen Now")
+    {{ partial "fountain-cta.html" (dict "context" . "variant" "primary") }}
+    {{ partial "fountain-cta.html" (dict "context" . "variant" "primary" "label" "Custom Text") }}
+
+  Parameters:
+    - context: Page context (. or dict with .context)
+    - variant: "sidebar" (default), "primary", "secondary"
+    - label: Button text (default: "Listen Now")
+    - episodeUrl: Optional override for episode URL (defaults to .Params.fountain_url)
+    - showUrl: Optional override for show URL (defaults to .Site.Params.fountain_show_url)
+*/}}
+
+{{- $context := . -}}
+{{- $variant := "sidebar" -}}
+{{- $label := "Listen Now" -}}
+{{- $episodeUrl := "" -}}
+{{- $showUrl := "" -}}
+
+{{/* Handle dict parameters */}}
+{{- if reflect.IsMap . -}}
+  {{- $context = .context -}}
+  {{- $variant = .variant | default "sidebar" -}}
+  {{- $label = .label | default "Listen Now" -}}
+  {{- $episodeUrl = .episodeUrl | default "" -}}
+  {{- $showUrl = .showUrl | default "" -}}
+{{- end -}}
+
+{{/* Determine URLs */}}
+{{- if not $episodeUrl -}}
+  {{- with $context.Params.fountain_url -}}
+    {{- $episodeUrl = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $showUrl -}}
+  {{- $showUrl = $context.Site.Params.fountain_show_url -}}
+{{- end -}}
+
+{{- $url := $episodeUrl | default $showUrl -}}
+
+{{/* Determine CSS class based on variant */}}
+{{- $class := "cta-button" -}}
+{{- if eq $variant "sidebar" -}}
+  {{- $class = "cta-button sidebar-cta" -}}
+{{- else if eq $variant "primary" -}}
+  {{- $class = "cta-button primary" -}}
+{{- else if eq $variant "secondary" -}}
+  {{- $class = "cta-button secondary" -}}
+{{- end -}}
+
+<a href="{{ $url }}" class="{{ $class }}" aria-label="{{ $label }} on Fountain">{{ $label }}</a>

@@ -1,0 +1,29 @@
+{
+  "name": "trustrevolution-co",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "generate:og": "node scripts/generate-og-images.js",
+    "prebuild": "npm run generate:og"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnyeager/trustrevolution-co.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shawnyeager/trustrevolution-co/issues"
+  },
+  "homepage": "https://github.com/shawnyeager/trustrevolution-co#readme",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "sharp": "^0.34.5"
+  }
+}

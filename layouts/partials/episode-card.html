@@ -1,0 +1,11 @@
+{{- $headingLevel := .headingLevel | default "h3" -}}
+{{- $cleanTitle := partial "episode-title-clean.html" .Title -}}
+<article class="episode-card">
+  <a href="{{ .RelPermalink }}" class="card-link" aria-label="{{ $cleanTitle }}">
+    {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 400 "sizes" "(max-width: 768px) 110px, 300px") }}
+    <div class="card-content">
+      {{ printf "<%s>%s</%s>" $headingLevel $cleanTitle $headingLevel | safeHTML }}
+      {{ with .Params.duration }}<span class="episode-duration">{{ . }}</span>{{ end }}
+    </div>
+  </a>
+</article>

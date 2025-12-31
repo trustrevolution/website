@@ -1,0 +1,32 @@
+{{/*
+  Manifesto Hero Partial
+
+  Bold hero section with label, heading, and accent lines.
+  Used on About and Support pages.
+
+  Usage:
+    {{ partial "manifesto-hero.html" .Params.manifesto }}
+
+  Parameters (dict):
+    - label: Small label above heading
+    - heading.lines: Array of main heading lines
+    - heading.accent_lines: Array of accent (orange) heading lines
+*/}}
+
+{{- $label := .label -}}
+{{- $lines := .heading.lines -}}
+{{- $accentLines := .heading.accent_lines -}}
+
+<section class="manifesto">
+  <div class="container">
+    <div class="manifesto-content fade-in">
+      <span class="manifesto-label">{{ $label }}</span>
+      <h1>
+        {{- range $lines }}{{ . }}<br>{{ end -}}
+        <span class="accent">
+          {{- range $accentLines }}{{ . }}<br>{{ end -}}
+        </span>
+      </h1>
+    </div>
+  </div>
+</section>

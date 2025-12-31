@@ -1,0 +1,4 @@
+# Nostr and Lightning Network endpoints
+/nostr                      https://primal.net/p/nprofile1qqs937g9lksy25es6h5c502d78shc3f2knq76ey0xu03qqj5g77fcygf09a6v
+/.well-known/lnurlp/sats    https://getalby.com/.well-known/lnurlp/trustrev
+/.well-known/lnurlp/zaps    https://getalby.com/.well-known/lnurlp/trustrev

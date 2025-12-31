@@ -1,0 +1,60 @@
+{{ define "main" }}
+<article class="about-page seamless-to-footer">
+
+  {{ partial "manifesto-hero.html" .Params.manifesto }}
+
+  <!-- THE SHOW: What this is -->
+  <section class="about-show">
+    <div class="container">
+      <div class="show-layout">
+        <div class="show-main fade-in">
+          <p class="show-lead">{{ .Params.show.lead }}</p>
+          <p>{{ .Params.show.body }}</p>
+        </div>
+        <aside class="show-stats fade-in delay-1">
+          {{ range .Params.show.stats }}
+          <div class="stat">
+            <span class="stat-value">{{ .value }}</span>
+            <span class="stat-label">{{ .label }}</span>
+          </div>
+          {{ end }}
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE HOST -->
+  <section class="host">
+    <div class="container">
+      <div class="host-layout fade-in delay-2">
+        <figure class="host-photo">
+          {{ partial "image.html" (dict "src" .Params.host.image "alt" (printf "Photo of %s" .Params.host.name) "width" 400 "sizes" "(max-width: 768px) 180px, 220px") }}
+        </figure>
+        <div class="host-content">
+          <span class="host-label">{{ .Params.host.label }}</span>
+          <h2 class="section-title">{{ .Params.host.name }}</h2>
+          {{ range .Params.host.bio }}
+          <p>{{ . }}</p>
+          {{ end }}
+          {{ partial "social-links.html" (dict "links" .Params.host.links "format" "array") }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT: Simple closer -->
+  <section class="about-connect">
+    <div class="container">
+      <div class="connect-layout fade-in delay-3">
+        <div class="connect-content">
+          <h2 class="section-title">{{ .Params.connect.heading }}</h2>
+          <p>{{ .Params.connect.text }}</p>
+          <a href="mailto:{{ .Params.connect.email }}" class="tag-link tag-link--lg">{{ .Params.connect.email }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "email-signup.html" . }}
+</article>
+{{ end }}

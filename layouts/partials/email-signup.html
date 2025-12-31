@@ -1,0 +1,9 @@
+{{ if .Site.Params.newsletter_enabled }}
+<section class="email-signup" aria-labelledby="signup-heading">
+  <div class="container">
+    <h3 id="signup-heading">Get New Episodes</h3>
+    <p>Delivered to your inbox. No spam, just revolution.</p>
+    {{ partial "buttondown-form.html" (dict "context" . "inputId" "email-input" "formClass" "email-signup-form") }}
+  </div>
+</section>
+{{ end }}

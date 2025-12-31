@@ -1,0 +1,55 @@
+baseURL = "https://trustrevolution.co/"
+languageCode = "en-us"
+title = "Trust Revolution"
+
+[params]
+  description = "Unfiltered conversations with builders, thinkers, and operators in Bitcoin and beyond. Exploring systems we trust, why they work (or don't), and what's next."
+  author = "Shawn Yeager"
+
+  # Social
+  nostr = "npub10lmwvqey26nyl54vvs3zp5p7dldxx46ye39qahv87l7f5xq4e8gqzspfnn"
+  youtube = "https://youtube.com/@trustrev"
+  substack = "https://trustrevolution.substack.com"
+
+  # Fountain
+  fountain_show_url = "https://fountain.fm/show/Mk0fJte5vrfiDQ5RyCZd"
+  fountain_rss_url = "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF"
+
+  # Structured Data
+  [params.podcast]
+    tagline = "Rethinking trust for a decentralized future"
+    language = "en"
+    explicit = false
+    categories = ["Technology", "Business", "Culture"]
+
+  # Email
+  buttondown_username = "trustrevolution"
+  newsletter_enabled = false  # Set to true when ready to go live
+
+[taxonomies]
+  guest = "guests"
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
+[outputs.episodes]
+  section = ["HTML", "RSS"]
+
+[permalinks]
+  episodes = "/episodes/:slug/"
+  posts = "/posts/:slug/"
+
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"
+  [imaging.exif]
+    disableDate = true
+    disableLatLong = true
+    includeFields = ""

@@ -1,0 +1,29 @@
+{{/*
+  Get OG Image Partial
+
+  Returns the appropriate OG/social media image for the current page.
+  Priority: episode-specific OG image > featured_image param > default
+
+  Usage:
+    {{ $ogImage := partial "get-og-image.html" . }}
+    {{ with $ogImage }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}
+
+  Parameters: Pass the current page context (.)
+*/}}
+
+{{- $ogImage := resources.Get "images/og-default.jpg" -}}
+
+{{- if and (eq .Section "episodes") .Params.season .Params.episode -}}
+  {{- $episodeOg := printf "images/og/s%02de%02d.jpg" .Params.season .Params.episode -}}
+  {{- with resources.Get $episodeOg -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
+{{- else -}}
+  {{- with .Params.featured_image -}}
+    {{- with resources.Get . -}}
+      {{- $ogImage = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $ogImage -}}

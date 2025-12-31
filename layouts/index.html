@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ $episodes := where .Site.RegularPages "Section" "episodes" }}
+{{ $latestEpisode := index $episodes 0 }}
+
+<!-- HERO: Latest Episode -->
+<section class="latest-episode">
+  <h1 class="sr-only">{{ .Site.Title }} — {{ .Site.Params.podcast.tagline }}</h1>
+  <div class="container">
+    <div class="latest-episode-layout">
+      {{ with $latestEpisode }}
+      {{- $cleanTitle := partial "episode-title-clean.html" .Title -}}
+      <a href="{{ .RelPermalink }}" class="latest-episode-cover fade-in" aria-label="{{ $cleanTitle }}">
+        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 400 "sizes" "(max-width: 768px) 200px, 280px") }}
+      </a>
+      <div class="latest-episode-content fade-in delay-1">
+        <span class="latest-episode-label">Latest Episode</span>
+        <h2 class="latest-episode-title">
+          <a href="{{ .RelPermalink }}" class="latest-episode-link">{{ $cleanTitle }}</a>
+        </h2>
+        <p class="latest-episode-meta">with {{ .Params.guest.name | default "Shawn Yeager" }}{{ with .Params.duration }} · {{ . }}{{ end }}</p>
+        <p class="latest-episode-desc">{{ .Description }}</p>
+        <div class="cta-group">
+          {{ partial "fountain-cta.html" (dict "context" . "variant" "primary") }}
+          <a href="/support/" class="cta-button secondary">Support</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if gt (len $episodes) 1 }}
+<section class="section fade-in delay-2">
+  <div class="container">
+    <div class="section-header">
+      <h2>Recent Episodes</h2>
+      <a href="/episodes/" class="view-all">All Episodes{{ partial "arrow.html" }}</a>
+    </div>
+    <div class="episode-grid">
+      {{ range first 6 (after 1 $episodes) }}
+      {{ partial "episode-card.html" (dict "RelPermalink" .RelPermalink "Params" .Params "Title" .Title "headingLevel" "h3") }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ partial "email-signup.html" . }}
+
+{{ end }}

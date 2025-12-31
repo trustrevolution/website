@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{- $cleanTitle := partial "episode-title-clean.html" .Title -}}
+<article class="episode-page" data-pagefind-body>
+  <div class="container">
+    <nav class="breadcrumb fade-in">
+      <a href="/episodes/">{{ partial "arrow.html" "back" }}All Episodes</a>
+    </nav>
+    <div class="episode-layout">
+      <aside class="episode-sidebar fade-in">
+        <div class="episode-cover">
+          {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 280 "sizes" "(max-width: 768px) 200px, 280px") }}
+        </div>
+        {{ partial "fountain-cta.html" . }}
+        {{ with .Params.duration }}
+        <div class="episode-duration">
+          <span class="meta-label">Duration</span>
+          <span class="meta-value">{{ . }}</span>
+        </div>
+        {{ end }}
+      </aside>
+
+      <div class="episode-main fade-in delay-1">
+        <header class="episode-header">
+          <h1>{{ $cleanTitle }}</h1>
+        </header>
+
+        {{ with .Params.summary }}
+        <div class="episode-summary">
+          {{ . | markdownify }}
+        </div>
+        {{ else }}
+        {{ with .Params.description }}
+        <div class="episode-summary">
+          {{ . }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        {{ with .Params.key_quote }}
+        <blockquote class="pull-quote">
+          <p>{{ .text }}</p>
+          {{ with .attribution }}<cite>— {{ . }}</cite>{{ end }}
+        </blockquote>
+        {{ end }}
+
+        {{ if .Params.timestamps }}
+        <section class="episode-section">
+          <h2>Timestamps</h2>
+          <ul class="timestamps-list">
+            {{ range .Params.timestamps }}
+            <li>
+              <span class="timestamp">{{ .time }}</span>
+              <span class="timestamp-topic">{{ .topic }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+
+        <div class="episode-content">
+          {{ .Content }}
+        </div>
+
+        {{ if .Params.resources }}
+        <section class="episode-section">
+          <h2>Resources</h2>
+          <ul class="resources-list">
+            {{ range .Params.resources }}
+            <li><a href="{{ .url }}">{{ .name }}</a></li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+
+        {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
+
+        <nav class="episode-nav" aria-label="Episode navigation">
+          {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" class="nav-prev">
+            {{ partial "arrow.html" "back" }}
+            <span>{{ partial "episode-title-clean.html" .Title }}</span>
+          </a>
+          {{ else }}
+          <span></span>
+          {{ end }}
+          {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" class="nav-next">
+            <span>{{ partial "episode-title-clean.html" .Title }}</span>
+            {{ partial "arrow.html" "forward" }}
+          </a>
+          {{ end }}
+        </nav>
+      </div>
+    </div>
+  </div>
+</article>
+
+{{ partial "email-signup.html" . }}
+{{ end }}

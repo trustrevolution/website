@@ -1,0 +1,40 @@
+{{/*
+  Social Links Partial
+
+  Renders social media/profile links in a consistent format.
+  Handles both guest.social (map) and host.links (array) formats.
+
+  Usage:
+    {{ partial "social-links.html" .Params.guest.social }}
+    {{ partial "social-links.html" (dict "links" .Params.host.links "format" "array") }}
+
+  Parameters:
+    - Pass guest.social object directly (default: map format)
+    - Or pass dict with "links" and "format" ("map" or "array")
+*/}}
+
+{{- $links := . -}}
+{{- $format := "map" -}}
+
+{{/* Handle dict parameters */}}
+{{- if reflect.IsMap . -}}
+  {{- if .links -}}
+    {{- $links = .links -}}
+    {{- $format = .format | default "map" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $format "map" -}}
+<div class="profile-links">
+    {{ with $links.nostr }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}nostr:{{ . }}{{ end }}" aria-label="Follow on Nostr">Nostr</a>{{ end }}
+    {{ with $links.twitter }}<a href="{{ . }}" aria-label="Follow on X">X</a>{{ end }}
+    {{ with $links.linkedin }}<a href="{{ . }}" aria-label="Connect on LinkedIn">LinkedIn</a>{{ end }}
+    {{ with $links.substack }}<a href="{{ . }}" aria-label="Subscribe on Substack">Substack</a>{{ end }}
+    {{ with $links.github }}<a href="{{ . }}" aria-label="View on GitHub">GitHub</a>{{ end }}
+    {{ with $links.website }}<a href="{{ . }}" aria-label="Visit website">Website</a>{{ end }}
+  </div>
+{{- else -}}
+<div class="profile-links">
+    {{ range $links }}<a href="{{ .url }}" aria-label="Visit {{ .label }}">{{ .label }}</a>{{ end }}
+  </div>
+{{- end -}}

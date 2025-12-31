@@ -1,0 +1,22 @@
+{{/*
+  Guest Bio Partial
+
+  Usage:
+    {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
+
+  Parameters:
+    - guest: The guest object with .name, .bio, and .social fields
+    - showHeader: Boolean - whether to show "About {name}" header
+*/}}
+
+{{ with .guest }}
+<section class="guest-bio">
+  {{ if $.showHeader }}
+  <h2>About {{ .name }}</h2>
+  {{ end }}
+  {{ with .bio }}<p>{{ . }}</p>{{ end }}
+  {{ if or .social.twitter .social.nostr .social.website .social.linkedin .social.substack .social.github }}
+  {{ partial "social-links.html" .social }}
+  {{ end }}
+</section>
+{{ end }}

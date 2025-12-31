@@ -1,0 +1,22 @@
+{{- $inputId := .inputId | default "email-input" -}}
+{{- $formClass := .formClass | default "newsletter-form" -}}
+{{- $buttonText := .buttonText | default "Subscribe" -}}
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/{{ .context.Site.Params.buttondown_username }}"
+  method="post"
+  target="popupwindow"
+  class="{{ $formClass }}"
+>
+  <div class="form-group">
+    <label for="{{ $inputId }}">Email Address</label>
+    <input
+      id="{{ $inputId }}"
+      type="email"
+      name="email"
+      placeholder="your@email.com"
+      autocomplete="email"
+      required
+    >
+  </div>
+  <button type="submit" class="cta-button">{{ $buttonText }}</button>
+</form>
