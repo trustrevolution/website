@@ -13,7 +13,23 @@
 
 {{- $ogImage := resources.Get "images/og-default.jpg" -}}
 
-{{- if and (eq .Section "episodes") .Params.season .Params.episode -}}
+{{- if .IsHome -}}
+  {{- with resources.Get "images/og/home.jpg" -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
+{{- else if eq .Layout "why" -}}
+  {{- with resources.Get "images/og/why.jpg" -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
+{{- else if eq .Layout "about" -}}
+  {{- with resources.Get "images/og/about.jpg" -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
+{{- else if eq .Layout "support" -}}
+  {{- with resources.Get "images/og/support.jpg" -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
+{{- else if and (eq .Section "episodes") .Params.season .Params.episode -}}
   {{- $episodeOg := printf "images/og/s%02de%02d.jpg" .Params.season .Params.episode -}}
   {{- with resources.Get $episodeOg -}}
     {{- $ogImage = . -}}
