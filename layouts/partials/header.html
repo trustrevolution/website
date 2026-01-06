@@ -9,6 +9,7 @@
       <span class="nav-toggle-bar"></span>
     </button>
     <nav class="site-nav" id="main-nav" aria-label="Main navigation">
+      <a href="/manifesto/"{{ if eq .RelPermalink "/manifesto/" }} aria-current="page"{{ end }}>Why</a>
       <a href="/episodes/"{{ if or (eq .RelPermalink "/episodes/") (eq .Section "episodes") }} aria-current="page"{{ end }}>Episodes</a>
       <a href="/guests/"{{ if or (eq .RelPermalink "/guests/") (eq .Section "guests") }} aria-current="page"{{ end }}>Guests</a>
       <a href="/about/"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>
