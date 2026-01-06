@@ -1,3 +1,6 @@
+# Subdomain redirects
+https://podcast.trustrevolution.co/* https://fountain.fm/show/Mk0fJte5vrfiDQ5RyCZd 301!
+
 # Nostr and Lightning Network endpoints
 /nostr                      https://primal.net/p/nprofile1qqs937g9lksy25es6h5c502d78shc3f2knq76ey0xu03qqj5g77fcygf09a6v
 /.well-known/lnurlp/sats    https://getalby.com/.well-known/lnurlp/trustrev
