@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="why-poster seamless-to-footer">
+  <div class="poster-content">
+
+    {{/* Accusations block */}}
+    <div class="accusations">
+      {{ range .Params.accusations }}
+      <div class="accusation">
+        <p class="setup">You were told to trust {{ .target }}.</p>
+        <p class="reality">{{ .reality }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    {{/* Divider */}}
+    <hr class="divider">
+
+    {{/* Pivot */}}
+    <div class="pivot">
+      <p class="pivot-setup">{{ .Params.pivot.line1 }}</p>
+      <p class="pivot-reveal">{{ .Params.pivot.line2 }}</p>
+    </div>
+
+    {{/* Divider */}}
+    <hr class="divider">
+
+    {{/* Builders / Hope */}}
+    <div class="builders">
+      <p class="builders-setup">{{ .Params.builders.intro }}</p>
+      <p class="builders-action">{{ .Params.builders.action }}</p>
+
+      <div class="solutions">
+        {{ range .Params.builders.solutions }}
+        <p class="solution"><strong>{{ .label }}</strong> {{ .text | lower }}</p>
+        {{ end }}
+      </div>
+    </div>
+
+    {{/* CTA Band */}}
+    <div class="cta-band">
+      <span class="cta-text">{{ .Params.invitation.text }}</span>
+      <a href="/episodes/" class="cta-button">{{ .Params.invitation.cta }}</a>
+    </div>
+
+  </div>
+</article>
+{{ end }}
