@@ -1,7 +1,7 @@
 ---
 title: "Why"
 description: "The systems didn't fail. They worked exactly as designed—just not for you. Some people saw it coming. They're building the alternative."
-layout: "manifesto"
+layout: "why"
 
 accusations:
   - target: "the banks"

@@ -37,6 +37,8 @@
   --text-inverse: rgba(255,255,255,1);
   --text-inverse-muted: rgba(255,255,255,0.9);
   --text-inverse-dim: rgba(255,255,255,0.5);
+  --text-inverse-secondary: #aaaaaa;
+  --text-inverse-tertiary: #999999;
 
   /* Overlay & dark UI */
   --overlay-bg: rgba(0, 0, 0, 0.95);
@@ -2275,9 +2277,9 @@ input:focus-visible {
 }
 
 /* ============================================
-   MANIFESTO — Editorial Brutalist
+   WHY — Editorial Brutalist
    ============================================ */
-.manifesto-poster {
+.why-poster {
   background: var(--bg-black);
   color: var(--bg-white);
   padding: 2rem 1.5rem;
@@ -2305,7 +2307,7 @@ input:focus-visible {
 
 .accusation .setup {
   font-size: 1.125rem;
-  color: #aaa;
+  color: var(--text-inverse-secondary);
   margin: 0 0 0.25rem;
   line-height: 1.4;
 }
@@ -2321,7 +2323,7 @@ input:focus-visible {
 }
 
 /* Divider */
-.manifesto-poster .divider {
+.why-poster .divider {
   border: none;
   height: 4px;
   background: var(--accent-orange);
@@ -2336,7 +2338,7 @@ input:focus-visible {
 
 .pivot-setup {
   font-size: 1.125rem;
-  color: #aaa;
+  color: var(--text-inverse-secondary);
   margin: 0 0 0.5rem;
 }
 
@@ -2358,7 +2360,7 @@ input:focus-visible {
 
 .builders-setup {
   font-size: 1.125rem;
-  color: #aaa;
+  color: var(--text-inverse-secondary);
   margin: 0 0 0.5rem;
 }
 
@@ -2380,7 +2382,7 @@ input:focus-visible {
 
 .solution {
   font-size: 1.125rem;
-  color: #999;
+  color: var(--text-inverse-tertiary);
   margin: 0;
   line-height: 1.4;
 }
@@ -2430,7 +2432,7 @@ input:focus-visible {
 
 /* Tablet+ */
 @media (min-width: 768px) {
-  .manifesto-poster {
+  .why-poster {
     padding: 4rem 2rem;
   }
 
