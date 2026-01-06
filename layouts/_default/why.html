@@ -6,7 +6,7 @@
     <div class="accusations">
       {{ range .Params.accusations }}
       <div class="accusation">
-        <p class="setup">You were told to trust {{ .target }}.</p>
+        <p class="setup">You were told to {{ .target }}.</p>
         <p class="reality">{{ .reality }}</p>
       </div>
       {{ end }}
@@ -31,7 +31,7 @@
 
       <div class="solutions">
         {{ range .Params.builders.solutions }}
-        <p class="solution"><strong>{{ .label }}</strong> {{ .text | lower }}</p>
+        <p class="solution">{{ . }}</p>
         {{ end }}
       </div>
     </div>

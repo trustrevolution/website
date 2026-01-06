@@ -2387,13 +2387,6 @@ input:focus-visible {
   line-height: 1.4;
 }
 
-.solution strong {
-  font-family: var(--font-display);
-  color: var(--accent-orange);
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin-right: 0.25rem;
-}
 
 /* CTA Band */
 .cta-band {
@@ -2462,12 +2455,7 @@ input:focus-visible {
     font-size: 1.75rem;
   }
 
-  .solutions {
-    flex-direction: row;
-    justify-content: center;
-    gap: 3rem;
-  }
-
+  
   .solution {
     font-size: 1.25rem;
   }

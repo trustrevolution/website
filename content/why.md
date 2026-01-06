@@ -1,16 +1,16 @@
 ---
 title: "Why"
-description: "The systems didn't fail. They worked exactly as designed—just not for you. Some people saw it coming. They're building the alternative."
+description: "Banks freeze accounts. Platforms sell data. Institutions don't trust you. Meet the builders creating the alternative."
 layout: "why"
 
 accusations:
-  - target: "the banks"
+  - target: "trust the banks"
     reality: "They froze accounts."
-  - target: "the platforms"
+  - target: "trust the platforms"
     reality: "They sold your data and banned your speech."
-  - target: "the institutions"
+  - target: "trust the institutions"
     reality: "They don't trust you."
-  - target: "them with your identity"
+  - target: "prove who you are"
     reality: "They built a file on everything you do."
 
 pivot:
@@ -21,12 +21,9 @@ builders:
   intro: "Some people refuse to accept it."
   action: "They're building the alternative."
   solutions:
-    - label: "Money"
-      text: "No one can freeze."
-    - label: "Communication"
-      text: "No one can censor."
-    - label: "Identity"
-      text: "That proves without exposing."
+    - "Money no one can freeze."
+    - "Communication no one can censor."
+    - "Identity that proves without exposing."
 
 invitation:
   text: "This is where you meet them."
