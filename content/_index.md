@@ -2,6 +2,7 @@
 title: "Trust Revolution"
 og_headline: "TRUST REVOLUTION"
 og_subtext:
-  - "UNFILTERED. UNCOMFORTABLE. ESSENTIAL."
+  - "QUESTION EVERYTHING."
+  - "TRUST NOTHING BLINDLY."
 og_brand: "PODCAST"
 ---

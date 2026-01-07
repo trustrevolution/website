@@ -19,3 +19,7 @@ Thumbs.db
 # Hugo
 .hugo_build.lock
 __pycache__/
+
+# Secrets
+.env
+.env.*
