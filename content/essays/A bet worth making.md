@@ -1,7 +1,7 @@
 ---
 title: "A bet worth making"
 description: "Voluntary payment can't replace ads at scale. Fifty years of data says so. But that was never the point."
-date: 2025-12-23T10:00:00Z
+date: 2026-01-06T10:00:00Z
 slug: bet-worth-making
 draft: true
 ---

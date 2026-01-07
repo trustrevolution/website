@@ -566,9 +566,21 @@ blockquote,
 
 .footer-nav {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.footer-primary,
+.footer-secondary {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--spacing-sm) var(--spacing-md);
+  gap: var(--spacing-xs) var(--spacing-md);
+}
+
+.footer-secondary {
+  font-size: var(--font-size-xs);
 }
 
 .footer-nav a {

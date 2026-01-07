@@ -10,7 +10,6 @@
     </button>
     <nav class="site-nav" id="main-nav" aria-label="Main navigation">
       <a href="/episodes/"{{ if or (eq .RelPermalink "/episodes/") (eq .Section "episodes") }} aria-current="page"{{ end }}>Episodes</a>
-      <a href="/essays/"{{ if or (eq .RelPermalink "/essays/") (eq .Section "essays") }} aria-current="page"{{ end }}>Essays</a>
       <a href="/why/"{{ if eq .RelPermalink "/why/" }} aria-current="page"{{ end }}>Why</a>
       <a href="/support/"{{ if eq .RelPermalink "/support/" }} aria-current="page"{{ end }}>Support</a>
       <a href="#" class="search-trigger" aria-label="Search"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg></a>
