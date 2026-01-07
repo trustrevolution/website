@@ -2282,7 +2282,7 @@ input:focus-visible {
 /* Builders */
 .builders {
   text-align: center;
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-md) 0;
 }
 
 .builders-setup {
@@ -2297,7 +2297,7 @@ input:focus-visible {
   color: var(--bg-white);
   text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 /* Solutions */
@@ -2305,8 +2305,9 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-sm);
   text-align: center;
+  margin-top: var(--spacing-content);
 }
 
 .solution {
@@ -2367,7 +2368,7 @@ input:focus-visible {
 
 .why-hope .cta-band {
   margin-top: var(--spacing-md);
-  margin-bottom: 0;
+  margin-bottom: calc(-1 * var(--spacing-lg)); /* Extend into footer margin */
   padding: 0;
 }
 
