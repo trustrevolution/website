@@ -2,9 +2,7 @@
 {{- $cleanTitle := partial "episode-title-clean.html" .Title -}}
 <article class="episode-page" data-pagefind-body>
   <div class="container">
-    <nav class="breadcrumb fade-in">
-      <a href="/episodes/">{{ partial "arrow.html" "back" }}All Episodes</a>
-    </nav>
+    {{ partial "breadcrumb.html" (dict "href" "/episodes/" "label" "All Episodes") }}
     <div class="episode-layout">
       <aside class="episode-sidebar fade-in">
         <div class="episode-cover">

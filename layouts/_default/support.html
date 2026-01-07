@@ -53,7 +53,7 @@
   {{ if .Site.Params.newsletter_enabled }}
   <section class="support-newsletter section-dark">
     <div class="container fade-in delay-4">
-      <h3 class="section-title">{{ .Params.newsletter.heading }}</h3>
+      <h2 class="section-title">{{ .Params.newsletter.heading }}</h2>
       <p>{{ .Params.newsletter.text }}</p>
       {{ partial "buttondown-form.html" (dict "context" . "inputId" "support-email" "formClass" "email-signup-form") }}
     </div>

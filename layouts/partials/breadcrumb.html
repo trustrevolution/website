@@ -1,0 +1,6 @@
+{{- $href := .href -}}
+{{- $label := .label -}}
+{{- $class := .class | default "fade-in" -}}
+<nav class="breadcrumb {{ $class }}">
+  <a href="{{ $href }}">{{ partial "arrow.html" "back" }}{{ $label }}</a>
+</nav>

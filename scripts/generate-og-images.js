@@ -65,11 +65,23 @@ async function main() {
   console.log('Generating OG images...');
   const episodes = fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.md')).sort();
   let generated = 0;
+  const errors = [];
+
   for (const file of episodes) {
-    const result = await generateOgImage(path.join(CONTENT_DIR, file));
-    if (result) generated++;
+    try {
+      const result = await generateOgImage(path.join(CONTENT_DIR, file));
+      if (result) generated++;
+    } catch (err) {
+      console.error(`  Error processing ${file}: ${err.message}`);
+      errors.push(file);
+    }
   }
+
   console.log(`Done. Generated ${generated} new image(s).`);
+  if (errors.length > 0) {
+    console.error(`Failed to process ${errors.length} file(s): ${errors.join(', ')}`);
+    process.exit(1);
+  }
 }
 
 main().catch(err => {

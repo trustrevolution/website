@@ -1,10 +1,7 @@
 {{ define "main" }}
 <section class="section">
   <div class="container">
-    <header class="section-header-intro fade-in">
-      <h1>Guests</h1>
-      <p>{{ len .Data.Terms }} brilliant minds</p>
-    </header>
+    {{ partial "section-header.html" (dict "title" "Guests" "subtitle" (printf "%d brilliant minds" (len .Data.Terms))) }}
 
     <div class="guest-grid fade-in delay-1">
       {{ range .Data.Terms.Alphabetical }}

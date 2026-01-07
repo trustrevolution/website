@@ -1,9 +1,7 @@
 {{ define "main" }}
 <article class="essay-page" data-pagefind-body>
   <div class="container container-narrow">
-    <nav class="breadcrumb fade-in">
-      <a href="/essays/">{{ partial "arrow.html" "back" }}Essays</a>
-    </nav>
+    {{ partial "breadcrumb.html" (dict "href" "/essays/" "label" "Essays") }}
 
     <header class="essay-header fade-in">
       <h1>{{ .Title }}</h1>

@@ -1,10 +1,7 @@
 {{ define "main" }}
 <section class="section">
   <div class="container">
-    <header class="section-header-intro fade-in">
-      <h1>{{ .Title }}</h1>
-      <p>{{ len .Pages }} deep dive{{ if gt (len .Pages) 1 }}s{{ end }}</p>
-    </header>
+    {{ partial "section-header.html" (dict "title" .Title "subtitle" (printf "%d deep dive%s" (len .Pages) (cond (gt (len .Pages) 1) "s" ""))) }}
 
     {{ if .Pages }}
     <div class="essay-list fade-in delay-1">

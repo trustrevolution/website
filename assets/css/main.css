@@ -1442,21 +1442,10 @@ blockquote cite {
   border: 0;
 }
 
-.text-center { text-align: center; }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-
 /* Common utility classes for repeated patterns */
 .bg-dark {
   background: var(--bg-black);
   color: var(--bg-white);
-}
-
-.text-white { color: var(--bg-white); }
-.text-secondary { color: var(--text-secondary); }
-
-.border-card {
-  border: var(--border-component) solid var(--border-heavy);
 }
 
 .arrow-icon {
@@ -1939,22 +1928,18 @@ input:focus-visible {
 
   /* Hover effects */
   @media (hover: hover) {
-    .episode-card:hover {
+    .episode-card:hover,
+    .guest-card:hover,
+    .essay-card:hover {
       transform: translate(-4px, -4px);
       box-shadow: var(--shadow-lg) var(--shadow-lg) 0 var(--accent-orange);
       border-color: var(--accent-orange);
-    }
-
-    .guest-card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: var(--shadow-lg) var(--shadow-lg) 0 var(--accent-orange);
     }
 
     .cta-button:hover {
       transform: translate(-2px, -2px);
       box-shadow: var(--shadow-sm) var(--shadow-sm) 0 var(--text-black);
     }
-
   }
 }
 
@@ -2694,14 +2679,6 @@ input:focus-visible {
 
   .essay-card h2 {
     font-size: var(--font-size-xl);
-  }
-
-  @media (hover: hover) {
-    .essay-card:hover {
-      transform: translate(-4px, -4px);
-      box-shadow: var(--shadow-lg) var(--shadow-lg) 0 var(--accent-orange);
-      border-color: var(--accent-orange);
-    }
   }
 
   .essay-header h1 {

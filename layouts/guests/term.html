@@ -2,9 +2,7 @@
 <section class="section" data-pagefind-body>
   <div class="container">
     <header class="episode-header fade-in">
-      <nav class="breadcrumb">
-        <a href="/guests/">{{ partial "arrow.html" "back" }}All Guests</a>
-      </nav>
+      {{ partial "breadcrumb.html" (dict "href" "/guests/" "label" "All Guests" "class" "") }}
       <h1>{{ .Title }}</h1>
     </header>
 

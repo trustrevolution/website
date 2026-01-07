@@ -8,7 +8,7 @@ Trust Revolution is a Hugo-powered podcast website deployed on Netlify. The site
 
 ## Technology Stack
 
-- **Hugo**: Static site generator (v0.140+)
+- **Hugo**: Static site generator (v0.154.1+)
 - **Netlify**: Hosting and deployment
 - **Buttondown**: Email subscriptions
 - **Fountain**: Primary listening platform (sat streaming)
