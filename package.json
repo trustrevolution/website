@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "generate:og": "node scripts/generate-og-images.js",
+    "dev": "hugo server -D",
+    "build": "hugo --gc --minify",
+    "generate:og": "node scripts/generate-og-images.js && node scripts/generate-page-og.js",
+    "fetch:youtube": "node scripts/fetch-youtube-stats.js",
     "prebuild": "npm run generate:og"
   },
   "repository": {

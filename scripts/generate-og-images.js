@@ -72,4 +72,7 @@ async function main() {
   console.log(`Done. Generated ${generated} new image(s).`);
 }
 
-main().catch(console.error);
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

@@ -127,4 +127,7 @@ async function main() {
   console.log(`\nDone. Generated ${pages.length} image(s).`);
 }
 
-main().catch(console.error);
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
