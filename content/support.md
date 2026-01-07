@@ -2,12 +2,9 @@
 title: "Support"
 description: "Value for Value: No ads, no sponsors, no agenda. You decide what the work is worth."
 layout: "support"
-og_headline: "NO ADS. NO SPONSORS."
-og_subtext:
-  - "NO AGENDA BUT THE TRUTH."
 
 # Hero section
-manifesto:
+hero:
   label: "Value for Value"
   heading:
     lines:

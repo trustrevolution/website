@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="why-page seamless-to-footer">
+<article class="why-page">
   <div class="container">
 
     {{/* Accusations block */}}
@@ -12,19 +12,18 @@
       {{ end }}
     </div>
 
-    {{/* Divider */}}
-    <hr class="divider fade-in delay-1">
-
     {{/* Pivot */}}
     <div class="pivot fade-in delay-1">
       <p class="pivot-setup">{{ .Params.pivot.line1 }}</p>
       <p class="pivot-reveal">{{ .Params.pivot.line2 }}</p>
     </div>
 
-    {{/* Divider */}}
-    <hr class="divider fade-in delay-2">
+  </div>
+</article>
 
-    {{/* Builders / Hope */}}
+{{/* Hope Section - White background */}}
+<section class="why-hope seamless-to-footer">
+  <div class="container">
     <div class="builders fade-in delay-2">
       <p class="builders-setup">{{ .Params.builders.intro }}</p>
       <p class="builders-action">{{ .Params.builders.action }}</p>
@@ -38,13 +37,13 @@
         {{ end }}
       </div>
     </div>
+  </div>
 
-    {{/* CTA Band */}}
-    <div class="cta-band fade-in delay-3">
+  <div class="cta-band fade-in delay-3">
+    <div class="container cta-band-inner">
       <span class="cta-text">{{ .Params.invitation.text }}</span>
       <a href="/episodes/" class="cta-button">{{ .Params.invitation.cta }}</a>
     </div>
-
   </div>
-</article>
+</section>
 {{ end }}

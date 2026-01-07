@@ -2,14 +2,14 @@
 <article class="support-page seamless-to-footer">
 
   <!-- HERO: The Challenge -->
-  <section class="manifesto support-hero">
+  <section class="hero support-hero">
     <div class="container">
-      <div class="manifesto-content fade-in">
-        <span class="manifesto-label">{{ .Params.manifesto.label }}</span>
+      <div class="hero-content fade-in">
+        <span class="hero-label">{{ .Params.hero.label }}</span>
         <h1>
-          {{- range .Params.manifesto.heading.lines }}{{ . }}<br>{{ end -}}
+          {{- range .Params.hero.heading.lines }}{{ . }}<br>{{ end -}}
           <span class="accent">
-            {{- range .Params.manifesto.heading.accent_lines }}{{ . }}<br>{{ end -}}
+            {{- range .Params.hero.heading.accent_lines }}{{ . }}<br>{{ end -}}
           </span>
         </h1>
       </div>

@@ -384,7 +384,7 @@ body.nav-open { overflow: hidden; }
    ============================================ */
 .site-footer,
 .email-signup,
-.manifesto,
+.hero,
 .latest-episode,
 blockquote,
 .pull-quote {
@@ -470,10 +470,6 @@ blockquote,
   border-bottom: var(--border-subtle) solid var(--accent-orange);
 }
 
-.section-subtle {
-  background: var(--bg-subtle);
-}
-
 /* ============================================
    EPISODE CARDS
    ============================================ */
@@ -532,18 +528,6 @@ blockquote,
   color: var(--text-secondary);
   margin-top: auto;
   padding-top: var(--spacing-xs);
-}
-
-.episode-number {
-  display: inline-block;
-  padding: var(--spacing-3xs) var(--btn-padding-y);
-  background: var(--text-black);
-  color: var(--bg-white);
-  font-family: 'SF Mono', Monaco, monospace;
-  font-weight: 700;
-  font-size: var(--font-size-xs);
-  letter-spacing: var(--tracking-wider);
-  margin-bottom: var(--spacing-xs);
 }
 
 /* ============================================
@@ -979,15 +963,14 @@ blockquote cite {
    ============================================ */
 .about-page { padding-bottom: 0; }
 
-/* Manifesto Hero */
-.manifesto {
+/* Page Hero */
+.hero {
   padding: var(--spacing-lg) 0;
-  background: var(--bg-dark);
 }
 
-.manifesto-content { position: relative; z-index: 1; }
+.hero-content { position: relative; z-index: 1; }
 
-.manifesto-label {
+.hero-label {
   display: inline-block;
   font-family: var(--font-display);
   font-size: var(--font-size-sm);
@@ -999,14 +982,14 @@ blockquote cite {
   border-bottom: var(--border-subtle) solid var(--accent-orange);
 }
 
-.manifesto h1 {
+.hero h1 {
   font-size: clamp(1.75rem, 8vw, 2.5rem);
   line-height: 1.05;
   margin: 0;
   color: var(--bg-white);
 }
 
-.manifesto h1 .accent {
+.hero h1 .accent {
   color: var(--accent-orange);
 }
 
@@ -1442,12 +1425,6 @@ blockquote cite {
   border: 0;
 }
 
-/* Common utility classes for repeated patterns */
-.bg-dark {
-  background: var(--bg-black);
-  color: var(--bg-white);
-}
-
 .arrow-icon {
   width: 1em;
   height: 1em;
@@ -1469,20 +1446,10 @@ blockquote cite {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .fade-in {
   animation: slideIn 0.5s ease-out both;
   /* Flexible delay system: use style="--delay: N" for N * 0.1s delay */
   animation-delay: calc(var(--delay, 0) * 0.1s);
-}
-
-/* Fade-only variant (no slide movement) */
-.fade-in.fade-only {
-  animation-name: fadeIn;
 }
 
 /* Legacy delay classes for backward compatibility (prefer --delay custom property) */
@@ -1784,16 +1751,16 @@ input:focus-visible {
     left: var(--spacing-md);
   }
 
-  /* About page */
-  .manifesto {
+  /* Page Hero */
+  .hero {
     padding: var(--spacing-xl) 0;
   }
 
-  .manifesto h1 {
+  .hero h1 {
     font-size: 4.5rem;
   }
 
-  .manifesto-label {
+  .hero-label {
     font-size: var(--font-size-sm);
     letter-spacing: 0.3em;
   }
@@ -2290,14 +2257,6 @@ input:focus-visible {
   margin: 0;
 }
 
-/* Divider */
-.why-page .divider {
-  border: none;
-  height: 4px;
-  background: var(--accent-orange);
-  margin: 1.25rem 0;
-}
-
 /* Pivot */
 .pivot {
   text-align: center;
@@ -2354,11 +2313,14 @@ input:focus-visible {
   font-size: 1.125rem;
   color: var(--text-inverse-tertiary);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .solution-keyword {
   color: var(--accent-orange);
+  font-weight: 700;
 }
 
 
@@ -2397,10 +2359,58 @@ input:focus-visible {
   color: var(--bg-black);
 }
 
+/* Hope Section - Inverted */
+.why-hope {
+  background: var(--bg-white);
+  padding: var(--spacing-md) 0 0;
+}
+
+.why-hope .cta-band {
+  margin-top: var(--spacing-md);
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.why-hope .cta-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .why-hope .cta-band-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.why-hope .builders-setup {
+  color: var(--text-secondary);
+}
+
+.why-hope .builders-action {
+  color: var(--text-black);
+}
+
+.why-hope .solution {
+  color: var(--text-secondary);
+}
+
 /* Tablet+ */
 @media (min-width: 768px) {
   .why-page {
     padding: 4rem 2rem;
+  }
+
+  .why-hope {
+    padding-top: var(--spacing-lg);
+  }
+
+  .why-hope .cta-band {
+    margin-top: var(--spacing-lg);
   }
 
   .accusations {
@@ -2410,10 +2420,6 @@ input:focus-visible {
   .accusation {
     margin-bottom: 2.5rem;
     padding-left: 2rem;
-  }
-
-  .why-page .divider {
-    margin: 3rem 0;
   }
 
   .pivot,
@@ -2580,13 +2586,13 @@ input:focus-visible {
 }
 
 .essay-content {
-  font-size: var(--font-size-md);
-  line-height: 1.45;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
   letter-spacing: -0.01em;
 }
 
 .essay-content p {
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--spacing-md);
 }
 
 .essay-content h2 {
@@ -2624,8 +2630,10 @@ input:focus-visible {
 .essay-content blockquote {
   border-left: var(--border-section) solid var(--accent-orange);
   padding-left: var(--spacing-md);
-  margin: 2rem 0;
-  font-style: italic;
+  margin: var(--spacing-lg) 0;
+  font-style: normal;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
   color: var(--text-secondary);
 }
 
@@ -2683,5 +2691,14 @@ input:focus-visible {
 
   .essay-header h1 {
     font-size: var(--font-size-4xl);
+  }
+
+  .essay-content {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+  }
+
+  .essay-content p {
+    margin-bottom: var(--spacing-sm);
   }
 }

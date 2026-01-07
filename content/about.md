@@ -2,12 +2,9 @@
 title: "About"
 description: "Trust Revolution is a podcast exploring the systems we trust, why they work (or don't), and what comes next."
 layout: "about"
-og_headline: "QUESTION EVERYTHING."
-og_subtext:
-  - "TRUST NOTHING BLINDLY."
 
 # Hero section
-manifesto:
+hero:
   label: "The Mission"
   heading:
     lines:
