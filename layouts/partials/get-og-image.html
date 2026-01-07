@@ -34,6 +34,11 @@
   {{- with resources.Get $episodeOg -}}
     {{- $ogImage = . -}}
   {{- end -}}
+{{- else if and (eq .Section "essays") .Params.slug -}}
+  {{- $essayOg := printf "images/og/essays/%s.jpg" .Params.slug -}}
+  {{- with resources.Get $essayOg -}}
+    {{- $ogImage = . -}}
+  {{- end -}}
 {{- else -}}
   {{- with .Params.featured_image -}}
     {{- with resources.Get . -}}

@@ -2,6 +2,10 @@
 title: "Why"
 description: "Banks freeze accounts. Platforms sell data. Institutions don't trust you. Meet the builders creating the alternative."
 layout: "why"
+og_headline: "THE SYSTEMS DIDN'T FAIL."
+og_subtext:
+  - "THEY WORKED EXACTLY AS DESIGNED"
+  - "—JUST NOT FOR YOU."
 
 accusations:
   - target: "trust the banks"

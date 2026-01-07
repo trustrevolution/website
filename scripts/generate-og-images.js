@@ -42,7 +42,7 @@ async function generateOgImage(episodePath) {
   }
 
   const cover = await sharp(coverPath)
-    .resize(COVER_SIZE, COVER_SIZE, { fit: 'cover' })
+    .resize(COVER_SIZE, COVER_SIZE, { fit: 'cover', position: 'centre' })
     .toBuffer();
 
   await sharp({

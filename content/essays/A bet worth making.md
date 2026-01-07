@@ -1,9 +1,12 @@
 ---
 title: "A bet worth making"
 description: "Voluntary payment can't replace ads at scale. Fifty years of data says so. But that was never the point."
+og_subtext:
+  - "FIFTY YEARS OF DATA SAYS ADS WIN."
+  - "THAT'S NOT THE POINT."
 date: 2026-01-06T10:00:00Z
 slug: bet-worth-making
-draft: true
+draft: false
 ---
 
 There's an idea I find compelling: what if you could pay creators directly instead of watching ads? What if the money currently flowing to Big Tech through your attention and data went to the people actually making things you value?
