@@ -568,7 +568,7 @@ blockquote,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
 }
 
 .footer-primary,
@@ -579,8 +579,13 @@ blockquote,
   gap: var(--spacing-xs) var(--spacing-md);
 }
 
-.footer-secondary {
+.footer-secondary a {
   font-size: var(--font-size-xs);
+  opacity: 0.6;
+}
+
+.footer-secondary a:hover {
+  opacity: 1;
 }
 
 .footer-nav a {
