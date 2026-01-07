@@ -566,26 +566,9 @@ blockquote,
 
 .footer-nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-}
-
-.footer-primary,
-.footer-secondary {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--spacing-xs) var(--spacing-md);
-}
-
-.footer-secondary a {
-  font-size: var(--font-size-xs);
-  opacity: 0.6;
-}
-
-.footer-secondary a:hover {
-  opacity: 1;
 }
 
 .footer-nav a {
@@ -1318,19 +1301,17 @@ blockquote cite {
 .testimonial-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-md);
 }
 
 /* Individual quote — big, bold, editorial */
 .testimonial-quote {
   margin: 0;
-  padding: 0 0 var(--spacing-lg);
-  border-bottom: var(--border-thin) solid var(--border-dark);
+  padding: 0 0 var(--spacing-md);
   position: relative;
 }
 
 .testimonial-quote:last-child {
-  border-bottom: none;
   padding-bottom: 0;
 }
 
@@ -1344,7 +1325,7 @@ blockquote cite {
   font-weight: 500;
   line-height: var(--line-height-normal);
   position: relative;
-  padding-left: var(--spacing-md);
+  padding-left: var(--spacing-sm);
 }
 
 .testimonial-quote blockquote::before {
@@ -1360,7 +1341,7 @@ blockquote cite {
 
 .testimonial-quote figcaption {
   margin-top: var(--spacing-sm);
-  padding-left: var(--spacing-md);
+  padding-left: var(--spacing-sm);
 }
 
 .testimonial-quote figcaption a {
@@ -1936,7 +1917,7 @@ input:focus-visible {
   .support-testimonials { padding: var(--spacing-xl) 0; }
 
   .testimonial-quote {
-    padding-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
   }
 
   .testimonial-quote blockquote {
@@ -1946,7 +1927,7 @@ input:focus-visible {
     line-height: var(--line-height-tight);
     text-transform: uppercase;
     letter-spacing: var(--tracking-normal);
-    padding-left: var(--spacing-xl);
+    padding-left: var(--spacing-md);
   }
 
   .testimonial-quote blockquote::before {
@@ -1955,7 +1936,7 @@ input:focus-visible {
   }
 
   .testimonial-quote figcaption {
-    padding-left: var(--spacing-xl);
+    padding-left: var(--spacing-md);
   }
 
   .support-newsletter { padding: var(--spacing-xl) 0; }
@@ -2296,24 +2277,19 @@ input:focus-visible {
 /* ============================================
    WHY — Editorial Brutalist
    ============================================ */
-.why-poster {
+.why-page {
   background: var(--bg-black);
   color: var(--bg-white);
-  padding: 2rem 1.5rem;
-}
-
-.poster-content {
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 /* Accusations */
 .accusations {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .accusation {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   padding-left: 1.5rem;
   border-left: 4px solid var(--accent-orange);
 }
@@ -2340,17 +2316,17 @@ input:focus-visible {
 }
 
 /* Divider */
-.why-poster .divider {
+.why-page .divider {
   border: none;
   height: 4px;
   background: var(--accent-orange);
-  margin: 3rem 0;
+  margin: 1.25rem 0;
 }
 
 /* Pivot */
 .pivot {
   text-align: center;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
 .pivot-setup {
@@ -2372,7 +2348,7 @@ input:focus-visible {
 /* Builders */
 .builders {
   text-align: center;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
 }
 
 .builders-setup {
@@ -2387,14 +2363,16 @@ input:focus-visible {
   color: var(--bg-white);
   text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 
 /* Solutions */
 .solutions {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
 .solution {
@@ -2404,12 +2382,16 @@ input:focus-visible {
   line-height: 1.4;
 }
 
+.solution-keyword {
+  color: var(--accent-orange);
+}
+
 
 /* CTA Band */
 .cta-band {
   background: var(--accent-orange);
   padding: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2442,13 +2424,38 @@ input:focus-visible {
 
 /* Tablet+ */
 @media (min-width: 768px) {
-  .why-poster {
+  .why-page {
     padding: 4rem 2rem;
   }
 
-  .accusation {
+  .accusations {
     margin-bottom: 3rem;
+  }
+
+  .accusation {
+    margin-bottom: 2.5rem;
     padding-left: 2rem;
+  }
+
+  .why-page .divider {
+    margin: 3rem 0;
+  }
+
+  .pivot,
+  .builders {
+    padding: 2rem 0;
+  }
+
+  .builders-action {
+    margin-bottom: 2rem;
+  }
+
+  .solutions {
+    gap: 1rem;
+  }
+
+  .cta-band {
+    margin-top: 3rem;
   }
 
   .accusation .setup {

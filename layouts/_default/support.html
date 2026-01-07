@@ -40,7 +40,7 @@
         <figure class="testimonial-quote fade-in" style="--delay: {{ add 2.5 (mul $i 0.5) }}">
           <blockquote>{{ $t.quote }}</blockquote>
           <figcaption>
-            <a href="{{ $t.url }}" target="_blank" rel="noopener">{{ $t.author }}</a>
+            <a href="{{ $t.url }}" target="_blank" rel="noopener">— {{ $t.author }}</a>
           </figcaption>
         </figure>
         {{ end }}

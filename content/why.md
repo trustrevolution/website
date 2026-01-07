@@ -4,7 +4,7 @@ description: "Banks freeze accounts. Platforms sell data. Institutions don't tru
 layout: "why"
 og_headline: "THE SYSTEMS DIDN'T FAIL."
 og_subtext:
-  - "THEY WORKED EXACTLY AS DESIGNED"
+  - "THEY WORK EXACTLY AS DESIGNED"
   - "—JUST NOT FOR YOU."
 
 accusations:
@@ -19,15 +19,15 @@ accusations:
 
 pivot:
   line1: "The systems didn't fail."
-  line2: "They worked exactly as designed—just not for you."
+  line2: "They work exactly as designed—just not for you."
 
 builders:
-  intro: "Some people refuse to accept it."
+  intro: "Some people saw it coming."
   action: "They're building the alternative."
   solutions:
-    - "Money no one can freeze."
-    - "Communication no one can censor."
-    - "Identity that proves without exposing."
+    - "MONEY no one can freeze."
+    - "COMMUNICATION no one can censor."
+    - "IDENTITY that proves without exposing."
 
 invitation:
   text: "This is where you meet them."
