@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <header class="section-header-intro fade-in">
+      <h1>{{ .Title }}</h1>
+      <p>{{ len .Pages }} deep dive{{ if gt (len .Pages) 1 }}s{{ end }}</p>
+    </header>
+
+    {{ if .Pages }}
+    <div class="essay-list fade-in delay-1">
+      {{ range .Pages }}
+      <article class="essay-card">
+        <a href="{{ .RelPermalink }}" class="card-link">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <h2>{{ .Title }}</h2>
+          {{ with .Description }}<p class="essay-excerpt">{{ . }}</p>{{ end }}
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <p class="empty-state">Essays coming soon.</p>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "email-signup.html" . }}
+{{ end }}

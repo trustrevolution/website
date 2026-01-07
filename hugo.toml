@@ -39,9 +39,6 @@ title = "Trust Revolution"
   home = ["HTML", "RSS"]
   section = ["HTML"]
 
-[outputs.episodes]
-  section = ["HTML", "RSS"]
-
 [permalinks]
   episodes = "/episodes/:slug/"
   posts = "/posts/:slug/"

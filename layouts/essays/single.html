@@ -1,0 +1,39 @@
+{{ define "main" }}
+<article class="essay-page" data-pagefind-body>
+  <div class="container container-narrow">
+    <nav class="breadcrumb fade-in">
+      <a href="/essays/">{{ partial "arrow.html" "back" }}Essays</a>
+    </nav>
+
+    <header class="essay-header fade-in">
+      <h1>{{ .Title }}</h1>
+      <div class="essay-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </div>
+    </header>
+
+    <div class="essay-content fade-in delay-1">
+      {{ .Content }}
+    </div>
+
+    <nav class="episode-nav fade-in delay-2" aria-label="Essay navigation">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" class="nav-prev">
+        {{ partial "arrow.html" "back" }}
+        <span>{{ .Title }}</span>
+      </a>
+      {{ else }}
+      <span></span>
+      {{ end }}
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" class="nav-next">
+        <span>{{ .Title }}</span>
+        {{ partial "arrow.html" "forward" }}
+      </a>
+      {{ end }}
+    </nav>
+  </div>
+</article>
+
+{{ partial "email-signup.html" . }}
+{{ end }}
