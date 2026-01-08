@@ -3,9 +3,13 @@
 {{- $class := .class | default "" -}}
 {{- $width := .width | default 800 -}}
 {{- $sizes := .sizes | default "(max-width: 768px) 100vw, 50vw" -}}
+{{- $grayscale := .grayscale | default false -}}
 
 {{- $image := resources.Get $src -}}
 {{- if $image -}}
+  {{- if $grayscale -}}
+    {{- $image = $image | images.Filter images.Grayscale -}}
+  {{- end -}}
   {{- $small := $image.Resize (printf "%dx webp" (div $width 2)) -}}
   {{- $medium := $image.Resize (printf "%dx webp" $width) -}}
   {{- $large := $image.Resize (printf "%dx webp" (mul $width 2)) -}}

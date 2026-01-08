@@ -34,7 +34,7 @@
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=600"
 
 # JavaScript caching
 [[headers]]

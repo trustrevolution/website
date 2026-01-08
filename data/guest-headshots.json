@@ -1,0 +1,714 @@
+{
+  "john-robb": {
+    "name": "John Robb",
+    "slug": "john-robb",
+    "episodes": [
+      "s01e01-john-robb"
+    ],
+    "social": {
+      "substack": "https://johnrobb.substack.com/"
+    },
+    "candidates": [
+      {
+        "source": "substack-avatar",
+        "url": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2ec63ab9-d0a9-47d6-befc-9ebf03b49b2c_4096x4096.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/john-robb/substack-avatar.jpg",
+        "filename": "substack-avatar.jpg",
+        "width": 4096,
+        "height": 4096,
+        "size": 6984786
+      }
+    ],
+    "selected": "substack-avatar",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/john-robb.jpg",
+    "notes": ""
+  },
+  "marks": {
+    "name": "Marks",
+    "slug": "marks",
+    "episodes": [
+      "s01e02-marks"
+    ],
+    "social": {
+      "nostr": "https://primal.net/Marks_FTW",
+      "twitter": "https://x.com/Marks_FTW",
+      "website": "https://opensecret.cloud"
+    },
+    "candidates": [
+      {
+        "source": "website-og",
+        "url": "https://opensecret.cloud/og-image.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/marks/website-0.png",
+        "filename": "website-0.png",
+        "width": 1516,
+        "height": 1040,
+        "size": 134697
+      },
+      {
+        "source": "nostr",
+        "url": "https://primal.net/public/primal-logo-large.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/marks/nostr-1.png",
+        "filename": "nostr-1.png",
+        "width": 300,
+        "height": 300,
+        "size": 96891
+      }
+    ],
+    "selected": "website-og",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/marks.jpg",
+    "notes": ""
+  },
+  "max-hillebrand": {
+    "name": "Max Hillebrand",
+    "slug": "max-hillebrand",
+    "episodes": [
+      "s01e03-max-hillebrand"
+    ],
+    "social": {
+      "nostr": "https://njump.me/npub1klkk3vrzme455yh9rl2jshq7rc8dpegj3ndf82c3ks2sk40dxt7qulx3vt",
+      "website": "https://soundmoneysolutions.io"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://image.nostr.build/08e549edff9a20737d72a74d6dd9bcd6f7f5189ef825626afdce3de9062afcb7.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/max-hillebrand/nostr-1.jpg",
+        "filename": "nostr-1.jpg",
+        "width": 1024,
+        "height": 1024,
+        "size": 175969
+      },
+      {
+        "source": "website-og",
+        "url": "https://soundmoneysolutions.io/wp-content/uploads/2025/04/S04_SMS2402-Facebook-Cover-2-1024x607.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/max-hillebrand/website-0.jpg",
+        "filename": "website-0.jpg",
+        "width": 1024,
+        "height": 607,
+        "size": 57138
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/max-hillebrand.jpg",
+    "notes": ""
+  },
+  "david-strayhorn": {
+    "name": "David Strayhorn",
+    "slug": "david-strayhorn",
+    "episodes": [
+      "s01e04-david-strayhorn"
+    ],
+    "social": {
+      "nostr": "https://primal.net/wds4",
+      "github": "https://github.com/wds4"
+    },
+    "candidates": [
+      {
+        "source": "github",
+        "url": "https://avatars.githubusercontent.com/wds4?s=800",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/david-strayhorn/github-1.jpg",
+        "filename": "github-1.jpg",
+        "width": 400,
+        "height": 400,
+        "size": 14101
+      },
+      {
+        "source": "nostr",
+        "url": "https://primal.net/public/primal-logo-large.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/david-strayhorn/nostr-0.png",
+        "filename": "nostr-0.png",
+        "width": 300,
+        "height": 300,
+        "size": 96891
+      }
+    ],
+    "selected": "github",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/david-strayhorn.jpg",
+    "notes": ""
+  },
+  "ya-l-ossowski": {
+    "name": "Yaël Ossowski",
+    "slug": "ya-l-ossowski",
+    "episodes": [
+      "s01e05-yael-ossowski"
+    ],
+    "social": {
+      "nostr": "https://primal.net/p/npub15dnln6cukw3yrflnv3hnrntdt9amh0uw466u6tns05ymqp3nal4qzz3lfc",
+      "twitter": "https://x.com/yaeloss",
+      "website": "https://yael.ca"
+    },
+    "candidates": [
+      {
+        "source": "website-og",
+        "url": "https://yael.ca/wp-content/uploads/2024/06/redYO.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/ya-l-ossowski/website-0.jpg",
+        "filename": "website-0.jpg",
+        "width": 1600,
+        "height": 1600,
+        "size": 145674
+      },
+      {
+        "source": "website-about",
+        "url": "https://yael.at/assets/images/head.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/ya-l-ossowski/website-1.png",
+        "filename": "website-1.png",
+        "width": 678,
+        "height": 489,
+        "size": 362251
+      },
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fmedia.primal.net%2Fcache%2F5%2F67%2F29%2F56729f5ee09b4c8f613b892435ae71579851104753aab129d135705e2110106a.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/ya-l-ossowski/nostr-2.jpg",
+        "filename": "nostr-2.jpg",
+        "width": 200,
+        "height": 200,
+        "size": 6433
+      }
+    ],
+    "selected": "website-about",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/ya-l-ossowski.jpg",
+    "notes": ""
+  },
+  "bronwyn-williams": {
+    "name": "Bronwyn Williams",
+    "slug": "bronwyn-williams",
+    "episodes": [
+      "s01e06-bronwyn-williams"
+    ],
+    "social": {
+      "twitter": "https://x.com/bronwynwilliams",
+      "website": "https://www.fluxtrends.com"
+    },
+    "candidates": [
+      {
+        "source": "website-about",
+        "url": "https://fluxtrends.com/wp-content/uploads/2023/08/good-faces-yWTUg04EZU8-unsplash-1024x681.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/bronwyn-williams/website-1.jpg",
+        "filename": "website-1.jpg",
+        "width": 1024,
+        "height": 681,
+        "size": 54803
+      },
+      {
+        "source": "website-og",
+        "url": "http://fluxtrends.com/wp-content/uploads/2023/02/Client_Logo_5.webp",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/bronwyn-williams/website-0.webp",
+        "filename": "website-0.webp",
+        "width": 300,
+        "height": 183,
+        "size": 4224
+      }
+    ],
+    "selected": "website-about",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/bronwyn-williams.jpg",
+    "notes": ""
+  },
+  "fran": {
+    "name": "Fran",
+    "slug": "fran",
+    "episodes": [
+      "s01e07-fran"
+    ],
+    "social": {
+      "nostr": "https://primal.net/fran",
+      "twitter": "https://x.com/FranOnNostr",
+      "website": "https://zapstore.dev"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fprimaldata.s3.us-east-005.backblazeb2.com%2Fcache%2F9%2F6c%2Fdc%2F96cdc2d4db61dc085834bd4feb529a12a18681374b58f15d604622a8e3553a6e.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/fran/nostr-0.jpg",
+        "filename": "nostr-0.jpg",
+        "width": 156,
+        "height": 200,
+        "size": 7379
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/fran.jpg",
+    "notes": ""
+  },
+  "rishad-tobaccowala": {
+    "name": "Rishad Tobaccowala",
+    "slug": "rishad-tobaccowala",
+    "episodes": [
+      "s01e08-rishad-tobaccowala"
+    ],
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/rishadtobaccowala/",
+      "substack": "https://rishad.substack.com"
+    },
+    "candidates": [
+      {
+        "source": "substack",
+        "url": "https://substackcdn.com/image/fetch/$s_!vA5D!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Frishad.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D-1988603801%26version%3D9",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/rishad-tobaccowala/substack-0.jpg",
+        "filename": "substack-0.jpg",
+        "width": 920,
+        "height": 480,
+        "size": 137723
+      }
+    ],
+    "selected": "substack",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/rishad-tobaccowala.jpg",
+    "notes": ""
+  },
+  "r-u-sirius": {
+    "name": "R.U. Sirius",
+    "slug": "r-u-sirius",
+    "episodes": [
+      "s01e09-r-u-sirius"
+    ],
+    "social": {
+      "twitter": "https://x.com/stealthissingul"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/r-u-sirius.jpg",
+    "notes": ""
+  },
+  "stephen-pollock": {
+    "name": "Stephen Pollock",
+    "slug": "stephen-pollock",
+    "episodes": [
+      "s01e10-stephen-pollock"
+    ],
+    "social": {
+      "website": "https://www.btcpolicy.org"
+    },
+    "candidates": [
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68ff9c2befb06be21a39e123/690924b8815276f2f32c0f2b_68067ee525d3d46561757c62_Untitled%2520design%2520(1).png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-1.png",
+        "filename": "website-1.png",
+        "width": 3000,
+        "height": 2001,
+        "size": 2489944
+      },
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68ff9c2befb06be21a39e123/690924ba92cc21f7466451dc_6806815a46d9ca26d9c1603a_Untitled%2520design%2520(1).png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-2.png",
+        "filename": "website-2.png",
+        "width": 3000,
+        "height": 2001,
+        "size": 2387354
+      },
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68ff9c2befb06be21a39e123/690924b9c7ad3ed2a7e8303e_688cfab9ae025a47adf91e04_headshots-10.jpeg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-5.jpeg",
+        "filename": "website-5.jpeg",
+        "width": 1250,
+        "height": 1042,
+        "size": 785547
+      },
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68ff9c2befb06be21a39e123/690924b7cbca24012d7fdb68_689249242ac20799fd1c2aa5_headshots-11.jpeg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-4.jpeg",
+        "filename": "website-4.jpeg",
+        "width": 1245,
+        "height": 1035,
+        "size": 271550
+      },
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68ff9c2befb06be21a39e123/691dd7bbdc80286e7ea3925a_248c77b5-df69-4a9a-a45b-660048409e8c_8191d524_Andrew.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-0.jpg",
+        "filename": "website-0.jpg",
+        "width": 800,
+        "height": 800,
+        "size": 94315
+      },
+      {
+        "source": "website-img",
+        "url": "https://cdn.prod.website-files.com/68f7cddcae0b61add08140fc/68f9b4e9071867dd20af5cdf_Rectangle%2039901.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/stephen-pollock/website-3.png",
+        "filename": "website-3.png",
+        "width": 56,
+        "height": 56,
+        "size": 9245
+      }
+    ],
+    "selected": "website-img",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/stephen-pollock.jpg",
+    "notes": ""
+  },
+  "matt-odell": {
+    "name": "Matt O'Dell",
+    "slug": "matt-odell",
+    "episodes": [
+      "s01e11-matt-o-dell"
+    ],
+    "social": {
+      "website": "https://odell.xyz"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/matt-odell.jpg",
+    "notes": ""
+  },
+  "opnstate": {
+    "name": "OpnState",
+    "slug": "opnstate",
+    "episodes": [
+      "s01e12-opnstate"
+    ],
+    "social": {
+      "nostr": "https://primal.net/p/nprofile1qqsxdp2cpe2m9ut65cuuj3v4pqldl6ej3ct44ae4s7a5ukhekquk2yqsgexrsw8ycujf0d2eaf6y9vnx0z727kcmqk3sfwaxrz5c7gfqznngr9ydnh"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://primal.net/public/primal-logo-large.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/opnstate/nostr-0.png",
+        "filename": "nostr-0.png",
+        "width": 300,
+        "height": 300,
+        "size": 96891
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/opnstate.jpg",
+    "notes": ""
+  },
+  "nicholas-anthony": {
+    "name": "Nicholas Anthony",
+    "slug": "nicholas-anthony",
+    "episodes": [
+      "s02e01-nicholas-anthony"
+    ],
+    "social": {
+      "nostr": "https://primal.net/p/nprofile1qqsf4dnexgne40djtcpacafxfz6sdemlzsyhr9clm9e7q86cgksmrmqvtucd0",
+      "twitter": "https://x.com/Nick-C-Anthony"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fmedia.primal.net%2Fcache%2Fc%2F11%2F05%2Fc1105875ddd4bd33ece9b5b814850df93cf383e0b2b18a9284765a40340c1b35.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/nicholas-anthony/nostr-0.jpg",
+        "filename": "nostr-0.jpg",
+        "width": 186,
+        "height": 200,
+        "size": 5599
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/nicholas-anthony.jpg",
+    "notes": ""
+  },
+  "mathias-buus": {
+    "name": "Mathias Buus",
+    "slug": "mathias-buus",
+    "episodes": [
+      "s02e02-mathias-buus"
+    ],
+    "social": {
+      "twitter": "https://x.com/mafintosh",
+      "github": "https://github.com/mafintosh",
+      "website": "https://company.holepunch.to"
+    },
+    "candidates": [
+      {
+        "source": "github",
+        "url": "https://avatars.githubusercontent.com/mafintosh?s=800",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/mathias-buus/github-0.jpg",
+        "filename": "github-0.jpg",
+        "width": 460,
+        "height": 460,
+        "size": 19037
+      }
+    ],
+    "selected": "github",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/mathias-buus.jpg",
+    "notes": ""
+  },
+  "jeffrey-tucker": {
+    "name": "Jeffrey Tucker",
+    "slug": "jeffrey-tucker",
+    "episodes": [
+      "s02e03-jeffrey-tucker"
+    ],
+    "social": {
+      "twitter": "https://twitter.com/jeffreyatucker",
+      "website": "https://brownstone.org/"
+    },
+    "candidates": [
+      {
+        "source": "brownstone-author-page",
+        "url": "https://brownstone.org/wp-content/uploads/2024/05/jeffrey-tucker.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/jeffrey-tucker/brownstone-headshot.jpg",
+        "filename": "brownstone-headshot.jpg",
+        "width": 1000,
+        "height": 1000,
+        "size": 75247
+      }
+    ],
+    "selected": "brownstone-author-page",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/jeffrey-tucker.jpg",
+    "notes": ""
+  },
+  "alex-newman": {
+    "name": "Alex Newman",
+    "slug": "alex-newman",
+    "episodes": [
+      "s02e04-alex-newman"
+    ],
+    "social": {
+      "twitter": "https://x.com/ALEXNEWMAN_JOU",
+      "website": "https://libertysentinel.org"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/alex-newman.jpg",
+    "notes": ""
+  },
+  "rob-brinded": {
+    "name": "Rob Brinded",
+    "slug": "rob-brinded",
+    "episodes": [
+      "s02e07-rob-brinded"
+    ],
+    "social": {
+      "nostr": "https://primal.net/RobBrinded",
+      "twitter": "https://x.com/RobBrinded",
+      "website": "https://robbrinded.com"
+    },
+    "candidates": [
+      {
+        "source": "website-og",
+        "url": "http://static1.squarespace.com/static/5b20d1bf0dbda31ec4746352/t/62c4148baa306b38b294a52a/1657017487546/masterless.png?format=1500w",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/rob-brinded/website-0.png",
+        "filename": "website-0.png",
+        "width": 595,
+        "height": 615,
+        "size": 67353
+      },
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fprimaldata.s3.us-east-005.backblazeb2.com%2Fcache%2F1%2Fdb%2F0f%2F1db0f525ac19f0f6a3d9952aacadb7065dc419d85ee89726d35db1b9c1483782.gif",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/rob-brinded/nostr-1.gif",
+        "filename": "nostr-1.gif",
+        "width": 200,
+        "height": 200,
+        "size": 225488
+      }
+    ],
+    "selected": "website-og",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/rob-brinded.jpg",
+    "notes": ""
+  },
+  "trey-sellers": {
+    "name": "Trey Sellers",
+    "slug": "trey-sellers",
+    "episodes": [
+      "s02e08-trey-sellers"
+    ],
+    "social": {
+      "twitter": "https://x.com/TreyBSellers",
+      "website": "https://firebtc.com"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/trey-sellers.jpg",
+    "notes": ""
+  },
+  "tim-bouma": {
+    "name": "Tim Bouma",
+    "slug": "tim-bouma",
+    "episodes": [
+      "s02e09-tim-bouma"
+    ],
+    "social": {
+      "nostr": "npub1q6mcr8tlr3l4gus3sfnw6772s7zae6hqncmw5wj27ejud5wcxf7q0nx7d5",
+      "twitter": "https://twitter.com/trbouma",
+      "linkedin": "https://linkedin.com/in/trbouma"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/tim-bouma.jpg",
+    "notes": ""
+  },
+  "dan-gould": {
+    "name": "Dan Gould",
+    "slug": "dan-gould",
+    "episodes": [
+      "s02e10-dan-gould"
+    ],
+    "social": {
+      "twitter": "https://twitter.com/bitgould",
+      "github": "https://github.com/DanGould",
+      "website": "https://bitgould.com"
+    },
+    "candidates": [
+      {
+        "source": "github",
+        "url": "https://avatars.githubusercontent.com/DanGould?s=800",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/dan-gould/github-0.jpg",
+        "filename": "github-0.jpg",
+        "width": 460,
+        "height": 460,
+        "size": 44820
+      }
+    ],
+    "selected": "github",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/dan-gould.jpg",
+    "notes": ""
+  },
+  "stephen-delorme": {
+    "name": "Stephen DeLorme",
+    "slug": "stephen-delorme",
+    "episodes": [
+      "s02e11-stephen-delorme"
+    ],
+    "social": {
+      "nostr": "npub1nxy56ame2gfnfj6fjylzxwq7r94phvgwt037mmvwr60qsqlaseksswlnxl",
+      "twitter": "https://twitter.com/StephenDeLorme",
+      "website": "https://d.elor.me"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/stephen-delorme.jpg",
+    "notes": ""
+  },
+  "average-gary": {
+    "name": "Average Gary",
+    "slug": "average-gary",
+    "episodes": [
+      "s02e12-average-gary"
+    ],
+    "social": {
+      "nostr": "https://primal.net/gary",
+      "github": "https://github.com/average-gary"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://primal.net/public/primal-logo-large.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/average-gary/nostr-0.png",
+        "filename": "nostr-0.png",
+        "width": 300,
+        "height": 300,
+        "size": 96891
+      },
+      {
+        "source": "github",
+        "url": "https://avatars.githubusercontent.com/average-gary?s=800",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/average-gary/github-1.jpg",
+        "filename": "github-1.jpg",
+        "width": 224,
+        "height": 224,
+        "size": 5221
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/average-gary.jpg",
+    "notes": ""
+  },
+  "cory-doctorow": {
+    "name": "Cory Doctorow",
+    "slug": "cory-doctorow",
+    "episodes": [
+      "s02e13-cory-doctorow"
+    ],
+    "social": {
+      "mastodon": "https://mamot.fr/@pluralistic",
+      "twitter": "https://twitter.com/doctorow",
+      "website": "https://craphound.com"
+    },
+    "candidates": [],
+    "selected": null,
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/cory-doctorow.jpg",
+    "notes": ""
+  },
+  "christian-keroles": {
+    "name": "Christian Keroles",
+    "slug": "christian-keroles",
+    "episodes": [
+      "s02e15-christian-keroles"
+    ],
+    "social": {
+      "nostr": "https://primal.net/ck",
+      "twitter": "https://twitter.com/ck_SNARKs",
+      "linkedin": "https://linkedin.com/in/ckeroles"
+    },
+    "candidates": [
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fprimaldata.s3.us-east-005.backblazeb2.com%2Fcache%2F1%2F7c%2F9b%2F17c9be49d7b223a3fdabf7eda3bca336a780857e6a7525611fb8c89bf456c684.jpg",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/christian-keroles/nostr-0.jpg",
+        "filename": "nostr-0.jpg",
+        "width": 199,
+        "height": 200,
+        "size": 7597
+      }
+    ],
+    "selected": "nostr",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/christian-keroles.jpg",
+    "notes": ""
+  },
+  "pippellia": {
+    "name": "Pippellia",
+    "slug": "pippellia",
+    "episodes": [
+      "s02e16-pippellia"
+    ],
+    "social": {
+      "nostr": "https://primal.net/p/nprofile1qqs0dqlgwq6l0t20gnstnr8mm9fhu9j9t2fv6wxwl3xtx8dh24l4auswr6u0j",
+      "twitter": "https://twitter.com/pippellia",
+      "github": "https://github.com/pippellia-btc"
+    },
+    "candidates": [
+      {
+        "source": "github",
+        "url": "https://avatars.githubusercontent.com/pippellia-btc?s=800",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/pippellia/github-1.jpg",
+        "filename": "github-1.jpg",
+        "width": 460,
+        "height": 460,
+        "size": 192442
+      },
+      {
+        "source": "nostr",
+        "url": "https://primal.net/media-cache?u=https%3A%2F%2Fr2.primal.net%2Fcache%2F6%2Fa4%2F67%2F6a4673c346c96cd8425c69987b17f4e326af41c32164f32055e39059c7796179.png",
+        "localPath": "/home/shawn/Work/trustrevolution/website/tmp/headshot-candidates/pippellia/nostr-0.png",
+        "filename": "nostr-0.png",
+        "width": 200,
+        "height": 200,
+        "size": 43402
+      }
+    ],
+    "selected": "github",
+    "status": "approved",
+    "finalPath": "/home/shawn/Work/trustrevolution/website/assets/images/guests/pippellia.jpg",
+    "notes": ""
+  }
+}

@@ -14,50 +14,22 @@ import xml.etree.ElementTree as ET
 import requests
 import re
 import os
+import json
 import argparse
 from datetime import datetime
 from pathlib import Path
 from bs4 import BeautifulSoup
 
 RSS_URL = "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF"
-OUTPUT_DIR = Path(__file__).parent.parent / "content" / "episodes"
+SCRIPT_DIR = Path(__file__).parent
+OUTPUT_DIR = SCRIPT_DIR.parent / "content" / "episodes"
 
-# Mapping from RSS hosting_id to Fountain episode URL
-# hosting_id is extracted from audio URLs, fountain_id is the actual episode ID
-FOUNTAIN_EPISODE_MAP = {
-    # Season 2
-    'VHM2DgApLFc8A5PB70Ly': 'K745y4I3kdplDkqnI7D2',  # S02E16 Pippellia
-    'ekTFnYA5vLvWqWsK8jnu': 'UnnHucGUFMryt3ZGmRD5',  # S02E15 Christian Keroles
-    'b4Cpnbz7wekLxRNlEEea': 'nx8jCK6OGhKpTsOI85E3',  # S02E14 Why Ads Keep Winning
-    '9yQHnOSO8VUJ2yjY01aS': 'bJgdt0hJAnppEve6Qmt8',  # S02E13 Cory Doctorow
-    'NyZmcRYt1Z2RNeLNEvwi': 'wLcSOyS8mZORCpm6HTpK',  # S02E12 Average Gary
-    'b7QoVU3M1lhklqRqF0I1': 'N6ZXzeTlp5nSMyx4Qt66',  # S02E11 Stephen DeLorme
-    'FJkMwthYIhnKWSTpApAb': 'jrcWHYhorCfoI4hagzD0',  # S02E10 Dan Gould
-    '9tSkghwV2VbzuBCQ5oQp': 'KoDQBw5S2Ga7bbUqLs7A',  # S02E09 Tim Bouma
-    'xjWVGV14YkfxajCGBhw0': 'FHJBXSVwd3JGkqIDGfBB',  # S02E08 Trey Sellers
-    '80hgjqEUEBWlzq6NiSSb': '5ufEYmtVbctyLiFiynuO',  # S02E07 Rob Brinded
-    'WBHHcFr7ZXtOMZBkJnUt': 'UWPtOZ6SoBPUYO7DU1pc',  # S02E06 Privacy's last stand
-    'ITN0uEN56TtjYm5npdlY': 'DbGXWmg0KxOD81td5EOp',  # S02E05 Imagine IF 2025
-    'tkIupHmTEgdfULSVlR16': '0R1QgTzjD437kfTbjrrT',  # S02E04 Alex Newman
-    'c1kHirOYha0drzFGIKaQ': 'wSoxigSB0d67rPpszvu7',  # S02E03 Jeffrey Tucker
-    'QEFcHfFmxIMZF1lrsTA7': 'ZiksXcYEeqQuef7gxGUE',  # S02E02 Mathias Buus
-    'znFFt1Gzimn9tJTBn01H': 'CuFy9yf3HDEBUYxtzQWi',  # S02E01 Nicholas Anthony
-    # Season 1
-    'OVTEOADwixiRnnd9Ji1i': 'Oe8qt5xc2XkJYhvZtxhC',  # S01E13 Recap
-    'LvqAtRvud6PgaC15CMOP': '3keoizzqUGz8kSq0GgxE',  # S01E12 OpnState
-    'XePgq5Mxuz7z63JkYYRi': 'Aaa8PgEyStGsGuMHUsWu',  # S01E11 Matt O'Dell
-    'nQ7beQNVkfucDvplWyja': 'CWuFTMBUntzZh2PZKYAh',  # S01E10 Stephen Pollock
-    'NMc217ydmCaLm18h1jso': 'o1vaaAL0VBqoKIbakDdi',  # S01E09 R.U. Sirius
-    '2bm9SGvMPWdBOCGxlDBk': 'Czt5CzqaXqCwvhez3JkU',  # S01E08 Rishad Tobaccowala
-    'aLUd4AhGEPMK4I5sJ1aO': 'rrhOoP3LoVLMCitU58uw',  # S01E07 Fran
-    'N504yIpfLTEoISh5UBbi': 'uxNq4GhUxtuKtSVkWJCr',  # S01E06 Bronwyn Williams
-    'e6VKDI3OrSovq5V9Hsmu': 'A3KRpxSS0CEEcDENcoWO',  # S01E05 Yaël Ossowski
-    'UTo0XKMgs9yFltrrPa85': 'KfVLgB816oUvzG4TB2vm',  # S01E04 Dr. David Strayhorn
-    'eOwt6O6rfKW0zuSqbRj4': 'pxkbfZaIxdKLPvXGCmBf',  # S01E03 Max Hillebrand
-    'o52AVviHb5XFn80n3TY3': 'VjH1BHbUPwsd1mzcYue9',  # S01E02 Marks
-    'ju6aXtZWLvlGB1jQD9c8': 'wlaiJey7Y3FxqnhNbYIE',  # S01E01 John Robb
-    'pf8AqSmaAorly6Gv5Lks': 'cXKk4mKAbyLICb5vbq5Q',  # S01E00 Trailer
-}
+# Load episode mapping from external JSON file
+FOUNTAIN_EPISODE_MAP_FILE = SCRIPT_DIR / "fountain-episode-map.json"
+with open(FOUNTAIN_EPISODE_MAP_FILE) as f:
+    _map_data = json.load(f)
+    # Remove the _comment key if present
+    FOUNTAIN_EPISODE_MAP = {k: v for k, v in _map_data.items() if not k.startswith('_')}
 
 NAMESPACES = {
     'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd',
@@ -269,7 +241,7 @@ def parse_list_timestamps(ul) -> list:
     return timestamps
 
 
-def parse_timestamp_line(text: str) -> dict:
+def parse_timestamp_line(text: str) -> dict | None:
     """Parse a single timestamp line like '[00:44] Topic' or '(03:23) Topic'."""
     match = re.match(r'[\[\(]?(\d{1,2}:\d{2}(?::\d{2})?)[\]\)]?\s*[-–—]?\s*(.+)', text)
     if match:
