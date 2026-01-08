@@ -21,7 +21,7 @@ guest:
     twitter: "https://x.com/yaeloss"
     website: "https://yael.ca"
 guests:
-- Yaël Ossowski
+- Yael Ossowski
 key_quote:
   text: "We've seen our institutions much more involved in our lives, much more so than they ever were for our parents or grandparents."
   attribution: Yaël Ossowski
