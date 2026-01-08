@@ -830,15 +830,51 @@ blockquote,
 }
 
 /* Guest bio */
+/* Guest bio — image floats left, text wraps around */
 .guest-bio {
   background: var(--bg-subtle);
   padding: var(--spacing-md);
   margin: var(--spacing-lg) 0 var(--spacing-md);
 }
 
+.guest-bio::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.guest-bio .guest-headshot {
+  float: left;
+  margin: 0 var(--spacing-md) var(--spacing-sm) 0;
+}
+
+.guest-bio .guest-headshot img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: var(--border-subtle) solid var(--border-heavy);
+}
+
 .guest-bio h2 {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.guest-bio p {
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+/* Half-leading compensation (optical)
+   Pulls text up to align with floated image top.
+   h2: DIN Condensed line-height 1.2 → (1.2-1)/2 = 0.1em + 0.05 optical = 0.15em
+   p:  System font line-height 1.6 → (1.6-1)/2 = 0.3em + 0.05 optical = 0.35em */
+.guest-bio .guest-headshot + h2 {
+  margin-top: -0.15em;
+}
+
+.guest-bio .guest-headshot + p {
+  margin-top: -0.35em;
 }
 
 .profile-links {
@@ -1366,6 +1402,29 @@ blockquote cite {
   text-decoration: none;
 }
 
+.guest-card.has-headshot .card-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.guest-card-headshot {
+  flex-shrink: 0;
+}
+
+.guest-card-headshot img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: var(--border-subtle) solid var(--border-heavy);
+}
+
+.guest-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .guest-card h2,
 .guest-card h3 {
   margin-bottom: var(--spacing-xs);
@@ -1728,6 +1787,16 @@ input:focus-visible {
     margin: var(--spacing-lg) 0;
   }
 
+  .guest-bio .guest-headshot img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .guest-card-headshot img {
+    width: 100px;
+    height: 100px;
+  }
+
   .guest-term-bio { margin-bottom: var(--spacing-content); }
   .guest-term-episodes { font-size: var(--font-size-2xl); }
 
@@ -1959,9 +2028,26 @@ input:focus-visible {
   }
 
 
-  /* Guest grid: 2 columns on mobile */
+  /* Guest grid: single column on small phones */
   .guest-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  /* Guest bio: stack on small screens */
+  .guest-bio .guest-headshot {
+    float: none;
+    margin: 0 0 var(--spacing-sm) 0;
+  }
+
+  .guest-bio .guest-headshot img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Guest cards: smaller headshot on small screens */
+  .guest-card-headshot img {
+    width: 70px;
+    height: 70px;
   }
 
   /* Episode card image: smaller on narrow screens */

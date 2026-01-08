@@ -10,13 +10,19 @@
 */}}
 
 {{ with .guest }}
+{{- $slug := .name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-|-$" "" -}}
+{{- $headshot := printf "images/guests/%s.jpg" $slug -}}
+{{- $hasHeadshot := fileExists (printf "assets/%s" $headshot) -}}
 <section class="guest-bio">
-  {{ if $.showHeader }}
-  <h2>About {{ .name }}</h2>
-  {{ end }}
-  {{ with .bio }}<p>{{ . }}</p>{{ end }}
-  {{ if or .social.twitter .social.nostr .social.website .social.linkedin .social.substack .social.github }}
-  {{ partial "social-links.html" .social }}
-  {{ end }}
+{{- if $hasHeadshot -}}
+<div class="guest-headshot">
+{{- partial "image.html" (dict "src" $headshot "alt" .name "width" 150 "sizes" "(max-width: 480px) 100px, 150px" "grayscale" true) -}}
+</div>
+{{- end -}}
+{{- if $.showHeader -}}<h2>About {{ .name }}</h2>{{- end -}}
+{{- with .bio -}}<p>{{ . }}</p>{{- end }}
+{{ if or .social.twitter .social.nostr .social.website .social.linkedin .social.substack .social.github }}
+{{ partial "social-links.html" .social }}
+{{ end }}
 </section>
 {{ end }}

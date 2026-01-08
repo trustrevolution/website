@@ -5,10 +5,21 @@
 
     <div class="guest-grid fade-in delay-1">
       {{ range .Data.Terms.Alphabetical }}
-      <article class="guest-card">
+      {{- $guestName := .Page.Title -}}
+      {{- $slug := $guestName | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-|-$" "" -}}
+      {{- $headshot := printf "images/guests/%s.jpg" $slug -}}
+      {{- $hasHeadshot := fileExists (printf "assets/%s" $headshot) -}}
+      <article class="guest-card{{ if $hasHeadshot }} has-headshot{{ end }}">
         <a href="{{ .Page.RelPermalink }}" class="card-link">
-          <h2>{{ .Page.Title }}</h2>
-          <p class="episode-count">{{ len .Pages }} episode{{ if gt (len .Pages) 1 }}s{{ end }}</p>
+          {{ if $hasHeadshot }}
+          <div class="guest-card-headshot">
+            {{ partial "image.html" (dict "src" $headshot "alt" $guestName "width" 80 "sizes" "80px" "grayscale" true) }}
+          </div>
+          {{ end }}
+          <div class="guest-card-content">
+            <h2>{{ $guestName }}</h2>
+            <p class="episode-count">{{ len .Pages }} episode{{ if gt (len .Pages) 1 }}s{{ end }}</p>
+          </div>
         </a>
       </article>
       {{ end }}
