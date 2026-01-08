@@ -667,6 +667,7 @@ blockquote,
 .episode-cover img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1;
   border: var(--border-component) solid var(--text-black);
   box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--accent-orange);
 }
