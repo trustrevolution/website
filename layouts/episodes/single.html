@@ -72,22 +72,7 @@
 
         {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
 
-        <nav class="episode-nav" aria-label="Episode navigation">
-          {{ with .PrevInSection }}
-          <a href="{{ .RelPermalink }}" class="nav-prev">
-            {{ partial "arrow.html" "back" }}
-            <span>{{ partial "episode-title-clean.html" .Title }}</span>
-          </a>
-          {{ else }}
-          <span></span>
-          {{ end }}
-          {{ with .NextInSection }}
-          <a href="{{ .RelPermalink }}" class="nav-next">
-            <span>{{ partial "episode-title-clean.html" .Title }}</span>
-            {{ partial "arrow.html" "forward" }}
-          </a>
-          {{ end }}
-        </nav>
+        {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
       </div>
     </div>
   </div>

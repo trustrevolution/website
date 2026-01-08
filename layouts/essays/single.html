@@ -14,22 +14,7 @@
       {{ .Content }}
     </div>
 
-    <nav class="episode-nav fade-in delay-2" aria-label="Essay navigation">
-      {{ with .PrevInSection }}
-      <a href="{{ .RelPermalink }}" class="nav-prev">
-        {{ partial "arrow.html" "back" }}
-        <span>{{ .Title }}</span>
-      </a>
-      {{ else }}
-      <span></span>
-      {{ end }}
-      {{ with .NextInSection }}
-      <a href="{{ .RelPermalink }}" class="nav-next">
-        <span>{{ .Title }}</span>
-        {{ partial "arrow.html" "forward" }}
-      </a>
-      {{ end }}
-    </nav>
+    {{ partial "prev-next-nav.html" (dict "page" . "label" "Essay navigation" "delay" "2") }}
   </div>
 </article>
 

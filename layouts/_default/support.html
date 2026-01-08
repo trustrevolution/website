@@ -2,19 +2,7 @@
 <article class="support-page seamless-to-footer">
 
   <!-- HERO: The Challenge -->
-  <section class="hero support-hero">
-    <div class="container">
-      <div class="hero-content fade-in">
-        <span class="hero-label">{{ .Params.hero.label }}</span>
-        <h1>
-          {{- range .Params.hero.heading.lines }}{{ . }}<br>{{ end -}}
-          <span class="accent">
-            {{- range .Params.hero.heading.accent_lines }}{{ . }}<br>{{ end -}}
-          </span>
-        </h1>
-      </div>
-    </div>
-  </section>
+  {{ partial "hero.html" (dict "label" .Params.hero.label "heading" .Params.hero.heading "class" "support-hero") }}
 
   <!-- PHILOSOPHY + CTA -->
   <section class="support-action">

@@ -1,0 +1,38 @@
+{{/*
+  Prev/Next Navigation Partial
+
+  Displays navigation links to previous and next content in a section.
+
+  Usage:
+    {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
+
+  Parameters (dict):
+    - page: The current page context (required)
+    - label: Aria label for the nav element (default: "navigation")
+    - cleanTitle: If true, uses episode-title-clean.html partial for title (default: false)
+    - class: Additional CSS class for the nav element (optional)
+    - delay: Animation delay class number (optional)
+*/}}
+
+{{- $page := .page -}}
+{{- $label := .label | default "navigation" -}}
+{{- $cleanTitle := .cleanTitle | default false -}}
+{{- $class := .class | default "" -}}
+{{- $delay := .delay | default "" -}}
+
+<nav class="episode-nav{{ with $class }} {{ . }}{{ end }}{{ with $delay }} fade-in delay-{{ . }}{{ end }}" aria-label="{{ $label }}">
+  {{ with $page.PrevInSection }}
+  <a href="{{ .RelPermalink }}" class="nav-prev">
+    {{ partial "arrow.html" "back" }}
+    <span>{{ if $cleanTitle }}{{ partial "episode-title-clean.html" .Title }}{{ else }}{{ .Title }}{{ end }}</span>
+  </a>
+  {{ else }}
+  <span></span>
+  {{ end }}
+  {{ with $page.NextInSection }}
+  <a href="{{ .RelPermalink }}" class="nav-next">
+    <span>{{ if $cleanTitle }}{{ partial "episode-title-clean.html" .Title }}{{ else }}{{ .Title }}{{ end }}</span>
+    {{ partial "arrow.html" "forward" }}
+  </a>
+  {{ end }}
+</nav>
