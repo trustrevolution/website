@@ -10,7 +10,7 @@
 */}}
 
 {{ with .guest }}
-{{- $slug := .name | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-|-$" "" -}}
+{{- $slug := .name | urlize -}}
 {{- $headshot := printf "images/guests/%s.jpg" $slug -}}
 {{- $hasHeadshot := fileExists (printf "assets/%s" $headshot) -}}
 <section class="guest-bio">

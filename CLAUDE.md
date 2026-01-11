@@ -115,19 +115,20 @@ Guest headshots are stored in color at `assets/images/guests/{slug}.jpg` (800x80
    ```bash
    magick input.jpg -resize 800x800^ -gravity center -extent 800x800 -quality 90 assets/images/guests/{slug}.jpg
    ```
-3. The slug is derived from the guest's name as it appears in episode frontmatter:
-   - Lowercase
-   - Non-alphanumeric characters replaced with hyphens
+3. The slug is derived using Hugo's `urlize` function on the guest's name:
+   - Converts to lowercase
+   - Strips diacritics (e.g., ë → e, ü → u)
+   - Replaces spaces and special characters with hyphens
    - Examples:
      - "John Robb" → `john-robb.jpg`
-     - "R.U. Sirius" → `r-u-sirius.jpg`
-     - "Matt O'Dell" → `matt-o-dell.jpg`
-     - "Yaël Ossowski" → `ya-l-ossowski.jpg`
+     - "R.U. Sirius" → `r.u.-sirius.jpg`
+     - "Matt O'Dell" → `matt-odell.jpg`
+     - "Yaël Ossowski" → `yael-ossowski.jpg`
 
 ### How It Works
 
 The `layouts/partials/guest-bio.html` and `layouts/guests/list.html` templates:
-1. Generate a slug from the guest name
+1. Generate a slug from the guest name using `| urlize`
 2. Check if `assets/images/guests/{slug}.jpg` exists
 3. If found, render via `layouts/partials/image.html` with `grayscale: true`
 

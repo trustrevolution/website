@@ -1,6 +1,7 @@
 baseURL = "https://trustrevolution.co/"
 languageCode = "en-us"
 title = "Trust Revolution"
+removePathAccents = true
 
 [params]
   description = "Unfiltered conversations with builders, thinkers, and operators in Bitcoin and beyond. Exploring systems we trust, why they work (or don't), and what's next."

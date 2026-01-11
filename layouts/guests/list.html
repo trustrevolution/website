@@ -6,7 +6,7 @@
     <div class="guest-grid fade-in delay-1">
       {{ range .Data.Terms.Alphabetical }}
       {{- $guestName := .Page.Title -}}
-      {{- $slug := $guestName | lower | replaceRE "[^a-z0-9]+" "-" | replaceRE "^-|-$" "" -}}
+      {{- $slug := $guestName | urlize -}}
       {{- $headshot := printf "images/guests/%s.jpg" $slug -}}
       {{- $hasHeadshot := fileExists (printf "assets/%s" $headshot) -}}
       <article class="guest-card{{ if $hasHeadshot }} has-headshot{{ end }}">
