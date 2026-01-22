@@ -6,18 +6,21 @@
 
   Usage:
     {{ partial "hero.html" .Params.hero }}
+    {{ partial "hero.html" (dict "label" .Params.hero.label "heading" .Params.hero.heading "class" "support-hero") }}
 
   Parameters (dict):
     - label: Small label above heading
     - heading.lines: Array of main heading lines
     - heading.accent_lines: Array of accent (orange) heading lines
+    - class: Optional additional CSS class for the section
 */}}
 
 {{- $label := .label -}}
 {{- $lines := .heading.lines -}}
 {{- $accentLines := .heading.accent_lines -}}
+{{- $class := .class | default "" -}}
 
-<section class="hero">
+<section class="hero{{ with $class }} {{ . }}{{ end }}">
   <div class="container">
     <div class="hero-content fade-in">
       <span class="hero-label">{{ $label }}</span>

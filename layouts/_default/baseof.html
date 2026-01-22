@@ -73,7 +73,7 @@
 
   {{ partial "structured-data.html" . }}
 </head>
-<body data-pagefind-ignore>
+<body data-pagefind-ignore{{ if in (slice "why" "support" "about") .Page.Layout }} class="page-seamless"{{ end }}>
   {{ partial "header.html" . }}
 
   <main id="main-content">

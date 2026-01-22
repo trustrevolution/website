@@ -53,6 +53,8 @@
   {{- $class = "cta-button primary" -}}
 {{- else if eq $variant "secondary" -}}
   {{- $class = "cta-button secondary" -}}
+{{- else if eq $variant "cta-band" -}}
+  {{- $class = "cta-button" -}}
 {{- end -}}
 
 <a href="{{ $url }}" class="{{ $class }}" aria-label="{{ $label }} on Fountain">{{ $label }}</a>

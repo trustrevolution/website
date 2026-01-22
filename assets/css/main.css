@@ -55,6 +55,11 @@
   --spacing-lg: clamp(20px, 4vw, 64px);
   --spacing-xl: clamp(32px, 6vw, 96px);
 
+  /* Section spacing — semantic tokens for vertical rhythm */
+  --section-py: clamp(32px, 5vw, 64px);       /* Standard section padding */
+  --section-py-lg: clamp(48px, 7vw, 96px);    /* Hero/major sections */
+  --section-py-sm: clamp(20px, 3vw, 32px);    /* Compact sections/CTA bands */
+
   /* Typography */
   --font-display: 'DIN Condensed', sans-serif;
 
@@ -68,6 +73,10 @@
   --font-size-2xl: 2rem;
   --font-size-3xl: 2.5rem;
   --font-size-4xl: 3rem;
+  --font-size-5xl: 4.5rem;
+
+  /* Spacing additions for fine-grained control */
+  --spacing-2xs: 0.25em;
 
   /* Layout */
   --max-width-narrow: 680px;
@@ -126,6 +135,11 @@
   --cover-size-host: 180px;
   --cover-size-md: 200px;
   --cover-size-lg: 280px;
+  --host-photo-size: 220px;
+
+  /* Nav toggle dimensions */
+  --nav-bar-height: 2px;
+  --nav-bar-offset: 7px;
 
   /* Semantic image sizing (for image.html partial) */
   --img-width-card: 400px;        /* Episode cards, thumbnails */
@@ -152,10 +166,11 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: var(--font-size-base-px, 17px);
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-black);
 }
 
 body {
@@ -214,10 +229,7 @@ img {
   max-width: var(--max-width-narrow);
 }
 
-/* Seamless transition to footer (dark-ending pages) */
-.seamless-to-footer {
-  margin-bottom: calc(-1 * var(--spacing-lg));
-}
+
 
 /* ============================================
    HEADER — Mobile overlay nav as base
@@ -253,7 +265,7 @@ img {
   color: var(--accent-orange);
   text-transform: uppercase;
   letter-spacing: var(--tracking-normal);
-  margin-left: 0.25em;
+  margin-left: var(--spacing-2xs);
 }
 
 /* Mobile nav toggle */
@@ -274,13 +286,13 @@ img {
 
 .nav-toggle-bar {
   width: var(--spacing-content);
-  height: 2px;
+  height: var(--nav-bar-height);
   background: var(--bg-white);
   transition: all var(--transition-normal);
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(var(--nav-bar-offset)) rotate(45deg);
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
@@ -288,7 +300,7 @@ img {
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(calc(-1 * var(--nav-bar-offset))) rotate(-45deg);
 }
 
 /* Mobile nav overlay */
@@ -536,6 +548,7 @@ blockquote,
 .site-footer {
   margin-top: var(--spacing-lg);
   padding: var(--spacing-lg) 0;
+  border-top: var(--border-section) solid var(--accent-orange);
   text-align: center;
 }
 
@@ -559,7 +572,7 @@ blockquote,
 .footer-nav a:hover { color: var(--accent-orange); }
 
 .footer-copyright {
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
   font-size: var(--font-size-xs);
   opacity: 0.5;
 }
@@ -568,7 +581,7 @@ blockquote,
    EMAIL SIGNUP
    ============================================ */
 .email-signup {
-  padding: var(--spacing-lg) 0;
+  padding: var(--section-py) 0;
   text-align: center;
 }
 
@@ -658,6 +671,7 @@ blockquote,
 .episode-cover img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1;
   border: var(--border-component) solid var(--text-black);
   box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--accent-orange);
 }
@@ -821,16 +835,54 @@ blockquote,
 }
 
 /* Guest bio */
+/* Guest bio — image floats left, text wraps around */
 .guest-bio {
   background: var(--bg-subtle);
   padding: var(--spacing-md);
   margin: var(--spacing-lg) 0 var(--spacing-md);
 }
 
+.guest-bio::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.guest-bio .guest-headshot {
+  float: left;
+  margin: 0 var(--spacing-md) var(--spacing-sm) 0;
+}
+
+.guest-bio .guest-headshot img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: var(--border-subtle) solid var(--border-heavy);
+}
+
 .guest-bio h2 {
   font-size: var(--font-size-lg);
-  margin-bottom: var(--spacing-sm);
+  margin: 0 0 var(--spacing-xs) 0;
 }
+
+.guest-bio p {
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+/* Half-leading compensation (optical)
+   Pulls text up to align with floated image top.
+   h2: DIN Condensed line-height 1.2 → (1.2-1)/2 = 0.1em + 0.05 optical = 0.15em
+   p:  System font line-height 1.6 → (1.6-1)/2 = 0.3em + 0.05 optical = 0.35em */
+.guest-bio .guest-headshot + h2 {
+  margin-top: -0.15em;
+}
+
+.guest-bio .guest-headshot + p {
+  margin-top: -0.35em;
+}
+
+
 
 .profile-links {
   display: flex;
@@ -914,7 +966,7 @@ blockquote::before {
   position: absolute;
   top: -0.2em;
   left: var(--spacing-sm);
-  font-size: 3rem;
+  font-size: var(--font-size-4xl);
   color: var(--accent-orange);
   opacity: 0.3;
   font-family: Georgia, serif;
@@ -930,32 +982,19 @@ blockquote cite {
   color: var(--accent-orange);
 }
 
+/* Pull quote inherits blockquote base styles, override only what differs */
 .pull-quote {
-  margin: var(--spacing-content) 0;
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-xl);
-  border-left: var(--border-accent) solid var(--accent-orange);
 }
 
 .pull-quote::before {
-  font-size: 2.5rem;
-  top: 0.1em;
-  left: var(--spacing-sm);
-  opacity: 0.4;
+  content: none;
 }
 
 .pull-quote p {
   font-size: var(--font-size-base);
   font-weight: 500;
-  line-height: var(--line-height-normal);
   margin: 0;
-}
-
-.pull-quote cite {
-  display: block;
-  margin-top: var(--spacing-sm);
-  font-size: var(--font-size-base);
-  font-style: normal;
-  color: var(--accent-orange);
 }
 
 /* ============================================
@@ -963,9 +1002,9 @@ blockquote cite {
    ============================================ */
 .about-page { padding-bottom: 0; }
 
-/* Page Hero */
+/* Page Hero — shared by About, Support, Why */
 .hero {
-  padding: var(--spacing-lg) 0;
+  padding: var(--section-py-lg) 0;
 }
 
 .hero-content { position: relative; z-index: 1; }
@@ -1019,7 +1058,6 @@ blockquote cite {
   display: block;
   width: 100%;
   height: auto;
-  border: var(--border-component) solid var(--accent-orange);
 }
 
 .latest-episode-label {
@@ -1091,8 +1129,8 @@ blockquote cite {
 
 /* The Show Section */
 .about-show {
-  padding: var(--spacing-lg) 0;
-  border-bottom: var(--border-section) solid var(--text-black);
+  padding: var(--section-py) 0;
+  border-top: var(--border-section) solid var(--text-black);
 }
 
 .show-layout {
@@ -1150,7 +1188,7 @@ blockquote cite {
 
 /* Host Section */
 .host {
-  padding: var(--spacing-lg) 0;
+  padding: var(--section-py) 0;
   background: var(--bg-white);
 }
 
@@ -1202,40 +1240,28 @@ blockquote cite {
 
 /* Connect Section */
 .about-connect {
-  padding: var(--spacing-lg) 0;
+  padding: var(--section-py) 0;
   background: var(--bg-subtle);
   border-top: var(--border-section) solid var(--text-black);
-}
-
-.connect-layout {
   text-align: center;
-  overflow: hidden;
 }
 
-.connect-content p {
-  color: var(--text-primary);
+.connect-layout p {
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
 }
+
+
 
 /* ============================================
    SUPPORT PAGE
    ============================================ */
 
-/* Philosophy + CTA Section */
-.support-action {
-  padding: var(--spacing-lg) 0;
+/* Philosophy Section */
+.support-philosophy {
+  padding: var(--section-py) 0;
   background: var(--bg-white);
   text-align: center;
-  border-bottom: var(--border-section) solid var(--border-heavy);
-}
-
-.philosophy-lead {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
-  color: var(--text-secondary);
-  max-width: 520px;
-  margin: 0 auto var(--spacing-md);
-  text-wrap: balance;
 }
 
 .philosophy-emphasis {
@@ -1245,48 +1271,48 @@ blockquote cite {
   text-transform: uppercase;
   letter-spacing: var(--tracking-normal);
   color: var(--text-black);
-  margin: 0 0 var(--spacing-lg);
-  text-wrap: balance;
+  margin: 0;
+  text-align: center;
 }
 
-.support-cta-wrap {
-  padding-top: var(--spacing-lg);
-  border-top: var(--border-thin) solid var(--border-light);
+.philosophy-emphasis span {
+  display: block;
 }
 
-.support-context {
-  margin-top: var(--spacing-sm);
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
+@media (min-width: 768px) {
+  .philosophy-emphasis {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .philosophy-emphasis span {
+    display: inline;
+  }
 }
 
 /* Testimonials Section — Dark editorial pull quotes */
 .support-testimonials {
-  padding: var(--spacing-lg) 0;
-  padding-bottom: var(--spacing-xl);
-  border-bottom: var(--border-section) solid var(--accent-orange);
+  padding: var(--section-py) 0;
 }
 
 .support-testimonials .section-title {
-  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
 .testimonial-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
 }
 
-/* Individual quote — big, bold, editorial */
+/* Individual testimonial quote */
 .testimonial-quote {
   margin: 0;
-  padding: 0 0 var(--spacing-md);
-  position: relative;
-}
-
-.testimonial-quote:last-child {
-  padding-bottom: 0;
+  padding-left: var(--spacing-md);
+  border-left: var(--border-subtle) solid var(--accent-orange);
 }
 
 .testimonial-quote blockquote {
@@ -1295,47 +1321,35 @@ blockquote cite {
   border: none;
   padding: 0;
   margin: 0;
+  font-family: inherit;
   font-size: var(--font-size-base);
-  font-weight: 500;
-  line-height: var(--line-height-normal);
-  position: relative;
-  padding-left: var(--spacing-sm);
+  font-weight: 400;
+  line-height: var(--line-height-relaxed);
 }
 
 .testimonial-quote blockquote::before {
-  content: '"';
-  position: absolute;
-  top: -0.15em;
-  left: 0;
-  font-family: Georgia, serif;
-  font-size: 2.5rem;
-  line-height: 1;
-  color: var(--accent-orange);
+  display: none;
 }
 
 .testimonial-quote figcaption {
-  margin-top: var(--spacing-sm);
-  padding-left: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
 }
 
 .testimonial-quote figcaption a {
   color: var(--accent-orange);
   font-size: var(--font-size-sm);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
+  font-weight: 600;
   text-decoration: none;
 }
 
 .testimonial-quote figcaption a:hover {
   color: var(--text-inverse);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  box-shadow: inset 0 -2px 0 var(--accent-orange);
 }
 
 /* Newsletter Section */
 .support-newsletter {
-  padding: var(--spacing-lg) 0;
+  padding: var(--section-py) 0;
   text-align: center;
 }
 
@@ -1366,6 +1380,29 @@ blockquote cite {
 .guest-card .card-link {
   display: block;
   text-decoration: none;
+}
+
+.guest-card.has-headshot .card-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.guest-card-headshot {
+  flex-shrink: 0;
+}
+
+.guest-card-headshot img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: var(--border-subtle) solid var(--border-heavy);
+}
+
+.guest-card-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .guest-card h2,
@@ -1441,22 +1478,30 @@ blockquote cite {
 /* ============================================
    ANIMATIONS
    ============================================ */
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(20px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/*
+ * Content animation system
+ * 
+ * Apply .fade-in to CONTENT elements, not section containers.
+ * Section backgrounds remain visible; only inner content animates.
+ * Use delay classes or --delay custom property for staggering.
+ */
 .fade-in {
-  animation: slideIn 0.5s ease-out both;
-  /* Flexible delay system: use style="--delay: N" for N * 0.1s delay */
+  animation: fadeIn 0.4s ease-out both;
   animation-delay: calc(var(--delay, 0) * 0.1s);
 }
 
-/* Legacy delay classes for backward compatibility (prefer --delay custom property) */
+/* Delay classes — stagger content within and across sections */
 .delay-1 { --delay: 1; }
-.delay-2 { --delay: 1.5; }
-.delay-3 { --delay: 2; }
-.delay-4 { --delay: 2.5; }
+.delay-2 { --delay: 2; }
+.delay-3 { --delay: 3; }
+.delay-4 { --delay: 4; }
+.delay-5 { --delay: 5; }
+.delay-6 { --delay: 6; }
 
 /* ============================================
    ACCESSIBILITY
@@ -1649,6 +1694,10 @@ input:focus-visible {
     padding: 0;
   }
 
+  .footer-copyright {
+    margin-top: var(--spacing-md);
+  }
+
   /* Email signup */
   .email-signup { padding: var(--spacing-xl) 0; }
   .email-signup h3 { font-size: var(--font-size-2xl); }
@@ -1730,6 +1779,16 @@ input:focus-visible {
     margin: var(--spacing-lg) 0;
   }
 
+  .guest-bio .guest-headshot img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .guest-card-headshot img {
+    width: 100px;
+    height: 100px;
+  }
+
   .guest-term-bio { margin-bottom: var(--spacing-content); }
   .guest-term-episodes { font-size: var(--font-size-2xl); }
 
@@ -1747,22 +1806,18 @@ input:focus-visible {
   }
 
   blockquote::before {
-    font-size: 4.5rem;
+    font-size: var(--font-size-5xl);
     left: var(--spacing-md);
   }
 
   /* Page Hero */
-  .hero {
-    padding: var(--spacing-xl) 0;
-  }
-
   .hero h1 {
-    font-size: 4.5rem;
+    font-size: var(--font-size-5xl);
   }
 
   .hero-label {
     font-size: var(--font-size-sm);
-    letter-spacing: 0.3em;
+    letter-spacing: var(--tracking-widest);
   }
 
   /* Latest Episode (Homepage Hero) */
@@ -1797,20 +1852,12 @@ input:focus-visible {
     justify-content: flex-start;
   }
 
-  .about-show {
-    padding: var(--spacing-xl) 0;
-  }
-
   .show-lead {
     font-size: var(--font-size-xl);
   }
 
   .stat-value {
     font-size: var(--font-size-3xl);
-  }
-
-  .host {
-    padding: var(--spacing-xl) 0;
   }
 
   .host-layout {
@@ -1826,8 +1873,8 @@ input:focus-visible {
   }
 
   .host-photo img {
-    width: 220px;
-    height: 220px;
+    width: var(--host-photo-size);
+    height: var(--host-photo-size);
   }
 
   .host-content p {
@@ -1838,54 +1885,20 @@ input:focus-visible {
     justify-content: flex-start;
   }
 
-  .about-connect {
-    padding: var(--spacing-xl) 0;
-  }
-
   .tag-link--lg {
-    height: 60px;
+    height: var(--touch-target-lg);
     padding: 0 var(--spacing-lg);
     font-size: var(--font-size-lg);
   }
 
   /* Support page */
-  .support-action { padding: var(--spacing-xl) 0; }
-
-  .philosophy-lead {
-    font-size: var(--font-size-md);
-    max-width: 600px;
-  }
-
   .philosophy-emphasis {
     font-size: var(--font-size-2xl);
   }
 
-  .support-testimonials { padding: var(--spacing-xl) 0; }
-
-  .testimonial-quote {
-    padding-bottom: var(--spacing-md);
-  }
-
   .testimonial-quote blockquote {
-    font-family: var(--font-display);
-    font-size: var(--font-size-2xl);
-    font-weight: 400;
-    line-height: var(--line-height-tight);
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-normal);
-    padding-left: var(--spacing-md);
+    font-size: var(--font-size-md);
   }
-
-  .testimonial-quote blockquote::before {
-    font-size: 4.5rem;
-    top: -0.1em;
-  }
-
-  .testimonial-quote figcaption {
-    padding-left: var(--spacing-md);
-  }
-
-  .support-newsletter { padding: var(--spacing-xl) 0; }
 
   /* Guest grid */
   .guest-grid {
@@ -1961,9 +1974,26 @@ input:focus-visible {
   }
 
 
-  /* Guest grid: 2 columns on mobile */
+  /* Guest grid: single column on small phones */
   .guest-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  /* Guest bio: stack on small screens */
+  .guest-bio .guest-headshot {
+    float: none;
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .guest-bio .guest-headshot img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Guest cards: smaller headshot on small screens */
+  .guest-card-headshot img {
+    width: 70px;
+    height: 70px;
   }
 
   /* Episode card image: smaller on narrow screens */
@@ -2217,87 +2247,70 @@ input:focus-visible {
 }
 
 /* ============================================
-   WHY — Editorial Brutalist
+   WHY PAGE
    ============================================ */
 .why-page {
-  background: var(--bg-black);
-  color: var(--bg-white);
-  padding: var(--spacing-lg) 0;
+  padding-bottom: 0;
 }
 
-/* Accusations */
+/* Accusations Section — functions as hero */
+.why-accusations {
+  background: var(--bg-black);
+  color: var(--bg-white);
+  padding: var(--section-py-lg) 0;
+}
+
 .accusations {
-  margin-bottom: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .accusation {
-  margin-bottom: var(--spacing-md);
   padding-left: var(--spacing-md);
-  border-left: 4px solid var(--accent-orange);
-}
-
-.accusation:last-child {
-  margin-bottom: 0;
+  border-left: var(--border-section) solid var(--accent-orange);
 }
 
 .accusation .setup {
-  font-size: 1.125rem;
+  font-size: var(--font-size-md);
   color: var(--text-inverse-secondary);
-  margin: 0 0 0.25rem;
-  line-height: 1.4;
+  margin: 0 0 var(--spacing-3xs);
+  line-height: var(--line-height-normal);
 }
 
 .accusation .reality {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: var(--font-size-2xl);
   color: var(--accent-orange);
   text-transform: uppercase;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-tight);
   margin: 0;
 }
 
-/* Pivot */
-.pivot {
-  text-align: center;
-  padding: var(--spacing-md) 0;
+/* Hope Section */
+.why-hope {
+  background: var(--bg-white);
+  padding: var(--section-py) 0;
 }
 
-.pivot-setup {
-  font-size: 1.125rem;
-  color: var(--text-inverse-secondary);
-  margin: 0 0 0.5rem;
-}
-
-.pivot-reveal {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--bg-white);
-  text-transform: uppercase;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  margin: 0;
-}
-
-/* Builders */
 .builders {
   text-align: center;
-  padding: var(--spacing-md) 0;
 }
 
 .builders-setup {
-  font-size: 1.125rem;
-  color: var(--text-inverse-secondary);
-  margin: 0 0 0.5rem;
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-xs);
 }
 
 .builders-action {
   font-family: var(--font-display);
-  font-size: 1.375rem;
-  color: var(--bg-white);
+  font-size: var(--font-size-lg);
+  color: var(--text-black);
   text-transform: uppercase;
-  line-height: 1.2;
-  margin: 0;
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--spacing-content);
 }
 
 /* Solutions */
@@ -2307,16 +2320,15 @@ input:focus-visible {
   align-items: center;
   gap: var(--spacing-sm);
   text-align: center;
-  margin-top: var(--spacing-content);
 }
 
 .solution {
-  font-size: 1.125rem;
-  color: var(--text-inverse-tertiary);
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
   margin: 0;
-  line-height: 1.2;
+  line-height: var(--line-height-tight);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: var(--tracking-normal);
 }
 
 .solution-keyword {
@@ -2324,24 +2336,25 @@ input:focus-visible {
   font-weight: 700;
 }
 
-
-/* CTA Band */
+/* CTA Band — Reusable orange action strip */
 .cta-band {
   background: var(--accent-orange);
-  padding: 1.5rem;
-  margin-top: 1.5rem;
+  padding: var(--section-py) 0;
+}
+
+.cta-band-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--spacing-sm);
   text-align: center;
 }
 
 .cta-text {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-tight);
   line-height: 1.1;
   color: var(--bg-black);
 }
@@ -2350,9 +2363,9 @@ input:focus-visible {
   background: var(--bg-black);
   color: var(--bg-white);
   font-weight: 700;
-  border: 3px solid var(--bg-black);
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  border: var(--border-component) solid var(--bg-black);
+  padding: var(--btn-padding-y-lg) var(--btn-padding-x-lg);
+  font-size: var(--font-size-md);
 }
 
 .cta-band .cta-button:hover {
@@ -2360,139 +2373,82 @@ input:focus-visible {
   color: var(--bg-black);
 }
 
-/* Hope Section - Inverted */
-.why-hope {
-  background: var(--bg-white);
-  padding: var(--spacing-md) 0 0;
-}
-
-.why-hope .cta-band {
-  margin-top: var(--spacing-md);
-  margin-bottom: calc(-1 * var(--spacing-lg)); /* Extend into footer margin */
-  padding: 0;
-}
-
-.why-hope .cta-band-inner {
-  display: flex;
+/* CTA Band — Stacked variant (centered with context caption) */
+.cta-band--stacked .cta-band-inner {
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   gap: var(--spacing-sm);
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
+}
+
+.cta-context {
+  font-size: var(--font-size-base);
+  color: var(--bg-black);
 }
 
 @media (min-width: 768px) {
-  .why-hope .cta-band-inner {
-    flex-direction: row;
-    justify-content: space-between;
+  .cta-band--stacked .cta-band-inner {
+    flex-direction: column;
   }
-}
-
-.why-hope .builders-setup {
-  color: var(--text-secondary);
-}
-
-.why-hope .builders-action {
-  color: var(--text-black);
-}
-
-.why-hope .solution {
-  color: var(--text-secondary);
 }
 
 /* Tablet+ */
 @media (min-width: 768px) {
-  .why-page {
-    padding: 4rem 2rem;
-  }
-
-  .why-hope {
-    padding-top: var(--spacing-lg);
-  }
-
-  .why-hope .cta-band {
-    margin-top: var(--spacing-lg);
-  }
-
   .accusations {
-    margin-bottom: 3rem;
-  }
-
-  .accusation {
-    margin-bottom: 2.5rem;
-    padding-left: 2rem;
-  }
-
-  .pivot,
-  .builders {
-    padding: 2rem 0;
-  }
-
-  .builders-action {
-    margin-bottom: 2rem;
-  }
-
-  .solutions {
-    gap: 1rem;
-  }
-
-  .cta-band {
-    margin-top: 3rem;
+    gap: var(--spacing-lg);
   }
 
   .accusation .setup {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
   }
 
   .accusation .reality {
-    font-size: 2.75rem;
+    font-size: var(--font-size-3xl);
   }
 
-  .pivot-setup,
   .builders-setup {
-    font-size: 1.25rem;
-  }
-
-  .pivot-reveal {
-    font-size: 2rem;
+    font-size: var(--font-size-lg);
   }
 
   .builders-action {
-    font-size: 1.75rem;
+    font-size: var(--font-size-xl);
   }
 
-  
   .solution {
-    font-size: 1.25rem;
+    font-size: var(--font-size-lg);
   }
 
-  .cta-band {
+  .cta-band-inner {
     flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
   }
 
   .cta-text {
-    font-size: 1.75rem;
+    font-size: var(--font-size-2xl);
+  }
+
+  .cta-band .cta-button {
+    font-size: var(--font-size-lg);
   }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .accusation .reality {
-    font-size: 3rem;
-  }
-
-  .pivot-reveal {
-    font-size: 2.25rem;
+    font-size: var(--font-size-4xl);
   }
 
   .builders-action {
-    font-size: 2rem;
+    font-size: var(--font-size-2xl);
   }
 
   .cta-text {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
+  }
+
+  .cta-text {
+    font-size: var(--font-size-2xl);
   }
 }
 
@@ -2599,9 +2555,9 @@ input:focus-visible {
 .essay-content h2 {
   font-size: var(--font-size-xl);
   font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding-top: 1.5rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  padding-top: var(--spacing-content);
   border-top: var(--border-subtle) solid var(--border-light);
 }
 
@@ -2614,18 +2570,18 @@ input:focus-visible {
 .essay-content h3 {
   font-size: var(--font-size-md);
   font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: var(--spacing-content);
+  margin-bottom: var(--spacing-xs);
 }
 
 .essay-content ul,
 .essay-content ol {
-  padding-left: 1.5rem;
-  margin: 1rem 0;
+  padding-left: var(--spacing-content);
+  margin: var(--spacing-sm) 0;
 }
 
 .essay-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-xs);
 }
 
 .essay-content blockquote {
@@ -2645,7 +2601,7 @@ input:focus-visible {
 .essay-content hr {
   border: none;
   border-top: var(--border-thin) solid var(--border-light);
-  margin: 2rem 0;
+  margin: var(--spacing-lg) 0;
 }
 
 .aside {
@@ -2663,7 +2619,7 @@ input:focus-visible {
 .aside a {
   color: var(--text-primary);
   text-decoration: none;
-  border-bottom: 1px solid var(--accent-orange);
+  border-bottom: var(--border-thin) solid var(--accent-orange);
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
@@ -2702,4 +2658,11 @@ input:focus-visible {
   .essay-content p {
     margin-bottom: var(--spacing-sm);
   }
+}
+
+/* ============================================
+   PAGE-LEVEL OVERRIDES
+   ============================================ */
+.page-seamless .site-footer {
+  margin-top: 0;
 }

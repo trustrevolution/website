@@ -1,43 +1,36 @@
 {{ define "main" }}
 <article class="support-page seamless-to-footer">
 
-  <!-- HERO: The Challenge -->
-  <section class="hero support-hero">
-    <div class="container">
-      <div class="hero-content fade-in">
-        <span class="hero-label">{{ .Params.hero.label }}</span>
-        <h1>
-          {{- range .Params.hero.heading.lines }}{{ . }}<br>{{ end -}}
-          <span class="accent">
-            {{- range .Params.hero.heading.accent_lines }}{{ . }}<br>{{ end -}}
-          </span>
-        </h1>
-      </div>
-    </div>
-  </section>
+  <!-- HERO -->
+  {{ partial "hero.html" (dict "label" .Params.hero.label "heading" .Params.hero.heading) }}
 
-  <!-- PHILOSOPHY + CTA -->
-  <section class="support-action">
+  <!-- PHILOSOPHY -->
+  <section class="support-philosophy">
     <div class="container">
-      {{ with .Params.philosophy }}
-      <p class="philosophy-lead fade-in delay-1">{{ .lead }}</p>
-      <p class="philosophy-emphasis fade-in delay-1">{{ .emphasis }}</p>
+      {{ with .Params.philosophy.lines }}
+      <div class="philosophy-emphasis fade-in delay-1">
+        {{ range . }}<span>{{ . }}</span>{{ end }}
+      </div>
       {{ end }}
-      <div class="support-cta-wrap fade-in delay-2">
-        {{ partial "fountain-cta.html" (dict "context" . "variant" "primary" "label" .Params.cta.label) }}
-        <p class="support-context">{{ .Params.cta.context }}</p>
-      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS: The Receipts -->
+  <!-- CTA BAND -->
+  <section class="cta-band cta-band--stacked">
+    <div class="container cta-band-inner fade-in delay-2">
+      {{ partial "fountain-cta.html" (dict "context" . "variant" "cta-band" "label" .Params.cta.label) }}
+      <span class="cta-context">{{ .Params.cta.context }}</span>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
   {{ with .Params.testimonials }}
   <section class="support-testimonials section-dark">
     <div class="container">
-      <h2 class="section-title fade-in delay-2">What Listeners Say</h2>
-      <div class="testimonial-stack">
+      <h2 class="section-title fade-in delay-3">What Listeners Say</h2>
+      <div class="testimonial-stack fade-in delay-4">
         {{ range $i, $t := . }}
-        <figure class="testimonial-quote fade-in" style="--delay: {{ add 2.5 (mul $i 0.5) }}">
+        <figure class="testimonial-quote">
           <blockquote>{{ $t.quote }}</blockquote>
           <figcaption>
             <a href="{{ $t.url }}" target="_blank" rel="noopener">— {{ $t.author }}</a>
@@ -52,7 +45,7 @@
   <!-- NEWSLETTER -->
   {{ if .Site.Params.newsletter_enabled }}
   <section class="support-newsletter section-dark">
-    <div class="container fade-in delay-4">
+    <div class="container fade-in delay-5">
       <h2 class="section-title">{{ .Params.newsletter.heading }}</h2>
       <p>{{ .Params.newsletter.text }}</p>
       {{ partial "buttondown-form.html" (dict "context" . "inputId" "support-email" "formClass" "email-signup-form") }}

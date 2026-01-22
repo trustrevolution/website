@@ -18,13 +18,6 @@ hero:
 show:
   lead: "Unfiltered conversations with builders, thinkers, and operators in Bitcoin and beyond. Exploring the systems we trust, why they work (or don't), and what comes next."
   body: "No softball questions. No talking points. Just the uncomfortable conversations that matter."
-  stats:
-    - value: "30+"
-      label: "Episodes"
-    - value: "2"
-      label: "Seasons"
-    - value: "0"
-      label: "Ads"
 
 # Host section
 host:

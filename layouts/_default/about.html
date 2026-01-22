@@ -4,6 +4,15 @@
   {{ partial "hero.html" .Params.hero }}
 
   <!-- THE SHOW: What this is -->
+  {{- $episodes := where .Site.RegularPages "Section" "episodes" -}}
+  {{- $episodeCount := len $episodes -}}
+  {{- $seasons := slice -}}
+  {{- range $episodes -}}
+    {{- with .Params.season -}}
+      {{- $seasons = $seasons | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $seasonCount := len ($seasons | uniq) -}}
   <section class="about-show">
     <div class="container">
       <div class="show-layout">
@@ -12,12 +21,18 @@
           <p>{{ .Params.show.body }}</p>
         </div>
         <aside class="show-stats fade-in delay-1">
-          {{ range .Params.show.stats }}
           <div class="stat">
-            <span class="stat-value">{{ .value }}</span>
-            <span class="stat-label">{{ .label }}</span>
+            <span class="stat-value">{{ $episodeCount }}</span>
+            <span class="stat-label">Episodes</span>
           </div>
-          {{ end }}
+          <div class="stat">
+            <span class="stat-value">{{ $seasonCount }}</span>
+            <span class="stat-label">Seasons</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">0</span>
+            <span class="stat-label">Ads</span>
+          </div>
         </aside>
       </div>
     </div>
@@ -42,15 +57,13 @@
     </div>
   </section>
 
-  <!-- CONNECT: Simple closer -->
+  <!-- CONNECT -->
   <section class="about-connect">
     <div class="container">
       <div class="connect-layout fade-in delay-3">
-        <div class="connect-content">
-          <h2 class="section-title">{{ .Params.connect.heading }}</h2>
-          <p>{{ .Params.connect.text }}</p>
-          <a href="mailto:{{ .Params.connect.email }}" class="tag-link tag-link--lg">{{ .Params.connect.email }}</a>
-        </div>
+        <h2 class="section-title">{{ .Params.connect.heading }}</h2>
+        <p>{{ .Params.connect.text }}</p>
+        <a href="mailto:{{ .Params.connect.email }}" class="tag-link tag-link--lg">{{ .Params.connect.email }}</a>
       </div>
     </div>
   </section>

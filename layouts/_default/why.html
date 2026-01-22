@@ -1,49 +1,46 @@
 {{ define "main" }}
-<article class="why-page">
-  <div class="container">
+<article class="why-page seamless-to-footer">
 
-    {{/* Accusations block */}}
-    <div class="accusations fade-in">
-      {{ range .Params.accusations }}
-      <div class="accusation">
-        <p class="setup">You were told to {{ .target }}.</p>
-        <p class="reality">{{ .reality }}</p>
-      </div>
-      {{ end }}
-    </div>
-
-    {{/* Pivot */}}
-    <div class="pivot fade-in delay-1">
-      <p class="pivot-setup">{{ .Params.pivot.line1 }}</p>
-      <p class="pivot-reveal">{{ .Params.pivot.line2 }}</p>
-    </div>
-
-  </div>
-</article>
-
-{{/* Hope Section - White background */}}
-<section class="why-hope seamless-to-footer">
-  <div class="container">
-    <div class="builders fade-in delay-2">
-      <p class="builders-setup">{{ .Params.builders.intro }}</p>
-      <p class="builders-action">{{ .Params.builders.action }}</p>
-
-      <div class="solutions">
-        {{ range .Params.builders.solutions }}
-        {{ $words := split . " " }}
-        {{ $first := index $words 0 }}
-        {{ $rest := slicestr . (add (len $first) 1) }}
-        <p class="solution"><span class="solution-keyword">{{ $first }}</span> {{ $rest }}</p>
+  {{/* Accusations Section — Dark hero-like opening */}}
+  <section class="why-accusations">
+    <div class="container">
+      <div class="accusations fade-in">
+        {{ range .Params.accusations }}
+        <div class="accusation">
+          <p class="setup">You were told to {{ .target }}.</p>
+          <p class="reality">{{ .reality }}</p>
+        </div>
         {{ end }}
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="cta-band fade-in delay-3">
-    <div class="container cta-band-inner">
+  {{/* Hope Section */}}
+  <section class="why-hope">
+    <div class="container">
+      <div class="builders fade-in delay-1">
+        <p class="builders-setup">{{ .Params.builders.intro }}</p>
+        <p class="builders-action">{{ .Params.builders.action }}</p>
+
+        <div class="solutions">
+          {{ range .Params.builders.solutions }}
+          {{ $words := split . " " }}
+          {{ $first := index $words 0 }}
+          {{ $rest := slicestr . (add (len $first) 1) }}
+          <p class="solution"><span class="solution-keyword">{{ $first }}</span> {{ $rest }}</p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* CTA Band */}}
+  <section class="cta-band">
+    <div class="container cta-band-inner fade-in delay-2">
       <span class="cta-text">{{ .Params.invitation.text }}</span>
       <a href="/episodes/" class="cta-button">{{ .Params.invitation.cta }}</a>
     </div>
-  </div>
-</section>
+  </section>
+
+</article>
 {{ end }}

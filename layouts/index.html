@@ -30,13 +30,13 @@
 </section>
 
 {{ if gt (len $episodes) 1 }}
-<section class="section fade-in delay-2">
+<section class="section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-in delay-2">
       <h2>Recent Episodes</h2>
       <a href="/episodes/" class="view-all">All Episodes{{ partial "arrow.html" }}</a>
     </div>
-    <div class="episode-grid">
+    <div class="episode-grid fade-in delay-3">
       {{ range first 6 (after 1 $episodes) }}
       {{ partial "episode-card.html" (dict "RelPermalink" .RelPermalink "Params" .Params "Title" .Title "headingLevel" "h3") }}
       {{ end }}

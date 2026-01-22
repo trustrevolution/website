@@ -16,13 +16,14 @@ hero:
 
 # CTA in hero
 cta:
-  label: "Support on Fountain"
-  context: "Stream sats, subscribe for $5/mo, or unlock early access for $1."
+  label: "Support the Show"
+  context: "Stream sats, subscribe, or unlock early access on Fountain."
 
 # Philosophy section
 philosophy:
-  lead: "No ads means no incentive to chase clicks. No sponsors means no one else's agenda."
-  emphasis: "You listen. You decide. You pay what it's worth to you."
+  lines:
+    - "You listen. You decide."
+    - "You pay what it's worth to you."
 
 # Testimonials section
 testimonials:

@@ -1,6 +1,6 @@
 ---
 title: "Why"
-description: "Banks freeze accounts. Platforms sell data. Institutions don't trust you. Meet the builders creating the alternative."
+description: "Banks freeze accounts. Platforms sell data. Government doesn't trust you. Meet the builders creating the alternative."
 layout: "why"
 
 accusations:
@@ -8,14 +8,8 @@ accusations:
     reality: "They froze accounts."
   - target: "trust the platforms"
     reality: "They sold your data and banned your speech."
-  - target: "trust the institutions"
+  - target: "trust the government"
     reality: "They don't trust you."
-  - target: "prove who you are"
-    reality: "They built a file on everything you do."
-
-pivot:
-  line1: "The systems didn't fail."
-  line2: "They work exactly as designed—just not for you."
 
 builders:
   intro: "Some people saw it coming."
