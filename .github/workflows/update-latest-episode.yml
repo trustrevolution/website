@@ -6,12 +6,13 @@ on:
     paths:
       - 'content/episodes/**'
   schedule:
-    # Run daily at 6 AM UTC to check for new Fountain episodes
-    - cron: '0 6 * * *'
+    # Run Wed-Fri at 7:30 AM CT (13:30 UTC) - after episodes publish
+    - cron: '30 13 * * 3-5'
   workflow_dispatch:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   update-episode-data:
@@ -32,13 +33,107 @@ jobs:
       - name: Fetch Fountain RSS and update data
         run: node scripts/update-episode-data.js
 
+      - name: Create new episode drafts from RSS
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/create-episode-from-rss.js
+
       - name: Commit changes
         run: |
           set -e
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add data/latest_episode.json data/fountain_rss.json
+          git add content/episodes/*.md
+          git add assets/images/cover-art/*.jpg
           if ! git diff --quiet --staged; then
-            git commit -m "Auto-update episode data from Fountain RSS"
+            git commit -m "Auto-update episode data and create new episode drafts"
             git push
           fi
+
+      - name: Create GitHub issue for episode problems
+        if: hashFiles('scripts/episode-issues.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issuesPath = 'scripts/episode-issues.json';
+            
+            if (!fs.existsSync(issuesPath)) {
+              console.log('No issues file found');
+              return;
+            }
+            
+            const issues = JSON.parse(fs.readFileSync(issuesPath, 'utf8'));
+            if (issues.length === 0) {
+              console.log('No issues to report');
+              return;
+            }
+            
+            // Group issues by episode
+            const byEpisode = {};
+            for (const issue of issues) {
+              const key = issue.episode;
+              if (!byEpisode[key]) byEpisode[key] = { title: issue.title, slug: issue.slug, problems: [] };
+              byEpisode[key].problems.push(issue);
+            }
+            
+            // Create a single issue for all problems
+            let body = '## Episode Draft Issues\n\n';
+            body += 'The following episode drafts were created but need manual attention:\n\n';
+            
+            for (const [ep, data] of Object.entries(byEpisode)) {
+              body += `### ${ep}: ${data.title}\n\n`;
+              body += `File: \`content/episodes/${data.slug}.md\`\n\n`;
+              
+              for (const problem of data.problems) {
+                if (problem.type === 'missing_fountain_url') {
+                  body += `- [ ] **Missing Fountain URL**\n`;
+                  body += `  - Hosting ID: \`${problem.hostingId}\`\n`;
+                  body += `  - Episode may not be indexed on Fountain yet - try re-running the workflow later\n`;
+                  body += `  - Or manually add the URL to \`content/episodes/${data.slug}.md\`\n\n`;
+                }
+                if (problem.type === 'missing_description') {
+                  body += `- [ ] **Missing Description**\n`;
+                  body += `  - AI-generated description was too long (>155 chars)\n`;
+                  body += `  - Edit the file and add a punchy 1-2 sentence hook\n\n`;
+                }
+              }
+            }
+            
+            body += '---\n';
+            body += '*This issue was automatically created by the episode intake workflow.*';
+            
+            // Check if there's already an open issue with this label
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'episode-intake'
+            });
+            
+            if (existingIssues.data.length > 0) {
+              // Update existing issue
+              const existingIssue = existingIssues.data[0];
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: body
+              });
+              console.log(`Updated existing issue #${existingIssue.number}`);
+            } else {
+              // Create new issue
+              const newIssue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: 'Episode Draft Issues Need Attention',
+                body: body,
+                labels: ['episode-intake']
+              });
+              console.log(`Created new issue #${newIssue.data.number}`);
+            }
+
+      - name: Cleanup issues file
+        if: always()
+        run: rm -f scripts/episode-issues.json

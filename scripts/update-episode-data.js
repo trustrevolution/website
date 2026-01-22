@@ -28,8 +28,7 @@ async function updateEpisodeData() {
       duration: latestEpisode.duration || null,
       artwork: latestEpisode.image?.href || latestEpisode.itunes?.image || null,
       link: latestEpisode.link,
-      description: latestEpisode.contentSnippet || latestEpisode.description,
-      updatedAt: new Date().toISOString()
+      description: latestEpisode.contentSnippet || latestEpisode.description
     };
 
     // Ensure data directory exists
@@ -38,13 +37,20 @@ async function updateEpisodeData() {
       fs.mkdirSync(dataDir, { recursive: true });
     }
 
-    // Write latest episode data
-    fs.writeFileSync(
-      path.join(dataDir, 'latest_episode.json'),
-      JSON.stringify(episodeData, null, 2)
-    );
+    // Only write if data actually changed
+    const latestEpisodePath = path.join(dataDir, 'latest_episode.json');
+    const existingData = fs.existsSync(latestEpisodePath)
+      ? JSON.parse(fs.readFileSync(latestEpisodePath, 'utf8'))
+      : null;
 
-    // Cache full RSS data
+    if (JSON.stringify(episodeData) !== JSON.stringify(existingData)) {
+      fs.writeFileSync(latestEpisodePath, JSON.stringify(episodeData, null, 2));
+      console.log('Episode data updated');
+    } else {
+      console.log('Episode data unchanged, skipping write');
+    }
+
+    // Cache full RSS data (always update for episode creation script)
     fs.writeFileSync(
       path.join(dataDir, 'fountain_rss.json'),
       JSON.stringify(feed.items, null, 2)
