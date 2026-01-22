@@ -9,4 +9,4 @@
   Input: Full episode title string
   Returns: Cleaned title without episode number prefix
 */}}
-{{- return (. | replaceRE "^[^–]+– " "") -}}
+{{- return (. | replaceRE "^[^–—]+[–—] " "") -}}

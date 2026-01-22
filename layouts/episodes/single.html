@@ -6,7 +6,7 @@
     <div class="episode-layout">
       <aside class="episode-sidebar fade-in">
         <div class="episode-cover">
-          {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 280 "sizes" "(max-width: 768px) 200px, 280px") }}
+          {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 280 "sizes" "(max-width: 768px) 200px, 280px" "eager" true) }}
         </div>
         {{ partial "fountain-cta.html" . }}
         {{ with .Params.duration }}
@@ -72,22 +72,7 @@
 
         {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
 
-        <nav class="episode-nav" aria-label="Episode navigation">
-          {{ with .PrevInSection }}
-          <a href="{{ .RelPermalink }}" class="nav-prev">
-            {{ partial "arrow.html" "back" }}
-            <span>{{ partial "episode-title-clean.html" .Title }}</span>
-          </a>
-          {{ else }}
-          <span></span>
-          {{ end }}
-          {{ with .NextInSection }}
-          <a href="{{ .RelPermalink }}" class="nav-next">
-            <span>{{ partial "episode-title-clean.html" .Title }}</span>
-            {{ partial "arrow.html" "forward" }}
-          </a>
-          {{ end }}
-        </nav>
+        {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
       </div>
     </div>
   </div>
