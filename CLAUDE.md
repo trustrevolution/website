@@ -104,6 +104,36 @@ node scripts/update-episode-data.js
 
 Deploys automatically on push to master/main branch via Netlify.
 
+## Guest Headshots
+
+Guest headshots are stored in color at `assets/images/guests/{slug}.jpg` (800x800 JPEG). Hugo applies a grayscale filter at build time for visual uniformity.
+
+### Adding a New Guest Headshot
+
+1. Source a high-quality image (minimum 400x400, square or croppable to square)
+2. Process to 800x800 JPEG:
+   ```bash
+   magick input.jpg -resize 800x800^ -gravity center -extent 800x800 -quality 90 assets/images/guests/{slug}.jpg
+   ```
+3. The slug is derived using Hugo's `urlize` function on the guest's name:
+   - Converts to lowercase
+   - Strips diacritics (e.g., ë → e, ü → u)
+   - Replaces spaces and special characters with hyphens
+   - Examples:
+     - "John Robb" → `john-robb.jpg`
+     - "R.U. Sirius" → `r.u.-sirius.jpg`
+     - "Matt O'Dell" → `matt-odell.jpg`
+     - "Yaël Ossowski" → `yael-ossowski.jpg`
+
+### How It Works
+
+The `layouts/partials/guest-bio.html` and `layouts/guests/list.html` templates:
+1. Generate a slug from the guest name using `| urlize`
+2. Check if `assets/images/guests/{slug}.jpg` exists
+3. If found, render via `layouts/partials/image.html` with `grayscale: true`
+
+Hugo's `images.Grayscale` filter is applied at build time. Processed images are cached in `resources/` for fast rebuilds.
+
 ## TODO (Pre-Launch)
 
 - [x] Full mobile test
@@ -114,7 +144,7 @@ Deploys automatically on push to master/main branch via Netlify.
 - [x] Meta tags
 - [x] og-images
 - [x] JSON-LD structured data (entities)
-- [ ] Source and incorporate guest headshots
+- [x] Source and incorporate guest headshots
 - [x] Episode-specific og-image generation
 
 ## TODO (Post-Launch)

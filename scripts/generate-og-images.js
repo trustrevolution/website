@@ -7,6 +7,7 @@ const OG_WIDTH = 1200;
 const OG_HEIGHT = 630;
 const COVER_SIZE = 630;
 const BAR_WIDTH = (OG_WIDTH - COVER_SIZE) / 2;
+const CONCURRENCY_LIMIT = 5;
 
 const CONTENT_DIR = path.join(__dirname, '../content/episodes');
 const COVER_DIR = path.join(__dirname, '../assets/images/cover-art');
@@ -25,8 +26,7 @@ async function generateOgImage(episodePath) {
   const outputPath = path.join(OUTPUT_DIR, `${episodeId}.jpg`);
 
   if (!fs.existsSync(coverPath)) {
-    console.log(`  Skip: ${episodeId} (no cover)`);
-    return null;
+    return { status: 'skip', episodeId, reason: 'no cover' };
   }
 
   // Check if OG image exists and is newer than episode file
@@ -35,10 +35,8 @@ async function generateOgImage(episodePath) {
     const ogStat = fs.statSync(outputPath);
 
     if (ogStat.mtime > episodeStat.mtime) {
-      return null; // OG image is up to date
+      return { status: 'skip', episodeId, reason: 'up to date' };
     }
-    // If episode is newer, regenerate
-    console.log(`  Regenerating ${episodeId}.jpg (episode updated)`);
   }
 
   const cover = await sharp(coverPath)
@@ -57,29 +55,62 @@ async function generateOgImage(episodePath) {
     .jpeg({ quality: 90 })
     .toFile(outputPath);
 
-  console.log(`  ${episodeId}.jpg`);
-  return outputPath;
+  return { status: 'generated', episodeId };
+}
+
+// Process items in parallel with a concurrency limit
+async function parallelLimit(items, fn, limit) {
+  const results = [];
+  const executing = new Set();
+
+  for (const item of items) {
+    const promise = Promise.resolve().then(() => fn(item));
+    results.push(promise);
+    executing.add(promise);
+
+    const cleanup = () => executing.delete(promise);
+    promise.then(cleanup, cleanup);
+
+    if (executing.size >= limit) {
+      await Promise.race(executing);
+    }
+  }
+
+  return Promise.all(results);
 }
 
 async function main() {
   console.log('Generating OG images...');
   const episodes = fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.md')).sort();
-  let generated = 0;
-  const errors = [];
+  const episodePaths = episodes.map(file => path.join(CONTENT_DIR, file));
 
-  for (const file of episodes) {
-    try {
-      const result = await generateOgImage(path.join(CONTENT_DIR, file));
-      if (result) generated++;
-    } catch (err) {
-      console.error(`  Error processing ${file}: ${err.message}`);
-      errors.push(file);
-    }
+  const results = await parallelLimit(
+    episodePaths,
+    async (episodePath) => {
+      try {
+        return await generateOgImage(episodePath);
+      } catch (err) {
+        const file = path.basename(episodePath);
+        console.error(`  Error processing ${file}: ${err.message}`);
+        return { status: 'error', file, error: err.message };
+      }
+    },
+    CONCURRENCY_LIMIT
+  );
+
+  // Report results
+  const generated = results.filter(r => r.status === 'generated');
+  const errors = results.filter(r => r.status === 'error');
+
+  for (const result of generated) {
+    console.log(`  ${result.episodeId}.jpg`);
   }
 
-  console.log(`Done. Generated ${generated} new image(s).`);
+  console.log(`Done. Generated ${generated.length} new image(s).`);
+  
   if (errors.length > 0) {
-    console.error(`Failed to process ${errors.length} file(s): ${errors.join(', ')}`);
+    console.error(`Failed to process ${errors.length} file(s):`);
+    errors.forEach(e => console.error(`  - ${e.file}: ${e.error}`));
     process.exit(1);
   }
 }
