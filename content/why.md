@@ -1,6 +1,6 @@
 ---
 title: "Why"
-description: "Banks freeze accounts. Platforms sell data. Government doesn't trust you. Meet the builders creating the alternative."
+description: "Banks freeze accounts. Platforms sell data. Institutions don't trust you. Meet the builders creating the alternative."
 layout: "why"
 
 accusations:
@@ -8,7 +8,7 @@ accusations:
     reality: "They froze accounts."
   - target: "trust the platforms"
     reality: "They sold your data and banned your speech."
-  - target: "trust the government"
+  - target: "trust the institutions"
     reality: "They don't trust you."
 
 builders:
