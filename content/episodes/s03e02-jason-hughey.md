@@ -18,7 +18,6 @@ guest:
   name: "Jason Hughey"
   bio: "Jason Hughey leads business development at Satoshi Pacioli, a Bitcoin-focused accounting firm founded in 2022, where he's also driving the firm's adoption of Principle Based Management—a framework rooted in Austrian economics that treats organizations like markets rather than command structures. With over ten years in customer experience and team building, including time in the fitness industry, Hughey brings a practitioner's lens to management theory. He co-authored Called to Freedom (2016), exploring the intersection of Christianity and libertarianism."
   social:
-    twitter: "https://twitter.com/JL_Hughey"
     linkedin: "https://www.linkedin.com/in/jasonhughey/"
 guests:
 - Jason Hughey
