@@ -92,13 +92,25 @@ npm run generate:og
 node scripts/update-episode-data.js
 ```
 
-## Content Workflow
+## Adding a New Episode
 
-1. Generate show notes with Claude
-2. Save as `content/episodes/s##e##.md`
-3. Commit to repo
-4. GitHub Action updates RSS data
-5. Netlify auto-deploys
+**IMPORTANT: Always run the script first. Never manually create episode files.**
+
+```bash
+# 1. Run the script to pull episode data from RSS
+node scripts/create-episode-from-rss.js
+
+# 2. Process guest headshot (if provided)
+magick ~/Downloads/guest-name.jpg -resize 800x800^ -gravity center -extent 800x800 -quality 90 assets/images/guests/guest-name.jpg
+```
+
+The script automatically:
+- Pulls all metadata from the Fountain RSS feed (title, description, timestamps, resources, etc.)
+- Downloads cover art
+- Maps Fountain URLs
+- Generates timestamps from transcript via Claude API (if ANTHROPIC_API_KEY is set)
+
+After running, review the generated file and commit.
 
 ## Deployment
 
