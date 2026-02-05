@@ -224,18 +224,24 @@ ${summary}
 
 ---
 
-TASK 1: DESCRIPTION (1-2 short sentences, STRICTLY under 100 characters)
+TASK 1: DESCRIPTION (1-2 short sentences, STRICTLY under 120 characters)
 Write a punchy hook for the homepage feature. This is NOT SEO description--it's a teaser.
 
-Good examples (note the length):
-- "One ban erases your identity. Pip built reputation they can't revoke." (71 chars)
-- "Seven billion people lack property rights. Bitcoin changes that math." (70 chars)
-- "Big Tech captures $670/year from you. Voluntary payment can't compete." (71 chars)
+CRITICAL RULES:
+- For guest episodes, MUST include the guest's name
+- Use ONLY facts from the summary/bio—never invent timeframes or credentials
+- Focus on what makes THIS guest's perspective unique
+
+Good examples (note: guest name included, under 120 chars):
+- "Aaron van Wirdum spent a decade documenting Bitcoin's origin story—and warns the fight isn't over." (99 chars)
+- "Pip built reputation systems that survive platform bans. One account deletion changes everything." (97 chars)
+- "Lyn Alden manages billions. She says the monetary system is breaking." (70 chars)
 
 Bad examples:
-- "In this episode we discuss..." (boring, too long)
-- "John shares his thoughts on..." (passive)
-- Anything over 100 characters (too long for homepage)
+- "The cypherpunks built digital cash..." (no guest name—too generic)
+- "In this episode we discuss..." (boring, passive)
+- "John shares his thoughts on..." (passive, weak verb)
+- Anything over 120 characters
 
 ---
 
@@ -311,11 +317,11 @@ ${truncatedTranscript}`;
           
           const result = JSON.parse(jsonMatch[0]);
           
-          // Enforce max 100 chars for homepage hook
+          // Enforce max 120 chars for homepage hook
           let description = result.description || '';
-          if (description.length > 100) {
+          if (description.length > 120) {
             console.log(`  Warning: AI description too long (${description.length} chars), truncating intelligently`);
-            description = truncateDescription(description, 100);
+            description = truncateDescription(description, 120);
           }
           
           resolve({
@@ -945,7 +951,7 @@ async function main() {
     
     // Check if first sentence of summary would work as description
     const firstSentence = (content.summary || '').split(/(?<=[.!?]['"]?['"]?)\s+/)[0] || '';
-    const needsDescriptionFromAI = !firstSentence || firstSentence.length > 100;
+    const needsDescriptionFromAI = !firstSentence || firstSentence.length > 120;
     
     // Call AI if we need timestamps OR description, and have transcript + API key
     if ((timestamps.length === 0 || needsDescriptionFromAI) && item.transcriptUrl && ANTHROPIC_API_KEY && GENERATE_TIMESTAMPS) {
@@ -1011,7 +1017,7 @@ async function main() {
     let description = generatedDescription ? normalizeText(generatedDescription) : '';
     if (!description && summary) {
       const firstSentence = summary.split(/(?<=[.!?]['"]?['"]?)\s+/)[0];
-      if (firstSentence && firstSentence.length <= 100) {
+      if (firstSentence && firstSentence.length <= 120) {
         description = firstSentence;
         console.log(`  Using first sentence for description (${description.length} chars)`);
       } else {
@@ -1098,7 +1104,7 @@ async function main() {
         console.log(`  - ${issue.episode}: ${issue.title}`);
         console.log(`    file: content/episodes/${issue.slug}.md`);
       }
-      console.log('\nTo fix: Edit the file and add a description (max 155 chars).\n');
+      console.log('\nTo fix: Edit the file and add a description (max 120 chars).\n');
     }
 
     // Write issues to a JSON file for GitHub Actions to pick up

@@ -95,7 +95,7 @@ jobs:
                 }
                 if (problem.type === 'missing_description') {
                   body += `- [ ] **Missing Description**\n`;
-                  body += `  - AI-generated description was too long (>155 chars)\n`;
+                  body += `  - AI-generated description was too long (>120 chars)\n`;
                   body += `  - Edit the file and add a punchy 1-2 sentence hook\n\n`;
                 }
               }
