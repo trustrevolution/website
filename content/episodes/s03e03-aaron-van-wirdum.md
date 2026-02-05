@@ -7,7 +7,7 @@ season: 3
 episode: 3
 description: "Author Aaron van Wirdum documents the decades-long war to build money governments can't control—and warns the fight isn't over."
 summary: |
-  "The cypherpunks who tried to build digital cash before Bitcoin might one day be remembered like America's founding fathers." Aaron van Wirdum has spent over a decade documenting the war to build money governments can't control—and warns the fight isn't over.
+  "The cypherpunks who tried to build digital cash before Bitcoin might one day be remembered like America's founding fathers." Aaron van Wirdum spent five years writing The Genesis Book—and warns the fight for money outside government control isn't over.
 featured_image: "images/cover-art/s03e03.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---PAID---1d75ba15-ff6e-4fcc-a631-526287942a8a.mp4/ORIGINAL.mp3"
 video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---PAID---1d75ba15-ff6e-4fcc-a631-526287942a8a.mp4/playlist.m3u8"
