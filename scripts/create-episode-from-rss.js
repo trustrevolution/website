@@ -395,7 +395,8 @@ function normalizeText(text) {
   return text
     .replace(/[""]/g, '"')      // curly double quotes
     .replace(/['']/g, "'")      // curly single quotes/apostrophes
-    .replace(/…/g, '...');      // ellipsis
+    .replace(/…/g, '...')       // ellipsis
+    .replace(/[—–]/g, '-');     // em-dash and en-dash
 }
 
 /**
