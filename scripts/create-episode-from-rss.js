@@ -393,10 +393,10 @@ function stripHtml(html) {
  */
 function normalizeText(text) {
   return text
-    .replace(/[""]/g, '"')      // curly double quotes
-    .replace(/['']/g, "'")      // curly single quotes/apostrophes
-    .replace(/…/g, '...')       // ellipsis
-    .replace(/[—–]/g, '-');     // em-dash and en-dash
+    .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036""]/g, '"')  // all curly/fancy double quotes
+    .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035'']/g, "'")  // all curly/fancy single quotes
+    .replace(/[\u2026…]/g, '...')                               // ellipsis
+    .replace(/[\u2014\u2013\u2012—–-]/g, '--');                 // em-dash, en-dash, figure dash
 }
 
 /**
@@ -1017,9 +1017,9 @@ async function main() {
     // Description: use AI-generated, or fall back to first sentence if short enough
     let description = generatedDescription ? normalizeText(generatedDescription) : '';
     if (!description && summary) {
-      const firstSentence = summary.split(/(?<=[.!?]['"]?['"]?)\s+/)[0];
+      const firstSentence = summary.split(/(?<=[.!?]["']?["']?)\s+/)[0];
       if (firstSentence && firstSentence.length <= 120) {
-        description = firstSentence;
+        description = normalizeText(firstSentence);
         console.log(`  Using first sentence for description (${description.length} chars)`);
       } else {
         console.log(`  Description needs manual review (first sentence too long)`);

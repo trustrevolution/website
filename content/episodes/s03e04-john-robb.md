@@ -5,9 +5,9 @@ draft: false
 slug: s03e04-john-robb
 season: 3
 episode: 4
-description: "“All it takes is the political will or the political mistake to turn it on."
+description: "\"All it takes is the political will or the political mistake to turn it on.\""
 summary: |
-  “All it takes is the political will or the political mistake to turn it on. And it's there.” John Robb maps the path from post-national identity collapse to automated totalitarian surveillance���and explains why most of the tools people are counting on won't stop it.
+  "All it takes is the political will or the political mistake to turn it on. And it's there." John Robb maps the path from post-national identity collapse to automated totalitarian surveillance--and explains why most of the tools people are counting on won't stop it.
 featured_image: "images/cover-art/s03e04.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---PAID---e056d90a-b56f-4177-8789-df0ea0d53a59.mp4/ORIGINAL.mp3"
 video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---PAID---e056d90a-b56f-4177-8789-df0ea0d53a59.mp4/playlist.m3u8"
