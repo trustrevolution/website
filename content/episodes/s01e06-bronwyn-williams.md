@@ -5,7 +5,7 @@ draft: false
 slug: s01e06-bronwyn-williams
 season: 1
 episode: 6
-description: "In this hard-hitting episode of Trust Revolution , Shawn sits down with Bronwyn Williams, a South African futurist and e"
+description: "South African futurist Bronwyn Williams maps the unraveling cycle: when institutions fail, what fills the vacuum?"
 summary: |
   In this hard-hitting episode of Trust Revolution, Shawn sits down with Bronwyn Williams, a South African futurist and economist, to dissect the collapse of trust in centralized systems. Bronwyn analyzes how globalization and technology challenge institutional credibility, using South Africa’s governance struggles as a backdrop. She critiques AI’s centralizing risks, questions Bitcoin’s decentralized promise, and discusses ways businesses and individuals can rebuild trust. This conversation unravels the dynamics of power and agency in a low-trust world.
 featured_image: "images/cover-art/s01e06.jpg"

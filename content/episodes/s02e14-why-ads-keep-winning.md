@@ -5,7 +5,7 @@ draft: false
 slug: s02e14-why-ads-keep-winning
 season: 2
 episode: 14
-description: Voluntary payment sounds like the answer to surveillance capitalism.
+description: "Voluntary payment has never broken 5% adoption in 50 years. Why it still matters when platforms decide you shouldn't exist."
 summary: |
   Big Tech captures $670 a year from the average American through attention and data. Voluntary payment has never broken past 5% adoption in 50 years of trying. So why does it still matter? Because it's not about replacing ads. It's about having somewhere to go when the platforms decide you shouldn't exist.
 featured_image: "images/cover-art/s02e14.jpg"

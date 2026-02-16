@@ -5,7 +5,7 @@ draft: false
 slug: s02e13-cory-doctorow
 season: 2
 episode: 13
-description: "Cory Doctorow breaks down the three-stage process by which platforms lure users in, lock them down, and extract maximum "
+description: "The man who coined enshittification maps exactly how every platform you depend on will turn against you."
 summary: |
   “The smallest government you can have is determined by the largest corporation you're willing to tolerate.” Cory Doctorow didn't just coin “enshittification”—he mapped the precise mechanics of how every platform you depend on will eventually turn against you, and why voting with your wallet won't save you.
 featured_image: "images/cover-art/s02e13.jpg"

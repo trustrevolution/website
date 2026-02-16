@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    {{ partial "section-header.html" (dict "title" "Topics" "subtitle" (printf "Explore %d topics covered across episodes" (len .Data.Terms))) }}
+
+    <div class="tag-grid fade-in delay-1">
+      {{ range .Data.Terms.Alphabetical }}
+      <a href="{{ .Page.RelPermalink }}" class="tag-card">
+        <span class="tag-name">{{ .Page.Title }}</span>
+        <span class="tag-count">{{ len .Pages }} episode{{ if gt (len .Pages) 1 }}s{{ end }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

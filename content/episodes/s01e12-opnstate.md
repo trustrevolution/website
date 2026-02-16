@@ -5,7 +5,7 @@ draft: false
 slug: s01e12-opnstate
 season: 1
 episode: 12
-description: "OpnState, a pseudonymous civil servant and former corporate banker, joins Shawn to expose the hidden mechanisms of globa"
+description: "A pseudonymous civil servant exposes how FATF's AML rules centralize power and erode financial sovereignty."
 summary: |
   OpnState, a pseudonymous civil servant and former corporate banker, joins Shawn to expose the hidden mechanisms of global financial standards and their impact on trust and sovereignty. From his role drafting anti-money laundering (AML) legislation, OpnState reveals how the Financial Action Task Force (FATF) enforces KYC and AML rules, centralizing power and eroding individual rights. He discusses the challenges of reforming a surveillance-heavy system, the power of citizen action through Freedom of Information (FOI) requests, and the hope offered by cypherpunk innovations like Bitcoin. Recorded June 16, 2025, amid growing global tensions, this episode examines why transparency matters, what’s at stake in 2025, and how individuals can reclaim agency in a trust-minimized future.
 

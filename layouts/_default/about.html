@@ -51,22 +51,29 @@
           {{ range .Params.host.bio }}
           <p>{{ . }}</p>
           {{ end }}
+          {{ with .Params.host.cta }}<p class="host-cta">{{ . }}</p>{{ end }}
           {{ partial "social-links.html" (dict "links" .Params.host.links "format" "array") }}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONNECT -->
-  <section class="about-connect">
+  <!-- CREDITS -->
+  {{ with .Params.credits }}
+  <section class="about-credits">
     <div class="container">
-      <div class="connect-layout fade-in delay-3">
-        <h2 class="section-title">{{ .Params.connect.heading }}</h2>
-        <p>{{ .Params.connect.text }}</p>
-        <a href="mailto:{{ .Params.connect.email }}" class="tag-link tag-link--lg">{{ .Params.connect.email }}</a>
+      <div class="credits-layout fade-in delay-4">
+        {{ range . }}
+        <div class="credit">
+          <span class="credit-role">{{ .role }}</span>
+          <a href="{{ .url }}" class="credit-name" target="_blank" rel="noopener">{{ .name }}</a>
+          {{ with .note }}<span class="credit-note">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
       </div>
     </div>
   </section>
+  {{ end }}
 
   {{ partial "email-signup.html" . }}
 </article>

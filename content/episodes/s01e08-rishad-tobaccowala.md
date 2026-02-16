@@ -5,7 +5,7 @@ draft: false
 slug: s01e08-rishad-tobaccowala
 season: 1
 episode: 8
-description: "Rishad Tobaccowala, futurist and author of Rethinking Work , joins Shawn to unravel the dynamics of power, talent, and t"
+description: "37 years at Publicis Groupe. Rishad Tobaccowala says we've hit peak jobs and trust is the only currency left."
 summary: |
   Rishad Tobaccowala, futurist and author of Rethinking Work, joins Shawn to unravel the dynamics of power, talent, and trust in a decentralized, AI-driven future. This conversation exposes the seismic shifts dismantling traditional jobs, the rise of talent over capital, and why trust—rooted in truth and integrity—is the ultimate currency for brands and leaders. From technology’s promise to demographic realities, Rishad delivers a wake-up call for navigating the unbundled world of work.
 

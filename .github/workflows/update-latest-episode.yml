@@ -46,6 +46,7 @@ jobs:
           git add data/latest_episode.json data/fountain_rss.json
           git add content/episodes/*.md
           git add assets/images/cover-art/*.jpg
+          git add data/transcripts/*.json
           if ! git diff --quiet --staged; then
             git commit -m "Auto-update episode data and create new episode drafts"
             git push
@@ -95,8 +96,8 @@ jobs:
                 }
                 if (problem.type === 'missing_description') {
                   body += `- [ ] **Missing Description**\n`;
-                  body += `  - AI-generated description was too long (>120 chars)\n`;
-                  body += `  - Edit the file and add a punchy 1-2 sentence hook\n\n`;
+                  body += `  - AI-generated description didn't meet length target (130-155 chars)\n`;
+                  body += `  - Edit the file and add an SEO meta description (130-155 chars, include guest name)\n\n`;
                 }
               }
             }

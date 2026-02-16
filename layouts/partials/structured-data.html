@@ -11,7 +11,10 @@
       "@id": "{{ $site.BaseURL }}#organization",
       "name": "{{ $site.Title }}",
       "url": "{{ $site.BaseURL }}",
-      "logo": "{{ "images/og-default.jpg" | absURL }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ "favicon.svg" | absURL }}"
+      },
       "sameAs": [
         {{- $social := slice -}}
         {{- with $site.Params.youtube }}{{ $social = $social | append . }}{{ end -}}
@@ -20,6 +23,23 @@
         {{- range $i, $url := $social }}{{ if $i }},{{ end }}"{{ $url }}"{{ end -}}
       ]
     }
+    {{/* WebSite - on homepage for sitelinks search box */}}
+    {{- if .IsHome -}}
+    ,{
+      "@type": "WebSite",
+      "@id": "{{ $site.BaseURL }}#website",
+      "name": "{{ $site.Title }}",
+      "url": "{{ $site.BaseURL }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ $site.BaseURL }}?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    {{- end }}
     {{/* PodcastSeries - on homepage and episode pages */}}
     {{- if or .IsHome (eq .Section "episodes") -}}
     ,{
@@ -71,6 +91,12 @@
       {{- with .Params.episode }}
       "episodeNumber": {{ . }},
       {{- end }}
+      {{- with $.Params.season }}
+      "partOfSeason": {
+        "@type": "CreativeWorkSeason",
+        "seasonNumber": {{ . }}
+      },
+      {{- end }}
       "partOfSeries": {
         "@type": "PodcastSeries",
         "@id": "{{ $site.BaseURL }}#podcast"
@@ -85,6 +111,35 @@
       }
       {{- end }}
     }
+    {{- end }}
+    {{/* Person - on guest taxonomy term pages */}}
+    {{- if eq .Kind "term" -}}
+    {{- if eq .Type "guests" -}}
+    {{- $firstEpisode := index .Pages 0 -}}
+    {{- with $firstEpisode.Params.guest -}}
+    ,{
+      "@type": "Person",
+      "@id": "{{ $page.Permalink }}#person",
+      "name": "{{ .name }}"
+      {{- with .bio }},
+      "description": "{{ . | plainify | truncate 300 }}"
+      {{- end }}
+      {{- $sameAs := slice -}}
+      {{- with .social -}}
+        {{- with .twitter }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .nostr }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .website }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .linkedin }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .mastodon }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .github }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+        {{- with .substack }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+      {{- end -}}
+      {{- if gt (len $sameAs) 0 }},
+      "sameAs": [{{ range $i, $url := $sameAs }}{{ if $i }},{{ end }}"{{ $url }}"{{ end }}]
+      {{- end }}
+    }
+    {{- end }}
+    {{- end }}
     {{- end }}
     {{/* Article - on essay pages */}}
     {{- if and .IsPage (eq .Section "essays") -}}

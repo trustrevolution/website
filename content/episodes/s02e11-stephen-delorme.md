@@ -5,7 +5,7 @@ draft: false
 slug: s02e11-stephen-delorme
 season: 2
 episode: 11
-description: "Stephen DeLorme designs Bitcoin products at Voltage and helps run Atlanta's ATL BitLab."
+description: "Freedom tech is harder to build and harder to use. Stephen DeLorme on designing Bitcoin products that people actually adopt."
 summary: |
   “It's really difficult to engineer freedom tech—solutions that require you to kind of take ownership of your money, take ownership of your data. These things typically have engineering solutions that are harder to build; they might take a longer time to build, or it might actually require the user to kind of learn something new.”
 

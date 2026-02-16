@@ -1,0 +1,17 @@
+{{- $slug := .slug -}}
+{{- $data := index site.Data.transcripts $slug -}}
+{{- with $data -}}
+{{- with .paragraphs -}}
+<section class="episode-section transcript-section">
+  <details class="transcript-disclosure" id="transcript-details">
+    <summary id="transcript"><h2>Transcript</h2><span class="transcript-toggle-hint">Show full transcript</span></summary>
+    <div class="transcript-content">
+      {{- range . }}
+      <p>{{ . }}</p>
+      {{- end }}
+      <button type="button" class="transcript-collapse" onclick="document.getElementById('transcript-details').removeAttribute('open');document.getElementById('transcript').scrollIntoView({behavior:'smooth'});">Hide transcript</button>
+    </div>
+  </details>
+</section>
+{{- end -}}
+{{- end -}}

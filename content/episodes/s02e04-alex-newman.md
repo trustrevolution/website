@@ -5,7 +5,7 @@ draft: false
 slug: s02e04-alex-newman
 season: 2
 episode: 4
-description: "Centralized systems—Big Pharma, globalist agendas, government education—are crumbling under their own weight, leaving tr"
+description: "Investigative journalist Alex Newman rips the veil off digital IDs, institutional capture, and the parallel systems replacing them."
 summary: |
   Centralized systems—Big Pharma, globalist agendas, government education—are crumbling under their own weight, leaving trust in tatters. Alex Newman, investigative journalist and CEO of Liberty Sentinel Media, joins Shawn to rip the veil off these failures. With 2025 exposés on digital IDs, vaccine mandates, and institutional overreach, Newman reveals how entities like the WEF and UN erode sovereignty. This Trust Revolution episode delivers a raw dissection of power grabs and practical, decentralized strategies to reclaim control, urging listeners to question narratives and act.
 featured_image: "images/cover-art/s02e04.jpg"

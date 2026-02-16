@@ -5,7 +5,7 @@ draft: false
 slug: s02e09-tim-bouma
 season: 2
 episode: 9
-description: "Tim Bouma dissects the architecture of institutional trust from a unique vantage point: architecting Canada's Pan-Canadi"
+description: "He built Canada's digital identity framework. Now he's building on Bitcoin. Tim Bouma on straddling both worlds."
 summary: |
   “You cannot have trust without some form of governance. And governance is basically rules.” Tim Bouma has spent two decades inside government building Canada's digital identity framework. He's also building on Bitcoin. This is the conversation about what he's learned straddling both worlds, why centralized architecture creates problems that better policy can't fix, and why the future isn't about choosing between government systems and freedom tech—it's about understanding what each reveals about trust itself.
 featured_image: "images/cover-art/s02e09.jpg"

@@ -5,7 +5,7 @@ draft: false
 slug: s02e12-average-gary
 season: 2
 episode: 12
-description: "Average Gary spent 11 years in Navy intelligence as a Chinese linguist and Naval Special Warfare tech operator, learning"
+description: "11 years in Navy intelligence. Now a Bitcoin miner. Average Gary on proof of work over credentials."
 summary: |
   Operating under a pseudonym fits the ethos—sovereignty starts with controlling your identity. Average Gary brought the “thinking shooter” principle from Naval Special Warfare into Bitcoin: you don't need to know every answer, but you need to know where to find it. His path from military intelligence through Microsoft to large-scale Bitcoin mining reveals how decentralized systems reward proof of work over credentials and why open source tears down the walls between citizens and the institutions meant to serve them.
 featured_image: "images/cover-art/s02e12.jpg"
