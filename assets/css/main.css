@@ -119,7 +119,7 @@
   /* Line heights */
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.6;
+  --line-height-relaxed: 1.7;
 
   /* Transitions */
   --transition-fast: 0.15s;
@@ -166,7 +166,7 @@
 }
 
 html {
-  font-size: var(--font-size-base-px, 17px);
+  font-size: var(--font-size-base-px, 19px);
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -193,14 +193,14 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-h1 { font-size: var(--font-size-2xl); }
-h2 { font-size: var(--font-size-xl); }
-h3 { font-size: var(--font-size-md); }
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-lg); }
 
 /* Page titles — consistent across all non-home pages */
 .section > .container > header h1,
 .episode-header h1 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
 }
 
 a {
@@ -442,7 +442,7 @@ blockquote,
 }
 
 .section-title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -1097,7 +1097,7 @@ blockquote cite {
 }
 
 .hero h1 {
-  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-size: var(--font-size-4xl);
   line-height: 1.05;
   margin: 0;
   color: var(--bg-white);
@@ -2102,7 +2102,7 @@ input:focus-visible {
 
   /* Scale base font size for small phones */
   html {
-    font-size: 15px;
+    font-size: 17px;
   }
 
   /* Scale tokens proportionally for small phones */
@@ -2115,17 +2115,16 @@ input:focus-visible {
     --shadow-md: 4px;
     --shadow-lg: 6px;
 
-    /* Typography scale - small phones (15px base)
-       Keep minimum sizes safe for readability */
-    --font-size-xs: 0.8rem;      /* 12px - labels only */
-    --font-size-sm: 0.9375rem;   /* 14px - safe for interactive */
-    --font-size-base: 1rem;      /* 15px - body text */
-    --font-size-md: 1.0625rem;   /* 16px */
-    --font-size-lg: 1.1875rem;   /* 18px */
-    --font-size-xl: 1.375rem;    /* 21px */
-    --font-size-2xl: 1.625rem;   /* 24px */
-    --font-size-3xl: 2rem;       /* 30px */
-    --font-size-4xl: 2.5rem;     /* 38px */
+    /* Typography scale - small phones (17px base) */
+    --font-size-xs: 0.75rem;     /* 13px - labels only */
+    --font-size-sm: 0.875rem;    /* 15px - safe for interactive */
+    --font-size-base: 1rem;      /* 17px - body text */
+    --font-size-md: 1.0625rem;   /* 18px */
+    --font-size-lg: 1.1875rem;   /* 20px */
+    --font-size-xl: 1.375rem;    /* 23px */
+    --font-size-2xl: 1.75rem;    /* 30px */
+    --font-size-3xl: 2.125rem;   /* 36px */
+    --font-size-4xl: 2.5rem;     /* 43px */
   }
 
   /* Container padding reduction for narrow screens */

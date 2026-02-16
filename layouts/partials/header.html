@@ -2,7 +2,7 @@
 <header class="site-header">
   <div class="container">
     <a href="/" class="site-logo">Trust Revolution</a>
-    {{- if or (eq .Kind "section") (eq .Kind "taxonomy") (and (eq .Kind "page") (not .Section)) }}<span class="current-page">/ {{ .Title }}</span>{{ end }}
+    {{- if or (eq .Kind "section") (eq .Kind "taxonomy") (and (eq .Kind "page") (not .Section)) }}<span class="current-page">/ {{ .LinkTitle }}</span>{{ end }}
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>

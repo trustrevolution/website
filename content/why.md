@@ -1,5 +1,6 @@
 ---
 title: "Why Trust Is Broken"
+linkTitle: "Why"
 description: "Banks freeze accounts. Platforms sell data. Institutions don't trust you. Meet the builders creating the alternative."
 layout: "why"
 
