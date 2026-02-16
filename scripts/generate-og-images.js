@@ -29,8 +29,9 @@ async function generateOgImage(episodePath) {
     return { status: 'skip', episodeId, reason: 'no cover' };
   }
 
-  // Check if OG image exists and is newer than episode file
-  if (fs.existsSync(outputPath)) {
+  // Check if OG image exists and is newer than episode file (skip with --force)
+  const force = process.argv.includes('--force');
+  if (!force && fs.existsSync(outputPath)) {
     const episodeStat = fs.statSync(episodePath);
     const ogStat = fs.statSync(outputPath);
 
@@ -39,18 +40,20 @@ async function generateOgImage(episodePath) {
     }
   }
 
+  // Sharp cover at full size
   const cover = await sharp(coverPath)
     .resize(COVER_SIZE, COVER_SIZE, { fit: 'cover', position: 'centre' })
     .toBuffer();
 
-  await sharp({
-    create: {
-      width: OG_WIDTH,
-      height: OG_HEIGHT,
-      channels: 3,
-      background: { r: 0, g: 0, b: 0 }
-    }
-  })
+  // Background: cover scaled to fill OG dimensions, blurred + darkened
+  const bg = await sharp(coverPath)
+    .resize(OG_WIDTH, OG_HEIGHT, { fit: 'cover', position: 'centre' })
+    .blur(30)
+    .modulate({ brightness: 0.4 })
+    .toBuffer();
+
+  // Composite sharp cover centered on blurred background
+  await sharp(bg)
     .composite([{ input: cover, left: BAR_WIDTH, top: 0 }])
     .jpeg({ quality: 90 })
     .toFile(outputPath);
