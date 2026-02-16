@@ -5,7 +5,7 @@ draft: false
 slug: s01e09-r-u-sirius
 season: 1
 episode: 9
-description: "In this episode, Shawn sits down with a legendary figure from the early days of digital culture, R.U. Sirius, exploring "
+description: "Mondo 2000 co-founder R.U. Sirius on the internet's broken promise, cypherpunk roots, and what we lost to commercialization."
 summary: "In this episode, Shawn sits down with a legendary figure from the early days of digital culture, R.U. Sirius, exploring the radical roots and transformative potential of the Internet. Our guest shares insights from his experience with pioneering publications like Mondo 2000, reflecting on the early ideals of user empowerment and decentralization. We delve into the evolution of the Internet from a space of individual freedom to one dominated by corporate interests, discussing the shifts in power dynamics and the impact of commercialization on the digital landscape. With a mix of optimism and caution, this episode offers a thought-provoking look at the past, present, and future of digital culture and individual agency."
 featured_image: "images/cover-art/s01e09.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---DEFAULT---44251c7b-cdfa-4a19-beb3-fbc426bb666d.mp3"

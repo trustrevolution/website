@@ -5,7 +5,7 @@ draft: false
 slug: s01e11-matt-o-dell
 season: 1
 episode: 11
-description: "Matt O'dell, Bitcoin OG and freedom tech advocate, joins Shawn to dissect trust in a world of surveillance and centraliz"
+description: "Bitcoin Park, OpenSats, Ten31. Matt Odell maps the past, present, and future of freedom tech."
 summary: |
   Matt O'dell, Bitcoin OG and freedom tech advocate, joins Shawn to dissect trust in a world of surveillance and centralized control. From Bitcoin’s role as a beacon of financial agency to Signal's strides in secure communication, O'dell unpacks the tools reshaping money, identity, and expression. As co-founder of Bitcoin Park, OpenSats, and Ten31 Ventures, and host of Rabbit Hole Recap and Citadel Dispatch, he shares a decade of insights on building privacy-first businesses and communities. Recorded June 16, 2025, amid global tensions, this episode explores why open protocols matter, what’s thriving in 2025, and how to navigate a trust-minimized future.
 

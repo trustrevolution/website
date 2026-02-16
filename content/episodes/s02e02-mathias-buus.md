@@ -5,7 +5,7 @@ draft: false
 slug: s02e02-mathias-buus
 season: 2
 episode: 2
-description: "Mathias Buus, CEO of Holepunch, on revolutionizing the internet with peer-to-peer technologies."
+description: "Holepunch CEO Mathias Buus built 1,000+ NPM modules and Keet. His case for a peer-to-peer internet that needs no servers."
 summary: "Mathias Buus, CEO of Holepunch, discusses revolutionizing the internet with peer-to-peer technologies like Pear Runtime, Hypercore, and Keet. He shares his journey from math student to open-source powerhouse with over 1,000 NPM modules, driven by empowering individuals. They explore centralized platforms' flaws—data control, censorship, and erosion of sovereignty—and how P2P technologies offer a trustless alternative. Mathias addresses Keet's partial open-sourcing controversy and lays out a vision for a world of borderless, sovereign communication via owned devices. For businesses, the path forward starts with deprogramming centralization assumptions, experimenting with hybrid models, and building sustainable decentralized systems."
 featured_image: "images/cover-art/s02e02.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---DEFAULT---cac7ac7a-7f94-4de0-ad53-7f5ffb43d615.mp3"

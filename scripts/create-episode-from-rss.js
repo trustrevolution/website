@@ -6,6 +6,7 @@ const FOUNTAIN_RSS_URL = 'https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF';
 const FOUNTAIN_SHOW_URL = 'https://fountain.fm/show/Mk0fJte5vrfiDQ5RyCZd';
 const CONTENT_DIR = path.join(__dirname, '../content/episodes');
 const COVER_ART_DIR = path.join(__dirname, '../assets/images/cover-art');
+const TRANSCRIPT_DIR = path.join(__dirname, '../data/transcripts');
 
 // Check for API key - timestamp generation is optional
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -213,7 +214,7 @@ async function generateFromTranscript(srtContent, episodeTitle, guestName, summa
   const truncatedTranscript = transcriptText.slice(0, 100000);
   
   const prompt = `You are generating metadata for a podcast episode. You need to create:
-1. A punchy 1-2 sentence description/hook (max 120 chars)
+1. An SEO meta description (130-155 characters)
 2. 10-12 chapter timestamps
 
 Episode: "${episodeTitle}"
@@ -224,24 +225,27 @@ ${summary}
 
 ---
 
-TASK 1: DESCRIPTION (1-2 short sentences, STRICTLY under 120 characters)
-Write a punchy hook for the homepage feature. This is NOT SEO description--it's a teaser.
+TASK 1: META DESCRIPTION (1-2 sentences, target 130-155 characters)
+Write an SEO meta description that works as both a search result snippet and a compelling hook.
 
 CRITICAL RULES:
-- For guest episodes, MUST include the guest's name
-- Use ONLY facts from the summary/bio—never invent timeframes or credentials
+- Target 130-155 characters (Google truncates at ~155)
+- For guest episodes, MUST include the guest's name and a specific credential or detail
+- Use ONLY facts from the summary/bio--never invent timeframes or credentials
 - Focus on what makes THIS guest's perspective unique
+- Must be a complete thought--no truncated sentences
 
-Good examples (note: guest name included, under 120 chars):
-- "Aaron van Wirdum spent a decade documenting Bitcoin's origin story—and warns the fight isn't over." (99 chars)
-- "Pip built reputation systems that survive platform bans. One account deletion changes everything." (97 chars)
-- "Lyn Alden manages billions. She says the monetary system is breaking." (70 chars)
+Good examples (note: guest name + credential, 130-155 chars):
+- "Former Goldman Sachs risk manager Trey Sellers on why the wealth you think you control is just a ledger entry someone else manages." (131 chars)
+- "Holepunch CEO Mathias Buus built 1,000+ NPM modules and Keet. His case for a peer-to-peer internet that needs no servers." (122 chars)
+- "Author Aaron van Wirdum documents the decades-long war to build money governments can't control--and warns the fight isn't over." (128 chars)
 
 Bad examples:
-- "The cypherpunks built digital cash..." (no guest name—too generic)
+- "The cypherpunks built digital cash..." (no guest name--too generic)
 - "In this episode we discuss..." (boring, passive)
 - "John shares his thoughts on..." (passive, weak verb)
-- Anything over 120 characters
+- Anything over 155 characters
+- Anything under 100 characters (wastes SERP real estate)
 
 ---
 
@@ -317,11 +321,11 @@ ${truncatedTranscript}`;
           
           const result = JSON.parse(jsonMatch[0]);
           
-          // Enforce max 120 chars for homepage hook
+          // Enforce max 155 chars for SEO meta description
           let description = result.description || '';
-          if (description.length > 120) {
+          if (description.length > 155) {
             console.log(`  Warning: AI description too long (${description.length} chars), truncating intelligently`);
-            description = truncateDescription(description, 120);
+            description = truncateDescription(description, 155);
           }
           
           resolve({
@@ -867,6 +871,69 @@ key_quote:
 }
 
 /**
+ * Parse SRT content into paragraphs for transcript embedding (groups every 60s)
+ */
+function srtToParagraphs(srtContent) {
+  const blocks = srtContent.trim().split(/\n\n+/);
+  const segments = [];
+
+  for (const block of blocks) {
+    const lines = block.trim().split('\n');
+    if (lines.length < 3) continue;
+    const timeMatch = lines[1].match(/(\d{2}):(\d{2}):(\d{2})/);
+    if (!timeMatch) continue;
+    const text = lines.slice(2).join(' ').replace(/<[^>]+>/g, '').trim();
+    if (!text) continue;
+    segments.push({
+      time: parseInt(timeMatch[1]) * 3600 + parseInt(timeMatch[2]) * 60 + parseInt(timeMatch[3]),
+      text
+    });
+  }
+
+  const paragraphs = [];
+  let current = [];
+  let startTime = 0;
+
+  for (const seg of segments) {
+    if (current.length > 0 && seg.time - startTime >= 60) {
+      paragraphs.push(current.join(' '));
+      current = [];
+      startTime = seg.time;
+    }
+    if (current.length === 0) startTime = seg.time;
+    current.push(seg.text);
+  }
+  if (current.length > 0) paragraphs.push(current.join(' '));
+
+  return paragraphs;
+}
+
+/**
+ * Download and save transcript as JSON for Hugo data directory
+ */
+async function downloadTranscript(transcriptUrl, slug) {
+  if (!transcriptUrl) return false;
+
+  const transcriptPath = path.join(TRANSCRIPT_DIR, `${slug}.json`);
+  if (fs.existsSync(transcriptPath)) return true;
+
+  try {
+    const srtContent = await fetchUrl(transcriptUrl);
+    const paragraphs = srtToParagraphs(srtContent);
+    if (paragraphs.length < 3) {
+      console.log(`  Transcript too short (${paragraphs.length} paragraphs), skipping`);
+      return false;
+    }
+    fs.writeFileSync(transcriptPath, JSON.stringify({ paragraphs }));
+    console.log(`  Transcript saved (${paragraphs.length} paragraphs)`);
+    return true;
+  } catch (err) {
+    console.log(`  Failed to download transcript: ${err.message}`);
+    return false;
+  }
+}
+
+/**
  * Main
  */
 async function main() {
@@ -893,6 +960,7 @@ async function main() {
   // Ensure directories exist
   if (!fs.existsSync(CONTENT_DIR)) fs.mkdirSync(CONTENT_DIR, { recursive: true });
   if (!fs.existsSync(COVER_ART_DIR)) fs.mkdirSync(COVER_ART_DIR, { recursive: true });
+  if (!fs.existsSync(TRANSCRIPT_DIR)) fs.mkdirSync(TRANSCRIPT_DIR, { recursive: true });
 
   let created = 0;
   const issues = []; // Track issues for GitHub issue creation
@@ -952,7 +1020,7 @@ async function main() {
     
     // Check if first sentence of summary would work as description
     const firstSentence = (content.summary || '').split(/(?<=[.!?]['"]?['"]?)\s+/)[0] || '';
-    const needsDescriptionFromAI = !firstSentence || firstSentence.length > 120;
+    const needsDescriptionFromAI = !firstSentence || firstSentence.length > 155 || firstSentence.length < 100;
     
     // Call AI if we need timestamps OR description, and have transcript + API key
     if ((timestamps.length === 0 || needsDescriptionFromAI) && item.transcriptUrl && ANTHROPIC_API_KEY && GENERATE_TIMESTAMPS) {
@@ -1018,11 +1086,11 @@ async function main() {
     let description = generatedDescription ? normalizeText(generatedDescription) : '';
     if (!description && summary) {
       const firstSentence = summary.split(/(?<=[.!?]["']?["']?)\s+/)[0];
-      if (firstSentence && firstSentence.length <= 120) {
+      if (firstSentence && firstSentence.length <= 155 && firstSentence.length >= 100) {
         description = normalizeText(firstSentence);
         console.log(`  Using first sentence for description (${description.length} chars)`);
       } else {
-        console.log(`  Description needs manual review (first sentence too long)`);
+        console.log(`  Description needs manual review (first sentence ${firstSentence ? firstSentence.length + ' chars' : 'missing'})`);
       }
     }
 
@@ -1057,6 +1125,12 @@ async function main() {
     // Write file
     const filePath = path.join(CONTENT_DIR, `${slug}.md`);
     fs.writeFileSync(filePath, markdown);
+
+    // Download transcript for Hugo data directory (SEO: embedded on episode page)
+    if (item.transcriptUrl) {
+      await downloadTranscript(item.transcriptUrl, slug);
+    }
+
     // Track if description is empty (needs manual review)
     if (!description) {
       issues.push({
@@ -1074,7 +1148,8 @@ async function main() {
     console.log(`    - video_url: ${item.videoUrl ? 'yes' : 'no'}`);
     console.log(`    - transcript_url: ${item.transcriptUrl ? 'yes' : 'no'}`);
     console.log(`    - fountain_url: ${fountainUrl ? 'yes' : 'NO (needs manual mapping)'}`);
-    console.log(`    - description: ${description ? 'yes' : 'NO (needs manual review)'}`);
+    console.log(`    - description: ${description ? `yes (${description.length} chars)` : 'NO (needs manual review)'}`);
+    console.log(`    - transcript: ${fs.existsSync(path.join(TRANSCRIPT_DIR, `${slug}.json`)) ? 'yes' : 'no'}`);
 
     created++;
   }

@@ -5,7 +5,7 @@ draft: false
 slug: s02e07-rob-brinded
 season: 2
 episode: 7
-description: "Rob Brinded, author of Glitch: The Hidden Code Running Your Life (And How to Debug It) , joins Shawn to reveal how child"
+description: "Your mind runs a four-year-old's survival code. Rob Brinded, author of Glitch, maps the operating system behind trust."
 summary: |
   What if the mind you trust is running a four-year-old's survival code?
 

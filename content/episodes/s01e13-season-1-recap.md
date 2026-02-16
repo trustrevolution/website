@@ -5,7 +5,7 @@ draft: false
 slug: s01e13-season-1-recap
 season: 1
 episode: 13
-description: "In this solo episode, Shawn reflects on the first 12 episodes of Trust Revolution, expressing gratitude to listeners and"
+description: "Twelve conversations. One thread: trust is breaking, and the builders aren't waiting for permission to fix it."
 summary: |
   In this solo episode, Shawn reflects on the first 12 episodes of Trust Revolution, expressing gratitude to listeners and sharing insights gained from conversations with various builders, thinkers, and leaders. The podcast aims to explore the erosion of trust in traditional institutions and the potential of decentralization and technology, such as Bitcoin, to restore personal sovereignty. Shawn discusses the importance of reaching those curious about alternative systems and highlights key themes like the diminishing trust in centralized entities and the promise of decentralized solutions.
 
@@ -18,11 +18,11 @@ transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwix
 fountain_url: "https://fountain.fm/episode/Oe8qt5xc2XkJYhvZtxhC"
 timestamps:
 - time: "00:03"
-  topic: "Bitcoin discussion"
+  topic: "Reflecting on twelve conversations and what they revealed"
 - time: "05:10"
-  topic: "Bitcoin discussion"
+  topic: "The thread connecting every guest: trust erosion in centralized systems"
 - time: "10:12"
-  topic: "Bitcoin discussion"
+  topic: "Bitcoin, decentralization, and the builders creating alternatives"
 - time: "15:14"
-  topic: "Trust dynamics"
+  topic: "What's ahead for Season 2 and the listeners making this possible"
 ---

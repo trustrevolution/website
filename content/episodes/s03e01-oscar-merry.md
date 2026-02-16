@@ -5,7 +5,7 @@ draft: false
 slug: s03e01-oscar-merry
 season: 3
 episode: 1
-description: "Exclusivity cost him his reach. Oscar built the open alternative."
+description: "Fountain CEO Oscar Merry on what Joe Rogan lost for $100M and why open podcasting beats platform exclusivity."
 summary: |
   “If you choose to go exclusive on Spotify, you're essentially saying to 70% of your existing and potential audience, ‘Sorry, you can't listen anymore.’” Oscar Merry watched Joe Rogan lose influence despite a $100 million payday—and built Fountain to prove there's a better way.
 featured_image: "images/cover-art/s03e01.jpg"

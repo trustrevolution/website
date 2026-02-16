@@ -5,7 +5,7 @@ draft: false
 slug: s01e01-john-robb
 season: 1
 episode: 1
-description: "What happens when trust starts to crumble under the weight of AI, decentralized networks, and political swarms?"
+description: "Former Special Ops officer turned tech strategist John Robb on AI swarms, decentralized networks, and why institutional trust is fragmenting."
 summary: |
   What happens when trust—the glue holding society together—starts to crumble under the weight of AI, decentralized networks, and political swarms? In the premier episode of Trust Revolution, host Shawn Yeager sits down with John Robb, a former Special Ops officer turned tech visionary, to explore this question. With a career spanning the battlefield and Silicon Valley, Robb offers sharp insights into how "red" and "blue" network swarms are reshaping U.S. politics, how AI-driven augmented reality might disconnect us from reality, and how social AIs could spark the next economic revolution. From the fertility crisis to the future of decentralized systems, this conversation unpacks the challenges and opportunities in a world where trust is increasingly fragile.
 

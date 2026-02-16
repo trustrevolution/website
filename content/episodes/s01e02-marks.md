@@ -5,7 +5,7 @@ draft: false
 slug: s01e02-marks
 season: 1
 episode: 2
-description: "Can your private data be as secure as your Bitcoin?"
+description: "Marks, co-founder of OpenSecret, on secure enclaves that protect your data the way Bitcoin protects your money."
 summary: |
   Can your private data be as secure as your Bitcoin? In this thought-provoking episode of Trust Revolution, host Shawn Yeager sits down with Marks, co-founder and CEO of OpenSecret and Maple AI, to explore the future of digital trust. Marks unpacks how secure enclaves are reshaping privacy, evolving from the privacy-first Mutiny Wallet to a platform that safeguards user data and shields businesses from costly liabilities. This conversation illuminates a new frontier where AI agents and apps prioritize your security, delivering an encrypted, seamless experience that could redefine how we protect what matters most.
 

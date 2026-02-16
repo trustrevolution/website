@@ -5,7 +5,7 @@ draft: false
 slug: s02e05-live-from-imagine-if-2025
 season: 2
 episode: 5
-description: "This week we feature the “Open Communities in the Age of Control” panel, recorded live on September 20th at the Imagine "
+description: "Live panel from Imagine IF Nashville. Shawn, Matt Odell, and Derek Ross on open communities in the age of control."
 summary: |
   This week we feature the “Open Communities in the Age of Control” panel, recorded live on September 20th at the Imagine IF conference in Nashville. The discussion dives into the erosion of trust in a digital age dominated by surveillance, opaque algorithms, and centralized platforms.
 

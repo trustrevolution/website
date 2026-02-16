@@ -5,7 +5,7 @@ draft: false
 slug: s02e03-jeffrey-tucker
 season: 2
 episode: 3
-description: "Jeffrey Tucker, founder of the Brownstone Institute and Austrian economics advocate, joins Shawn to dissect the COVID-19"
+description: "Brownstone Institute founder Jeffrey Tucker on how COVID exposed the total state and broke institutional trust for good."
 summary: |
   Jeffrey Tucker, founder of the Brownstone Institute and Austrian economics advocate, joins Shawn to dissect the COVID-19 response's devastating impact on institutional trust and explore paths to personal sovereignty. This conversation unveils how the pandemic revealed the “total state” pervading all aspects of society, why libertarian institutions failed during the crisis, and how Austrian economics principles point toward reclaiming individual freedom through timeless values and critical thinking.
 featured_image: "images/cover-art/s02e03.jpg"

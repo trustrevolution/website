@@ -5,7 +5,7 @@ draft: false
 slug: s02e15-christian-keroles
 season: 2
 episode: 15
-description: One billion people live in democracies with stable currency and property rights.
+description: "Only one billion people have stable currency and property rights. CK on why HRF treats Bitcoin as essential human rights infrastructure."
 summary: |
   “It's not enough for me to be taken care of if everyone else on the planet is living in a digital gulag.” CK explains why HRF treats Bitcoin as essential infrastructure for human rights—and why dictators keep failing to build alternatives that work.
 featured_image: "images/cover-art/s02e15.jpg"

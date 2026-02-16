@@ -20,6 +20,10 @@
       <div class="episode-main fade-in delay-1">
         <header class="episode-header">
           <h1>{{ $cleanTitle }}</h1>
+          <div class="episode-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ with .Params.guest }}· with {{ .name }}{{ end }}
+          </div>
         </header>
 
         {{ with .Params.summary }}
@@ -71,6 +75,8 @@
         {{ end }}
 
         {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
+
+        {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}
 
         {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
       </div>

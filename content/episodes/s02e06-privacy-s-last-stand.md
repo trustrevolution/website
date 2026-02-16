@@ -5,7 +5,7 @@ draft: false
 slug: s02e06-privacy-s-last-stand
 season: 2
 episode: 6
-description: September 2025 marked a critical turning point in the surveillance economy. Disney paid $10 million for illegally collec
+description: "Disney fined. Google penalized. Governments pushing digital IDs. The surveillance trap is closing. Here's what's left."
 summary: |
   September 2025 marked a critical turning point in the surveillance economy. Disney paid $10 million for illegally collecting children's data. Google faced $425.7 million in penalties for nearly a decade of smartphone tracking. Microsoft cut off a military unit for using their tools to surveil civilians. While corporations face mounting fines and compliance nightmares, governments worldwide are accelerating digital ID mandates—offering a false choice between corporate surveillance and state control. From cryptographic proofs to peer-to-peer networks, the alternatives exist right now. The question is whether we'll adopt them before the surveillance trap closes.
 featured_image: "images/cover-art/s02e06.jpg"

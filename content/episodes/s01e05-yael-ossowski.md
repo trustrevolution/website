@@ -5,7 +5,7 @@ draft: false
 slug: s01e05-yael-ossowski
 season: 1
 episode: 5
-description: "In this episode of Trust Revolution, Shawn welcomes Yaël Ossowski, a consumer advocate and Bitcoin policy expert, for a "
+description: "From Canada to Austria, Yaël Ossowski has lived under enough governments to know when the balance of power shifts."
 summary: "In this episode of Trust Revolution, Shawn welcomes Yaël Ossowski, a consumer advocate and Bitcoin policy expert, for a candid discussion on the shifting balance of power between individuals and institutions. Yaël shares his global perspective, shaped by living under multiple governments, from Canada to the U.S. to Austria. As Deputy Director of the Consumer Choice Center and a Fellow at the Bitcoin Policy Institute, he unpacks how overreach during the pandemic exposed institutional distrust, why agencies like the CFPB often hinder innovation, and how Bitcoin and decentralized technologies empower individuals to reclaim control. From vaping to stablecoins, they explore how consumer choice and sound money are fueling consumer empowerment."
 featured_image: "images/cover-art/s01e05.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---DEFAULT---09f35565-4336-459d-bd12-14bc13e8fd75.mp3"

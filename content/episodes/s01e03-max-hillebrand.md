@@ -5,7 +5,7 @@ draft: false
 slug: s01e03-max-hillebrand
 season: 1
 episode: 3
-description: From working inside the banking system to living fully bankless.
+description: "Max Hillebrand went from working inside the banking system to living fully bankless. A blueprint for peer-to-peer economics."
 summary: |
   From working inside the banking system to living fully bankless.
 featured_image: "images/cover-art/s01e03.jpg"

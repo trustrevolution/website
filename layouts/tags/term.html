@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section" data-pagefind-body>
+  <div class="container">
+    {{ partial "breadcrumb.html" (dict "href" "/tags/" "label" "All Topics") }}
+    {{ partial "section-header.html" (dict "title" .Title "subtitle" (printf "%d episode%s" (len .Pages) (cond (gt (len .Pages) 1) "s" ""))) }}
+
+    <div class="episode-grid fade-in delay-1">
+      {{ range .Pages }}
+      {{ partial "episode-card.html" (dict "RelPermalink" .RelPermalink "Params" .Params "Title" .Title "headingLevel" "h2") }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -5,7 +5,7 @@ draft: false
 slug: s01e10-stephen-pollock
 season: 1
 episode: 10
-description: "Stephen Pollock, SVP of Development at the Bitcoin Policy Institute (BPI), joins Shawn to explore Bitcoin’s growing role"
+description: "Inside the Bitcoin Policy Institute. Stephen Pollock on getting Bitcoin to the White House and the fight for self-custody."
 summary: |
   Stephen Pollock, SVP of Development at the Bitcoin Policy Institute (BPI), joins Shawn to explore Bitcoin’s growing role in U.S. policy and statecraft. This discussion covers BPI’s mission to educate policymakers, the challenges of Washington’s political landscape, and the push for Bitcoin as a tool for freedom and national interest, including the Strategic Bitcoin Reserve.
 

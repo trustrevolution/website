@@ -5,7 +5,7 @@ draft: false
 slug: s02e01-nicholas-anthony
 season: 2
 episode: 1
-description: "Shawn Yeager kicks off Season 2 of Trust Revolution with Nick Anthony, policy analyst at the Cato Institute’s Center for"
+description: "Cato Institute policy analyst Nick Anthony tracks 139 CBDC programs worldwide. Most are surveillance tools."
 summary: |
   Shawn Yeager kicks off Season 2 of Trust Revolution with Nick Anthony, policy analyst at the Cato Institute’s Center for Monetary and Financial Alternatives and fellow at the Human Rights Foundation, leading their CBDC Tracker. They dive into the escalating risks of central bank digital currencies (CBDCs), which supercharge government surveillance beyond laws like the Bank Secrecy Act. Nick, author of Digital Currency or Digital Control, traces the 2019 CBDC surge to Facebook’s Libra and flags authoritarian regimes as frontrunners. Learn why financial privacy hangs by a thread and how Bitcoin could be the lifeline.
 featured_image: "images/cover-art/s02e01.jpg"

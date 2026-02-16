@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="index, follow">
   <meta name="apple-mobile-web-app-title" content="TrustRev">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if eq .Section "episodes" }}{{ .Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Unfiltered Conversations in Bitcoin and Beyond{{ else if eq .Section "episodes" }}{{ .Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="sitemap" type="application/xml" href="{{ "sitemap.xml" | absURL }}" title="Sitemap">

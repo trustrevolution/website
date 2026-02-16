@@ -5,7 +5,7 @@ draft: false
 slug: s01e07-fran
 season: 1
 episode: 7
-description: "In this Trust Revolution episode, Shawn Yeager and Fran, the Buenos Aires-based creator of Zapstore, explore the chokeho"
+description: "Apple and Google control what you can install. Fran built Zapstore on Nostr to break the chokehold."
 summary: |
   In this Trust Revolution episode, Shawn Yeager and Fran, the Buenos Aires-based creator of Zapstore, explore the chokehold of centralized app stores. Fran details how Apple and Google’s control stifles innovation and erodes trust, then unveils Zapstore, a Nostr-powered, decentralized solution with cryptographic security and social trust layers. This 65-minute conversation spans the frustrations of arbitrary curation to the promise of AI-driven “vibe-coded” apps, showing how decentralized systems can reclaim power for users and developers.
 featured_image: "images/cover-art/s01e07.jpg"

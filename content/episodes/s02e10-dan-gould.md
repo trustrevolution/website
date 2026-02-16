@@ -5,7 +5,7 @@ draft: false
 slug: s02e10-dan-gould
 season: 2
 episode: 10
-description: Dan Gould reveals how PayJoin breaks the core assumption that chain surveillance companies use to track Bitcoin users ac
+description: "PayJoin breaks chain surveillance and cuts fees 25%. Dan Gould on making Bitcoin privacy an economic edge."
 summary: |
   “Bitcoin exists to remove intermediaries from the movement of money online. Without privacy, if someone can see how money is moving, they don't like someone you paid, they can discriminate based on that.” — Dan Gould
 

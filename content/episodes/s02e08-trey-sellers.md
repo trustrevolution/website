@@ -5,7 +5,7 @@ draft: false
 slug: s02e08-trey-sellers
 season: 2
 episode: 8
-description: "Trust is breaking where it matters most: at your bank."
+description: "Former Goldman Sachs risk manager Trey Sellers on why the wealth you think you control is just a ledger entry someone else manages."
 summary: |
   "If you go into a local community bank and ask for $50,000 in cash, you're going to get a lot of questions—and very likely they're going to say, 'Come back in a week, we need to order that.' The cash doesn't exist." Former Goldman Sachs risk manager Trey Sellers spent 15 years inside the machine before realizing the wealth you think you control is just a ledger entry someone else manages.
 featured_image: "images/cover-art/s02e08.jpg"

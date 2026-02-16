@@ -5,7 +5,7 @@ draft: false
 slug: s01e04-david-strayhorn
 season: 1
 episode: 4
-description: "In this episode of Trust Revolution , Shawn welcomes Dr. David Strayhorn, a neurologist, electrical engineer, and freedo"
+description: "A neurologist builds GrapeRank on Nostr. Decentralized trust scored like PageRank, but personal."
 summary: "In this episode of Trust Revolution, Shawn welcomes Dr. David Strayhorn, a neurologist, electrical engineer, and freedom technologist, for a deep dive into Web of Trust. Recorded at Bitcoin Park in Nashville, David shares his journey from clinical practice to building Brainstorm, a personal Web of Trust relay on Nostr, and GrapeRank, an algorithm reimagining trust curation. Together, they explore how decentralized systems can empower individuals to control their data and trust networks, challenging centralized gatekeepers and reshaping how we find truth in a skeptical world."
 featured_image: "images/cover-art/s01e04.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UTo0XKMgs9yFltrrPa85/files/AUDIO---DEFAULT---e1bd0fa2-29be-4f5e-ac66-b6d8c8f553c7.mp3"

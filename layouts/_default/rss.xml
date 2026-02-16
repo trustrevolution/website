@@ -6,6 +6,16 @@
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
+{{- /* Filter to only episodes and essays on home feed */ -}}
+{{- if $.IsHome -}}
+{{- $filtered := slice -}}
+{{- range $pages -}}
+  {{- if or (eq .Section "episodes") (eq .Section "essays") -}}
+    {{- $filtered = $filtered | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages = $filtered -}}
+{{- end -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
@@ -32,7 +42,7 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <author>{{ $.Site.Params.author }}</author>
       <guid>{{ .Permalink }}</guid>
-      <description>{{ with .Params.description }}{{ . | html }}{{ else }}{{ .Summary | html }}{{ end }}</description>
+      <description>{{ with .Params.summary }}{{ . | plainify | html }}{{ else }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ .Summary | html }}{{ end }}{{ end }}</description>
       {{- with .Params.featured_image }}
       {{- $img := resources.Get . }}
       {{- with $img }}
