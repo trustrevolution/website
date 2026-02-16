@@ -1309,25 +1309,61 @@ blockquote cite {
   margin-bottom: 0;
 }
 
+.host-cta {
+  color: var(--text-secondary);
+}
+
 .host-content .profile-links {
   justify-content: center;
   margin-top: var(--spacing-md);
 }
 
-/* Connect Section */
-.about-connect {
+
+/* Credits Section */
+.about-credits {
   padding: var(--section-py) 0;
-  background: var(--bg-subtle);
-  border-top: var(--border-section) solid var(--text-black);
-  text-align: center;
+  background: var(--bg-black);
+  border-top: var(--border-section) solid var(--accent-orange);
 }
 
-.connect-layout p {
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-md);
+.credits-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
+.credit {
+  flex: 1;
+}
 
+.credit-role {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-inverse-dim);
+  margin-bottom: var(--spacing-3xs);
+}
+
+.credit-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  color: var(--text-inverse);
+  text-decoration: none;
+  margin-bottom: var(--spacing-2xs);
+  transition: color 0.2s;
+}
+
+.credit-name:hover {
+  color: var(--accent-orange);
+}
+
+.credit-note {
+  font-size: var(--font-size-sm);
+  color: var(--text-inverse-secondary);
+  line-height: var(--line-height-relaxed);
+}
 
 /* ============================================
    SUPPORT PAGE
@@ -2001,6 +2037,11 @@ input:focus-visible {
     height: var(--touch-target-lg);
     padding: 0 var(--spacing-lg);
     font-size: var(--font-size-lg);
+  }
+
+  .credits-layout {
+    flex-direction: row;
+    gap: var(--spacing-xl);
   }
 
   /* Support page */
