@@ -961,7 +961,7 @@ blockquote,
 
 .profile-links {
   display: flex;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   flex-wrap: wrap;
   margin-top: var(--spacing-sm);
 }
@@ -1176,8 +1176,7 @@ blockquote cite {
   color: var(--text-inverse-muted);
   margin: var(--spacing-sm) 0;
   max-width: var(--measure-narrow);
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
   text-wrap: balance;
 }
 
@@ -1213,6 +1212,10 @@ blockquote cite {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
+}
+
+.show-main {
+  text-align: left;
 }
 
 .show-lead {
@@ -1298,6 +1301,11 @@ blockquote cite {
   letter-spacing: var(--tracking-widest);
   color: var(--text-secondary);
   margin-bottom: var(--spacing-3xs);
+}
+
+.host-content p,
+.host-content .host-cta {
+  text-align: left;
 }
 
 .host-content p {
@@ -2126,6 +2134,10 @@ input:focus-visible {
     padding: 0 var(--spacing-md);
   }
 
+
+  .stat-value {
+    font-size: var(--font-size-xl);
+  }
 
   /* Guest grid: single column on small phones */
   .guest-grid {
