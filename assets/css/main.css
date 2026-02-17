@@ -524,7 +524,7 @@ blockquote,
 .episode-card h2,
 .episode-card h3 {
   font-size: var(--font-size-md);
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-tight);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
