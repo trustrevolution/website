@@ -496,7 +496,7 @@ function parseTitle(rssTitle) {
     return {
       guestName: pipeMatch[2].trim(),
       episodeTitle: pipeMatch[1].trim(),
-      fullTitle: `${pipeMatch[2].trim()} \u2014 ${pipeMatch[1].trim()}`,
+      fullTitle: pipeMatch[1].trim(),
       isGuest: true
     };
   }

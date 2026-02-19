@@ -1,5 +1,5 @@
 ---
-title: "Jesse Posner -- Your Money, Your Data, Your Mind"
+title: "Your Money, Your Data, Your Mind"
 date: 2026-02-19
 draft: false
 slug: s03e05-jesse-posner
