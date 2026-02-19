@@ -530,6 +530,7 @@ blockquote,
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-wrap: balance;
 }
 
 .episode-card:hover h2,
@@ -717,6 +718,7 @@ blockquote,
 .episode-header h1 {
   line-height: var(--line-height-tight);
   margin: 0;
+  text-wrap: balance;
 }
 
 .episode-meta {
@@ -1158,6 +1160,7 @@ blockquote cite {
   line-height: 1.1;
   margin: 0 0 var(--spacing-3xs);
   color: var(--text-inverse);
+  text-wrap: balance;
 }
 
 .latest-episode-link:hover .latest-episode-title {
