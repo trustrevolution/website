@@ -400,7 +400,7 @@ function normalizeText(text) {
     .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036""]/g, '"')  // all curly/fancy double quotes
     .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035'']/g, "'")  // all curly/fancy single quotes
     .replace(/[\u2026…]/g, '...')                               // ellipsis
-    .replace(/[\u2014\u2013\u2012—–-]/g, '--');                 // em-dash, en-dash, figure dash
+    .replace(/[\u2014\u2013\u2012—–]/g, '--');                   // em-dash, en-dash, figure dash
 }
 
 /**
@@ -463,34 +463,46 @@ function slugify(str) {
 }
 
 /**
- * Parse title: "S02E16 Pippellia – Reputation Without a Kill Switch"
- * Returns { season, episode, guestName, episodeTitle, fullTitle, isGuest }
+ * Parse title into components.
+ * Supports two formats:
+ *   Old: "S02E16 Pippellia – Reputation Without a Kill Switch"
+ *   New: "Your Money, Your Data, Your Mind | Jesse Posner"
+ * Season/episode numbers come from RSS tags, not the title.
+ * Returns { guestName, episodeTitle, fullTitle, isGuest }
  */
 function parseTitle(rssTitle) {
-  const prefixMatch = rssTitle.match(/^S(\d+)E(\d+)\s+(.+)$/i);
-  if (!prefixMatch) return null;
+  let remainder = rssTitle;
 
-  const season = parseInt(prefixMatch[1], 10);
-  const episode = parseInt(prefixMatch[2], 10);
-  const remainder = prefixMatch[3].trim();
+  // Strip S##E## prefix if present
+  const prefixMatch = rssTitle.match(/^S\d+E\d+\s+(.+)$/i);
+  if (prefixMatch) {
+    remainder = prefixMatch[1].trim();
+  }
 
-  // Guest episode: "Guest Name – Episode Title"
-  const guestMatch = remainder.match(/^(.+?)\s*[–—-]\s*(.+)$/);
-  if (guestMatch) {
+  // Old format guest episode: "Guest Name – Episode Title" (em-dash, en-dash, or hyphen)
+  const dashMatch = remainder.match(/^(.+?)\s*[–—]\s*(.+)$/);
+  if (dashMatch) {
     return {
-      season,
-      episode,
-      guestName: guestMatch[1].trim(),
-      episodeTitle: guestMatch[2].trim(),
-      fullTitle: remainder, // Keep "Guest Name – Episode Title"
+      guestName: dashMatch[1].trim(),
+      episodeTitle: dashMatch[2].trim(),
+      fullTitle: remainder,
+      isGuest: true
+    };
+  }
+
+  // New format guest episode: "Episode Title | Guest Name"
+  const pipeMatch = remainder.match(/^(.+?)\s*\|\s*(.+)$/);
+  if (pipeMatch) {
+    return {
+      guestName: pipeMatch[2].trim(),
+      episodeTitle: pipeMatch[1].trim(),
+      fullTitle: `${pipeMatch[2].trim()} \u2014 ${pipeMatch[1].trim()}`,
       isGuest: true
     };
   }
 
   // Solo episode
   return {
-    season,
-    episode,
     guestName: null,
     episodeTitle: remainder,
     fullTitle: remainder,
