@@ -1989,12 +1989,14 @@ input:focus-visible {
     grid-template-columns: var(--cover-size-lg) 1fr;
     gap: var(--spacing-xl);
     text-align: left;
-    align-items: center;
+    align-items: start;
   }
 
   .latest-episode-cover {
+    --heading-size: var(--font-size-2xl);
     max-width: none;
     margin: 0;
+    margin-top: var(--labeled-heading-offset);
   }
 
   .latest-episode-title {
