@@ -7,7 +7,7 @@ season: 3
 episode: 5
 description: "FROST creator Jesse Posner on why your hardware wallet leaks data, self-custody must include physical security, and your AI is the next target."
 summary: |
-  "If somebody gets control over your personal AI -- all your health data, all your financial data, all your emails, everything you've thought about -- they own you." Jesse Posner built FROST threshold signatures and shipped BitKey at Block. Now he's building Vora because he realized individual self-custody is still a LARP -- and the stakes are about to get much higher.
+  "If somebody gets control over your personal AI—all your health data, all your financial data, all your emails, everything you've thought about—they own you." Jesse Posner built FROST threshold signatures and shipped BitKey at Block. Now he's building Vora because he realized individual self-custody is still a LARP—and the stakes are about to get much higher.
 featured_image: "images/cover-art/s03e05.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---DEFAULT---c83dc858-4cc9-4033-a34d-7d5f08363fe5.mp4/ORIGINAL.mp3"
 video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---DEFAULT---c83dc858-4cc9-4033-a34d-7d5f08363fe5.mp4/playlist.m3u8"
@@ -16,7 +16,7 @@ transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2
 fountain_url: "https://fountain.fm/episode/cISlqMX36DhP6F4AW4G0"
 guest:
   name: "Jesse Posner"
-  bio: "Jesse Posner is CEO and co-founder of Vora, a startup building Bitcoin-grade self-custody for both digital assets and AI. A trained lawyer turned cryptographic engineer, Posner spent over four years at Coinbase on key management, then helped build BitKey at Block. He created the first BIP-340 compatible implementation of FROST (Flexible Round-Optimized Schnorr Threshold Signatures), supported by a Brink grant. His work sits at the intersection of cryptography, constitutional law, and physical security -- bringing an unusually broad lens to the question of individual sovereignty in the digital age."
+  bio: "Jesse Posner is CEO and co-founder of Vora, a startup building Bitcoin-grade self-custody for both digital assets and AI. A trained lawyer turned cryptographic engineer, Posner spent over four years at Coinbase on key management, then helped build BitKey at Block. He created the first BIP-340 compatible implementation of FROST (Flexible Round-Optimized Schnorr Threshold Signatures), supported by a Brink grant. His work sits at the intersection of cryptography, constitutional law, and physical security—bringing an unusually broad lens to the question of individual sovereignty in the digital age."
   social:
     nostr: "https://primal.net/jesseposner"
     twitter: "https://twitter.com/jesseposner"

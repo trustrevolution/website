@@ -5,9 +5,9 @@ draft: false
 slug: s03e07-roland-bewick
 season: 3
 episode: 7
-description: "Software developer Roland Bewick built tools letting AI agents custody Bitcoin and make payments--then taught his OpenClaw to spawn child agents that..."
+description: "Alby developer Roland Bewick built self-custodial Lightning for humans—then taught an AI agent to custody Bitcoin and spawn its own child agents."
 summary: |
-  "With 12 words, you can travel the world. Your money arrives in the country before you do. It cannot be taken from you." Roland Bewick builds the software that makes that sentence true--and just taught an AI agent to do the same thing.
+  "With 12 words, you can travel the world. Your money arrives in the country before you do. It cannot be taken from you." Roland Bewick builds the software that makes that sentence true—and just taught an AI agent to do the same thing.
 featured_image: "images/cover-art/s03e07.jpg"
 audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---DEFAULT---171d3828-e57a-4446-89f4-6a9b7eb956dc.mp4/ORIGINAL.mp3"
 video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---DEFAULT---171d3828-e57a-4446-89f4-6a9b7eb956dc.mp4/playlist.m3u8"
@@ -16,7 +16,7 @@ transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHps
 fountain_url: ""
 guest:
   name: "Roland Bewick"
-  bio: "Roland Bewick is a core developer at Alby, where he leads development of Alby Hub--an open-source, self-custodial Lightning node that lets users connect to any application through Nostr Wallet Connect. Originally from New Zealand and currently based in Thailand, Roland started at Alby in early 2023 after winning the Legends of Lightning hackathon with Lightsats, a Bitcoin onboarding tool. He also created Bitcoin Connect and recently built the first documented autonomous agent onboarding system using Bitcoin Lightning for machine-to-machine payments."
+  bio: "Roland Bewick is a core developer at Alby, where he leads development of Alby Hub—an open-source, self-custodial Lightning node that lets users connect to any application through Nostr Wallet Connect. Originally from New Zealand and currently based in Thailand, Roland started at Alby in early 2023 after winning the Legends of Lightning hackathon with Lightsats, a Bitcoin onboarding tool. He also created Bitcoin Connect and recently built the first documented autonomous agent onboarding system using Bitcoin Lightning for machine-to-machine payments."
   social:
     twitter: "https://twitter.com/rolznz"
     github: "https://github.com/rolznz"
@@ -31,23 +31,23 @@ timestamps:
 - time: "04:30"
   topic: "How Nostr Wallet Connect emerged from a simple zap experiment"
 - time: "08:07"
-  topic: "NWC as the USB-C of Lightning--one protocol for every wallet and app"
+  topic: "NWC as the USB-C of Lightning—one protocol for every wallet and app"
 - time: "11:03"
   topic: "Why Alby didn't just offer both custodial and self-custodial options"
 - time: "16:41"
-  topic: "What Alby Hub gives users that custodial wallets can't--and what breaks without it"
+  topic: "What Alby Hub gives users that custodial wallets can't—and what breaks without it"
 - time: "25:35"
   topic: "The real UX gap between self-custody and Cash App"
 - time: "32:07"
   topic: "Why AI agents should use Bitcoin instead of giving them your credit card"
 - time: "36:04"
-  topic: "Roland's autonomous agent onboarding project--an AI spawning its own child agent"
+  topic: "Roland's autonomous agent onboarding project—an AI spawning its own child agent"
 - time: "46:20"
   topic: "How Bitcoin fits into the AI disruption and why permissionless rails matter"
 - time: "54:01"
   topic: "First steps: taking Bitcoin off exchanges and becoming an AI builder, not just a consumer"
 - time: "59:16"
-  topic: "Alby's NWC Faucet--play money for agents that lets them test real payment flows"
+  topic: "Alby's NWC Faucet—play money for agents that lets them test real payment flows"
 resources:
 - name: "Alby Hub"
   url: "https://github.com/getAlby/hub"

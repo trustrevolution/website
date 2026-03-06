@@ -393,14 +393,15 @@ function stripHtml(html) {
 }
 
 /**
- * Normalize text - convert curly quotes/apostrophes to straight
+ * Normalize text - standardize quotes and convert double hyphens to em dashes
  */
 function normalizeText(text) {
   return text
-    .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036""]/g, '"')  // all curly/fancy double quotes
-    .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035'']/g, "'")  // all curly/fancy single quotes
-    .replace(/[\u2026…]/g, '...')                               // ellipsis
-    .replace(/[\u2014\u2013\u2012—–]/g, '--');                   // em-dash, en-dash, figure dash
+    .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036\u201A""]/g, '"')  // curly/fancy double quotes → straight
+    .replace(/[\u2018\u2019\u201B\u2032\u2035'']/g, "'")              // curly/fancy single quotes → straight
+    .replace(/[\u2026…]/g, '...')                                      // ellipsis → three dots
+    .replace(/[\u2013\u2012–]/g, '—')                                  // en-dash, figure dash → em dash
+    .replace(/\s--\s/g, '—');                                          // space-surrounded -- → em dash
 }
 
 /**
