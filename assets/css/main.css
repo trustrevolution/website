@@ -98,6 +98,10 @@
   --border-subtle: 2px;
   --border-accent: 6px;
 
+  /* Guest headshot sizes */
+  --guest-headshot: 150px;
+  --guest-card-headshot: 80px;
+
   /* Touch targets */
   --touch-target: 44px;
   --touch-target-lg: 56px;
@@ -127,6 +131,7 @@
 
   /* Form widths */
   --form-max-width: 400px;
+  --form-max-width-wide: 600px;
 
   /* Component sizes */
   --cover-size-xs: 100px;
@@ -228,8 +233,6 @@ img {
 .container-narrow {
   max-width: var(--max-width-narrow);
 }
-
-
 
 /* ============================================
    HEADER — Mobile overlay nav as base
@@ -797,12 +800,12 @@ blockquote,
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
 }
 
 .transcript-disclosure summary:hover .transcript-toggle-hint {
-  color: var(--accent-primary);
+  color: var(--accent-orange);
 }
 
 .transcript-disclosure[open] .transcript-toggle-hint {
@@ -826,17 +829,17 @@ blockquote,
   padding: 0;
   background: none;
   border: none;
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: var(--font-size-sm);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--tracking-wide);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .transcript-collapse:hover {
-  color: var(--accent-primary);
+  color: var(--accent-orange);
 }
 
 .timestamps-list {
@@ -932,8 +935,8 @@ blockquote,
 
 .guest-bio .guest-headshot img {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: var(--guest-headshot);
+  height: var(--guest-headshot);
   object-fit: cover;
   border: var(--border-subtle) solid var(--border-heavy);
 }
@@ -958,8 +961,6 @@ blockquote,
 .guest-bio .guest-headshot + p {
   margin-top: -0.35em;
 }
-
-
 
 .profile-links {
   display: flex;
@@ -999,7 +1000,7 @@ blockquote,
   padding: 0 var(--spacing-md);
   font-family: var(--font-display);
   font-size: var(--font-size-base);
-  letter-spacing: 0.03em;
+  letter-spacing: var(--tracking-normal);
   border-width: var(--border-component);
 }
 
@@ -1407,7 +1408,7 @@ blockquote cite {
   .philosophy-emphasis {
     font-size: var(--font-size-2xl);
   }
-  
+
   .philosophy-emphasis span {
     display: inline;
   }
@@ -1554,8 +1555,8 @@ blockquote cite {
 
 .guest-card-headshot img {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: var(--guest-card-headshot);
+  height: var(--guest-card-headshot);
   object-fit: cover;
   border: var(--border-subtle) solid var(--border-heavy);
 }
@@ -1645,12 +1646,19 @@ blockquote cite {
 
 /*
  * Content animation system
- * 
+ *
  * Apply .fade-in to CONTENT elements, not section containers.
  * Section backgrounds remain visible; only inner content animates.
  * Use delay classes or --delay custom property for staggering.
+ * Elements start hidden and animate when .is-visible is added
+ * by the intersection observer (or immediately if JS is unavailable).
  */
 .fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.fade-in.is-visible {
   animation: fadeIn 0.4s ease-out both;
   animation-delay: calc(var(--delay, 0) * 0.1s);
 }
@@ -1713,7 +1721,14 @@ input:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  .fade-in { animation: none; opacity: 1; }
+  .fade-in { animation: none; opacity: 1; transform: none; }
+}
+
+/* Fallback: show content if JS is unavailable */
+noscript + main .fade-in,
+.no-js .fade-in {
+  opacity: 1;
+  transform: none;
 }
 
 /* ============================================
@@ -1725,6 +1740,10 @@ input:focus-visible {
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 32px;
+
+    /* Guest headshot sizes — desktop */
+    --guest-headshot: 180px;
+    --guest-card-headshot: 100px;
 
     /* Button padding — desktop */
     --btn-padding-y-sm: 12px;
@@ -1865,7 +1884,7 @@ input:focus-visible {
   .email-signup-form {
     flex-direction: row;
     gap: 0;
-    max-width: 600px;
+    max-width: var(--form-max-width-wide);
   }
 
   .email-signup-form .form-group { flex: 1; }
@@ -1940,13 +1959,13 @@ input:focus-visible {
   }
 
   .guest-bio .guest-headshot img {
-    width: 180px;
-    height: 180px;
+    width: var(--guest-headshot);
+    height: var(--guest-headshot);
   }
 
   .guest-card-headshot img {
-    width: 100px;
-    height: 100px;
+    width: var(--guest-card-headshot);
+    height: var(--guest-card-headshot);
   }
 
   .guest-term-bio { margin-bottom: var(--spacing-content); }
@@ -2117,6 +2136,10 @@ input:focus-visible {
     --cover-size-sm: 100px;
     --cover-size-lg: 180px;
 
+    /* Guest headshot sizes — small phones */
+    --guest-headshot: 100px;
+    --guest-card-headshot: 70px;
+
     --shadow-sm: 3px;
     --shadow-md: 4px;
     --shadow-lg: 6px;
@@ -2156,14 +2179,14 @@ input:focus-visible {
   }
 
   .guest-bio .guest-headshot img {
-    width: 100px;
-    height: 100px;
+    width: var(--guest-headshot);
+    height: var(--guest-headshot);
   }
 
   /* Guest cards: smaller headshot on small screens */
   .guest-card-headshot img {
-    width: 70px;
-    height: 70px;
+    width: var(--guest-card-headshot);
+    height: var(--guest-card-headshot);
   }
 
   /* Episode card image: smaller on narrow screens */
@@ -2611,10 +2634,6 @@ input:focus-visible {
 
   .builders-action {
     font-size: var(--font-size-2xl);
-  }
-
-  .cta-text {
-    font-size: var(--font-size-3xl);
   }
 
   .cta-text {

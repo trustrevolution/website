@@ -87,14 +87,18 @@
 
   function closeSearch() {
     if (!state.isOpen) return;
-    
+
     overlay.classList.remove('is-open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     state.isOpen = false;
-    
+
     stopObserver();
     state.selectedIndex = -1;
+
+    // Restore focus to trigger
+    var trigger = document.querySelector('.search-trigger');
+    if (trigger) trigger.focus();
   }
 
   // Get all search results
@@ -193,6 +197,23 @@
     if (e.target === overlay) closeSearch();
   });
 
+  // Focus trap within search overlay
+  function handleFocusTrap(e) {
+    if (!state.isOpen || e.key !== 'Tab') return;
+    var focusable = overlay.querySelectorAll('input, button, a[href], [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   // Keyboard navigation
   document.addEventListener('keydown', function(e) {
     if (e.key === '/') {
@@ -203,6 +224,8 @@
       handleArrowNavigation(e);
     } else if (e.key === 'Enter') {
       handleEnterKey(e);
+    } else if (e.key === 'Tab') {
+      handleFocusTrap(e);
     }
   });
 })();

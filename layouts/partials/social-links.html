@@ -26,15 +26,15 @@
 
 {{- if eq $format "map" -}}
 <div class="profile-links">
-    {{ with $links.nostr }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}nostr:{{ . }}{{ end }}" aria-label="Follow on Nostr">Nostr</a>{{ end }}
-    {{ with $links.twitter }}<a href="{{ . }}" aria-label="Follow on X">X</a>{{ end }}
-    {{ with $links.linkedin }}<a href="{{ . }}" aria-label="Connect on LinkedIn">LinkedIn</a>{{ end }}
-    {{ with $links.substack }}<a href="{{ . }}" aria-label="Subscribe on Substack">Substack</a>{{ end }}
-    {{ with $links.github }}<a href="{{ . }}" aria-label="View on GitHub">GitHub</a>{{ end }}
-    {{ with $links.website }}<a href="{{ . }}" aria-label="Visit website">Website</a>{{ end }}
+    {{ with $links.nostr }}<a href="{{ if hasPrefix . "http" }}{{ . }}{{ else }}nostr:{{ . }}{{ end }}" target="_blank" rel="noopener" aria-label="Follow on Nostr">Nostr</a>{{ end }}
+    {{ with $links.twitter }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Follow on X">X</a>{{ end }}
+    {{ with $links.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">LinkedIn</a>{{ end }}
+    {{ with $links.substack }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Subscribe on Substack">Substack</a>{{ end }}
+    {{ with $links.github }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="View on GitHub">GitHub</a>{{ end }}
+    {{ with $links.website }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Visit website">Website</a>{{ end }}
   </div>
 {{- else -}}
 <div class="profile-links">
-    {{ range $links }}<a href="{{ .url }}" aria-label="Visit {{ .label }}">{{ .label }}</a>{{ end }}
+    {{ range $links }}<a href="{{ .url }}" target="_blank" rel="noopener" aria-label="Visit {{ .label }}">{{ .label }}</a>{{ end }}
   </div>
 {{- end -}}
