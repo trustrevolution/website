@@ -89,22 +89,26 @@
   (function(){
     var els = document.querySelectorAll('.fade-in');
     function show(el) { el.classList.add('is-visible'); }
-    function showAll() { els.forEach(show); }
 
-    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(show);
+      return;
+    }
 
+    var vh = window.innerHeight;
     var io = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
       });
-    }, { threshold: 0.05 });
+    }, { threshold: 0.01 });
 
-    requestAnimationFrame(function() {
-      els.forEach(function(el) { io.observe(el); });
+    els.forEach(function(el) {
+      if (el.getBoundingClientRect().top < vh + 50) {
+        show(el);
+      } else {
+        io.observe(el);
+      }
     });
-
-    // Safety net: never leave content invisible
-    setTimeout(showAll, 2000);
   })();
   </script>
 </body>
