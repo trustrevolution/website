@@ -21,6 +21,7 @@ guest:
     nostr: "https://primal.net/ck"
     twitter: "https://twitter.com/ck_SNARKs"
     linkedin: "https://linkedin.com/in/ckeroles"
+    website: "https://christiankeroles.com"
 guests:
 - Christian Keroles
 key_quote:
@@ -54,6 +55,8 @@ timestamps:
 - time: "49:59"
   topic: "What success looks like: flipping the 1 billion / 7 billion equation"
 resources:
+- name: christiankeroles.com
+  url: "https://christiankeroles.com"
 - name: HRF CBDC Tracker
   url: "https://hrf.org/cbdctracker"
 - name: Zeus Wallet
