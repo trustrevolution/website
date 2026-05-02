@@ -54,7 +54,7 @@ jobs:
 
       - name: Create GitHub issue for episode problems
         if: hashFiles('scripts/episode-issues.json') != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
