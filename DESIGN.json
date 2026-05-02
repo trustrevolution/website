@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-02T00:00:00Z",
+  "title": "Design System: Trust Revolution",
+  "extensions": {
+    "colorMeta": {
+      "signal-vermillion": {
+        "role": "primary",
+        "displayName": "Signal Vermillion",
+        "canonical": "#F04E23",
+        "tonalRamp": ["#2a0d05", "#5a1d0a", "#8a2c11", "#b13c18", "#d53312", "#F04E23", "#f7836a", "#fdd2c8"]
+      },
+      "signal-vermillion-deep": {
+        "role": "primary",
+        "displayName": "Signal Vermillion Deep",
+        "canonical": "#D53312",
+        "tonalRamp": ["#260800", "#4d1004", "#7a1a08", "#a3220c", "#c52a10", "#D53312", "#e8694b", "#f6c2b3"]
+      },
+      "press-black": {
+        "role": "neutral",
+        "displayName": "Press Black",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#0a0a0a", "#1a1a1a", "#2b2b2b", "#3d3d3d", "#555555", "#7a7a7a", "#aaaaaa"]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "#1a1a1a",
+        "tonalRamp": ["#0a0a0a", "#161616", "#1a1a1a", "#2b2b2b", "#3d3d3d", "#555555", "#7a7a7a", "#aaaaaa"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#4a4a4a",
+        "tonalRamp": ["#1a1a1a", "#2b2b2b", "#3d3d3d", "#4a4a4a", "#666666", "#888888", "#a8a8a8", "#cccccc"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#666666",
+        "tonalRamp": ["#1a1a1a", "#333333", "#4a4a4a", "#666666", "#8a8a8a", "#aaaaaa", "#cccccc", "#e6e6e6"]
+      },
+      "newsprint": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "canonical": "#FAFAFA",
+        "tonalRamp": ["#1a1a1a", "#3d3d3d", "#666666", "#999999", "#cccccc", "#e8e8e8", "#F0F0F0", "#FAFAFA"]
+      },
+      "newsprint-tinted": {
+        "role": "neutral",
+        "displayName": "Newsprint Tinted",
+        "canonical": "#F0F0F0",
+        "tonalRamp": ["#1a1a1a", "#3d3d3d", "#666666", "#999999", "#bbbbbb", "#dddddd", "#F0F0F0", "#fafafa"]
+      },
+      "press-elevated": {
+        "role": "neutral",
+        "displayName": "Press Elevated",
+        "canonical": "#111111",
+        "tonalRamp": ["#000000", "#0a0a0a", "#111111", "#1f1f1f", "#333333", "#555555", "#7a7a7a", "#aaaaaa"]
+      },
+      "press-divider": {
+        "role": "neutral",
+        "displayName": "Press Divider",
+        "canonical": "#333333",
+        "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2b2b2b", "#333333", "#4a4a4a", "#666666", "#888888", "#aaaaaa"]
+      },
+      "press-divider-hover": {
+        "role": "neutral",
+        "displayName": "Press Divider Hover",
+        "canonical": "#555555",
+        "tonalRamp": ["#1a1a1a", "#333333", "#444444", "#555555", "#777777", "#999999", "#bbbbbb", "#dddddd"]
+      },
+      "paper-rule": {
+        "role": "neutral",
+        "displayName": "Paper Rule",
+        "canonical": "#cccccc",
+        "tonalRamp": ["#333333", "#555555", "#777777", "#999999", "#bbbbbb", "#cccccc", "#e0e0e0", "#f0f0f0"]
+      },
+      "inverse-secondary": {
+        "role": "neutral",
+        "displayName": "Inverse Secondary",
+        "canonical": "#aaaaaa",
+        "tonalRamp": ["#333333", "#555555", "#777777", "#999999", "#aaaaaa", "#bbbbbb", "#dddddd", "#f0f0f0"]
+      },
+      "inverse-tertiary": {
+        "role": "neutral",
+        "displayName": "Inverse Tertiary",
+        "canonical": "#999999",
+        "tonalRamp": ["#1a1a1a", "#444444", "#666666", "#888888", "#999999", "#bbbbbb", "#dddddd", "#f0f0f0"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Marquee", "purpose": "Hero declarations and marquee moments. Always uppercase." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles (h1) on episode pages, sections, posts." },
+      "title": { "displayName": "Title", "purpose": "Section titles (h2). Uppercase, condensed." },
+      "body": { "displayName": "Body", "purpose": "Long-form reading: essays, summaries, transcripts. 65-75ch measure, 1.7 line-height." },
+      "label": { "displayName": "Label", "purpose": "Section labels, button copy, breadcrumbs, profile chips, footer nav. Structural metadata layer." },
+      "mono": { "displayName": "Mono Timestamp", "purpose": "Reserved for episode timestamp values only. Vermillion-inked. Nowhere else." }
+    },
+    "shadows": [
+      { "name": "state-shadow-xs", "value": "3px 3px 0 #F04E23", "purpose": "Smallest hover offset. Tag-link / profile-link chip hover." },
+      { "name": "state-shadow-sm", "value": "4px 4px 0 #000000", "purpose": "Quiet black offset. Used where vermillion would over-amplify." },
+      { "name": "state-shadow-md", "value": "6px 6px 0 #F04E23", "purpose": "Signature card / cover offset. Episode cover at rest, episode-card hover, latest-episode hover." },
+      { "name": "state-shadow-lg", "value": "8px 8px 0 #F04E23", "purpose": "Largest offset. Guest-card hover on larger viewports." },
+      { "name": "inline-underrule", "value": "inset 0 -2px 0 #F04E23", "purpose": "Hairline vermillion underrule under a heading or label inside a dark band." }
+    ],
+    "motion": [
+      { "name": "transition-fast", "value": "0.15s", "purpose": "Default state-change duration. Hover color steps, focus rings, shadow appearance." },
+      { "name": "transition-normal", "value": "0.3s", "purpose": "Slower transitions for nav overlays, hamburger morph, scroll-driven reveals." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid Signal Vermillion CTA. The 'do this' button — used for Listen on Fountain, Subscribe, primary in-content CTAs.",
+      "html": "<button class=\"ds-btn-primary\">LISTEN ON FOUNTAIN</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 12px 20px; min-height: 44px; background: #F04E23; color: #FAFAFA; border: 3px solid transparent; border-radius: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; transition: all 0.15s; } .ds-btn-primary:hover { background: #D53312; color: #FAFAFA; } .ds-btn-primary:focus-visible { outline: 2px solid #F04E23; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bordered Press Black ghost button. Inverts to fill on hover.",
+      "html": "<button class=\"ds-btn-secondary\">VIEW ALL EPISODES</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 12px 20px; min-height: 44px; background: transparent; color: #000000; border: 3px solid #000000; border-radius: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; transition: all 0.15s; } .ds-btn-secondary:hover { background: #000000; color: #FAFAFA; } .ds-btn-secondary:focus-visible { outline: 2px solid #F04E23; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tag Link",
+      "kind": "chip",
+      "refersTo": "tag-link",
+      "description": "Bordered die-cut chip for outbound links: guest social profiles, tags, resources. Lifts and gains a vermillion offset shadow on hover.",
+      "html": "<a href=\"#\" class=\"ds-tag-link\">NOSTR</a>",
+      "css": ".ds-tag-link { display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; background: #FAFAFA; color: #000000; border: 2px solid #000000; border-radius: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.15s; } .ds-tag-link:hover { border-color: #F04E23; box-shadow: 3px 3px 0 #F04E23; transform: translate(-1px, -1px); } .ds-tag-link:focus-visible { outline: 2px solid #F04E23; outline-offset: 2px; }"
+    },
+    {
+      "name": "Episode Card",
+      "kind": "card",
+      "refersTo": "episode-card",
+      "description": "Horizontal card with a 110px square cover on the left. Flat at rest; gains a 6px vermillion offset shadow on hover and the title color-steps to vermillion.",
+      "html": "<a href=\"#\" class=\"ds-episode-card\"><div class=\"ds-episode-card__cover\" aria-hidden=\"true\"></div><div class=\"ds-episode-card__content\"><h3 class=\"ds-episode-card__title\">S02E16 GUEST NAME — EPISODE TITLE GOES HERE</h3><div class=\"ds-episode-card__duration\">1:08:58</div></div></a>",
+      "css": ".ds-episode-card { display: flex; flex-direction: row; height: 100%; background: #FAFAFA; color: #1a1a1a; border: 3px solid #000000; border-radius: 0; text-decoration: none; transition: all 0.15s; overflow: hidden; } .ds-episode-card:hover { box-shadow: 6px 6px 0 #F04E23; } .ds-episode-card__cover { width: 110px; height: 110px; flex-shrink: 0; background: linear-gradient(135deg, #1a1a1a 0%, #444 100%); border-right: 3px solid #000000; } .ds-episode-card__content { display: flex; flex-direction: column; flex: 1; padding: 16px 20px; min-height: 110px; } .ds-episode-card__title { font-family: 'DIN Condensed', sans-serif; font-size: 1.125rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; text-transform: uppercase; color: #000000; margin: 0; transition: color 0.15s; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-wrap: balance; } .ds-episode-card:hover .ds-episode-card__title { color: #F04E23; } .ds-episode-card__duration { margin-top: auto; padding-top: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.9375rem; color: #4a4a4a; }"
+    },
+    {
+      "name": "Email Signup Input",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "Email field designed to live on the dark email-signup band. Press Black surface, Newsprint border, Vermillion focus ring.",
+      "html": "<div class=\"ds-input-wrap\"><label for=\"ds-email\" class=\"ds-input-label\">EMAIL</label><input id=\"ds-email\" type=\"email\" class=\"ds-input-email\" placeholder=\"you@example.com\" /></div>",
+      "css": ".ds-input-wrap { display: flex; flex-direction: column; gap: 8px; max-width: 400px; } .ds-input-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.8); } .ds-input-email { width: 100%; padding: 20px; background: #000000; color: #FAFAFA; border: 3px solid #FAFAFA; border-radius: 0; font-family: inherit; font-size: 1rem; line-height: 1.7; } .ds-input-email::placeholder { color: rgba(255,255,255,0.5); } .ds-input-email:focus { outline: 2px solid #F04E23; outline-offset: 2px; border-color: #F04E23; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "section-label",
+      "description": "Inline-block uppercase label with a 2px Signal Vermillion underrule. Marks 'this is what you're looking at' above an h2/h3 inside a dark section. The system's broadsheet section dingbat.",
+      "html": "<div class=\"ds-section-block\"><span class=\"ds-section-label\">LATEST EPISODE</span><h2 class=\"ds-section-block__title\">S02E16 — GUEST NAME</h2></div>",
+      "css": ".ds-section-block { padding: 32px; background: #000000; color: #FAFAFA; } .ds-section-label { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; padding-bottom: 4px; border-bottom: 2px solid #F04E23; } .ds-section-block__title { font-family: 'DIN Condensed', sans-serif; font-size: 2.5rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.2; text-transform: uppercase; color: #FAFAFA; margin: 0; }"
+    },
+    {
+      "name": "Site Header / Top Nav",
+      "kind": "nav",
+      "refersTo": "site-header",
+      "description": "Press Black bar with a 4px Signal Vermillion bottom border. Brand wordmark + page indicator + hamburger toggle (mobile-first).",
+      "html": "<header class=\"ds-site-header\"><div class=\"ds-site-header__inner\"><a href=\"/\" class=\"ds-site-logo\">TRUST REVOLUTION</a><nav class=\"ds-site-nav\"><a href=\"#\" class=\"ds-nav-link\">EPISODES</a><a href=\"#\" class=\"ds-nav-link\">WHY</a><a href=\"#\" class=\"ds-nav-link\" aria-current=\"page\">SUPPORT</a><a href=\"#\" class=\"ds-nav-link ds-nav-link--icon\" aria-label=\"Search\"><svg width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"10\" cy=\"10\" r=\"7\"/><path d=\"M21 21l-6-6\"/></svg></a></nav></div></header>",
+      "css": ".ds-site-header { background: #000000; padding: 16px 0; border-bottom: 4px solid #F04E23; } .ds-site-header__inner { display: flex; justify-content: space-between; align-items: center; min-height: 44px; max-width: 1000px; margin: 0 auto; padding: 0 32px; gap: 64px; } .ds-site-logo { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 1.25rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: #FAFAFA; text-transform: uppercase; text-decoration: none; transition: color 0.15s; } .ds-site-logo:hover { color: #F04E23; } .ds-site-nav { display: flex; align-items: center; gap: 64px; } .ds-nav-link { font-family: 'DIN Condensed', sans-serif; font-size: 1.25rem; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #FAFAFA; text-transform: uppercase; text-decoration: none; box-shadow: inset 0 -2px 0 transparent; transition: box-shadow 0.15s linear, color 0.15s; } .ds-nav-link:hover, .ds-nav-link[aria-current=\"page\"] { box-shadow: inset 0 -2px 0 #F04E23; color: #F04E23; } .ds-nav-link--icon { box-shadow: none; } .ds-nav-link--icon:hover { box-shadow: none; color: #F04E23; } .ds-nav-link:focus-visible { outline: 2px solid #F04E23; outline-offset: 2px; }"
+    },
+    {
+      "name": "Episode Cover (Pressed Plate)",
+      "kind": "custom",
+      "refersTo": "episode-cover",
+      "description": "Signature episode-page sidebar treatment. The cover artwork is bordered in 3px Press Black and carries a permanent 6px Signal Vermillion offset shadow at rest — the one place ambient elevation is intentional, because the cover IS the artwork.",
+      "html": "<div class=\"ds-episode-cover\"><div class=\"ds-episode-cover__art\" aria-hidden=\"true\"></div></div>",
+      "css": ".ds-episode-cover { max-width: 200px; } .ds-episode-cover__art { width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #1a1a1a 0%, #444 100%); border: 3px solid #000000; box-shadow: 6px 6px 0 #F04E23; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Manifesto Broadsheet",
+    "overview": "Trust Revolution looks like a press-shop poster pulled fresh off the platen. DIN Condensed runs as masthead and marquee; type sets as declaration, not decoration. Pure black ink on warm off-white paper. A single ink — Signal Vermillion (#F04E23) — carries every act of meaning: links, calls to action, the rule under a section label, the offset shadow under a hovered card. Density is high, white space is intentional, and every rule, border, or shadow is hard-edged. The site reads as a confident broadsheet that opted out of the broken model and printed its case in plate-on-paper. This system explicitly rejects the visual language that podcast and crypto sites have collapsed into. No gradients, no neon, no dark-mode-by-default, no 'wagmi' energy, no soft pastels, no rounded-corner card UI, no glassmorphism, no stock photography, no generic podcast templates. It is light-mode only by design, brutalist by craft, and tokenized by discipline. Sharp edges and hard offset shadows are intentional — craft is in the precision, not the polish.",
+    "keyCharacteristics": [
+      "One ink color (Signal Vermillion) marks every act of meaning. If everything is orange, nothing is.",
+      "DIN Condensed in uppercase for all headings; system sans for body. Display as marquee, body as broadsheet copy.",
+      "Pure black borders ranging from 1px hairline to 6px section frames. No rounded corners anywhere.",
+      "Hard-offset, zero-blur shadows on hover only — surfaces are flat at rest.",
+      "Fluid spacing via clamp(). Mobile-first base styles; larger viewports enhance.",
+      "Grayscale guest portraits at build time — color reserved for the accent ink.",
+      "Black background bleed at the html level frames the page like ink at the paper edge."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Signal Vermillion is the only chromatic color in the system. It marks action and emphasis only — links, CTAs, the underrule under a section label, the offset shadow on a hovered card. Cap it near 10% of any given screen. If everything is orange, nothing is.", "section": "colors" },
+      { "name": "The No-True-White, No-True-Black Rule", "body": "Body backgrounds are Newsprint (#FAFAFA), not #fff. Body text is Ink Black (#1a1a1a), not #000. Pure #000 is reserved for borders, dark surfaces, and inverse text — structure, not type.", "section": "colors" },
+      { "name": "The Marquee Rule", "body": "All headings (h1–h6) are DIN Condensed, uppercase, with positive tracking. No exceptions. No mixed-case display type. No script, no serif, no playful weights.", "section": "typography" },
+      { "name": "The Mono-as-Mark Rule", "body": "Monospace appears in exactly one place: the timestamp value in an episode timestamp list. Mono is wayfinding — a typed marker that says 'this is a coordinate, click here.' Don't use it for code samples, IDs, or filler.", "section": "typography" },
+      { "name": "The Broadsheet Measure Rule", "body": "Body copy caps at the 65–75ch reading measure (the project tokenizes this as --measure-narrow: 480px and --max-width-narrow: 680px). Line-height stays at 1.7 — newspaper density, not blog airiness.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. No ambient shadow. Depth is signal — it appears only when the user does something (hover, focus, active).", "section": "elevation" },
+      { "name": "The Pressed-Plate Rule", "body": "All shadows are hard-offset (no blur, no spread) and step in fixed offsets (3 / 4 / 6 / 8 px). They look mechanical, not atmospheric — a plate that has shifted, not a halo of light.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use one of the seven defined spacing tokens (--spacing-3xs/xs/sm/md/content/lg/xl) for every spacing decision. Never type a literal 20px, 1rem, or 2em value.",
+      "Do keep Signal Vermillion at or below ~10% of any given screen. Reserve it for links, primary CTAs, section underrules, and the offset shadow on a hovered card.",
+      "Do set every heading in DIN Condensed, uppercase, with --tracking-normal (0.02em) — including h3 inside cards.",
+      "Do specify shadow as <offset> <offset> 0 <color> only. Always 0 blur, always 0 spread, always one of the four defined offset steps (3 / 4 / 6 / 8 px).",
+      "Do use 3px (--border-component) as the default component border. 1px hairlines for in-content rules. 4px (--border-section) for major section frames (header bottom, footer top). 2px and 6px exist for specific roles — don't substitute.",
+      "Do use text-wrap: balance on card and hero headings.",
+      "Do keep mono typography to timestamps only.",
+      "Do apply images.Grayscale at build time to every guest portrait — color reserved for the accent ink.",
+      "Do start all CSS at mobile, enhance up via min-width media queries."
+    ],
+    "donts": [
+      "Don't introduce gradients of any kind — color, text, or background. The system is one ink, flat fills.",
+      "Don't use neon, pastel, or any chromatic color other than Signal Vermillion. No secondary accents, no 'category color' schemes, no syntax-rainbow palettes.",
+      "Don't ship dark mode as a toggle. The system is light-mode by design — Press Black is a structural surface inside the light-mode page, not an alternate theme.",
+      "Don't use rounded corners. border-radius: 0 is enforced. Pills, soft cards, and 'friendly' UI shapes are forbidden.",
+      "Don't use ambient or blurred shadows. No box-shadow: 0 4px 16px rgba(0,0,0,0.1). No glass cards, no backdrop-filter.",
+      "Don't ship 'wagmi' energy or any crypto-bro / Web3 visual cliché — neon-on-black, holographic gradients, hexagon avatars, glow effects, terminal-on-glass. The brand opts out of that aesthetic on principle.",
+      "Don't reach for stock photography or generic-podcast-template chrome (mic-and-headphones illustrations, soundwave SVGs, 'host card' carousels).",
+      "Don't use side-stripe borders. No border-left: 4px solid <color> as a callout accent. If a block needs framing, use a full 3px Press Black border or no border.",
+      "Don't use gradient text or background-clip: text. Type is one solid ink.",
+      "Don't wrap everything in a card. Most modules sit directly on the page; a card means a discrete object that can be picked up.",
+      "Don't use modals as a default. Disclosures (<details>), inline panels, and full-page navigation overlays are the established pattern.",
+      "Don't use em dashes in copy. Use commas, colons, semicolons, periods, or parentheses.",
+      "Don't type a hardcoded color, font-size, spacing, border, or shadow value. The token system is normative — bypassing it is a defect, not a shortcut."
+    ]
+  }
+}
