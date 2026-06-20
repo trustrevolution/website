@@ -38,8 +38,16 @@ enableGitInfo = true
       unsafe = true
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "LLMS"]
   section = ["HTML"]
+
+# llms.txt — machine-readable site overview for AI search engines (ChatGPT, Claude, Perplexity)
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  rel = "alternate"
+  noUgly = true
 
 [permalinks]
   episodes = "/episodes/:slug/"

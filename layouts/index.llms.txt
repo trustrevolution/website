@@ -1,0 +1,21 @@
+# Trust Revolution
+
+> {{ .Site.Params.description }}
+
+{{ .Site.Params.podcast.tagline }}. A podcast hosted by {{ .Site.Params.author }}. Each episode is an unfiltered conversation with builders, thinkers, and operators across Bitcoin, privacy, decentralization, AI, and the future of trust online. Listen on Fountain (stream sats, not ads), watch on YouTube, or read on Substack.
+
+## Episodes
+{{ range (where .Site.RegularPages "Section" "episodes") -}}
+{{ $t := partial "episode-title-clean.html" .Title -}}
+- [{{ $t }}{{ with .Params.guest.name }} — {{ . }}{{ end }} ({{ .Date.Format "2006-01-02" }})]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}
+{{ end }}
+## Essays
+{{ range (where .Site.RegularPages "Section" "essays") -}}
+- [{{ .Title }} ({{ .Date.Format "2006-01-02" }})]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}
+{{ end }}
+## Pages
+- [About]({{ "about/" | absURL }}): About the show and host {{ .Site.Params.author }}
+- [Why Trust Revolution]({{ "why/" | absURL }}): The thesis behind the show
+- [Support]({{ "support/" | absURL }}): Support the show by streaming sats over the Lightning Network
+- [Guests]({{ "guests/" | absURL }}): Index of every guest who has appeared on the show
+- [Podcast RSS feed]({{ .Site.Params.fountain_rss_url }}): Subscribe in any podcast app

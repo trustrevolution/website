@@ -6,7 +6,22 @@
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="index, follow">
   <meta name="apple-mobile-web-app-title" content="TrustRev">
-  <title>{{ if .IsHome }}{{ .Site.Title }} — Unfiltered Conversations in Bitcoin and Beyond{{ else if eq .Section "episodes" }}{{ .Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{- /* Page + social titles. Episodes: "Topic — Guest | Brand" via clean-title partial (strips legacy S##E## prefix); guestless episodes fall back to "Topic | Brand". */ -}}
+  {{- $pageTitle := "" -}}
+  {{- $socialTitle := "" -}}
+  {{- if .IsHome -}}
+    {{- $pageTitle = printf "%s — Unfiltered Conversations in Bitcoin and Beyond" .Site.Title -}}
+    {{- $socialTitle = .Site.Title -}}
+  {{- else if eq .Section "episodes" -}}
+    {{- $clean := partial "episode-title-clean.html" .Title -}}
+    {{- with .Params.guest.name }}{{ $clean = printf "%s — %s" $clean . }}{{ end -}}
+    {{- $pageTitle = printf "%s | %s" $clean .Site.Title -}}
+    {{- $socialTitle = $clean -}}
+  {{- else -}}
+    {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
+    {{- $socialTitle = .Title -}}
+  {{- end -}}
+  <title>{{ $pageTitle }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="sitemap" type="application/xml" href="{{ "sitemap.xml" | absURL }}" title="Sitemap">
@@ -14,7 +29,7 @@
   <!-- Open Graph -->
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:title" content="{{ $socialTitle }}">
   <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
@@ -31,7 +46,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta name="twitter:title" content="{{ $socialTitle }}">
   <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{- with $socialImage -}}
   <meta name="twitter:image" content="{{ .Permalink }}">
