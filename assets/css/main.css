@@ -123,6 +123,7 @@
   /* Line heights */
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
+  --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
 
   /* Transitions */
@@ -2710,6 +2711,7 @@ noscript + main .fade-in,
   font-size: var(--font-size-2xl);
   line-height: var(--line-height-tight);
   margin: 0 0 var(--spacing-xs);
+  text-wrap: balance;
 }
 
 .essay-meta {
@@ -2723,13 +2725,14 @@ noscript + main .fade-in,
 }
 
 .essay-content {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  letter-spacing: -0.01em;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-reading);
+  letter-spacing: normal;
 }
 
 .essay-content p {
   margin-bottom: var(--spacing-md);
+  text-wrap: pretty;
 }
 
 .essay-content h2 {
@@ -2828,15 +2831,6 @@ noscript + main .fade-in,
 
   .essay-header h1 {
     font-size: var(--font-size-4xl);
-  }
-
-  .essay-content {
-    font-size: var(--font-size-md);
-    line-height: var(--line-height-normal);
-  }
-
-  .essay-content p {
-    margin-bottom: var(--spacing-sm);
   }
 }
 
