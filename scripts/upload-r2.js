@@ -8,10 +8,10 @@
  * regardless. Multipart is used above the threshold so a 2 GB video is not one
  * fragile request.
  *
- * Credentials are read from a file outside the repo, never from arguments or
- * this source:
+ * Credentials come from .env in the project root, which .gitignore already
+ * covers. Never from arguments or this source.
  *
- *   umask 077 && cat > ~/.config/r2-trustrevolution.env <<'EOF'
+ *   umask 077 && cat > .env <<'EOF'
  *   R2_ACCESS_KEY_ID=...
  *   R2_SECRET_ACCESS_KEY=...
  *   EOF
@@ -36,8 +36,15 @@ const ARCHIVE_DIR =
   process.env.ARCHIVE_DIR ||
   path.join(os.homedir(), 'Archive', 'trust-revolution-fountain');
 
-const CREDS_FILE =
-  process.env.R2_CREDS || path.join(os.homedir(), '.config', 'r2-trustrevolution.env');
+/**
+ * .env in the project root, which .gitignore covers. The old home-directory
+ * path is still honoured so an existing setup keeps working.
+ */
+const CREDS_CANDIDATES = [
+  process.env.R2_CREDS,
+  path.join(__dirname, '..', '.env'),
+  path.join(os.homedir(), '.config', 'r2-trustrevolution.env')
+].filter(Boolean);
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const ONLY = (() => {
@@ -70,22 +77,29 @@ const CONTENT_TYPES = {
 const CACHE_CONTROL = 'public, max-age=31536000, immutable';
 
 function loadCredentials() {
-  if (!fs.existsSync(CREDS_FILE)) {
+  const found = CREDS_CANDIDATES.find((p) => fs.existsSync(p));
+
+  if (!found) {
     throw new Error(
-      `credentials file not found at ${CREDS_FILE}\n` +
-        `Create an Account API token with Object Read & Write scoped to ${BUCKET}, then:\n` +
-        `  umask 077 && cat > ${CREDS_FILE} <<'EOF'\n` +
+      `no credentials file found. Looked in:\n` +
+        CREDS_CANDIDATES.map((p) => `  ${p}`).join('\n') +
+        `\nCreate an Account API token with Object Read & Write scoped to ${BUCKET}, then:\n` +
+        `  umask 077 && cat > .env <<'EOF'\n` +
         `  R2_ACCESS_KEY_ID=...\n  R2_SECRET_ACCESS_KEY=...\n  EOF`
     );
   }
+
   const env = {};
-  for (const line of fs.readFileSync(CREDS_FILE, 'utf8').split('\n')) {
-    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
+  for (const line of fs.readFileSync(found, 'utf8').split('\n')) {
+    const m = line.match(/^\s*(?:export\s+)?([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
     if (m) env[m[1]] = m[2].replace(/^["']|["']$/g, '');
   }
+
   if (!env.R2_ACCESS_KEY_ID || !env.R2_SECRET_ACCESS_KEY) {
-    throw new Error(`${CREDS_FILE} must define R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY`);
+    throw new Error(`${found} must define R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY`);
   }
+
+  console.log(`Creds:    ${found.replace(os.homedir(), '~')}`);
   return { accessKeyId: env.R2_ACCESS_KEY_ID, secretAccessKey: env.R2_SECRET_ACCESS_KEY };
 }
 
