@@ -9,10 +9,14 @@ description: "One ban erases your identity. Pip built reputation they can't revo
 summary: |
   “Web of Trust is any network of relationship where trust is distributed and emergent—it's not imposed by someone else.” Pip builds the infrastructure that makes decentralized reputation actually work. While platforms like Twitter sell verification for $8, he's applying Google's PageRank algorithm to Nostr—and giving it away for free.
 featured_image: "images/cover-art/s02e16.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/AUDIO---DEFAULT---cd6faf8d-1931-48fb-8ef9-8432475facce.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/VIDEO---DEFAULT---2c0311f0-8000-4243-9a5f-a8a2edc17f98.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e16-pippellia.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e16-pippellia.mp4"
 duration: "1:08:58"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e16-pippellia.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e16-pippellia.json"
+guid: "7ab9d5eb-135c-4427-b4c0-04f5d3b86f28"
+pubdate: "Thu, 18 Dec 2025 13:00:26 GMT"
+enclosure_bytes: 33103639
 fountain_url: "https://fountain.fm/episode/K745y4I3kdplDkqnI7D2"
 guest:
   name: Pippellia

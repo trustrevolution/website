@@ -11,10 +11,14 @@ summary: |
 
   Background
 featured_image: "images/cover-art/s01e08.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/AUDIO---DEFAULT---e73423a2-6092-44a3-bc08-bea64de52458.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/VIDEO---DEFAULT---d2047ec4-b515-4a34-9faf-4e00077a863c.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e08-rishad-tobaccowala.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e08-rishad-tobaccowala.mp4"
 duration: "1:11:38"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e08-rishad-tobaccowala.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e08-rishad-tobaccowala.json"
+guid: "66e24bc1-5a3f-4d27-8c8f-563862058af8"
+pubdate: "Wed, 04 Jun 2025 12:00:00 GMT"
+enclosure_bytes: 68939009
 fountain_url: "https://fountain.fm/episode/Czt5CzqaXqCwvhez3JkU"
 guest:
   name: Rishad Tobaccowala

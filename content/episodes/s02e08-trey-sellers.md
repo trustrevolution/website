@@ -9,10 +9,14 @@ description: "Former Goldman Sachs risk manager Trey Sellers on why the wealth y
 summary: |
   "If you go into a local community bank and ask for $50,000 in cash, you're going to get a lot of questions—and very likely they're going to say, 'Come back in a week, we need to order that.' The cash doesn't exist." Former Goldman Sachs risk manager Trey Sellers spent 15 years inside the machine before realizing the wealth you think you control is just a ledger entry someone else manages.
 featured_image: "images/cover-art/s02e08.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/AUDIO---DEFAULT---21769dec-3a75-4c8a-8e36-87776d2416c9.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/VIDEO---DEFAULT---d30b2cc6-bdeb-4459-af05-52e70a2e3188.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e08-trey-sellers.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e08-trey-sellers.mp4"
 duration: "1:02:42"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e08-trey-sellers.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e08-trey-sellers.json"
+guid: "cd5bc045-25a3-4523-bbe3-5f49ce0c1418"
+pubdate: "Wed, 15 Oct 2025 11:58:28 GMT"
+enclosure_bytes: 30098303
 fountain_url: "https://fountain.fm/episode/FHJBXSVwd3JGkqIDGfBB"
 guest:
   name: Trey Sellers

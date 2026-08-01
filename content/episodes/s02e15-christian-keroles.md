@@ -9,10 +9,14 @@ description: "Only one billion people have stable currency and property rights. 
 summary: |
   “It's not enough for me to be taken care of if everyone else on the planet is living in a digital gulag.” CK explains why HRF treats Bitcoin as essential infrastructure for human rights—and why dictators keep failing to build alternatives that work.
 featured_image: "images/cover-art/s02e15.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/AUDIO---DEFAULT---5a6b8f2b-b435-41ce-b000-45b3b2701a41.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/VIDEO---DEFAULT---497d334a-e3ff-407d-bdd8-0df8eeb36384.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e15-christian-keroles.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e15-christian-keroles.mp4"
 duration: "54:37"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e15-christian-keroles.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e15-christian-keroles.json"
+guid: "4ddb2a8f-c049-48a8-8068-7c3cf1a0e049"
+pubdate: "Fri, 12 Dec 2025 13:00:26 GMT"
+enclosure_bytes: 26216507
 fountain_url: "https://fountain.fm/episode/UnnHucGUFMryt3ZGmRD5"
 guest:
   name: Christian Keroles

@@ -9,10 +9,14 @@ description: "Disney fined. Google penalized. Governments pushing digital IDs. T
 summary: |
   September 2025 marked a critical turning point in the surveillance economy. Disney paid $10 million for illegally collecting children's data. Google faced $425.7 million in penalties for nearly a decade of smartphone tracking. Microsoft cut off a military unit for using their tools to surveil civilians. While corporations face mounting fines and compliance nightmares, governments worldwide are accelerating digital ID mandates—offering a false choice between corporate surveillance and state control. From cryptographic proofs to peer-to-peer networks, the alternatives exist right now. The question is whether we'll adopt them before the surveillance trap closes.
 featured_image: "images/cover-art/s02e06.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/AUDIO---DEFAULT---be6cf1ad-18ce-43bf-b41e-0529f152099c.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/VIDEO---DEFAULT---0bc7586b-3d6b-47f0-b6f9-5db67df24390.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e06-privacy-s-last-stand.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e06-privacy-s-last-stand.mp4"
 duration: "32:07"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e06-privacy-s-last-stand.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e06-privacy-s-last-stand.json"
+guid: "d0ececd3-2d48-4100-8944-d00e02458479"
+pubdate: "Wed, 01 Oct 2025 19:28:55 GMT"
+enclosure_bytes: 15413516
 fountain_url: "https://fountain.fm/episode/UWPtOZ6SoBPUYO7DU1pc"
 key_quote:
   text: "When given a choice, most people choose free with ads over paying directly. But the question isn't replacement—it's exit."

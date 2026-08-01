@@ -9,10 +9,14 @@ description: "Max Hillebrand went from working inside the banking system to livi
 summary: |
   From working inside the banking system to living fully bankless.
 featured_image: "images/cover-art/s01e03.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/AUDIO---DEFAULT---6d4f8124-8615-4736-bbb5-8d17d641d7de.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/VIDEO---DEFAULT---03a7c284-a77d-49dd-8a5e-7d1563449176.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e03-max-hillebrand.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e03-max-hillebrand.mp4"
 duration: "1:01:39"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e03-max-hillebrand.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e03-max-hillebrand.json"
+guid: "bc82dfd8-8d92-4ffb-bcf9-07a6eeb7d123"
+pubdate: "Wed, 30 Apr 2025 12:00:00 GMT"
+enclosure_bytes: 59318303
 fountain_url: "https://fountain.fm/episode/pxkbfZaIxdKLPvXGCmBf"
 guest:
   name: Max Hillebrand

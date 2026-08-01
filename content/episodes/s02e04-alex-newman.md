@@ -9,10 +9,14 @@ description: "Investigative journalist Alex Newman rips the veil off digital IDs
 summary: |
   Centralized systems—Big Pharma, globalist agendas, government education—are crumbling under their own weight, leaving trust in tatters. Alex Newman, investigative journalist and CEO of Liberty Sentinel Media, joins Shawn to rip the veil off these failures. With 2025 exposés on digital IDs, vaccine mandates, and institutional overreach, Newman reveals how entities like the WEF and UN erode sovereignty. This Trust Revolution episode delivers a raw dissection of power grabs and practical, decentralized strategies to reclaim control, urging listeners to question narratives and act.
 featured_image: "images/cover-art/s02e04.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/AUDIO---DEFAULT---5741d065-8d9c-4c82-a43d-f761866ae04e.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/VIDEO---DEFAULT---aaaebace-bea9-41a6-881c-f40541e262d4.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e04-alex-newman.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e04-alex-newman.mp4"
 duration: "49:20"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e04-alex-newman.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e04-alex-newman.json"
+guid: "f4f3f4ae-ce61-4770-abf0-59f23a39de11"
+pubdate: "Wed, 17 Sep 2025 12:00:27 GMT"
+enclosure_bytes: 23683257
 fountain_url: "https://fountain.fm/episode/0R1QgTzjD437kfTbjrrT"
 guest:
   name: Alex Newman

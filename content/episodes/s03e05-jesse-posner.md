@@ -9,10 +9,14 @@ description: "FROST creator Jesse Posner on why your hardware wallet leaks data,
 summary: |
   "If somebody gets control over your personal AI—all your health data, all your financial data, all your emails, everything you've thought about—they own you." Jesse Posner built FROST threshold signatures and shipped BitKey at Block. Now he's building Vora because he realized individual self-custody is still a LARP—and the stakes are about to get much higher.
 featured_image: "images/cover-art/s03e05.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---DEFAULT---c83dc858-4cc9-4033-a34d-7d5f08363fe5.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---DEFAULT---c83dc858-4cc9-4033-a34d-7d5f08363fe5.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e05-jesse-posner.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e05-jesse-posner.mp4"
 duration: "1:21:38"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e05-jesse-posner.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e05-jesse-posner.json"
+guid: "68731d20-8515-4b19-8212-335943b83db5"
+pubdate: "Thu, 19 Feb 2026 13:00:26 GMT"
+enclosure_bytes: 78367911
 fountain_url: "https://fountain.fm/episode/cISlqMX36DhP6F4AW4G0"
 guest:
   name: "Jesse Posner"

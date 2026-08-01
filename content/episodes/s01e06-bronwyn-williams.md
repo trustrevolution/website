@@ -9,10 +9,14 @@ description: "South African futurist Bronwyn Williams maps the unraveling cycle:
 summary: |
   In this hard-hitting episode of Trust Revolution, Shawn sits down with Bronwyn Williams, a South African futurist and economist, to dissect the collapse of trust in centralized systems. Bronwyn analyzes how globalization and technology challenge institutional credibility, using South Africa’s governance struggles as a backdrop. She critiques AI’s centralizing risks, questions Bitcoin’s decentralized promise, and discusses ways businesses and individuals can rebuild trust. This conversation unravels the dynamics of power and agency in a low-trust world.
 featured_image: "images/cover-art/s01e06.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/AUDIO---DEFAULT---07540bf7-58ad-4417-9b6d-253e30800dea.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/VIDEO---DEFAULT---e4bc9785-1cec-441a-8790-149d88884f55.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e06-bronwyn-williams.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e06-bronwyn-williams.mp4"
 duration: "1:04:03"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e06-bronwyn-williams.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e06-bronwyn-williams.json"
+guid: "e04297e7-f422-44df-94ae-12ea86751b07"
+pubdate: "Wed, 21 May 2025 12:00:00 GMT"
+enclosure_bytes: 61494241
 fountain_url: "https://fountain.fm/episode/uxNq4GhUxtuKtSVkWJCr"
 guest:
   name: Bronwyn Williams

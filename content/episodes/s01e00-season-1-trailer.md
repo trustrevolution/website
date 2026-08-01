@@ -8,9 +8,13 @@ episode: 0
 description: "Meet the builders rethinking trust for a decentralized future. Season 1 starts now."
 summary: "Trailer for Season 1 of Trust Revolution with Shawn Yeager Your host: Shawn Yeager Music in this episode by More Ghost Than Man ."
 featured_image: "images/cover-art/s01e00.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/AUDIO---DEFAULT---966b836b-b270-434a-87b5-424e722f7e25.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/VIDEO---DEFAULT---0a5af24f-db98-4f97-afe0-83b8c3e3e8e6.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e00-season-1-trailer.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e00-season-1-trailer.mp4"
 duration: "1:13"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e00-season-1-trailer.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e00-season-1-trailer.json"
+guid: "2314bccf-18a5-48c4-b5f0-1ade409d4926"
+pubdate: "Mon, 10 Mar 2025 01:00:26 GMT"
+enclosure_bytes: 1326954
 fountain_url: "https://fountain.fm/episode/cXKk4mKAbyLICb5vbq5Q"
 ---

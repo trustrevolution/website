@@ -9,10 +9,14 @@ description: "Voluntary payment has never broken 5% adoption in 50 years. Why it
 summary: |
   Big Tech captures $670 a year from the average American through attention and data. Voluntary payment has never broken past 5% adoption in 50 years of trying. So why does it still matter? Because it's not about replacing ads. It's about having somewhere to go when the platforms decide you shouldn't exist.
 featured_image: "images/cover-art/s02e14.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/AUDIO---DEFAULT---2b27ee6c-15f6-46be-be81-2f06133f35d4.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/VIDEO---DEFAULT---7aed07a7-f07f-4654-a879-377682645614.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e14-why-ads-keep-winning.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e14-why-ads-keep-winning.mp4"
 duration: "24:07"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e14-why-ads-keep-winning.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e14-why-ads-keep-winning.json"
+guid: "8b278f29-8458-482b-8fde-b4300a2f6deb"
+pubdate: "Fri, 05 Dec 2025 13:00:26 GMT"
+enclosure_bytes: 11579577
 fountain_url: "https://fountain.fm/episode/nx8jCK6OGhKpTsOI85E3"
 key_quote:
   text: Your ad revenue pays the bills. Your voluntary supporters are your insurance policy.

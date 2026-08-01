@@ -9,10 +9,14 @@ description: "John Robb maps the path from identity collapse to automated totali
 summary: |
   "All it takes is the political will or the political mistake to turn it on. And it's there." John Robb maps the path from post-national identity collapse to automated totalitarian surveillance--and explains why most of the tools people are counting on won't stop it.
 featured_image: "images/cover-art/s03e04.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---PAID---e056d90a-b56f-4177-8789-df0ea0d53a59.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---PAID---e056d90a-b56f-4177-8789-df0ea0d53a59.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e04-john-robb.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e04-john-robb.mp4"
 duration: "1:10:49"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---TRANSCRIPT---PAID---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e04-john-robb.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e04-john-robb.json"
+guid: "74af5fc8-73e4-4b5b-bc09-f43749eb5170"
+pubdate: "Fri, 13 Feb 2026 13:00:26 GMT"
+enclosure_bytes: 67979954
 fountain_url: "https://fountain.fm/episode/jCYytxpQ5gzNZWNAUimY"
 guest:
   name: "John Robb"

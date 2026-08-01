@@ -8,10 +8,14 @@ episode: 2
 description: "Holepunch CEO Mathias Buus built 1,000+ NPM modules and Keet. His case for a peer-to-peer internet that needs no servers."
 summary: "Mathias Buus, CEO of Holepunch, discusses revolutionizing the internet with peer-to-peer technologies like Pear Runtime, Hypercore, and Keet. He shares his journey from math student to open-source powerhouse with over 1,000 NPM modules, driven by empowering individuals. They explore centralized platforms' flaws—data control, censorship, and erosion of sovereignty—and how P2P technologies offer a trustless alternative. Mathias addresses Keet's partial open-sourcing controversy and lays out a vision for a world of borderless, sovereign communication via owned devices. For businesses, the path forward starts with deprogramming centralization assumptions, experimenting with hybrid models, and building sustainable decentralized systems."
 featured_image: "images/cover-art/s02e02.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---DEFAULT---cac7ac7a-7f94-4de0-ad53-7f5ffb43d615.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/VIDEO---DEFAULT---10fe0ad7-0c68-40f3-b96c-253ce60cc021.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e02-mathias-buus.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e02-mathias-buus.mp4"
 duration: "1:02:01"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e02-mathias-buus.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e02-mathias-buus.json"
+guid: "827e58e9-efa4-4846-9b03-a20f35305abe"
+pubdate: "Wed, 03 Sep 2025 12:00:27 GMT"
+enclosure_bytes: 29765190
 fountain_url: "https://fountain.fm/episode/ZiksXcYEeqQuef7gxGUE"
 guest:
   name: Mathias Buus

@@ -9,10 +9,14 @@ description: "Alby developer Roland Bewick built self-custodial Lightning for hu
 summary: |
   "With 12 words, you can travel the world. Your money arrives in the country before you do. It cannot be taken from you." Roland Bewick builds the software that makes that sentence true—and just taught an AI agent to do the same thing.
 featured_image: "images/cover-art/s03e07.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---DEFAULT---171d3828-e57a-4446-89f4-6a9b7eb956dc.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---DEFAULT---171d3828-e57a-4446-89f4-6a9b7eb956dc.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e07-roland-bewick.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e07-roland-bewick.mp4"
 duration: "58:44"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e07-roland-bewick.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e07-roland-bewick.json"
+guid: "6c22583d-7678-488e-b907-461a737d294a"
+pubdate: "Fri, 06 Mar 2026 13:00:25 GMT"
+enclosure_bytes: 56379915
 fountain_url: ""
 guest:
   name: "Roland Bewick"

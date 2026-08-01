@@ -11,10 +11,14 @@ summary: |
 
   Background
 featured_image: "images/cover-art/s01e12.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/AUDIO---DEFAULT---d755436d-f0fa-4c42-bc3b-5fd0125164ce.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/VIDEO---DEFAULT---25abf70b-edbd-4760-9b33-90a96096ff43.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e12-opnstate.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e12-opnstate.mp4"
 duration: "1:05:59"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e12-opnstate.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e12-opnstate.json"
+guid: "b903dc85-8951-415f-80f3-86a6aa4bac82"
+pubdate: "Wed, 02 Jul 2025 12:00:00 GMT"
+enclosure_bytes: 63473988
 fountain_url: "https://fountain.fm/episode/3keoizzqUGz8kSq0GgxE"
 guest:
   name: OpnState

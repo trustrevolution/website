@@ -9,10 +9,14 @@ description: "11 years in Navy intelligence. Now a Bitcoin miner. Average Gary o
 summary: |
   Operating under a pseudonym fits the ethos—sovereignty starts with controlling your identity. Average Gary brought the “thinking shooter” principle from Naval Special Warfare into Bitcoin: you don't need to know every answer, but you need to know where to find it. His path from military intelligence through Microsoft to large-scale Bitcoin mining reveals how decentralized systems reward proof of work over credentials and why open source tears down the walls between citizens and the institutions meant to serve them.
 featured_image: "images/cover-art/s02e12.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/AUDIO---DEFAULT---e36141c5-4cf0-422b-9086-fa099efb63df.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/VIDEO---DEFAULT---958e53b7-f30c-483a-8a74-b2bc9f6fea4c.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e12-average-gary.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e12-average-gary.mp4"
 duration: "59:57"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e12-average-gary.srt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e12-average-gary.json"
+guid: "5435e728-4dd7-4b57-bc74-fdc32ab6b2be"
+pubdate: "Wed, 19 Nov 2025 13:00:25 GMT"
+enclosure_bytes: 28777552
 fountain_url: "https://fountain.fm/episode/wLcSOyS8mZORCpm6HTpK"
 guest:
   name: Average Gary
