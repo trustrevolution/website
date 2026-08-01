@@ -246,3 +246,40 @@
     init();
   }
 })();
+
+/* Dock the player to the bottom edge once the reader scrolls past it, and
+ * release it when they scroll back. A placeholder holds the plate's space so
+ * the page does not jump at the moment it detaches. */
+(function () {
+  'use strict';
+
+  function init() {
+    var section = document.querySelector('.transport--audio');
+    var plate = section ? section.querySelector('.transport__plate') : null;
+    if (!section || !plate || !('IntersectionObserver' in window)) return;
+
+    var spacer = document.createElement('div');
+    spacer.setAttribute('aria-hidden', 'true');
+    spacer.style.display = 'none';
+    section.appendChild(spacer);
+
+    var sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    section.parentNode.insertBefore(sentinel, section);
+
+    new IntersectionObserver(function (entries) {
+      var passed = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      if (passed === section.classList.contains('is-docked')) return;
+
+      spacer.style.height = passed ? plate.offsetHeight + 'px' : '';
+      spacer.style.display = passed ? 'block' : 'none';
+      section.classList.toggle('is-docked', passed);
+    }, { threshold: 0 }).observe(sentinel);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

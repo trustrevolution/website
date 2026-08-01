@@ -231,6 +231,21 @@ img {
   padding: 0 var(--spacing-lg);
 }
 
+/* The site sat at 1000px however wide the display, which on a large monitor
+   left ~450px of dead margin each side. Step up rather than jump, so the
+   composition stays deliberate instead of merely wide. */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: var(--max-width-wide);
+  }
+}
+
 .container-narrow {
   max-width: var(--max-width-narrow);
 }
@@ -3316,7 +3331,7 @@ noscript + main .fade-in,
 
 /* The quote is a voice, not a callout. DESIGN.md bans side-stripe borders, and
    the black plate already carries all the emphasis it needs. */
-.episode-main .pull-quote {
+.episode-body .pull-quote {
   border-left: none;
   padding: var(--spacing-content);
   margin: var(--spacing-lg) 0;
@@ -3324,7 +3339,7 @@ noscript + main .fade-in,
 
 /* Support sits on the page like the sections around it, marked by its label
    rather than by a box. */
-.episode-main .v4v {
+.episode-body .v4v {
   padding: 0;
   border: none;
   background: transparent;
@@ -3333,7 +3348,7 @@ noscript + main .fade-in,
 }
 
 /* The bio is a person, not a card. */
-.episode-main .guest-bio {
+.episode-body .guest-bio {
   border: none;
   background: transparent;
   border-top: var(--border-thin) solid var(--border-light);
@@ -3351,15 +3366,157 @@ noscript + main .fade-in,
 
 /* Chapters read as an index tied to the player, so the rows are quiet and the
    times carry the weight. */
-.episode-section .timestamps-list li {
+.episode-body .timestamps-list li {
   padding: var(--spacing-sm) 0;
 }
 
 @media (min-width: 768px) {
-  .episode-section .timestamps-list li {
+  .episode-body .timestamps-list li {
     display: grid;
     grid-template-columns: 5.5rem 1fr;
     gap: var(--spacing-sm);
     align-items: baseline;
+  }
+}
+
+/* ============================================
+   EPISODE PAGE — single column
+   The two-column grid parked a sticky rail
+   beside 82% of the page with nothing relevant
+   in it, and capped the reading measure at
+   624px however wide the screen got. One
+   column, one measure, and only the player
+   sticks.
+   ============================================ */
+
+/* Only the summary and the transcript need a reading measure; chapters, media,
+   and the support block are better for having the width. Capping the whole
+   page to serve two text blocks is what made it a ribbon. */
+.episode-summary,
+.transcript-content p {
+  max-width: var(--max-width-narrow);
+}
+
+/* Chapters pay off at width: two columns of index instead of one long wall. */
+@media (min-width: 1024px) {
+  .episode-body #chapters .timestamps-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-lg);
+  }
+}
+
+/* --- hero: identity, once, at the top --- */
+
+.episode-hero {
+  display: grid;
+  gap: var(--spacing-content);
+  margin-bottom: var(--spacing-content);
+}
+
+.episode-hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--border-component) solid var(--border-heavy);
+}
+
+.episode-hero h1 {
+  margin: 0 0 var(--spacing-xs);
+}
+
+.episode-hero .episode-meta {
+  margin: 0 0 var(--spacing-content);
+  color: var(--text-secondary);
+}
+
+.episode-hero .episode-summary {
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .episode-hero {
+    grid-template-columns: var(--cover-size-md) 1fr;
+    align-items: start;
+    gap: var(--spacing-content);
+  }
+}
+
+/* --- the player, and the bar it becomes --- */
+
+.transport--audio {
+  margin: 0 0 var(--spacing-content);
+}
+
+/* Detached state: the plate leaves the flow and rides the bottom edge. A
+   placeholder holds its space so the page does not jump when it detaches. */
+.transport--audio.is-docked .transport__plate {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  margin: 0;
+  border-width: var(--border-component) 0 0 0;
+  padding: var(--spacing-sm) var(--spacing-content);
+  background: var(--bg-white);
+  /* The only place this system uses a shadow at rest: the bar is lifted off
+     the page it covers, and a hard edge alone does not read as above. */
+  box-shadow: 0 -4px 0 var(--text-black);
+}
+
+.transport--audio.is-docked .section-label { display: none; }
+
+@media (min-width: 768px) {
+  .transport--audio.is-docked .transport__plate {
+    /* Match the reading column rather than spanning a 1900px screen. */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(var(--max-width-content), calc(100% - var(--spacing-content) * 2));
+    border-width: var(--border-component);
+    border-bottom: none;
+  }
+}
+
+/* --- body --- */
+
+.episode-body > * + * {
+  margin-top: var(--spacing-lg);
+}
+
+/* Collapsed video is display:none and contributed a phantom gap between the
+   blocks either side of it. */
+.transport--video:not(:has(.transport__video:not([hidden]))) {
+  display: none;
+}
+
+.transport--video { margin: 0 0 var(--spacing-content); }
+
+/* --- chapters: real hit areas, readable ink --- */
+
+.timestamps-list li {
+  padding: 0;
+  border-bottom: var(--border-thin) solid var(--border-light);
+}
+
+.timestamps-list li:last-child { border-bottom: none; }
+
+.timestamp--seek,
+.timestamps-list .timestamp {
+  /* 23px tall and 3.46:1 before: under the touch minimum and under AA. */
+  min-height: var(--touch-target);
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-orange-dark);
+}
+
+@media (min-width: 600px) {
+  .timestamps-list li {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: var(--spacing-sm);
+    align-items: center;
+    min-height: var(--touch-target);
   }
 }
