@@ -88,6 +88,12 @@
         <button type="button" class="tag-link" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
         <button type="button" class="tag-link" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
         <button type="button" class="tag-link tag-link--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
+        {{- if $ctx.Params.video_url }}
+        {{/* Switches the same episode to video and carries the playhead across.
+             Hidden until the script can wire it, since without JS the video is
+             simply present in the page already. */}}
+        <button type="button" class="tag-link" data-transport-watch hidden aria-pressed="false">Watch</button>
+        {{- end }}
         <span class="transport__spacer" aria-hidden="true"></span>
         {{/* No transcript control here. The transcript is rendered in full
              further down this page, so a link to it is furniture. */}}
@@ -106,8 +112,7 @@
   {{- end }}
 
   {{- with $video }}
-  <div class="transport__video">
-    <span class="section-label">Watch</span>
+  <div class="transport__video" data-transport-video-panel>
     {{/* Shown outright rather than behind a disclosure: the poster costs a few
          kilobytes and preload="none" means the gigabyte only moves when someone
          presses play. Making people unfold it bought nothing. */}}

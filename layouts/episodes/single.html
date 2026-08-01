@@ -4,29 +4,26 @@
   <div class="container">
     {{ partial "breadcrumb.html" (dict "href" "/episodes/" "label" "All Episodes") }}
     <div class="episode-layout">
+
+      {{/* The sidebar is the control surface: what this is, and how to play it.
+           Sticky on desktop, so it stays reachable through the whole page. */}}
       <aside class="episode-sidebar fade-in">
         <div class="episode-cover">
           {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 280 "sizes" "(max-width: 768px) 200px, 280px" "eager" true) }}
         </div>
-        {{ with .Params.duration }}
-        <div class="episode-duration">
-          <span class="meta-label">Duration</span>
-          <span class="meta-value">{{ . }}</span>
-        </div>
-        {{ end }}
 
-        {{/* The sidebar is already sticky on desktop, so the plate rides along
-             while the reader works through timestamps and transcript. Video
-             stays in the main column; it is unreadable at this width. */}}
         {{ partial "media-player.html" (dict "context" . "only" "audio") }}
       </aside>
 
+      {{/* The main column is editorial, in reading order. Every module below
+           sits directly on the page; the player is the only framed object. */}}
       <div class="episode-main fade-in delay-1">
         <header class="episode-header">
           <h1>{{ $cleanTitle }}</h1>
           <div class="episode-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
             {{ with .Params.guest }}· with {{ .name }}{{ end }}
+            {{ with .Params.duration }}· {{ . }}{{ end }}
           </div>
         </header>
 
@@ -42,6 +39,9 @@
         {{ end }}
         {{ end }}
 
+        {{/* Revealed by the Watch control in the sidebar, carrying the playhead
+             across. Audio and video are one episode in two formats, so they
+             are one player rather than two competing blocks. */}}
         {{ partial "media-player.html" (dict "context" . "only" "video") }}
 
         {{ with .Params.key_quote }}
@@ -52,8 +52,8 @@
         {{ end }}
 
         {{ if .Params.timestamps }}
-        <section class="episode-section">
-          <h2>Timestamps</h2>
+        <section class="episode-section" id="chapters">
+          <h2>Chapters</h2>
           <ul class="timestamps-list">
             {{ range .Params.timestamps }}
             <li>
@@ -65,9 +65,9 @@
         </section>
         {{ end }}
 
-        <div class="episode-content">
-          {{ .Content }}
-        </div>
+        {{ with .Content }}
+        <div class="episode-content">{{ . }}</div>
+        {{ end }}
 
         {{ if .Params.resources }}
         <section class="episode-section">
@@ -80,11 +80,12 @@
         </section>
         {{ end }}
 
-        {{ partial "support-v4v.html" . }}
-
         {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
 
         {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}
+
+        {{/* Last, after the episode has actually been delivered. */}}
+        {{ partial "support-v4v.html" . }}
 
         {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
       </div>

@@ -3305,3 +3305,61 @@ noscript + main .fade-in,
     display: none;
   }
 }
+
+/* ============================================
+   EPISODE PAGE — one framed object
+   The page was a stack of seven competing
+   containers. The player is the only thing that
+   earns a frame; everything else sits on the
+   page and is separated typographically.
+   ============================================ */
+
+/* The quote is a voice, not a callout. DESIGN.md bans side-stripe borders, and
+   the black plate already carries all the emphasis it needs. */
+.episode-main .pull-quote {
+  border-left: none;
+  padding: var(--spacing-content);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Support sits on the page like the sections around it, marked by its label
+   rather than by a box. */
+.episode-main .v4v {
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-top: var(--border-thin) solid var(--border-light);
+  padding-top: var(--spacing-lg);
+}
+
+/* The bio is a person, not a card. */
+.episode-main .guest-bio {
+  border: none;
+  background: transparent;
+  border-top: var(--border-thin) solid var(--border-light);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* The video panel is content, not a module: no label, no frame of its own
+   beyond the picture's edge. */
+.transport--video {
+  margin: var(--spacing-lg) 0;
+}
+
+.transport--video .transport__video { margin-top: 0; }
+
+/* Chapters read as an index tied to the player, so the rows are quiet and the
+   times carry the weight. */
+.episode-section .timestamps-list li {
+  padding: var(--spacing-sm) 0;
+}
+
+@media (min-width: 768px) {
+  .episode-section .timestamps-list li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: var(--spacing-sm);
+    align-items: baseline;
+  }
+}

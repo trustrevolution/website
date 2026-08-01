@@ -120,6 +120,50 @@
       });
     }
 
+    /* Audio and video are one episode in two formats. Switching hands the
+     * playhead over and pauses the other, so there is never a moment with two
+     * copies of the same conversation playing. */
+    var watchBtn = ui.querySelector('[data-transport-watch]');
+    var videoPanel = document.querySelector('[data-transport-video-panel]');
+    var video = videoPanel ? videoPanel.querySelector('video') : null;
+
+    if (watchBtn && video && videoPanel) {
+      videoPanel.hidden = true;
+      watchBtn.hidden = false;
+
+      watchBtn.addEventListener('click', function () {
+        var watching = videoPanel.hidden;
+        videoPanel.hidden = !watching;
+        watchBtn.setAttribute('aria-pressed', String(watching));
+        watchBtn.textContent = watching ? 'Listen' : 'Watch';
+
+        if (watching) {
+          var at = audio.currentTime;
+          var wasPlaying = !audio.paused;
+          audio.pause();
+          video.currentTime = at;
+          videoPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          if (wasPlaying) video.play().catch(function () {});
+        } else {
+          audio.currentTime = video.currentTime;
+          var videoWasPlaying = !video.paused;
+          video.pause();
+          if (videoWasPlaying) audio.play().catch(function () {});
+        }
+      });
+
+      // Playing the video directly should still silence the audio.
+      video.addEventListener('play', function () {
+        if (!audio.paused) {
+          audio.currentTime = video.currentTime;
+          audio.pause();
+        }
+      });
+      audio.addEventListener('play', function () {
+        if (!video.paused) video.pause();
+      });
+    }
+
     syncPlayButton();
     syncProgress();
 
