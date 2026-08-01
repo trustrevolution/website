@@ -72,9 +72,8 @@
         <button type="button" class="tag-link" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
         <button type="button" class="tag-link tag-link--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
         <span class="transport__spacer" aria-hidden="true"></span>
-        {{/* The transcript is rendered further down this page, so this jumps to
-             it rather than offering a file nobody asked to download. */}}
-        <a class="tag-link" href="#transcript">Read transcript</a>
+        {{/* No transcript control here. The transcript is rendered in full
+             further down this page, so a link to it is furniture. */}}
         <a class="tag-link" href="{{ . }}" download>Download</a>
       </div>
 
