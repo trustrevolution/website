@@ -2883,7 +2883,10 @@ noscript + main .fade-in,
   align-items: center;
 }
 
-.transport__label {
+/* Section label — the broadsheet's section dingbat, per DESIGN.md. Declared as
+   a shared component because DESIGN.md names it as one; the dark-section
+   variant sets its own colour. */
+.section-label {
   display: inline-block;
   margin-bottom: var(--spacing-sm);
   padding-bottom: var(--spacing-3xs);
@@ -2958,8 +2961,10 @@ noscript + main .fade-in,
   font-weight: 600;
 }
 
-/* Elapsed time is inked like a timestamp value, because that is what it is. */
-.transport__time--elapsed { color: var(--accent-orange); }
+/* Ink, not accent. The playhead is a reading, not an action -- vermillion on the
+   plate measured 3.17:1 at this size, under the 4.5:1 floor, and the accent is
+   already carrying the scrub fill and the play block. */
+.transport__time--elapsed { color: var(--text-black); }
 .transport__time--total { color: var(--text-secondary); }
 .transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
 
@@ -3026,7 +3031,9 @@ noscript + main .fade-in,
 
 .transport__spacer { flex: 1 1 auto; }
 
-.transport__step {
+/* Tag link — the signature die-cut small component, per DESIGN.md. Shared so
+   the next component that needs one does not reinvent it. */
+.tag-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3045,18 +3052,18 @@ noscript + main .fade-in,
   transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.transport__step:hover {
+.tag-link:hover {
   border-color: var(--accent-orange);
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0 var(--accent-orange);
 }
 
-.transport__step:focus-visible {
+.tag-link:focus-visible {
   outline: var(--border-subtle) solid var(--accent-orange);
   outline-offset: var(--spacing-3xs);
 }
 
-.transport__step--rate { min-width: var(--touch-target); }
+.tag-link--rate { min-width: var(--touch-target); }
 
 /* --- timestamps become seek targets --- */
 
@@ -3081,48 +3088,11 @@ noscript + main .fade-in,
   outline-offset: var(--spacing-3xs);
 }
 
-/* --- video disclosure, matching the transcript pattern --- */
+/* --- video, shown outright --- */
 
 .transport__video {
-  margin-top: var(--spacing-content);
+  margin-top: var(--spacing-lg);
 }
-
-.transport__video summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-sm);
-  min-height: var(--touch-target);
-  padding: var(--spacing-sm) 0;
-  cursor: pointer;
-  list-style: none;
-}
-
-.transport__video summary::-webkit-details-marker,
-.transport__video summary::marker {
-  display: none;
-  content: "";
-}
-
-.transport__video summary h2 { margin: 0; }
-
-.transport__hint {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-  transition: color var(--transition-fast);
-}
-
-.transport__video summary:hover .transport__hint { color: var(--accent-orange); }
-.transport__video[open] .transport__hint { display: none; }
-
-.transport__video summary:focus-visible {
-  outline: var(--border-subtle) solid var(--accent-orange);
-  outline-offset: var(--spacing-3xs);
-}
-
-.transport__video-body { padding-top: var(--spacing-sm); }
 
 .transport__video-element {
   display: block;
@@ -3132,13 +3102,27 @@ noscript + main .fade-in,
   border: var(--border-component) solid var(--border-heavy);
 }
 
-.transport__video-links {
-  margin: var(--spacing-sm) 0 0;
-}
-
 /* Desktop: the plate reads as one horizontal instrument. */
 @media (min-width: 768px) {
   .transport__controls {
     column-gap: var(--spacing-content);
   }
+}
+
+/* Media error: stated plainly, with a way out. */
+.transport__error {
+  margin: var(--spacing-sm) 0 0;
+  padding: var(--spacing-sm);
+  border: var(--border-subtle) solid var(--accent-orange);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.transport__error a { color: var(--accent-orange); }
+
+.transport__controls[aria-disabled='true'] .transport__play,
+.transport__controls[aria-disabled='true'] .transport__scrub,
+.transport__controls[aria-disabled='true'] .tag-link {
+  opacity: 0.4;
+  pointer-events: none;
 }

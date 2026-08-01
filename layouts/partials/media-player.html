@@ -28,7 +28,7 @@
 
   {{- with $audio }}
   <div class="transport__plate" data-transport>
-    <span class="transport__label">Listen</span>
+    <span class="section-label">Listen</span>
 
     <audio
       class="transport__audio"
@@ -68,47 +68,48 @@
       <div class="transport__secondary">
         {{/* Signed numerals rather than rewind arrows: the arrow glyphs are not
              in the system stack and fall back to stray carets. */}}
-        <button type="button" class="transport__step" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
-        <button type="button" class="transport__step" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
-        <button type="button" class="transport__step transport__step--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
+        <button type="button" class="tag-link" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
+        <button type="button" class="tag-link" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
+        <button type="button" class="tag-link tag-link--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
         <span class="transport__spacer" aria-hidden="true"></span>
-        <a class="transport__step" href="{{ . }}" download>Audio</a>
-        {{- with $.Params.transcript_url }}
-        <a class="transport__step" href="{{ . }}" download>Transcript</a>
-        {{- end }}
+        {{/* The transcript is rendered further down this page, so this jumps to
+             it rather than offering a file nobody asked to download. */}}
+        <a class="tag-link" href="#transcript">Read transcript</a>
+        <a class="tag-link" href="{{ . }}" download>Download</a>
       </div>
+
+      {{/* Populated by the script when the file fails to load. Without this a
+           404 or a network drop leaves the plate sitting at 00:00 with no
+           explanation and no way out. */}}
+      <p class="transport__error" data-transport-error hidden role="alert">
+        This episode could not be loaded.
+        <a href="{{ . }}" download>Download it instead</a>, or try again later.
+      </p>
     </div>
   </div>
   {{- end }}
 
   {{- with $video }}
-  <details class="transport__video">
-    <summary>
-      <h2>Watch</h2>
-      <span class="transport__hint">Show video</span>
-    </summary>
-    <div class="transport__video-body">
-      {{/* preload="none" so opening the disclosure does not pull a gigabyte
-           before anyone presses play. */}}
-      <video
-        class="transport__video-element"
-        controls
-        playsinline
-        preload="none"
-        {{ with $.Params.featured_image }}{{ with resources.Get . }}poster="{{ .Permalink }}"{{ end }}{{ end }}
-        aria-label="Video for {{ $title }}">
-        <source src="{{ . }}" type="video/mp4">
-        {{- with $captions }}
-        <track kind="captions" src="{{ . }}" srclang="en" label="English" default>
-        {{- end }}
-        Your video player is unavailable.
-        <a href="{{ . }}" download>Download the video</a> instead.
-      </video>
-      <p class="transport__video-links">
-        <a class="transport__step" href="{{ . }}" download>Video, 1080p</a>
-      </p>
-    </div>
-  </details>
+  <div class="transport__video">
+    <span class="section-label">Watch</span>
+    {{/* Shown outright rather than behind a disclosure: the poster costs a few
+         kilobytes and preload="none" means the gigabyte only moves when someone
+         presses play. Making people unfold it bought nothing. */}}
+    <video
+      class="transport__video-element"
+      controls
+      playsinline
+      preload="none"
+      {{ with $.Params.featured_image }}{{ with resources.Get . }}poster="{{ .Permalink }}"{{ end }}{{ end }}
+      aria-label="Video for {{ $title }}">
+      <source src="{{ . }}" type="video/mp4">
+      {{- with $captions }}
+      <track kind="captions" src="{{ . }}" srclang="en" label="English" default>
+      {{- end }}
+      Your video player is unavailable.
+      <a href="{{ . }}" download>Download the video</a> instead.
+    </video>
+  </div>
   {{- end }}
 
 </section>

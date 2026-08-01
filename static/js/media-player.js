@@ -77,6 +77,16 @@
     audio.addEventListener('ended', syncPlayButton);
     audio.addEventListener('timeupdate', syncProgress);
 
+    // A missing or unreachable file otherwise leaves the plate frozen at 00:00
+    // with no signal that anything went wrong.
+    var errorBox = plate.querySelector('[data-transport-error]');
+    audio.addEventListener('error', function () {
+      if (errorBox) errorBox.hidden = false;
+      ui.setAttribute('aria-disabled', 'true');
+      playBtn.disabled = true;
+      scrub.disabled = true;
+    });
+
     audio.addEventListener('loadedmetadata', function () {
       if (isFinite(audio.duration)) total.textContent = formatTime(audio.duration);
       syncProgress();
@@ -145,8 +155,24 @@
     });
   }
 
+  /**
+   * The transcript lives in a collapsed <details> further down the page, so a
+   * bare fragment link would land the reader on a closed section. Open it, then
+   * let the anchor jump run.
+   */
+  function setupTranscriptLink() {
+    var link = document.querySelector('a[href="#transcript"]');
+    var details = document.getElementById('transcript-details');
+    if (!link || !details) return;
+
+    link.addEventListener('click', function () {
+      details.open = true;
+    });
+  }
+
   function init() {
     var plate = document.querySelector('[data-transport]');
+    setupTranscriptLink();
     if (!plate) return;
     setupTimestamps(setupTransport(plate));
   }
