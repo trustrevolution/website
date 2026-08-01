@@ -100,6 +100,9 @@
 
   <!-- JavaScript -->
   <script src="/js/nav-toggle.js" defer></script>
+  {{- if eq .Section "episodes" }}
+  <script src="/js/media-player.js" defer></script>
+  {{- end }}
   <script>
   (function(){
     var els = document.querySelectorAll('.fade-in');

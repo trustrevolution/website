@@ -15,6 +15,7 @@ audio_url: "https://media.trustrevolution.co/audio/s02e05-live-from-imagine-if-2
 video_url: "https://media.trustrevolution.co/video/s02e05-live-from-imagine-if-2025.mp4"
 duration: "22:17"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e05-live-from-imagine-if-2025.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e05-live-from-imagine-if-2025.vtt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e05-live-from-imagine-if-2025.json"
 guid: "68d39605-1468-40fa-934a-dfe963be3be1"
 feed_pubdate: "Wed, 24 Sep 2025 20:20:55 GMT"

@@ -13,6 +13,7 @@ audio_url: "https://media.trustrevolution.co/audio/s02e14-why-ads-keep-winning.m
 video_url: "https://media.trustrevolution.co/video/s02e14-why-ads-keep-winning.mp4"
 duration: "24:07"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e14-why-ads-keep-winning.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e14-why-ads-keep-winning.vtt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e14-why-ads-keep-winning.json"
 guid: "8b278f29-8458-482b-8fde-b4300a2f6deb"
 feed_pubdate: "Fri, 05 Dec 2025 13:00:26 GMT"

@@ -13,6 +13,7 @@ audio_url: "https://media.trustrevolution.co/audio/s02e06-privacy-s-last-stand.m
 video_url: "https://media.trustrevolution.co/video/s02e06-privacy-s-last-stand.mp4"
 duration: "32:07"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e06-privacy-s-last-stand.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e06-privacy-s-last-stand.vtt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e06-privacy-s-last-stand.json"
 guid: "d0ececd3-2d48-4100-8944-d00e02458479"
 feed_pubdate: "Wed, 01 Oct 2025 19:28:55 GMT"

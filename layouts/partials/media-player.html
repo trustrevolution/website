@@ -1,0 +1,115 @@
+{{/*
+  Media player — the transport plate.
+
+  Audio ships with native `controls` in the markup and works fully without
+  JavaScript. The script removes that attribute and reveals the custom transport,
+  so a scripting failure degrades to a working player rather than a dead one.
+
+  Custom controls exist because the native audio widget is a rounded grey pill —
+  the one shape this system forbids — and it sits in the page as furniture rather
+  than on an artifact. Video keeps its native controls for the opposite reason:
+  they overlay the picture, and fullscreen, picture-in-picture, and caption
+  selection are all things a custom control would take away.
+
+  The mono timecode is deliberate. This system reserves monospace for timestamp
+  values, and a playhead is the same object as a timestamp: a coordinate in the
+  episode. The script wires the page's timestamp list to seek this player, so the
+  rhyme is functional, not decorative.
+*/}}
+
+{{- $audio := .Params.audio_url -}}
+{{- $video := .Params.video_url -}}
+{{- $captions := .Params.captions_url -}}
+{{- $title := partial "episode-title-clean.html" .Title -}}
+{{- $duration := .Params.duration -}}
+
+{{- if or $audio $video }}
+<section class="transport" aria-label="Listen and watch">
+
+  {{- with $audio }}
+  <div class="transport__plate" data-transport>
+    <span class="transport__label">Listen</span>
+
+    <audio
+      class="transport__audio"
+      data-transport-audio
+      controls
+      preload="metadata"
+      aria-label="Audio for {{ $title }}">
+      <source src="{{ . }}" type="audio/mpeg">
+      Your audio player is unavailable.
+      <a href="{{ . }}" download>Download the episode</a> instead.
+    </audio>
+
+    {{/* Revealed by the script. Hidden by default so no-JS never sees dead controls. */}}
+    <div class="transport__controls" data-transport-ui hidden>
+      <button
+        type="button"
+        class="transport__play"
+        data-transport-play
+        aria-label="Play episode">
+        <span class="transport__glyph transport__glyph--play" aria-hidden="true"></span>
+        <span class="transport__glyph transport__glyph--pause" aria-hidden="true"></span>
+      </button>
+
+      <input
+        type="range"
+        class="transport__scrub"
+        data-transport-scrub
+        min="0" max="1000" value="0" step="1"
+        aria-label="Seek within episode">
+
+      {{/* The timecode sits under the rule it describes, not under the button. */}}
+      <div class="transport__readout">
+        <span class="transport__time transport__time--elapsed" data-transport-elapsed>00:00</span>
+        <span class="transport__time transport__time--total" data-transport-total>{{ $duration | default "--:--" }}</span>
+      </div>
+
+      <div class="transport__secondary">
+        {{/* Signed numerals rather than rewind arrows: the arrow glyphs are not
+             in the system stack and fall back to stray carets. */}}
+        <button type="button" class="transport__step" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
+        <button type="button" class="transport__step" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
+        <button type="button" class="transport__step transport__step--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
+        <span class="transport__spacer" aria-hidden="true"></span>
+        <a class="transport__step" href="{{ . }}" download>Audio</a>
+        {{- with $.Params.transcript_url }}
+        <a class="transport__step" href="{{ . }}" download>Transcript</a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+  {{- end }}
+
+  {{- with $video }}
+  <details class="transport__video">
+    <summary>
+      <h2>Watch</h2>
+      <span class="transport__hint">Show video</span>
+    </summary>
+    <div class="transport__video-body">
+      {{/* preload="none" so opening the disclosure does not pull a gigabyte
+           before anyone presses play. */}}
+      <video
+        class="transport__video-element"
+        controls
+        playsinline
+        preload="none"
+        {{ with $.Params.featured_image }}{{ with resources.Get . }}poster="{{ .Permalink }}"{{ end }}{{ end }}
+        aria-label="Video for {{ $title }}">
+        <source src="{{ . }}" type="video/mp4">
+        {{- with $captions }}
+        <track kind="captions" src="{{ . }}" srclang="en" label="English" default>
+        {{- end }}
+        Your video player is unavailable.
+        <a href="{{ . }}" download>Download the video</a> instead.
+      </video>
+      <p class="transport__video-links">
+        <a class="transport__step" href="{{ . }}" download>Video, 1080p</a>
+      </p>
+    </div>
+  </details>
+  {{- end }}
+
+</section>
+{{- end }}

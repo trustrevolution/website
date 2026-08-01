@@ -38,6 +38,8 @@
         {{ end }}
         {{ end }}
 
+        {{ partial "media-player.html" . }}
+
         {{ with .Params.key_quote }}
         <blockquote class="pull-quote">
           <p>{{ .text }}</p>

@@ -59,6 +59,7 @@ const CONTENT_TYPES = {
   '.mp3': 'audio/mpeg',
   '.mp4': 'video/mp4',
   '.srt': 'application/x-subrip',
+  '.vtt': 'text/vtt',
   '.json': 'application/json',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -306,6 +307,7 @@ function collect() {
     audio: 'audio',
     video: 'video',
     transcripts: 'transcripts',
+    captions: 'captions',
     chapters: 'chapters',
     art: 'art'
   };

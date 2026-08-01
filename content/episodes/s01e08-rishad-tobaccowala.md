@@ -15,6 +15,7 @@ audio_url: "https://media.trustrevolution.co/audio/s01e08-rishad-tobaccowala.mp3
 video_url: "https://media.trustrevolution.co/video/s01e08-rishad-tobaccowala.mp4"
 duration: "1:11:38"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e08-rishad-tobaccowala.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e08-rishad-tobaccowala.vtt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e08-rishad-tobaccowala.json"
 guid: "66e24bc1-5a3f-4d27-8c8f-563862058af8"
 feed_pubdate: "Wed, 04 Jun 2025 12:00:00 GMT"

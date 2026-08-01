@@ -135,7 +135,9 @@ function main() {
     }
 
     // Durable feed data, anchored after the media URLs so it reads in one block.
-    text = upsertAfter(text, 'chapters_url', `${MEDIA_BASE}/chapters/${slug}.json`, 'transcript_url');
+    // WebVTT captions for the <video> track element; SRT stays for the feed.
+    text = upsertAfter(text, 'captions_url', `${MEDIA_BASE}/captions/${slug}.vtt`, 'transcript_url');
+    text = upsertAfter(text, 'chapters_url', `${MEDIA_BASE}/chapters/${slug}.json`, 'captions_url');
     text = upsertAfter(text, 'guid', record.guid, 'chapters_url');
     text = upsertAfter(text, 'feed_pubdate', record.pubDate, 'guid');
     text = upsertAfter(text, 'enclosure_bytes', record.assets.audio.bytes, 'feed_pubdate', { raw: true });

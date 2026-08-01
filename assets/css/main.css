@@ -2840,3 +2840,305 @@ noscript + main .fade-in,
 .page-seamless .site-footer {
   margin-top: 0;
 }
+
+/* ============================================
+   TRANSPORT PLATE — episode media player
+   Custom audio transport, because the native
+   audio widget is a rounded grey pill and sits
+   in the page as furniture. Video keeps native
+   controls: they live on the artifact and carry
+   fullscreen, PiP, and caption selection.
+   ============================================ */
+
+.transport {
+  margin: var(--spacing-lg) 0;
+}
+
+.transport__plate {
+  padding: var(--spacing-content);
+  border: var(--border-component) solid var(--border-heavy);
+  background: var(--bg-subtle);
+}
+
+/* No-JS fallback: the native element stays visible and usable. */
+.transport__audio {
+  display: block;
+  width: 100%;
+}
+
+.transport__plate:has([data-transport-ui]:not([hidden])) .transport__audio {
+  display: none;
+}
+
+/* Mobile: play plate and rule on one line, timecode beneath, controls last. */
+.transport__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "play scrub"
+    "play times"
+    "secondary secondary";
+  column-gap: var(--spacing-sm);
+  row-gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.transport__label {
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-3xs);
+  border-bottom: var(--border-subtle) solid var(--accent-orange);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+}
+
+.transport__play {
+  grid-area: play;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--touch-target-lg);
+  height: var(--touch-target-lg);
+  padding: 0;
+  background: var(--accent-orange);
+  border: var(--border-component) solid var(--accent-orange);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.transport__play:hover {
+  background: var(--accent-orange-dark);
+  border-color: var(--accent-orange-dark);
+}
+
+.transport__play:focus-visible {
+  outline: var(--border-subtle) solid var(--text-black);
+  outline-offset: var(--spacing-3xs);
+}
+
+/* Solid geometry cut from the same ink as the plate: a triangle and two bars.
+   Shaped with clip-path and flex rather than border tricks so the glyphs are
+   real boxes that scale with the type scale. */
+.transport__glyph--play {
+  width: var(--spacing-md);
+  height: var(--spacing-md);
+  margin-left: var(--spacing-3xs);
+  background: var(--bg-white);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.transport__glyph--pause {
+  display: none;
+  gap: var(--spacing-3xs);
+  height: var(--spacing-md);
+}
+
+.transport__glyph--pause::before,
+.transport__glyph--pause::after {
+  content: '';
+  width: var(--spacing-3xs);
+  height: 100%;
+  background: var(--bg-white);
+}
+
+.is-playing .transport__glyph--play { display: none; }
+.is-playing .transport__glyph--pause { display: flex; }
+
+.transport__readout {
+  grid-area: times;
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* Elapsed time is inked like a timestamp value, because that is what it is. */
+.transport__time--elapsed { color: var(--accent-orange); }
+.transport__time--total { color: var(--text-secondary); }
+.transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
+
+/* --- scrub rule --- */
+
+.transport__scrub {
+  grid-area: scrub;
+  --progress: 0%;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--touch-target);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.transport__scrub:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+/* A hard rule, filled to the playhead. No track radius, no gradient softening. */
+.transport__scrub::-webkit-slider-runnable-track {
+  height: var(--border-accent);
+  background:
+    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
+}
+
+.transport__scrub::-moz-range-track {
+  height: var(--border-accent);
+  background:
+    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
+}
+
+.transport__scrub::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+  margin-top: calc((var(--border-accent) - var(--spacing-sm)) / 2);
+  background: var(--text-black);
+  border: var(--border-subtle) solid var(--bg-subtle);
+}
+
+.transport__scrub::-moz-range-thumb {
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+  border-radius: 0;
+  background: var(--text-black);
+  border: var(--border-subtle) solid var(--bg-subtle);
+}
+
+/* --- die-cut secondary controls --- */
+
+.transport__secondary {
+  grid-area: secondary;
+  margin-top: var(--spacing-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.transport__spacer { flex: 1 1 auto; }
+
+.transport__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3xs);
+  min-height: var(--touch-target);
+  padding: var(--btn-padding-y-sm) var(--spacing-sm);
+  background: var(--bg-white);
+  border: var(--border-subtle) solid var(--border-heavy);
+  color: var(--text-black);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.transport__step:hover {
+  border-color: var(--accent-orange);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--accent-orange);
+}
+
+.transport__step:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+.transport__step--rate { min-width: var(--touch-target); }
+
+/* --- timestamps become seek targets --- */
+
+.timestamp--seek {
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: var(--border-thin) solid transparent;
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--accent-orange);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.timestamp--seek:hover { border-bottom-color: var(--accent-orange); }
+
+.timestamp--seek:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+/* --- video disclosure, matching the transcript pattern --- */
+
+.transport__video {
+  margin-top: var(--spacing-content);
+}
+
+.transport__video summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  min-height: var(--touch-target);
+  padding: var(--spacing-sm) 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.transport__video summary::-webkit-details-marker,
+.transport__video summary::marker {
+  display: none;
+  content: "";
+}
+
+.transport__video summary h2 { margin: 0; }
+
+.transport__hint {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: color var(--transition-fast);
+}
+
+.transport__video summary:hover .transport__hint { color: var(--accent-orange); }
+.transport__video[open] .transport__hint { display: none; }
+
+.transport__video summary:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+.transport__video-body { padding-top: var(--spacing-sm); }
+
+.transport__video-element {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-black);
+  border: var(--border-component) solid var(--border-heavy);
+}
+
+.transport__video-links {
+  margin: var(--spacing-sm) 0 0;
+}
+
+/* Desktop: the plate reads as one horizontal instrument. */
+@media (min-width: 768px) {
+  .transport__controls {
+    column-gap: var(--spacing-content);
+  }
+}
