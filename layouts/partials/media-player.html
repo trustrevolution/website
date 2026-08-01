@@ -17,14 +17,31 @@
   rhyme is functional, not decorative.
 */}}
 
-{{- $audio := .Params.audio_url -}}
-{{- $video := .Params.video_url -}}
-{{- $captions := .Params.captions_url -}}
-{{- $title := partial "episode-title-clean.html" .Title -}}
-{{- $duration := .Params.duration -}}
+{{/*
+  Scope: "audio", "video", or unset for both. The two halves are placed in
+  different columns on desktop -- the audio plate rides along in the sticky
+  sidebar while a 1080p video would be unreadable at that width.
+
+    {{ partial "media-player.html" (dict "context" . "only" "audio") }}
+*/}}
+{{- $ctx := . -}}
+{{- $only := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $ctx = .context -}}
+  {{- $only = .only | default "" -}}
+{{- end -}}
+
+{{- $audio := "" -}}
+{{- if ne $only "video" }}{{ $audio = $ctx.Params.audio_url }}{{ end -}}
+{{- $video := "" -}}
+{{- if ne $only "audio" }}{{ $video = $ctx.Params.video_url }}{{ end -}}
+
+{{- $captions := $ctx.Params.captions_url -}}
+{{- $title := partial "episode-title-clean.html" $ctx.Title -}}
+{{- $duration := $ctx.Params.duration -}}
 
 {{- if or $audio $video }}
-<section class="transport" aria-label="Listen and watch">
+<section class="transport transport--{{ $only | default "full" }}" aria-label="{{ if eq $only "video" }}Watch{{ else if eq $only "audio" }}Listen{{ else }}Listen and watch{{ end }}">
 
   {{- with $audio }}
   <div class="transport__plate" data-transport>
@@ -99,7 +116,7 @@
       controls
       playsinline
       preload="none"
-      {{ with $.Params.featured_image }}{{ with resources.Get . }}poster="{{ .Permalink }}"{{ end }}{{ end }}
+      {{ with $ctx.Params.featured_image }}{{ with resources.Get . }}poster="{{ .Permalink }}"{{ end }}{{ end }}
       aria-label="Video for {{ $title }}">
       <source src="{{ . }}" type="video/mp4">
       {{- with $captions }}

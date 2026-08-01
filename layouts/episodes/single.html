@@ -14,6 +14,11 @@
           <span class="meta-value">{{ . }}</span>
         </div>
         {{ end }}
+
+        {{/* The sidebar is already sticky on desktop, so the plate rides along
+             while the reader works through timestamps and transcript. Video
+             stays in the main column; it is unreadable at this width. */}}
+        {{ partial "media-player.html" (dict "context" . "only" "audio") }}
       </aside>
 
       <div class="episode-main fade-in delay-1">
@@ -37,7 +42,7 @@
         {{ end }}
         {{ end }}
 
-        {{ partial "media-player.html" . }}
+        {{ partial "media-player.html" (dict "context" . "only" "video") }}
 
         {{ with .Params.key_quote }}
         <blockquote class="pull-quote">
