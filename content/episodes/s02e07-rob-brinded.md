@@ -11,10 +11,16 @@ summary: |
 
   Rob Brinded, author of Glitch: The Hidden Code Running Your Life (And How to Debug It), joins Shawn to reveal how childhood programming creates unconscious “hamster wheels” that determine who we trust, why we repeat patterns of betrayal, and how intelligent people make devastating choices. This conversation maps the five binary programs installed in early childhood that run our lives—left-siders seeking value through people-pleasing, right-siders compulsively achieving to avoid disappointment, both trapped in wheels that inevitably flip.
 featured_image: "images/cover-art/s02e07.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/AUDIO---DEFAULT---96fb43a4-73fb-406a-80b3-71818a2fe311.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/VIDEO---DEFAULT---a2784bac-84f8-47c2-a075-4e7ea1ba508b.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e07-rob-brinded.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e07-rob-brinded.mp4"
 duration: "1:23:22"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e07-rob-brinded.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e07-rob-brinded.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e07-rob-brinded.json"
+guid: "97b19908-1107-4a57-aeb4-4769eda41442"
+feed_pubdate: "Wed, 08 Oct 2025 12:00:25 GMT"
+enclosure_bytes: 40020236
+duration_seconds: 5002
 fountain_url: "https://fountain.fm/episode/5ufEYmtVbctyLiFiynuO"
 guest:
   name: Rob Brinded

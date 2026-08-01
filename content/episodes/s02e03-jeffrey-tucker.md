@@ -9,10 +9,16 @@ description: "Brownstone Institute founder Jeffrey Tucker on how COVID exposed t
 summary: |
   Jeffrey Tucker, founder of the Brownstone Institute and Austrian economics advocate, joins Shawn to dissect the COVID-19 response's devastating impact on institutional trust and explore paths to personal sovereignty. This conversation unveils how the pandemic revealed the “total state” pervading all aspects of society, why libertarian institutions failed during the crisis, and how Austrian economics principles point toward reclaiming individual freedom through timeless values and critical thinking.
 featured_image: "images/cover-art/s02e03.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/AUDIO---DEFAULT---77236bf2-6f1b-4947-a5b4-a404169e1e65.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/VIDEO---DEFAULT---ca11947b-f742-4700-a001-4d928af6c643.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e03-jeffrey-tucker.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e03-jeffrey-tucker.mp4"
 duration: "1:04:48"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e03-jeffrey-tucker.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e03-jeffrey-tucker.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e03-jeffrey-tucker.json"
+guid: "6dfbec12-ca11-438a-8f6f-7966a40a3386"
+feed_pubdate: "Wed, 10 Sep 2025 12:00:27 GMT"
+enclosure_bytes: 31108302
+duration_seconds: 3888
 fountain_url: "https://fountain.fm/episode/wSoxigSB0d67rPpszvu7"
 guest:
   name: Jeffrey Tucker

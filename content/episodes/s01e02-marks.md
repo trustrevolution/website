@@ -11,10 +11,16 @@ summary: |
 
   Marks, co-founder and CEO of OpenSecret and Maple AI, is a seasoned mobile app developer and privacy advocate. With a startup background, he’s pioneering secure enclave solutions to safeguard data and rebuild trust in the digital world.
 featured_image: "images/cover-art/s01e02.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/AUDIO---DEFAULT---c46809f1-6c0f-4b68-8e3f-d7d1974203ef.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/VIDEO---DEFAULT---9b18b6dd-108f-4b16-9f9c-0cc93e422817.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e02-marks.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e02-marks.mp4"
 duration: "56:26"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e02-marks.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e02-marks.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e02-marks.json"
+guid: "8c1d47bd-eef6-4445-b4f7-75501da064ca"
+feed_pubdate: "Wed, 23 Apr 2025 12:00:00 GMT"
+enclosure_bytes: 54312695
+duration_seconds: 3386
 fountain_url: "https://fountain.fm/episode/VjH1BHbUPwsd1mzcYue9"
 guest:
   name: Marks

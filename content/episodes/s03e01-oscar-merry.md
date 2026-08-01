@@ -9,10 +9,16 @@ description: "Fountain CEO Oscar Merry on what Joe Rogan lost for $100M and why 
 summary: |
   “If you choose to go exclusive on Spotify, you're essentially saying to 70% of your existing and potential audience, ‘Sorry, you can't listen anymore.’” Oscar Merry watched Joe Rogan lose influence despite a $100 million payday—and built Fountain to prove there's a better way.
 featured_image: "images/cover-art/s03e01.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---PAID---1c28b3bb-f0e1-4d2d-8a2e-e3cc0e6723dc.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---PAID---1c28b3bb-f0e1-4d2d-8a2e-e3cc0e6723dc.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e01-oscar-merry.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e01-oscar-merry.mp4"
 duration: "1:07:46"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---TRANSCRIPT---PAID---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e01-oscar-merry.srt"
+captions_url: "https://media.trustrevolution.co/captions/s03e01-oscar-merry.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e01-oscar-merry.json"
+guid: "e9ae1784-1113-41cd-b71b-9ea7dd49967d"
+feed_pubdate: "Thu, 22 Jan 2026 13:00:26 GMT"
+enclosure_bytes: 65061345
+duration_seconds: 4066
 fountain_url: "https://fountain.fm/episode/muP1tUHZyoQJkqw5WHKc"
 guest:
   name: "Oscar Merry"

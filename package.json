@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "hugo server -D",
-    "build": "hugo --gc --minify",
+    "build": "hugo --gc --minify && npm run verify:feed",
+    "verify:feed": "node scripts/verify-feed.js",
     "generate:og": "node scripts/generate-og-images.js",
     "fetch:youtube": "node scripts/fetch-youtube-stats.js",
     "prebuild": "npm run generate:og"

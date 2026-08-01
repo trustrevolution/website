@@ -1,0 +1,1407 @@
+{
+  "generatedAt": "2026-08-01T17:25:34.393Z",
+  "sourceFeed": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF",
+  "archiveDir": "~/Archive/trust-revolution-fountain",
+  "feed": {
+    "path": "feed.xml",
+    "bytes": 259704,
+    "sha256": "9038d74b07e2fda3230395d442431c100db276a8594d25ad8f787093d52d51a0"
+  },
+  "channel": {
+    "podcastGuid": "a7d58130-6f1d-4ff3-9c5a-aee3b8cc07cc",
+    "coverArt": {
+      "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/files/COVER_ART---DEFAULT---cfe5c2ea-d5ad-42ac-82c9-b634c1a30b19.jpg",
+      "path": "art/cover.jpg",
+      "bytes": 111815,
+      "sha256": "c0907ebf692c3b7497773cb4ad648c535ae231b7756b896627f1df70a7ad9a8d"
+    }
+  },
+  "episodes": [
+    {
+      "slug": "s03e07-roland-bewick",
+      "title": "Self-Custody for You and Your AI | Roland Bewick",
+      "guid": "6c22583d-7678-488e-b907-461a737d294a",
+      "pubDate": "Fri, 06 Mar 2026 13:00:25 GMT",
+      "declaredDuration": 3524,
+      "season": 3,
+      "episode": 7,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---DEFAULT---171d3828-e57a-4446-89f4-6a9b7eb956dc.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e07-roland-bewick.mp3",
+          "bytes": 56379915,
+          "declaredBytes": 56379915,
+          "observedDuration": 3524,
+          "sha256": "086351125cf5bbfc15af33b44f6dfc134a345ed57917acecd59988cec56e0eea"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e07-roland-bewick.srt",
+          "bytes": 76726,
+          "sha256": "c9cf9a65a322cbd5725916c3ed15ee47a0b8345b7748932db8310f0b080ad775"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e07-roland-bewick.json",
+          "bytes": 941,
+          "sha256": "2a8649bf4c2446be1f188239c74a146e0e9e97a6b5fa9f6eb22c00612d7a62e5"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UfDFqrjHpsTpEAbZPh7v/files/COVER_ART---DEFAULT---c886d44b-dca2-4fa5-9675-61472a13bee0.jpg",
+          "path": "art/s03e07-roland-bewick.jpg",
+          "bytes": 113478,
+          "sha256": "75c7698b6cb687caa3751f68ff48b2ee3582629e969e352e66be155edf1e78e0"
+        }
+      }
+    },
+    {
+      "slug": "s03e06-james-lee",
+      "title": "Your Data's Already Gone. Now What? | James Lee",
+      "guid": "a2ced3c5-8140-46fc-a682-dc529015560e",
+      "pubDate": "Thu, 26 Feb 2026 13:00:26 GMT",
+      "declaredDuration": 4271,
+      "season": 3,
+      "episode": 6,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---DEFAULT---6a9d3091-7557-4efd-abf6-06785ae71ea6.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e06-james-lee.mp3",
+          "bytes": 68331458,
+          "declaredBytes": 68330000,
+          "observedDuration": 4271,
+          "sha256": "225fadf1597875888172119d5b417584038033e5ef125b070018cae4b8e2bcc2"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e06-james-lee.srt",
+          "bytes": 92325,
+          "sha256": "7c62a936ff6661c6e9b7cf28f179da72d80d9a8c06977f5e6b8c5727ded1144e"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e06-james-lee.json",
+          "bytes": 1271,
+          "sha256": "d20160b3e89a5eb39b722b10a4403e7befff4550f1a7a7cad238d5a3fee9aadf"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/COVER_ART---DEFAULT---df67b5e1-35ab-4ef5-870a-02ae7aa362ee.jpg",
+          "path": "art/s03e06-james-lee.jpg",
+          "bytes": 88188,
+          "sha256": "34444857767ee5d8d7f245bd5eeae3ddba42aaa58fdd6936125562d97b5356e4"
+        }
+      }
+    },
+    {
+      "slug": "s03e05-jesse-posner",
+      "title": "Your Money, Your Data, Your Mind | Jesse Posner",
+      "guid": "68731d20-8515-4b19-8212-335943b83db5",
+      "pubDate": "Thu, 19 Feb 2026 13:00:26 GMT",
+      "declaredDuration": 4898,
+      "season": 3,
+      "episode": 5,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---DEFAULT---c83dc858-4cc9-4033-a34d-7d5f08363fe5.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e05-jesse-posner.mp3",
+          "bytes": 78367911,
+          "declaredBytes": 78366667,
+          "observedDuration": 4898,
+          "sha256": "288aecb4f3a69fdcfbf4eeb5ea7a5acc05574239f869bd2ff616580800db9026"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e05-jesse-posner.srt",
+          "bytes": 90229,
+          "sha256": "f68bfdcf223aed76a4ab07f38514918e1bba9d576a93005192fddb5f5a324505"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e05-jesse-posner.json",
+          "bytes": 1326,
+          "sha256": "ea5560aa622dd5712a6e612e5defa2949e3a37ed9e94dc853b7f01852a59e8e4"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/58OL7iA3g2ypmFzmCSVw/files/COVER_ART---DEFAULT---e79c393a-2583-4e08-a556-958e8cef2ba5.jpg",
+          "path": "art/s03e05-jesse-posner.jpg",
+          "bytes": 110887,
+          "sha256": "d9d95ae017c4f05a5395a076d6f4e6772df452dc3cb56f506bd850758c7405a1"
+        }
+      }
+    },
+    {
+      "slug": "s03e04-john-robb",
+      "title": "S03E04 John Robb \u2014 Total Surveillance Is One Switch Away",
+      "guid": "74af5fc8-73e4-4b5b-bc09-f43749eb5170",
+      "pubDate": "Fri, 13 Feb 2026 13:00:26 GMT",
+      "declaredDuration": 4249,
+      "season": 3,
+      "episode": 4,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---DEFAULT---56b81a32-77a9-4eef-a203-77b038c39627.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e04-john-robb.mp3",
+          "bytes": 67979954,
+          "declaredBytes": 67979954,
+          "observedDuration": 4249,
+          "sha256": "ddbda2382db286be85e827c4f80d099fe2a23b0fdae35824216d5641f74203b2"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e04-john-robb.srt",
+          "bytes": 107277,
+          "sha256": "6daa3ea24899d1164917f0c61d66af5694c2380788bca1da19686e74879ae50e"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e04-john-robb.json",
+          "bytes": 1327,
+          "sha256": "37a1fac9079783f119b3decfda375ca8e42315a5d246a576b08756dd2c12821a"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/IAcYeLXGG9VqvP7SeuLS/files/COVER_ART---DEFAULT---e7ca1098-c6b9-4c2f-a13c-813a626b231f.jpg",
+          "path": "art/s03e04-john-robb.jpg",
+          "bytes": 90274,
+          "sha256": "b78f68125b455d1b42612b878d6f34790c4c0264c8f8a0296d2219278226a69f"
+        }
+      }
+    },
+    {
+      "slug": "s03e03-aaron-van-wirdum",
+      "title": "S03E03 Aaron van Wirdum \u2013 Bitcoin's Origin Story and the Unfinished Fight",
+      "guid": "205d46ef-091c-41a0-bad3-69e1a13f7e1f",
+      "pubDate": "Fri, 06 Feb 2026 13:00:26 GMT",
+      "declaredDuration": 3890,
+      "season": 3,
+      "episode": 3,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---DEFAULT---1d75ba15-ff6e-4fcc-a631-526287942a8a.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e03-aaron-van-wirdum.mp3",
+          "bytes": 62237613,
+          "declaredBytes": 62237613,
+          "observedDuration": 3890,
+          "sha256": "09d42ca04348559e90f5c5060618ad853bea978b6203b472cc6f4f3ad06a815d"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e03-aaron-van-wirdum.srt",
+          "bytes": 89056,
+          "sha256": "1c5997a6acce5ef30e0cf215c63892f8aa6ff42c405c693b1c796c4615dbc154"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e03-aaron-van-wirdum.json",
+          "bytes": 1262,
+          "sha256": "2bf7e06357736782997d7de9316a54e15d0f92f55c8bd6d8867ad1d856520199"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/COVER_ART---DEFAULT---787e9a8d-1d74-4bd1-9284-e5b936a7a807.jpg",
+          "path": "art/s03e03-aaron-van-wirdum.jpg",
+          "bytes": 120931,
+          "sha256": "b272fd705918509abfd0bd180709fda0cbb6469c392062962736205b343a9f0b"
+        }
+      }
+    },
+    {
+      "slug": "s03e02-jason-hughey",
+      "title": "S03E02 Jason Hughey \u2013 Companies Don't Keep Promises. People Do.",
+      "guid": "93fff2dd-aece-4aeb-9e58-eab81cad83d1",
+      "pubDate": "Fri, 30 Jan 2026 15:01:52 GMT",
+      "declaredDuration": 3820,
+      "season": 3,
+      "episode": 2,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---DEFAULT---498d97c2-a989-4c7f-a6f3-67a322e19759.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e02-jason-hughey.mp3",
+          "bytes": 61127931,
+          "declaredBytes": 61126667,
+          "observedDuration": 3820,
+          "sha256": "2280c84e00c728e9158717a670b296268a13c9dbc5b43ecfba7d3ca9ad249081"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e02-jason-hughey.srt",
+          "bytes": 89391,
+          "sha256": "f10e380ae45b455a3e939af5b7ceae047d36fd401be3c4e8c45f845a52ab89b2"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e02-jason-hughey.json",
+          "bytes": 1338,
+          "sha256": "c877b9ed2d0a996afe5a31fc21b33782f24cf66651be81df1b735287fb523bfa"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/COVER_ART---DEFAULT---2543fd43-6b40-4bc0-b81f-564543f3b26d.jpg",
+          "path": "art/s03e02-jason-hughey.jpg",
+          "bytes": 95575,
+          "sha256": "f9df1258d020858f6b7d39f47894d479a27b0d90880ac7630b466773344b92e0"
+        }
+      }
+    },
+    {
+      "slug": "s03e01-oscar-merry",
+      "title": "S03E01 Oscar Merry \u2014 What Joe Rogan Lost for $100M",
+      "guid": "e9ae1784-1113-41cd-b71b-9ea7dd49967d",
+      "pubDate": "Thu, 22 Jan 2026 13:00:26 GMT",
+      "declaredDuration": 4066,
+      "season": 3,
+      "episode": 1,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---DEFAULT---1c28b3bb-f0e1-4d2d-8a2e-e3cc0e6723dc.mp4/ORIGINAL.mp3",
+          "path": "audio/s03e01-oscar-merry.mp3",
+          "bytes": 65061345,
+          "declaredBytes": 65061345,
+          "observedDuration": 4066,
+          "sha256": "6a25e6580f80f5b9eb87b4a250d804ece2c9190c92cde8411661ae78b0e7ce27"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s03e01-oscar-merry.srt",
+          "bytes": 79824,
+          "sha256": "be298c6626466df5210eada08af4bab963bf369445869a4190565d79bd4d2355"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/VIDEO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s03e01-oscar-merry.json",
+          "bytes": 1342,
+          "sha256": "b8e0bd9b1c28a02aafec4ae721cd4e18996dda896ab9a6cd1d95d2a1d40d1cfe"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/BzxjjsLRnm1bp14hlk1s/files/COVER_ART---DEFAULT---6300ffed-b0d1-4502-8052-4ab976e49813.jpg",
+          "path": "art/s03e01-oscar-merry.jpg",
+          "bytes": 110963,
+          "sha256": "6177d7b21bdb9331aebe3ca15c67927059e543edbb2e972676cc98962b6c0ff3"
+        }
+      }
+    },
+    {
+      "slug": "s02e16-pippellia",
+      "title": "S02E16 Pippellia \u2013 Reputation Without a Kill Switch",
+      "guid": "7ab9d5eb-135c-4427-b4c0-04f5d3b86f28",
+      "pubDate": "Thu, 18 Dec 2025 13:00:26 GMT",
+      "declaredDuration": 4138,
+      "season": 2,
+      "episode": 16,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/AUDIO---DEFAULT---cd6faf8d-1931-48fb-8ef9-8432475facce.mp3",
+          "path": "audio/s02e16-pippellia.mp3",
+          "bytes": 33103639,
+          "declaredBytes": 33103639,
+          "observedDuration": 4138,
+          "sha256": "3360d8252f921369327d86e1f8e862dc2cfc58eba06e69576eb96230671451a8"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e16-pippellia.srt",
+          "bytes": 86093,
+          "sha256": "93f8d9e694edec5674136c8471445aa725d48b8297a409741715832ea1af12d8"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e16-pippellia.json",
+          "bytes": 1385,
+          "sha256": "3a69f9ca66aacb41415b0c88305565c6d8d6b0719f9bb3e25d0a3223f7b9bbdd"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/VHM2DgApLFc8A5PB70Ly/files/COVER_ART---DEFAULT---271ea903-b539-44b0-9b0a-a6f80caa41ab.jpg",
+          "path": "art/s02e16-pippellia.jpg",
+          "bytes": 87065,
+          "sha256": "f9df0c354001158cc242b300d3ba134e89b12908040c85f1bf1efd30f6a11a31"
+        }
+      }
+    },
+    {
+      "slug": "s02e15-christian-keroles",
+      "title": "S02E15 Christian Keroles \u2013 What Dissidents Know About Bitcoin",
+      "guid": "4ddb2a8f-c049-48a8-8068-7c3cf1a0e049",
+      "pubDate": "Fri, 12 Dec 2025 13:00:26 GMT",
+      "declaredDuration": 3277,
+      "season": 2,
+      "episode": 15,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/AUDIO---DEFAULT---5a6b8f2b-b435-41ce-b000-45b3b2701a41.mp3",
+          "path": "audio/s02e15-christian-keroles.mp3",
+          "bytes": 26216507,
+          "declaredBytes": 26216507,
+          "observedDuration": 3277,
+          "sha256": "d2c85d296abddb4177118c0818b23c26b65d213232823ed695c04f0e2c9a6256"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e15-christian-keroles.srt",
+          "bytes": 62447,
+          "sha256": "eafa2288795aace23a6879e56db7cd7c99076cc3996a13e7c644d6e709aa0961"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e15-christian-keroles.json",
+          "bytes": 966,
+          "sha256": "2466fb367c1e105c4735f26f6dcd594e534ec19a314b850da47d6a6ba012d0a9"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ekTFnYA5vLvWqWsK8jnu/files/COVER_ART---DEFAULT---749954c6-d623-4590-b377-55d22d1daafc.jpg",
+          "path": "art/s02e15-christian-keroles.jpg",
+          "bytes": 117746,
+          "sha256": "c1d1553bc982faa0885e9ebe4b932017ee971a3214c55a7873f6f0eb809c500c"
+        }
+      }
+    },
+    {
+      "slug": "s02e14-why-ads-keep-winning",
+      "title": "S02E14 Why Ads Keep Winning",
+      "guid": "8b278f29-8458-482b-8fde-b4300a2f6deb",
+      "pubDate": "Fri, 05 Dec 2025 13:00:26 GMT",
+      "declaredDuration": 1447,
+      "season": 2,
+      "episode": 14,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/AUDIO---DEFAULT---2b27ee6c-15f6-46be-be81-2f06133f35d4.mp3",
+          "path": "audio/s02e14-why-ads-keep-winning.mp3",
+          "bytes": 11579577,
+          "declaredBytes": 11579577,
+          "observedDuration": 1447,
+          "sha256": "4888d30e864fadacc24f87ed5a6e2ebdf3ecc8398455785c8520300d561dd459"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e14-why-ads-keep-winning.srt",
+          "bytes": 31534,
+          "sha256": "bb1c485720a77f617e8d2c3890699448cd94903f149017dba140be1b8ee9f9e1"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e14-why-ads-keep-winning.json",
+          "bytes": 772,
+          "sha256": "70ff441283755c0fad0388205527931d5aa521bb47fdd268fece2b21c558fb7a"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b4Cpnbz7wekLxRNlEEea/files/COVER_ART---DEFAULT---b68ea2de-d6c9-419b-8bb1-a609f01fd54a.jpg",
+          "path": "art/s02e14-why-ads-keep-winning.jpg",
+          "bytes": 109779,
+          "sha256": "7b2965cdd4ba54ec29eb970f9da1bb60163527c0dd3c7e46e9692ea1c8e287f7"
+        }
+      }
+    },
+    {
+      "slug": "s02e13-cory-doctorow",
+      "title": "S02E13 Cory Doctorow \u2013 Why Every Platform Betrays You",
+      "guid": "8214ca6a-d4d8-44f6-b2fe-c1e373e57b1a",
+      "pubDate": "Wed, 26 Nov 2025 13:00:25 GMT",
+      "declaredDuration": 4455,
+      "season": 2,
+      "episode": 13,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/AUDIO---DEFAULT---2bfd2d14-b8ff-4558-95e3-ae0e6110b550.mp3",
+          "path": "audio/s02e13-cory-doctorow.mp3",
+          "bytes": 35636889,
+          "declaredBytes": 35636889,
+          "observedDuration": 4455,
+          "sha256": "b3e988a8581461e18ec5a6cffa415f13e5a154f89b199daa5f668cae824ee691"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e13-cory-doctorow.srt",
+          "bytes": 98022,
+          "sha256": "953b7b43dd416321690b3ca6ee9846f7a3b24ec730ccffb46b58d4629cf89857"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e13-cory-doctorow.json",
+          "bytes": 1198,
+          "sha256": "a57216be6515bb4481f7cb55cbb9ba4b794ffef6bc0dc41313f8ab3595a46aa4"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/COVER_ART---DEFAULT---7c8d9d90-1d4a-468f-a8af-56838558fb47.jpg",
+          "path": "art/s02e13-cory-doctorow.jpg",
+          "bytes": 98585,
+          "sha256": "1e1a9b612d19a271c08ad1767bb2e989ccda914bbcf2eeb5d115ab6f781499ca"
+        }
+      }
+    },
+    {
+      "slug": "s02e12-average-gary",
+      "title": "S02E12 Average Gary \u2013 From classified ops to open source",
+      "guid": "5435e728-4dd7-4b57-bc74-fdc32ab6b2be",
+      "pubDate": "Wed, 19 Nov 2025 13:00:25 GMT",
+      "declaredDuration": 3597,
+      "season": 2,
+      "episode": 12,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/AUDIO---DEFAULT---e36141c5-4cf0-422b-9086-fa099efb63df.mp3",
+          "path": "audio/s02e12-average-gary.mp3",
+          "bytes": 28777552,
+          "declaredBytes": 28777552,
+          "observedDuration": 3597,
+          "sha256": "574c389c8849ba50eaedb4990a5a52fecdc05f2ec3e51aac5b0668b4fea23fcc"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e12-average-gary.srt",
+          "bytes": 84864,
+          "sha256": "80136dab0f0605b140d52a61c6110fb01d6c8bc5274e7c6d1ee7e2645c6c572d"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e12-average-gary.json",
+          "bytes": 973,
+          "sha256": "eae4ed8172cf572435412a0b3252352f523f400a3d8ccd238c61b49f2efe9f73"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NyZmcRYt1Z2RNeLNEvwi/files/COVER_ART---DEFAULT---453fae0d-37cf-4a5a-91d2-75e3214be468.jpg",
+          "path": "art/s02e12-average-gary.jpg",
+          "bytes": 111737,
+          "sha256": "4e5e3a5a3baf3ecc5736455114c275cee06a3114ba9f1eaea566c8e7b33c6ea7"
+        }
+      }
+    },
+    {
+      "slug": "s02e11-stephen-delorme",
+      "title": "S02E11 Stephen DeLorme \u2013 Bitcoin and Freedom by Design",
+      "guid": "c4dde0e3-0685-43c7-bf16-0dbdd36775f0",
+      "pubDate": "Thu, 13 Nov 2025 13:00:25 GMT",
+      "declaredDuration": 3988,
+      "season": 2,
+      "episode": 11,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/AUDIO---DEFAULT---a4d71fa0-4e34-488d-a9cd-297e2a08d24c.mp3",
+          "path": "audio/s02e11-stephen-delorme.mp3",
+          "bytes": 31902215,
+          "declaredBytes": 31902215,
+          "observedDuration": 3988,
+          "sha256": "e176839b1cd69f743455b44deb66728746a47fd62d912a4328847f60b6272647"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e11-stephen-delorme.srt",
+          "bytes": 84407,
+          "sha256": "547dfd568ca282138d9b93cc7e0db2cd50cc86ebd8d2c3f6a9af85874de2e33c"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e11-stephen-delorme.json",
+          "bytes": 1242,
+          "sha256": "06cabf9a978fa694b5af1b5d9100bc2664b826875da4debedf6071ee80737593"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/COVER_ART---DEFAULT---68e2a723-8989-4214-9010-8de86d1d3718.jpg",
+          "path": "art/s02e11-stephen-delorme.jpg",
+          "bytes": 100157,
+          "sha256": "ae7b4518480e3f72460586450b9864873b43740d8a691806d4ef97ed86cff618"
+        }
+      }
+    },
+    {
+      "slug": "s02e10-dan-gould",
+      "title": "S02E10 Dan Gould \u2013 Turning privacy into Bitcoin's economic edge",
+      "guid": "18c9a5b1-8c7a-432f-b052-22b3184e9003",
+      "pubDate": "Wed, 05 Nov 2025 13:00:25 GMT",
+      "declaredDuration": 3584,
+      "season": 2,
+      "episode": 10,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/AUDIO---DEFAULT---04b43543-a9f0-4dc0-9271-4c043d9a1164.mp3",
+          "path": "audio/s02e10-dan-gould.mp3",
+          "bytes": 28669301,
+          "declaredBytes": 28669301,
+          "observedDuration": 3584,
+          "sha256": "d03ae9aa414eeaafd895ba834dce8fa692ef9efae602d6062f94110ac892c74b"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e10-dan-gould.srt",
+          "bytes": 71810,
+          "sha256": "cee867ef3e259a9c0adbcf71652bc0cb9f0f7437646c6e1513ba847f54b5c002"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e10-dan-gould.json",
+          "bytes": 936,
+          "sha256": "605d0f8de97822a50dcf64e7e6885d9b618047fba902f167ab5be5816fd3ffd2"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/COVER_ART---DEFAULT---efe3538c-843c-4779-9dd6-a54abe2bd2a6.jpg",
+          "path": "art/s02e10-dan-gould.jpg",
+          "bytes": 104752,
+          "sha256": "b860e29d1e25cdff280a30c96bd66c6109238da068b42c3f69fef1b6a2805cfb"
+        }
+      }
+    },
+    {
+      "slug": "s02e09-tim-bouma",
+      "title": "S02E09 Tim Bouma \u2014 Digital ID architect builds the escape route",
+      "guid": "e86b999d-bb27-42ad-8df1-8337b7eeaab6",
+      "pubDate": "Wed, 22 Oct 2025 12:00:25 GMT",
+      "declaredDuration": 5120,
+      "season": 2,
+      "episode": 9,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/AUDIO---DEFAULT---ccde4dc7-8817-4e92-a147-ba05ed312c2c.mp3",
+          "path": "audio/s02e09-tim-bouma.mp3",
+          "bytes": 40957928,
+          "declaredBytes": 40957928,
+          "observedDuration": 5120,
+          "sha256": "79583c4f095b595f32d6ca723f8831ad4a5d14a9b787f9bf98a67dec2cda1895"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e09-tim-bouma.srt",
+          "bytes": 107484,
+          "sha256": "aa9830b4ff044ade376ab0d824dd501b07c879df13fc2be414a25d192d209ec5"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e09-tim-bouma.json",
+          "bytes": 1350,
+          "sha256": "bfb581bee37e97ce6fbab44657e64a09758878645b3f035ed6d65b4aa6ee103c"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/COVER_ART---DEFAULT---df6c6ab5-fc37-420d-9b44-3d69bf256012.jpg",
+          "path": "art/s02e09-tim-bouma.jpg",
+          "bytes": 89714,
+          "sha256": "d6e796140288c8ffe083cb20e662b7aefa4e121d987fc84f84218f775e9f32ab"
+        }
+      }
+    },
+    {
+      "slug": "s02e08-trey-sellers",
+      "title": "S02E08 Trey Sellers \u2013 Power Without Permission",
+      "guid": "cd5bc045-25a3-4523-bbe3-5f49ce0c1418",
+      "pubDate": "Wed, 15 Oct 2025 11:58:28 GMT",
+      "declaredDuration": 3762,
+      "season": 2,
+      "episode": 8,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/AUDIO---DEFAULT---21769dec-3a75-4c8a-8e36-87776d2416c9.mp3",
+          "path": "audio/s02e08-trey-sellers.mp3",
+          "bytes": 30098303,
+          "declaredBytes": 30098303,
+          "observedDuration": 3762,
+          "sha256": "13dfa310db186fa531088140d7f3837e58df256c7118488e16df98fe9715ac53"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e08-trey-sellers.srt",
+          "bytes": 73009,
+          "sha256": "2eb6989619c3e4b8d3dcd97e427ca38e6b912bd4f36da42b707e31008bde99aa"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e08-trey-sellers.json",
+          "bytes": 1415,
+          "sha256": "d8e6cad5ef3d2507f396d5665c5547b6702bcd98bacfd2d3306eaa6da7737bd5"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/xjWVGV14YkfxajCGBhw0/files/COVER_ART---DEFAULT---029307f4-14df-4bea-ac16-254aae5cfd2b.jpg",
+          "path": "art/s02e08-trey-sellers.jpg",
+          "bytes": 108654,
+          "sha256": "0f31914adb35a23e6501ae2b59e0d2439984f748296a680cf894a136f1749e7f"
+        }
+      }
+    },
+    {
+      "slug": "s02e07-rob-brinded",
+      "title": "S02E07 Rob Brinded \u2013 Can you trust your mind?",
+      "guid": "97b19908-1107-4a57-aeb4-4769eda41442",
+      "pubDate": "Wed, 08 Oct 2025 12:00:25 GMT",
+      "declaredDuration": 5002,
+      "season": 2,
+      "episode": 7,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/AUDIO---DEFAULT---96fb43a4-73fb-406a-80b3-71818a2fe311.mp3",
+          "path": "audio/s02e07-rob-brinded.mp3",
+          "bytes": 40020236,
+          "declaredBytes": 40020236,
+          "observedDuration": 5002,
+          "sha256": "cf6aeacca9f77e27c4b1f15e92da3fd57dbb402463f89718fa1c2a7280d606df"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e07-rob-brinded.srt",
+          "bytes": 102027,
+          "sha256": "606a08f751d1f911d6a3fca072d317a544ec7278f25cdb196dc055e031d1856c"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e07-rob-brinded.json",
+          "bytes": 1402,
+          "sha256": "fa87d6570c8e3ab3987bffc488c2c0dfbb6e92aa7d2a7ed6f61e6850d28fb681"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/80hgjqEUEBWlzq6NiSSb/files/COVER_ART---DEFAULT---7245be84-b344-4c57-b1d6-e590ac527e3a.jpg",
+          "path": "art/s02e07-rob-brinded.jpg",
+          "bytes": 93945,
+          "sha256": "688860b784a3f976e64fae7339e57f20b0d7d99cedd3b979af536e0ebf7d27cc"
+        }
+      }
+    },
+    {
+      "slug": "s02e06-privacy-s-last-stand",
+      "title": "S02E06 \u2013 Privacy's last stand",
+      "guid": "d0ececd3-2d48-4100-8944-d00e02458479",
+      "pubDate": "Wed, 01 Oct 2025 19:28:55 GMT",
+      "declaredDuration": 1927,
+      "season": 2,
+      "episode": 6,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/AUDIO---DEFAULT---be6cf1ad-18ce-43bf-b41e-0529f152099c.mp3",
+          "path": "audio/s02e06-privacy-s-last-stand.mp3",
+          "bytes": 15413516,
+          "declaredBytes": 15413516,
+          "observedDuration": 1927,
+          "sha256": "225a20aa2104477ac137342ac8ae47afcfa1ca49029a91d4bdb910e7f33a2e6f"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e06-privacy-s-last-stand.srt",
+          "bytes": 43296,
+          "sha256": "c5e342eb7717c7f80bbd86dbb39606a00923c8d221ce2a1e881549bc5cada938"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e06-privacy-s-last-stand.json",
+          "bytes": 845,
+          "sha256": "e2e38a45c37163fe78f23e8230cf45793c71fc00c825d362039cb920e619adbb"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/WBHHcFr7ZXtOMZBkJnUt/files/COVER_ART---DEFAULT---acad345c-ca4e-4e2e-9fbe-b6b7d439844c.jpg",
+          "path": "art/s02e06-privacy-s-last-stand.jpg",
+          "bytes": 114618,
+          "sha256": "3ede988a421fc2a22aa62407b795168f4d25f136c75ddf1dc498481b3d3938be"
+        }
+      }
+    },
+    {
+      "slug": "s02e05-live-from-imagine-if-2025",
+      "title": "S02E05 Live from Imagine IF 2025",
+      "guid": "68d39605-1468-40fa-934a-dfe963be3be1",
+      "pubDate": "Wed, 24 Sep 2025 20:20:55 GMT",
+      "declaredDuration": 1337,
+      "season": 2,
+      "episode": 5,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ITN0uEN56TtjYm5npdlY/files/AUDIO---DEFAULT---7bc92273-338e-4a67-9732-bbb97eefd819.mp3",
+          "path": "audio/s02e05-live-from-imagine-if-2025.mp3",
+          "bytes": 10693294,
+          "declaredBytes": 10693294,
+          "observedDuration": 1337,
+          "sha256": "361e3a750e43e8fd5cec13f939f43f4ed2260c672861252780152eb85fa1dc8f"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ITN0uEN56TtjYm5npdlY/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e05-live-from-imagine-if-2025.srt",
+          "bytes": 28484,
+          "sha256": "96a4ce1413c82a3cc9170d09014caa023c35b4bb9647dab2afb80580f652d1fc"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ITN0uEN56TtjYm5npdlY/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e05-live-from-imagine-if-2025.json",
+          "bytes": 783,
+          "sha256": "d6ff1e5f8058ca9f344e5a9cde89e2148a17670439c702e49bd2f582e70b9264"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ITN0uEN56TtjYm5npdlY/files/COVER_ART---DEFAULT---bb56c2d8-aeaf-447d-9c54-6aed9ecb2a48.jpg",
+          "path": "art/s02e05-live-from-imagine-if-2025.jpg",
+          "bytes": 92863,
+          "sha256": "43044b010f7b2f80837afa3454c9ed095c92e5f8b7678a087e0f0ae0ef9897cc"
+        }
+      }
+    },
+    {
+      "slug": "s02e04-alex-newman",
+      "title": "S02E04 Alex Newman \u2013 Trust Crisis: Paths to Renewal",
+      "guid": "f4f3f4ae-ce61-4770-abf0-59f23a39de11",
+      "pubDate": "Wed, 17 Sep 2025 12:00:27 GMT",
+      "declaredDuration": 2960,
+      "season": 2,
+      "episode": 4,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/AUDIO---DEFAULT---5741d065-8d9c-4c82-a43d-f761866ae04e.mp3",
+          "path": "audio/s02e04-alex-newman.mp3",
+          "bytes": 23683257,
+          "declaredBytes": 23683257,
+          "observedDuration": 2960,
+          "sha256": "fe128c0cd0233ac796d652b5919dacd427fa2423c0f940b6ac7e5038197561f1"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e04-alex-newman.srt",
+          "bytes": 71693,
+          "sha256": "b153fce6811ee7c60f73665b13600b54eadea8b8d40108615c27d0c5220785dc"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e04-alex-newman.json",
+          "bytes": 939,
+          "sha256": "498789e23ecb791fc372fe5b054411f79b948c89d0ce4def9aa51e7d8f5aeb25"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/tkIupHmTEgdfULSVlR16/files/COVER_ART---DEFAULT---2014c12d-8677-4cd0-88d8-68ed97c1e75f.jpg",
+          "path": "art/s02e04-alex-newman.jpg",
+          "bytes": 111323,
+          "sha256": "48db6c7600e4e37f143f97c903ea8487443ad21ff92c671c3af7c585c776aa47"
+        }
+      }
+    },
+    {
+      "slug": "s02e03-jeffrey-tucker",
+      "title": "S02E03 Jeffrey Tucker \u2013 Breaking the spell of consensus",
+      "guid": "6dfbec12-ca11-438a-8f6f-7966a40a3386",
+      "pubDate": "Wed, 10 Sep 2025 12:00:27 GMT",
+      "declaredDuration": 3888,
+      "season": 2,
+      "episode": 3,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/AUDIO---DEFAULT---77236bf2-6f1b-4947-a5b4-a404169e1e65.mp3",
+          "path": "audio/s02e03-jeffrey-tucker.mp3",
+          "bytes": 31108302,
+          "declaredBytes": 31108302,
+          "observedDuration": 3888,
+          "sha256": "528de011d888be9c63df958d5bc2dcf19a4fbd8cc3cc7ce0740c07fc342d8274"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e03-jeffrey-tucker.srt",
+          "bytes": 89045,
+          "sha256": "d587863254bbbf16b56c6bb9ac285f42aa7b6fb96da1a855f96588436497d5db"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e03-jeffrey-tucker.json",
+          "bytes": 1317,
+          "sha256": "4a216ce22b8d47487ff235d426c5c70b145592be898ab8cc1ed2fea977aad8ff"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/c1kHirOYha0drzFGIKaQ/files/COVER_ART---DEFAULT---66bcc98e-92a4-4620-9deb-458855199f10.jpg",
+          "path": "art/s02e03-jeffrey-tucker.jpg",
+          "bytes": 94769,
+          "sha256": "60d760ff56a609ef809cade73d757b7eb787fd86fd0240cd0c826a6f5dbff1ed"
+        }
+      }
+    },
+    {
+      "slug": "s02e02-mathias-buus",
+      "title": "S02E02 Mathias Buus \u2013 The future is peer-to-peer",
+      "guid": "827e58e9-efa4-4846-9b03-a20f35305abe",
+      "pubDate": "Wed, 03 Sep 2025 12:00:27 GMT",
+      "declaredDuration": 3721,
+      "season": 2,
+      "episode": 2,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---DEFAULT---cac7ac7a-7f94-4de0-ad53-7f5ffb43d615.mp3",
+          "path": "audio/s02e02-mathias-buus.mp3",
+          "bytes": 29765190,
+          "declaredBytes": 29765190,
+          "observedDuration": 3721,
+          "sha256": "7e8283002c12b45a17a1f7c9746a50628528e6b6ced7b459164f75a03321abd6"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e02-mathias-buus.srt",
+          "bytes": 97531,
+          "sha256": "5ca8f4276ea5d41e041d06ab0ffd96d6c9daa8c4806f57ba2a15662564175e68"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e02-mathias-buus.json",
+          "bytes": 1446,
+          "sha256": "32e55977b53b344f2b92009dabeac9c507c3f399f931fff69953f30f57a68311"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/QEFcHfFmxIMZF1lrsTA7/files/COVER_ART---DEFAULT---d0f07398-c02b-44df-9ca3-b9b9f9d7d201.jpg",
+          "path": "art/s02e02-mathias-buus.jpg",
+          "bytes": 109481,
+          "sha256": "daef5821625ed00e90228e1f0faa9a6a3971290ff750515b5c64ea46ff1f8c18"
+        }
+      }
+    },
+    {
+      "slug": "s02e01-nicholas-anthony",
+      "title": "S02E01 Nicholas Anthony \u2013 CBDCs and defying digital control",
+      "guid": "4811dc8b-57b2-4677-9b32-7ecf3b5d7c73",
+      "pubDate": "Wed, 27 Aug 2025 12:00:27 GMT",
+      "declaredDuration": 3713,
+      "season": 2,
+      "episode": 1,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/AUDIO---DEFAULT---ececcf10-44d1-4e30-8e6f-fe3afa161330.mp3",
+          "path": "audio/s02e01-nicholas-anthony.mp3",
+          "bytes": 29703959,
+          "declaredBytes": 29703959,
+          "observedDuration": 3713,
+          "sha256": "a482e9de3f72519595a8993c48e3a4080b780e8f4f154fa16b0ad82511b028ed"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s02e01-nicholas-anthony.srt",
+          "bytes": 68130,
+          "sha256": "6db83e7f81f701d54ef1b155d21665c2c89b6113255dc990b0221565d1543858"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s02e01-nicholas-anthony.json",
+          "bytes": 2320,
+          "sha256": "3f7396336f7ec0aaa54f3f5e0a528316215e6130dd1b4946e8ea03ab446156c3"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/COVER_ART---DEFAULT---a765a327-0995-4a06-baea-86df4e7654be.jpg",
+          "path": "art/s02e01-nicholas-anthony.jpg",
+          "bytes": 100808,
+          "sha256": "d8608f25a3ff1e60e35ea7adc82df86392dc291d4cc3cddabc1435144f95375e"
+        }
+      }
+    },
+    {
+      "slug": "s01e13-season-1-recap",
+      "title": "S01E13 \u2013 Reflecting on Trust Revolution: Season 1 recap",
+      "guid": "aa036637-bf94-430a-a251-4180a7fcd2dc",
+      "pubDate": "Thu, 10 Jul 2025 12:00:00 GMT",
+      "declaredDuration": 1175,
+      "season": 1,
+      "episode": 13,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/AUDIO---DEFAULT---b41a17ff-e313-446c-9684-f6ff00dcc2d3.mp3",
+          "path": "audio/s01e13-season-1-recap.mp3",
+          "bytes": 18806276,
+          "declaredBytes": 18806276,
+          "observedDuration": 1175,
+          "sha256": "21a1c6f609753f0f6b6c3a8fb0fb5b90f81b8368ec7c18cf3c60c0171b27ce94"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e13-season-1-recap.srt",
+          "bytes": 27207,
+          "sha256": "708d4d6a1caf287cf03d7dad3398b9a84b99eb251c148b19d210a821ac1f4fb6"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e13-season-1-recap.json",
+          "bytes": 635,
+          "sha256": "22a09ff6cd5038fd0064d2acf45403399d1bf06708b15ad5e1fc972eff528de5"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/COVER_ART---DEFAULT---f6e4ad44-3813-410e-948c-f751262ce748.jpg",
+          "path": "art/s01e13-season-1-recap.jpg",
+          "bytes": 89441,
+          "sha256": "2cda0aaff30b8976d1777289d90d653ba8b9406bd4dba0a5afee558c8721cefe"
+        }
+      }
+    },
+    {
+      "slug": "s01e12-opnstate",
+      "title": "S01E12 OpnState \u2012 Global financial control: AML\u2019s hidden cost",
+      "guid": "b903dc85-8951-415f-80f3-86a6aa4bac82",
+      "pubDate": "Wed, 02 Jul 2025 12:00:00 GMT",
+      "declaredDuration": 3959,
+      "season": 1,
+      "episode": 12,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/AUDIO---DEFAULT---d755436d-f0fa-4c42-bc3b-5fd0125164ce.mp3",
+          "path": "audio/s01e12-opnstate.mp3",
+          "bytes": 63473988,
+          "declaredBytes": 63473988,
+          "observedDuration": 3959,
+          "sha256": "0dfe87ed6e0320c8f6788f60ab13499d99fd64e0a87aaade763feb14f0da2898"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e12-opnstate.srt",
+          "bytes": 91801,
+          "sha256": "5587e5b57336cae858f69688088866236c02ac7f9f18794117d68f5086fcaeb6"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e12-opnstate.json",
+          "bytes": 1194,
+          "sha256": "fb1ec5124eeff76630355472995b6c9205b17d69b4f95b3bbf7d2d5b4b1dc987"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/LvqAtRvud6PgaC15CMOP/files/COVER_ART---DEFAULT---b281a27c-7c25-4211-b1bf-0e74cd7a4aa3.jpg",
+          "path": "art/s01e12-opnstate.jpg",
+          "bytes": 94319,
+          "sha256": "e7605a8ee3d39f6de71d955abef933f092cfc5a292b9bac5f5825ae3a33e7426"
+        }
+      }
+    },
+    {
+      "slug": "s01e11-matt-o-dell",
+      "title": "S01E11 Matt O'Dell \u2012 The past, present, and future of freedomtech",
+      "guid": "c2a8471c-a32e-44a2-a004-7b0c378d373d",
+      "pubDate": "Wed, 25 Jun 2025 12:00:00 GMT",
+      "declaredDuration": 4280,
+      "season": 1,
+      "episode": 11,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/AUDIO---DEFAULT---8ace659b-bda4-4484-9891-38b1ca6a8c15.mp3",
+          "path": "audio/s01e11-matt-o-dell.mp3",
+          "bytes": 68599690,
+          "declaredBytes": 68599690,
+          "observedDuration": 4280,
+          "sha256": "941c1f1a70e1ffac7c49bb108e6831e26534fd1e2455fcf96f9f0840f075246e"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e11-matt-o-dell.srt",
+          "bytes": 98638,
+          "sha256": "9583c16906daadd7753e28ce3a586df9b8f60c26e882b8f8bdfc827e36bcc6e1"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e11-matt-o-dell.json",
+          "bytes": 2865,
+          "sha256": "67fb21e66b15597b495740fade67a0af621ee0133f589a98f3139bcca5f236e1"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/COVER_ART---DEFAULT---e0782053-ffb7-4293-afbf-2c455f281946.jpg",
+          "path": "art/s01e11-matt-o-dell.jpg",
+          "bytes": 92255,
+          "sha256": "7357ec507455858174f4c51cb377cb20be4480ec02fd96705059c9fd37a54425"
+        }
+      }
+    },
+    {
+      "slug": "s01e10-stephen-pollock",
+      "title": "Bitcoin and American statecraft | Stephen Pollock",
+      "guid": "38630fa0-9c1d-4093-a49b-c6e9b128984e",
+      "pubDate": "Wed, 18 Jun 2025 12:00:00 GMT",
+      "declaredDuration": 4878,
+      "season": 1,
+      "episode": 10,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/AUDIO---DEFAULT---04b5c6c6-4c68-486a-b5b8-f1805506d173.mp3",
+          "path": "audio/s01e10-stephen-pollock.mp3",
+          "bytes": 78225891,
+          "declaredBytes": 78225891,
+          "observedDuration": 4878,
+          "sha256": "628215124d7bd5e122d815f8bb2dae624d89a5e7f3dd52aaa61df4aa0ed39bde"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e10-stephen-pollock.srt",
+          "bytes": 114349,
+          "sha256": "fcddaaad37f0609a48ac64c94b5c966be358b8ed87206ec08463b0a1acbf4084"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e10-stephen-pollock.json",
+          "bytes": 863,
+          "sha256": "a7210df447b7cdbdc070335847e817d616a83829d50d0def70438a8740adcd2a"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/COVER_ART---DEFAULT---421fa9b2-3f9b-471c-a08e-c9c68a3e1fb3.jpg",
+          "path": "art/s01e10-stephen-pollock.jpg",
+          "bytes": 106035,
+          "sha256": "58c6fad743f994bc64cc06641ad8f288c5b46227c4fe580cbbd82e872397c9d1"
+        }
+      }
+    },
+    {
+      "slug": "s01e09-r-u-sirius",
+      "title": "The Internet\u2019s lost promise and paths to freedom | R.U. Sirius",
+      "guid": "16833efc-bdd5-455c-a122-9ed9b2c511d6",
+      "pubDate": "Wed, 11 Jun 2025 11:39:06 GMT",
+      "declaredDuration": 3243,
+      "season": 1,
+      "episode": 9,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---DEFAULT---44251c7b-cdfa-4a19-beb3-fbc426bb666d.mp3",
+          "path": "audio/s01e09-r-u-sirius.mp3",
+          "bytes": 52002570,
+          "declaredBytes": 52002570,
+          "observedDuration": 3243,
+          "sha256": "f02914f6895daddf2599972becdc29c8a4dcd8991945c49773d35232228854a8"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e09-r-u-sirius.srt",
+          "bytes": 75020,
+          "sha256": "d14226db924a6d128c272201f6476f6e84ecec10df26c9e6ec233aca97bc9ad5"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e09-r-u-sirius.json",
+          "bytes": 895,
+          "sha256": "41b32f1ae1ea3740e94daafe7e5429c6331d1aa12780e57d124f0ffdda61e207"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/COVER_ART---DEFAULT---bbbbadb2-bed6-444a-b963-38dce228c748.jpg",
+          "path": "art/s01e09-r-u-sirius.jpg",
+          "bytes": 94936,
+          "sha256": "f756a8704d33c522de1940b6b48f73a76fb8931a3b4d785c5ef181c24aebfc77"
+        }
+      }
+    },
+    {
+      "slug": "s01e08-rishad-tobaccowala",
+      "title": "Trust is the currency of the future | Rishad Tobaccowala",
+      "guid": "66e24bc1-5a3f-4d27-8c8f-563862058af8",
+      "pubDate": "Wed, 04 Jun 2025 12:00:00 GMT",
+      "declaredDuration": 4298,
+      "season": 1,
+      "episode": 10,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/AUDIO---DEFAULT---e73423a2-6092-44a3-bc08-bea64de52458.mp3",
+          "path": "audio/s01e08-rishad-tobaccowala.mp3",
+          "bytes": 68939009,
+          "declaredBytes": 68939009,
+          "observedDuration": 4298,
+          "sha256": "ef720cff521efd61f9db9cc26b069baed97c2ceafad2a36133d6f59f14b147e4"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e08-rishad-tobaccowala.srt",
+          "bytes": 102178,
+          "sha256": "2e8d6a157881e9990e5b2e83acfdc2552ca59fd4bfd65726d3fec2bb5f5ede9a"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e08-rishad-tobaccowala.json",
+          "bytes": 1383,
+          "sha256": "1055dc63c1d740fff2ae84f30f5a78768c8663eaab2711af36d177ae1ada479f"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/2bm9SGvMPWdBOCGxlDBk/files/COVER_ART---DEFAULT---356dad2b-7b15-4a97-b843-cd80680b852d.jpg",
+          "path": "art/s01e08-rishad-tobaccowala.jpg",
+          "bytes": 109282,
+          "sha256": "ee0d19733b8a01287c0261bda4ff2c3b4439ebeb34ae577cc9e82e0498c28c3f"
+        }
+      }
+    },
+    {
+      "slug": "s01e07-fran",
+      "title": "Revolutionizing the app store | Fran",
+      "guid": "be271a91-1875-46e6-b136-97d8ca3059bf",
+      "pubDate": "Wed, 28 May 2025 12:00:00 GMT",
+      "declaredDuration": 4143,
+      "season": 1,
+      "episode": 7,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/AUDIO---DEFAULT---5d46c16f-35de-4a17-bc7c-950de03df36a.mp3",
+          "path": "audio/s01e07-fran.mp3",
+          "bytes": 66403254,
+          "declaredBytes": 66403254,
+          "observedDuration": 4143,
+          "sha256": "7cc12bc7f1b2a7b618be19fc59e3aab5a172611df1f791578288c3168e5fbb51"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e07-fran.srt",
+          "bytes": 94604,
+          "sha256": "3dd660e1dd5fa4b7927c616856e9e68fcb9eaaaadcef9d9dbe66b133b54cbf72"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e07-fran.json",
+          "bytes": 1227,
+          "sha256": "1d0a95a4b5b160c3afb8ca449bdb35b4ae13dc8235bd6e42f630bb96d1faaaaa"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/COVER_ART---DEFAULT---7652c17a-089d-4375-a144-c78cdffe1a48.jpg",
+          "path": "art/s01e07-fran.jpg",
+          "bytes": 88225,
+          "sha256": "8ba4f4ffd786110f4203af88c4401f2342e0011fa7b0f9a930e58be129b01cd2"
+        }
+      }
+    },
+    {
+      "slug": "s01e06-bronwyn-williams",
+      "title": "Navigating the unraveling cycle of society | Bronwyn Williams",
+      "guid": "e04297e7-f422-44df-94ae-12ea86751b07",
+      "pubDate": "Wed, 21 May 2025 12:00:00 GMT",
+      "declaredDuration": 3843,
+      "season": 1,
+      "episode": 6,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/AUDIO---DEFAULT---07540bf7-58ad-4417-9b6d-253e30800dea.mp3",
+          "path": "audio/s01e06-bronwyn-williams.mp3",
+          "bytes": 61494241,
+          "declaredBytes": 61494241,
+          "observedDuration": 3843,
+          "sha256": "b3c96fd69b28ddaf9e3eb51b02e371ec5b08d057d4115f0c9325a203f03d50ce"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e06-bronwyn-williams.srt",
+          "bytes": 89310,
+          "sha256": "c4ad2ee42a47d1a59f02880528ec97a644595980788542e7ceb64c79e678795e"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e06-bronwyn-williams.json",
+          "bytes": 767,
+          "sha256": "7147b9f0fa255d68019da4e6641daa25faa4e45dbbfa080bdb1839003c2f5c56"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/N504yIpfLTEoISh5UBbi/files/COVER_ART---DEFAULT---39be1480-320d-4bd5-8278-d17b78c65e5a.jpg",
+          "path": "art/s01e06-bronwyn-williams.jpg",
+          "bytes": 112004,
+          "sha256": "9d6023bb7462c36d23e6ead18e7a07e40ec5cfe645d489be1e70e288b8c2248c"
+        }
+      }
+    },
+    {
+      "slug": "s01e05-yael-ossowski",
+      "title": "The balance of power is shifting | Ya\u00ebl Ossowski",
+      "guid": "cd0bf2fc-0c41-4dc8-b60a-5b8154e227e2",
+      "pubDate": "Wed, 14 May 2025 12:00:00 GMT",
+      "declaredDuration": 3333,
+      "season": 1,
+      "episode": 5,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---DEFAULT---09f35565-4336-459d-bd12-14bc13e8fd75.mp3",
+          "path": "audio/s01e05-yael-ossowski.mp3",
+          "bytes": 53452400,
+          "declaredBytes": 53452400,
+          "observedDuration": 3333,
+          "sha256": "77adf18b96fa54d77d718d5a4bfb805a7f8658d98424a47ed3b49538242f815a"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e05-yael-ossowski.srt",
+          "bytes": 78497,
+          "sha256": "beedfb4bd01433f084b67751178540f256eeb5a11df49746c54702efddad9d5d"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e05-yael-ossowski.json",
+          "bytes": 1680,
+          "sha256": "16a3d9fef2706c0035fef169756e2dba649bd5b0f78772113e7dbbf00d4ccafc"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/COVER_ART---DEFAULT---16358239-451f-4fba-874e-b91bd6c72007.jpg",
+          "path": "art/s01e05-yael-ossowski.jpg",
+          "bytes": 102633,
+          "sha256": "70daf3b84c38ae9759a77c576878c10bf04c50f2490640f412f5afda57ba8688"
+        }
+      }
+    },
+    {
+      "slug": "s01e04-david-strayhorn",
+      "title": "Decoding trust | Dr. David Strayhorn",
+      "guid": "48ff7eb5-7c20-48f3-9faa-6341be874ae4",
+      "pubDate": "Wed, 07 May 2025 12:00:00 GMT",
+      "declaredDuration": 4202,
+      "season": 1,
+      "episode": 4,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UTo0XKMgs9yFltrrPa85/files/AUDIO---DEFAULT---e1bd0fa2-29be-4f5e-ac66-b6d8c8f553c7.mp3",
+          "path": "audio/s01e04-david-strayhorn.mp3",
+          "bytes": 67410037,
+          "declaredBytes": 67410037,
+          "observedDuration": 4202,
+          "sha256": "b2645b4aaf8f49d4ca8f22e37e20f5d8c54a282f3d851c5d83a5c8a00c4eafab"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UTo0XKMgs9yFltrrPa85/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e04-david-strayhorn.srt",
+          "bytes": 95675,
+          "sha256": "cf91cfb9063097dd17c528977c67d4f8ba6e1856ec88c775e3c5522ceee9c2d1"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UTo0XKMgs9yFltrrPa85/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e04-david-strayhorn.json",
+          "bytes": 707,
+          "sha256": "966586e4a6c943e2a4b4a5094289ad521e96a7130194f6e78dd97c5a6199caf1"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/UTo0XKMgs9yFltrrPa85/files/COVER_ART---DEFAULT---daa9e573-e3a8-4566-a7b4-442207cb2041.jpg",
+          "path": "art/s01e04-david-strayhorn.jpg",
+          "bytes": 112751,
+          "sha256": "69c4d69500ed953db8fafa9144c451c6d268c0e74ce4556e65149f646d6771e9"
+        }
+      }
+    },
+    {
+      "slug": "s01e03-max-hillebrand",
+      "title": "The rise of peer-to-peer economies | Max Hillebrand",
+      "guid": "bc82dfd8-8d92-4ffb-bcf9-07a6eeb7d123",
+      "pubDate": "Wed, 30 Apr 2025 12:00:00 GMT",
+      "declaredDuration": 3699,
+      "season": 1,
+      "episode": 3,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/AUDIO---DEFAULT---6d4f8124-8615-4736-bbb5-8d17d641d7de.mp3",
+          "path": "audio/s01e03-max-hillebrand.mp3",
+          "bytes": 59318303,
+          "declaredBytes": 59318303,
+          "observedDuration": 3699,
+          "sha256": "97a1a2fcf4b12f201e80cb054a7d9be395fdab15d4f3f580ba74aa970cd88afd"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e03-max-hillebrand.srt",
+          "bytes": 87732,
+          "sha256": "12afd95a981e2a5cc56649203ef6e82f5b72e5f9e52e7b3eff44525937a33f75"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e03-max-hillebrand.json",
+          "bytes": 1715,
+          "sha256": "e56a7caedbafcc3679111a26772fa883f01c26a0e0e5877e523d8882a2167433"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/eOwt6O6rfKW0zuSqbRj4/files/COVER_ART---DEFAULT---e4fb4b4d-ce22-4ad5-9692-74690f48673b.jpg",
+          "path": "art/s01e03-max-hillebrand.jpg",
+          "bytes": 101573,
+          "sha256": "acff62200f42a90450b1d180d4b750175886237cdfac96f4b55cc5a7580c0832"
+        }
+      }
+    },
+    {
+      "slug": "s01e02-marks",
+      "title": "Reshaping privacy with secure enclaves | Marks",
+      "guid": "8c1d47bd-eef6-4445-b4f7-75501da064ca",
+      "pubDate": "Wed, 23 Apr 2025 12:00:00 GMT",
+      "declaredDuration": 3386,
+      "season": 1,
+      "episode": 2,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/AUDIO---DEFAULT---c46809f1-6c0f-4b68-8e3f-d7d1974203ef.mp3",
+          "path": "audio/s01e02-marks.mp3",
+          "bytes": 54312695,
+          "declaredBytes": 54312695,
+          "observedDuration": 3386,
+          "sha256": "3bc175c42f1ac2c9af1cb0b65a94c278b9040ffaa3e1aae9667cc0dee5949df9"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e02-marks.srt",
+          "bytes": 79268,
+          "sha256": "a2b5459eb3d5c0cdfb6700b133ce2de11ed5396390b07e7e5407e378abd33e28"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e02-marks.json",
+          "bytes": 1823,
+          "sha256": "22c66629d9c0c4871f22beeaf4e9c9d51b0977d8d007f9a13615b239de097051"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/o52AVviHb5XFn80n3TY3/files/COVER_ART---DEFAULT---f0430d80-8820-4a6f-bf29-7067a7821921.jpg",
+          "path": "art/s01e02-marks.jpg",
+          "bytes": 94425,
+          "sha256": "1e590126836d820a37df69c42874f432f8dc307fb48191de8513f0b3fd0bb660"
+        }
+      }
+    },
+    {
+      "slug": "s01e01-john-robb",
+      "title": "AI, decentralized networks, and political swarms | John Robb",
+      "guid": "d7f3f137-d1ed-4e73-995a-a6720d6f247c",
+      "pubDate": "Wed, 16 Apr 2025 12:00:00 GMT",
+      "declaredDuration": 3958,
+      "season": null,
+      "episode": null,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/AUDIO---DEFAULT---e0bb57b7-a86e-4ad0-b3c3-3d77d7441112.mp3",
+          "path": "audio/s01e01-john-robb.mp3",
+          "bytes": 63333874,
+          "declaredBytes": 63333874,
+          "observedDuration": 3958,
+          "sha256": "d2e4e8a346b15dec6955cb8718a4a12a641e032a1e89b262be9035acee16fb58"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e01-john-robb.srt",
+          "bytes": 94429,
+          "sha256": "40d8b35332c487763aac44e718b5f0d657fe78f891357234643f9f1217e1be37"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e01-john-robb.json",
+          "bytes": 1478,
+          "sha256": "075a481dab8240c0f66000fe0b020519ceddcbd7efac6e2865b9fc2fe348473d"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/COVER_ART---DEFAULT---a482ce54-6efd-4f63-abcb-525a9097d9a2.jpg",
+          "path": "art/s01e01-john-robb.jpg",
+          "bytes": 94462,
+          "sha256": "a81834ae87ac9bf829ef0291af02d4e1fa27dc85674a06c3d108bc0022d92c4b"
+        }
+      }
+    },
+    {
+      "slug": "s01e00-season-1-trailer",
+      "title": "Season 1 Trailer",
+      "guid": "2314bccf-18a5-48c4-b5f0-1ade409d4926",
+      "pubDate": "Mon, 10 Mar 2025 01:00:26 GMT",
+      "declaredDuration": 73,
+      "season": null,
+      "episode": null,
+      "assets": {
+        "audio": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/AUDIO---DEFAULT---966b836b-b270-434a-87b5-424e722f7e25.mp3",
+          "path": "audio/s01e00-season-1-trailer.mp3",
+          "bytes": 1326954,
+          "declaredBytes": 1326954,
+          "observedDuration": 73,
+          "sha256": "94e94ec8baadf81427e84dc96b6074221a43d8ed0c2d3035e6436334dfa1fcd4"
+        },
+        "transcript": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt",
+          "path": "transcripts/s01e00-season-1-trailer.srt",
+          "bytes": 1656,
+          "sha256": "8dc09b751114c956078a92033ec35eaa0a006ae7e8b3d66b9fd2bb275e11a3dc"
+        },
+        "chapters": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/AUDIO---CHAPTERS---DEFAULT---PODCAST.json",
+          "path": "chapters/s01e00-season-1-trailer.json",
+          "bytes": 1108,
+          "sha256": "efde10718e40865b7e935e4a474c9ac9e007f2dcfbf6e1795296f1fadae46e72"
+        },
+        "image": {
+          "sourceUrl": "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/pf8AqSmaAorly6Gv5Lks/files/COVER_ART---DEFAULT---00d45bf4-1721-4e5a-aeaf-ec3f5cf077b7.jpg",
+          "path": "art/s01e00-season-1-trailer.jpg",
+          "bytes": 111815,
+          "sha256": "c0907ebf692c3b7497773cb4ad648c535ae231b7756b896627f1df70a7ad9a8d"
+        }
+      }
+    }
+  ],
+  "problems": [
+    {
+      "scope": "s03e06-james-lee",
+      "severity": "info",
+      "issue": "feed declares 68330000 bytes, actual is 68331458"
+    },
+    {
+      "scope": "s03e05-jesse-posner",
+      "severity": "info",
+      "issue": "feed declares 78366667 bytes, actual is 78367911"
+    },
+    {
+      "scope": "s03e02-jason-hughey",
+      "severity": "info",
+      "issue": "feed declares 61126667 bytes, actual is 61127931"
+    }
+  ]
+}

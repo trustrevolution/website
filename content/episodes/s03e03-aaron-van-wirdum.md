@@ -9,10 +9,16 @@ description: "Author Aaron van Wirdum documents the decades-long war to build mo
 summary: |
   "The cypherpunks who tried to build digital cash before Bitcoin might one day be remembered like America's founding fathers." Aaron van Wirdum spent five years writing The Genesis Book—and warns the fight for money outside government control isn't over.
 featured_image: "images/cover-art/s03e03.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---PAID---1d75ba15-ff6e-4fcc-a631-526287942a8a.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---PAID---1d75ba15-ff6e-4fcc-a631-526287942a8a.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e03-aaron-van-wirdum.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e03-aaron-van-wirdum.mp4"
 duration: "1:04:50"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/GXmDzXH1SBj8CCrAqhXj/files/VIDEO---TRANSCRIPT---PAID---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e03-aaron-van-wirdum.srt"
+captions_url: "https://media.trustrevolution.co/captions/s03e03-aaron-van-wirdum.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e03-aaron-van-wirdum.json"
+guid: "205d46ef-091c-41a0-bad3-69e1a13f7e1f"
+feed_pubdate: "Fri, 06 Feb 2026 13:00:26 GMT"
+enclosure_bytes: 62237613
+duration_seconds: 3890
 fountain_url: "https://fountain.fm/episode/Go9j4PIZm0XIV5f2v9dV"
 guest:
   name: "Aaron van Wirdum"

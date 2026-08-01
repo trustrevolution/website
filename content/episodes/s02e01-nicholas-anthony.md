@@ -9,10 +9,16 @@ description: "Cato Institute policy analyst Nick Anthony tracks 139 CBDC program
 summary: |
   Shawn Yeager kicks off Season 2 of Trust Revolution with Nick Anthony, policy analyst at the Cato Institute’s Center for Monetary and Financial Alternatives and fellow at the Human Rights Foundation, leading their CBDC Tracker. They dive into the escalating risks of central bank digital currencies (CBDCs), which supercharge government surveillance beyond laws like the Bank Secrecy Act. Nick, author of Digital Currency or Digital Control, traces the 2019 CBDC surge to Facebook’s Libra and flags authoritarian regimes as frontrunners. Learn why financial privacy hangs by a thread and how Bitcoin could be the lifeline.
 featured_image: "images/cover-art/s02e01.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/AUDIO---DEFAULT---ececcf10-44d1-4e30-8e6f-fe3afa161330.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/VIDEO---DEFAULT---fee0aad2-776e-4f15-9ad0-9d67e086c4af.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e01-nicholas-anthony.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e01-nicholas-anthony.mp4"
 duration: "1:01:53"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/znFFt1Gzimn9tJTBn01H/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e01-nicholas-anthony.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e01-nicholas-anthony.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e01-nicholas-anthony.json"
+guid: "4811dc8b-57b2-4677-9b32-7ecf3b5d7c73"
+feed_pubdate: "Wed, 27 Aug 2025 12:00:27 GMT"
+enclosure_bytes: 29703959
+duration_seconds: 3713
 fountain_url: "https://fountain.fm/episode/CuFy9yf3HDEBUYxtzQWi"
 guest:
   name: Nicholas Anthony

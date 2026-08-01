@@ -8,10 +8,16 @@ episode: 9
 description: "Mondo 2000 co-founder R.U. Sirius on the internet's broken promise, cypherpunk roots, and what we lost to commercialization."
 summary: "In this episode, Shawn sits down with a legendary figure from the early days of digital culture, R.U. Sirius, exploring the radical roots and transformative potential of the Internet. Our guest shares insights from his experience with pioneering publications like Mondo 2000, reflecting on the early ideals of user empowerment and decentralization. We delve into the evolution of the Internet from a space of individual freedom to one dominated by corporate interests, discussing the shifts in power dynamics and the impact of commercialization on the digital landscape. With a mix of optimism and caution, this episode offers a thought-provoking look at the past, present, and future of digital culture and individual agency."
 featured_image: "images/cover-art/s01e09.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---DEFAULT---44251c7b-cdfa-4a19-beb3-fbc426bb666d.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/VIDEO---DEFAULT---f6e5abf5-3d27-4c7f-ad59-250389c678d6.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e09-r-u-sirius.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e09-r-u-sirius.mp4"
 duration: "54:03"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/NMc217ydmCaLm18h1jso/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e09-r-u-sirius.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e09-r-u-sirius.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e09-r-u-sirius.json"
+guid: "16833efc-bdd5-455c-a122-9ed9b2c511d6"
+feed_pubdate: "Wed, 11 Jun 2025 11:39:06 GMT"
+enclosure_bytes: 52002570
+duration_seconds: 3243
 fountain_url: "https://fountain.fm/episode/o1vaaAL0VBqoKIbakDdi"
 guest:
   name: R.U. Sirius

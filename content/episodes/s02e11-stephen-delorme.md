@@ -11,10 +11,16 @@ summary: |
 
   Two days after Square unleashed Bitcoin payments on four million merchants, we're asking the uncomfortable question: what if buttery-smooth UX beats self-custody every time?
 featured_image: "images/cover-art/s02e11.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/AUDIO---DEFAULT---a4d71fa0-4e34-488d-a9cd-297e2a08d24c.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/VIDEO---DEFAULT---4d96f0ee-39b3-46f8-9c7c-ea2a354379af.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e11-stephen-delorme.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e11-stephen-delorme.mp4"
 duration: "1:06:28"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/b7QoVU3M1lhklqRqF0I1/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e11-stephen-delorme.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e11-stephen-delorme.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e11-stephen-delorme.json"
+guid: "c4dde0e3-0685-43c7-bf16-0dbdd36775f0"
+feed_pubdate: "Thu, 13 Nov 2025 13:00:25 GMT"
+enclosure_bytes: 31902215
+duration_seconds: 3988
 fountain_url: "https://fountain.fm/episode/N6ZXzeTlp5nSMyx4Qt66"
 guest:
   name: Stephen DeLorme

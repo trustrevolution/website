@@ -9,10 +9,16 @@ description: "The man who coined enshittification maps exactly how every platfor
 summary: |
   “The smallest government you can have is determined by the largest corporation you're willing to tolerate.” Cory Doctorow didn't just coin “enshittification”—he mapped the precise mechanics of how every platform you depend on will eventually turn against you, and why voting with your wallet won't save you.
 featured_image: "images/cover-art/s02e13.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/AUDIO---DEFAULT---2bfd2d14-b8ff-4558-95e3-ae0e6110b550.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/VIDEO---DEFAULT---f2cd0a86-8799-4702-8621-9361f42538e4.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e13-cory-doctorow.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e13-cory-doctorow.mp4"
 duration: "1:14:15"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9yQHnOSO8VUJ2yjY01aS/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e13-cory-doctorow.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e13-cory-doctorow.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e13-cory-doctorow.json"
+guid: "8214ca6a-d4d8-44f6-b2fe-c1e373e57b1a"
+feed_pubdate: "Wed, 26 Nov 2025 13:00:25 GMT"
+enclosure_bytes: 35636889
+duration_seconds: 4455
 fountain_url: "https://fountain.fm/episode/bJgdt0hJAnppEve6Qmt8"
 guest:
   name: Cory Doctorow

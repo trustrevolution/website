@@ -11,10 +11,16 @@ summary: |
 
   Dan Gould builds PayJoin, the privacy protocol that breaks Bitcoin surveillance while cutting transaction fees up to 25%. Satoshi flagged Bitcoin's privacy problem in the white paper—PayJoin solves it without mixing, turning surveillance assumptions into dead ends. When privacy becomes an economic benefit rather than a cost, adoption follows.
 featured_image: "images/cover-art/s02e10.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/AUDIO---DEFAULT---04b43543-a9f0-4dc0-9271-4c043d9a1164.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/VIDEO---DEFAULT---4eb4a721-be8c-4a83-9bee-1ac526a65f9d.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e10-dan-gould.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e10-dan-gould.mp4"
 duration: "59:44"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/FJkMwthYIhnKWSTpApAb/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e10-dan-gould.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e10-dan-gould.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e10-dan-gould.json"
+guid: "18c9a5b1-8c7a-432f-b052-22b3184e9003"
+feed_pubdate: "Wed, 05 Nov 2025 13:00:25 GMT"
+enclosure_bytes: 28669301
+duration_seconds: 3584
 fountain_url: "https://fountain.fm/episode/jrcWHYhorCfoI4hagzD0"
 guest:
   name: Dan Gould

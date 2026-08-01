@@ -1,0 +1,676 @@
+{
+  "generatedAt": "2026-08-01T18:52:02.011Z",
+  "videoDir": "~/Videos/Trust Revolution",
+  "counts": {
+    "matched": 35,
+    "different-cut": 2
+  },
+  "episodes": [
+    {
+      "key": "S01E00",
+      "slug": "s01e00-season-1-trailer",
+      "file": "content/episodes/s01e00-season-1-trailer.md",
+      "publishedDuration": 73,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/Season 1 Trailer/trust_revolution trailer 16x9.mp4",
+        "duration": 73,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 2122616
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S01E01",
+      "slug": "s01e01-john-robb",
+      "file": "content/episodes/s01e01-john-robb.md",
+      "publishedDuration": 3958,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E01 John Robb/Trust Revolution - EP01.mp4",
+        "duration": 3958,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1990943963
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S01E02",
+      "slug": "s01e02-marks",
+      "file": "content/episodes/s01e02-marks.md",
+      "publishedDuration": 3386,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E02 Marks/riverside_interview_with marks full episode _ mar 19, 2025_trust_revolution.mp4",
+        "duration": 3386,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 983534160
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S01E03",
+      "slug": "s01e03-max-hillebrand",
+      "file": "content/episodes/s01e03-max-hillebrand.md",
+      "publishedDuration": 3699,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E03 Max Hillebrand/riverside_max_& shawn full episode _ mar 12, 2025_trust_revolution.mp4",
+        "duration": 3699,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 924701604
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S01E04",
+      "slug": "s01e04-david-strayhorn",
+      "file": "content/episodes/s01e04-david-strayhorn.md",
+      "publishedDuration": 4202,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E04 David Strayhorn/riverside_trust_revolution   ep04 _ may 6, 2025 005_trust_revolution.mp4",
+        "duration": 4202,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1109102717
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S01E05",
+      "slug": "s01e05-yael-ossowski",
+      "file": "content/episodes/s01e05-yael-ossowski.md",
+      "publishedDuration": 3333,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E05 Yaël Ossowski/S01E05 Yaël Ossowski - 1080p.mp4",
+        "duration": 3333,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 2015333490
+      },
+      "otherFilesInDirectory": 3
+    },
+    {
+      "key": "S01E06",
+      "slug": "s01e06-bronwyn-williams",
+      "file": "content/episodes/s01e06-bronwyn-williams.md",
+      "publishedDuration": 3843,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E06 Bronwyn Williams/riverside_bronwyn_williams on tr... full episode _ may 8, 2_trust_revolution.mp4",
+        "duration": 3843,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1917830360
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S01E07",
+      "slug": "s01e07-fran",
+      "file": "content/episodes/s01e07-fran.md",
+      "publishedDuration": 4143,
+      "status": "different-cut",
+      "delta": -171,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E07 Fran/1080p - Trust Revolution S01E07 Fran.mp4",
+        "duration": 3972,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 946477650
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S01E08",
+      "slug": "s01e08-rishad-tobaccowala",
+      "file": "content/episodes/s01e08-rishad-tobaccowala.md",
+      "publishedDuration": 4298,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E08 Rishad Tobaccowala/riverside_720p_- rishad tobaccowala on ... full episode _ j_trust_revolution.mp4",
+        "duration": 4298,
+        "resolution": {
+          "width": 1280,
+          "height": 720
+        },
+        "bytes": 1440719123
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S01E09",
+      "slug": "s01e09-r-u-sirius",
+      "file": "content/episodes/s01e09-r-u-sirius.md",
+      "publishedDuration": 3243,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E09 R.U. Sirius/r.u. sirius on trust_revolution.mp4",
+        "duration": 3243,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1185721240
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S01E10",
+      "slug": "s01e10-stephen-pollock",
+      "file": "content/episodes/s01e10-stephen-pollock.md",
+      "publishedDuration": 4878,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E10 Stephen Pollock/riverside_stephen_pollock on tru... magic episode _ jun 6, _trust_revolution.mp4",
+        "duration": 4878,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1094972658
+      },
+      "otherFilesInDirectory": 4
+    },
+    {
+      "key": "S01E11",
+      "slug": "s01e11-matt-o-dell",
+      "file": "content/episodes/s01e11-matt-o-dell.md",
+      "publishedDuration": 4280,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E11 Matt O'Dell/riverside_o'dell_on trust revolu... magic episode _ jun 16,_trust_revolution.mp4",
+        "duration": 4280,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1228733661
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S01E12",
+      "slug": "s01e12-opnstate",
+      "file": "content/episodes/s01e12-opnstate.md",
+      "publishedDuration": 3959,
+      "status": "different-cut",
+      "delta": 388,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E12 OpnState/opnstate-reexport.mp4",
+        "duration": 4347,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1029095643
+      },
+      "otherFilesInDirectory": 5
+    },
+    {
+      "key": "S01E13",
+      "slug": "s01e13-season-1-recap",
+      "file": "content/episodes/s01e13-season-1-recap.md",
+      "publishedDuration": 1175,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 01/S01E13 - S1 Recap/riverside_season_1 recap _ jul 10, 2025_trust_revolution.mp4",
+        "duration": 1175,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 319000880
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E01",
+      "slug": "s02e01-nicholas-anthony",
+      "file": "content/episodes/s02e01-nicholas-anthony.md",
+      "publishedDuration": 3713,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E01 Nicholas Anthony/riverside_nicholas_anthony on tr... magic episode _ jul 14,_trust_revolution.mp4",
+        "duration": 3713,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1623654047
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E02",
+      "slug": "s02e02-mathias-buus",
+      "file": "content/episodes/s02e02-mathias-buus.md",
+      "publishedDuration": 3721,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E02 Mathias Buus/riverside_mathias_buus on trust ... magic episode _ aug 26,_trust_revolution.mp4",
+        "duration": 3721,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1109393906
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E03",
+      "slug": "s02e03-jeffrey-tucker",
+      "file": "content/episodes/s02e03-jeffrey-tucker.md",
+      "publishedDuration": 3888,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E03 Jeffrey Tucker/riverside_jeffrey_tucker on trus... magic episode _ aug 28,_trust_revolution.mp4",
+        "duration": 3888,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1464739279
+      },
+      "otherFilesInDirectory": 7
+    },
+    {
+      "key": "S02E04",
+      "slug": "s02e04-alex-newman",
+      "file": "content/episodes/s02e04-alex-newman.md",
+      "publishedDuration": 2960,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E04 Alex Newman/riverside_alex_newman on trust r... magic episode _ sep 15,_trust_revolution.mp4",
+        "duration": 2960,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1284101320
+      },
+      "otherFilesInDirectory": 5
+    },
+    {
+      "key": "S02E05",
+      "slug": "s02e05-live-from-imagine-if-2025",
+      "file": "content/episodes/s02e05-live-from-imagine-if-2025.md",
+      "publishedDuration": 1337,
+      "status": "matched",
+      "delta": 58,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E05 Live from Imagine IF/riverside_open_communities in the age of control_bitcoin_park live s.mp4",
+        "duration": 1395,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 306982259
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S02E06",
+      "slug": "s02e06-privacy-s-last-stand",
+      "file": "content/episodes/s02e06-privacy-s-last-stand.md",
+      "publishedDuration": 1927,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E06 Privacy's Last Stand/riverside_shawn_yeager_ privacy'... magic episode _ oct 1, _trust_revolution.mp4",
+        "duration": 1927,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 505116581
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S02E07",
+      "slug": "s02e07-rob-brinded",
+      "file": "content/episodes/s02e07-rob-brinded.md",
+      "publishedDuration": 5002,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E07 Rob Brinded/riverside_rob_brinded - video_trust_revolution.mp4",
+        "duration": 5002,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1732645054
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E08",
+      "slug": "s02e08-trey-sellers",
+      "file": "content/episodes/s02e08-trey-sellers.md",
+      "publishedDuration": 3762,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E08 Trey Sellers/riverside_trey_sellers on trust ... magic episode _ oct 14,_trust_revolution.mp4",
+        "duration": 3762,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1376514934
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E09",
+      "slug": "s02e09-tim-bouma",
+      "file": "content/episodes/s02e09-tim-bouma.md",
+      "publishedDuration": 5120,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E09 Tim Bouma/riverside_tim_bourma on trust re... magic episode _ oct 21,_trust_revolution.mp4",
+        "duration": 5120,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1773141114
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S02E10",
+      "slug": "s02e10-dan-gould",
+      "file": "content/episodes/s02e10-dan-gould.md",
+      "publishedDuration": 3584,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E10 Dan Gould/riverside_dan_gould on trust rev... magic episode _ nov 04,_trust_revolution.mp4",
+        "duration": 3584,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1095242682
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S02E11",
+      "slug": "s02e11-stephen-delorme",
+      "file": "content/episodes/s02e11-stephen-delorme.md",
+      "publishedDuration": 3988,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E11 Stephen DeLorme/riverside_stephen_delorme on trust revolution_trust_revolution.mp4",
+        "duration": 3988,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1652825374
+      },
+      "otherFilesInDirectory": 3
+    },
+    {
+      "key": "S02E12",
+      "slug": "s02e12-average-gary",
+      "file": "content/episodes/s02e12-average-gary.md",
+      "publishedDuration": 3597,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E12 Average Gary/riverside_gary_krause on trust r... magic episode _ nov 17,_trust_revolution.mp4",
+        "duration": 3597,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1423490336
+      },
+      "otherFilesInDirectory": 4
+    },
+    {
+      "key": "S02E13",
+      "slug": "s02e13-cory-doctorow",
+      "file": "content/episodes/s02e13-cory-doctorow.md",
+      "publishedDuration": 4455,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E13 Cory Doctorow/riverside_cory_doctorow on trust revolution _ nov 25, 2025_trust_revolution.mp4",
+        "duration": 4455,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 2198528408
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E14",
+      "slug": "s02e14-why-ads-keep-winning",
+      "file": "content/episodes/s02e14-why-ads-keep-winning.md",
+      "publishedDuration": 1447,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E14 Why Ads Keep Winning/riverside_why_ads keep winning magic episode _ dec 03, 2025_trust_revolution.mp4",
+        "duration": 1447,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 321367101
+      },
+      "otherFilesInDirectory": 3
+    },
+    {
+      "key": "S02E15",
+      "slug": "s02e15-christian-keroles",
+      "file": "content/episodes/s02e15-christian-keroles.md",
+      "publishedDuration": 3277,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E15 CK/riverside_ck_on trust revolution magic episode _ dec 10, 20_trust_revolution.mp4",
+        "duration": 3277,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 899028355
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S02E16",
+      "slug": "s02e16-pippellia",
+      "file": "content/episodes/s02e16-pippellia.md",
+      "publishedDuration": 4138,
+      "status": "matched",
+      "delta": 46,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 02/S02E16 Pip/riverside_pip_on trust revolution magic episode _ dec 16, 2_trust_revolution.mp4",
+        "duration": 4184,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 783150496
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S03E01",
+      "slug": "s03e01-oscar-merry",
+      "file": "content/episodes/s03e01-oscar-merry.md",
+      "publishedDuration": 4066,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E01 Oscar Merry/riverside_oscar_merry on trust r... magic episode _ jan 19,_trust_revolution.mp4",
+        "duration": 4066,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1319714259
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S03E02",
+      "slug": "s03e02-jason-hughey",
+      "file": "content/episodes/s03e02-jason-hughey.md",
+      "publishedDuration": 3820,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E02 Jason Hughey/riverside_jason_hughey on trust ... magic episode _ jan 28,_trust_revolution.mp4",
+        "duration": 3820,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1330923572
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S03E03",
+      "slug": "s03e03-aaron-van-wirdum",
+      "file": "content/episodes/s03e03-aaron-van-wirdum.md",
+      "publishedDuration": 3890,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E03 Aaron van Wirdum/riverside_aaron_van wirdum on tr... magic episode _ jan 30,_trust_revolution.mp4",
+        "duration": 3890,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1565948658
+      },
+      "otherFilesInDirectory": 2
+    },
+    {
+      "key": "S03E04",
+      "slug": "s03e04-john-robb",
+      "file": "content/episodes/s03e04-john-robb.md",
+      "publishedDuration": 4249,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E04 John Robb/riverside_john_robb on trust rev... magic episode _ feb 10,_trust_revolution.mp4",
+        "duration": 4249,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1924412920
+      },
+      "otherFilesInDirectory": 5
+    },
+    {
+      "key": "S03E05",
+      "slug": "s03e05-jesse-posner",
+      "file": "content/episodes/s03e05-jesse-posner.md",
+      "publishedDuration": 4898,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E05 Jesse Posner/riverside_jesse_posner on trust ... magic episode _ feb 13,_trust_revolution.mp4",
+        "duration": 4898,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1480991306
+      },
+      "otherFilesInDirectory": 1
+    },
+    {
+      "key": "S03E06",
+      "slug": "s03e06-james-lee",
+      "file": "content/episodes/s03e06-james-lee.md",
+      "publishedDuration": 4271,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E06 James Lee/riverside_james_lee on trust rev... magic episode _ feb 18,_trust_revolution.mp4",
+        "duration": 4271,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 1438547882
+      },
+      "otherFilesInDirectory": 0
+    },
+    {
+      "key": "S03E07",
+      "slug": "s03e07-roland-bewick",
+      "file": "content/episodes/s03e07-roland-bewick.md",
+      "publishedDuration": 3524,
+      "status": "matched",
+      "delta": 0,
+      "master": {
+        "path": "~/Videos/Trust Revolution/Season 03/S03E07 Roland Bewick/riverside_roland_bewick on trust... magic episode _ mar 02,_trust_revolution.mp4",
+        "duration": 3524,
+        "resolution": {
+          "width": 1920,
+          "height": 1080
+        },
+        "bytes": 887797112
+      },
+      "otherFilesInDirectory": 1
+    }
+  ]
+}

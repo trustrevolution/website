@@ -9,10 +9,16 @@ description: "He built Canada's digital identity framework. Now he's building on
 summary: |
   “You cannot have trust without some form of governance. And governance is basically rules.” Tim Bouma has spent two decades inside government building Canada's digital identity framework. He's also building on Bitcoin. This is the conversation about what he's learned straddling both worlds, why centralized architecture creates problems that better policy can't fix, and why the future isn't about choosing between government systems and freedom tech—it's about understanding what each reveals about trust itself.
 featured_image: "images/cover-art/s02e09.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/AUDIO---DEFAULT---ccde4dc7-8817-4e92-a147-ba05ed312c2c.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/VIDEO---DEFAULT---9763499b-21c6-43a9-b84b-c08939978695.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s02e09-tim-bouma.mp3"
+video_url: "https://media.trustrevolution.co/video/s02e09-tim-bouma.mp4"
 duration: "1:25:20"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/9tSkghwV2VbzuBCQ5oQp/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s02e09-tim-bouma.srt"
+captions_url: "https://media.trustrevolution.co/captions/s02e09-tim-bouma.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s02e09-tim-bouma.json"
+guid: "e86b999d-bb27-42ad-8df1-8337b7eeaab6"
+feed_pubdate: "Wed, 22 Oct 2025 12:00:25 GMT"
+enclosure_bytes: 40957928
+duration_seconds: 5120
 fountain_url: "https://fountain.fm/episode/KoDQBw5S2Ga7bbUqLs7A"
 guest:
   name: Tim Bouma

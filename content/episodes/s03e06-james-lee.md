@@ -9,10 +9,16 @@ description: "Identity Theft Resource Center president James Lee on why Social S
 summary: |
   "You cannot have data compromised that you do not have." James Lee has spent two decades watching breach transparency collapse--from near-total disclosure in 2020 to just 30 percent today. The president of the nation's leading identity crime nonprofit breaks down why your Social Security number is worthless on the black market. Why your driver's license isn't and what individuals can actually do when the system designed to protect them has already failed.
 featured_image: "images/cover-art/s03e06.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---PAID---6a9d3091-7557-4efd-abf6-06785ae71ea6.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---PAID---6a9d3091-7557-4efd-abf6-06785ae71ea6.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e06-james-lee.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e06-james-lee.mp4"
 duration: "1:11:11"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/KrUuA4OQ2KhqJTWhUh0t/files/VIDEO---TRANSCRIPT---PAID---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e06-james-lee.srt"
+captions_url: "https://media.trustrevolution.co/captions/s03e06-james-lee.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e06-james-lee.json"
+guid: "a2ced3c5-8140-46fc-a682-dc529015560e"
+feed_pubdate: "Thu, 26 Feb 2026 13:00:26 GMT"
+enclosure_bytes: 68331458
+duration_seconds: 4271
 fountain_url: "https://fountain.fm/episode/KsWKldbJjRUws620C42z"
 guest:
   name: "James Lee"

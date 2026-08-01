@@ -18,4 +18,4 @@
 - [Why Trust Revolution]({{ "why/" | absURL }}): The thesis behind the show
 - [Support]({{ "support/" | absURL }}): Support the show by streaming sats over the Lightning Network
 - [Guests]({{ "guests/" | absURL }}): Index of every guest who has appeared on the show
-- [Podcast RSS feed]({{ .Site.Params.fountain_rss_url }}): Subscribe in any podcast app
+- [Podcast RSS feed]({{ .Site.Params.podcast_rss_url }}): Subscribe in any podcast app

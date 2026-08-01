@@ -9,10 +9,16 @@ description: "Apple and Google control what you can install. Fran built Zapstore
 summary: |
   In this Trust Revolution episode, Shawn Yeager and Fran, the Buenos Aires-based creator of Zapstore, explore the chokehold of centralized app stores. Fran details how Apple and Google’s control stifles innovation and erodes trust, then unveils Zapstore, a Nostr-powered, decentralized solution with cryptographic security and social trust layers. This 65-minute conversation spans the frustrations of arbitrary curation to the promise of AI-driven “vibe-coded” apps, showing how decentralized systems can reclaim power for users and developers.
 featured_image: "images/cover-art/s01e07.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/AUDIO---DEFAULT---5d46c16f-35de-4a17-bc7c-950de03df36a.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/VIDEO---DEFAULT---78f75b1f-4ef1-490b-beef-71bfe61ba9f5.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e07-fran.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e07-fran.mp4"
 duration: "1:09:03"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/aLUd4AhGEPMK4I5sJ1aO/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e07-fran.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e07-fran.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e07-fran.json"
+guid: "be271a91-1875-46e6-b136-97d8ca3059bf"
+feed_pubdate: "Wed, 28 May 2025 12:00:00 GMT"
+enclosure_bytes: 66403254
+duration_seconds: 4143
 fountain_url: "https://fountain.fm/episode/rrhOoP3LoVLMCitU58uw"
 guest:
   name: Fran

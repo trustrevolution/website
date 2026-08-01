@@ -11,10 +11,16 @@ summary: |
 
   John Robb is a US Air Force Academy graduate, a former Special Ops officer, and a tech entrepreneur. He founded Gomez and served as CEO of Userland Software, a key player in the development of RSS technology. Robb is also the author of Brave New War and a leading strategist focused on decentralized systems and artificial intelligence.
 featured_image: "images/cover-art/s01e01.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/AUDIO---DEFAULT---e0bb57b7-a86e-4ad0-b3c3-3d77d7441112.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/VIDEO---DEFAULT---c6133df9-38f9-4322-8d0f-0c2702af37f7.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e01-john-robb.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e01-john-robb.mp4"
 duration: "1:05:58"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/ju6aXtZWLvlGB1jQD9c8/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e01-john-robb.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e01-john-robb.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e01-john-robb.json"
+guid: "d7f3f137-d1ed-4e73-995a-a6720d6f247c"
+feed_pubdate: "Wed, 16 Apr 2025 12:00:00 GMT"
+enclosure_bytes: 63333874
+duration_seconds: 3958
 fountain_url: "https://fountain.fm/episode/wlaiJey7Y3FxqnhNbYIE"
 guest:
   name: John Robb

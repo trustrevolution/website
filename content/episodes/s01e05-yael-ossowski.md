@@ -8,10 +8,16 @@ episode: 5
 description: "From Canada to Austria, Yaël Ossowski has lived under enough governments to know when the balance of power shifts."
 summary: "In this episode of Trust Revolution, Shawn welcomes Yaël Ossowski, a consumer advocate and Bitcoin policy expert, for a candid discussion on the shifting balance of power between individuals and institutions. Yaël shares his global perspective, shaped by living under multiple governments, from Canada to the U.S. to Austria. As Deputy Director of the Consumer Choice Center and a Fellow at the Bitcoin Policy Institute, he unpacks how overreach during the pandemic exposed institutional distrust, why agencies like the CFPB often hinder innovation, and how Bitcoin and decentralized technologies empower individuals to reclaim control. From vaping to stablecoins, they explore how consumer choice and sound money are fueling consumer empowerment."
 featured_image: "images/cover-art/s01e05.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---DEFAULT---09f35565-4336-459d-bd12-14bc13e8fd75.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/VIDEO---DEFAULT---83482b78-176e-4523-b359-029541b4d6ce.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e05-yael-ossowski.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e05-yael-ossowski.mp4"
 duration: "55:33"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/e6VKDI3OrSovq5V9Hsmu/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e05-yael-ossowski.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e05-yael-ossowski.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e05-yael-ossowski.json"
+guid: "cd0bf2fc-0c41-4dc8-b60a-5b8154e227e2"
+feed_pubdate: "Wed, 14 May 2025 12:00:00 GMT"
+enclosure_bytes: 53452400
+duration_seconds: 3333
 fountain_url: "https://fountain.fm/episode/A3KRpxSS0CEEcDENcoWO"
 guest:
   name: Yaël Ossowski

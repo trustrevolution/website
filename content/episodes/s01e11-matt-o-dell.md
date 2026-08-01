@@ -11,10 +11,16 @@ summary: |
 
   Background
 featured_image: "images/cover-art/s01e11.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/AUDIO---DEFAULT---8ace659b-bda4-4484-9891-38b1ca6a8c15.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/VIDEO---DEFAULT---e2ba8fc8-87e3-411d-a150-44655c45d770.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e11-matt-o-dell.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e11-matt-o-dell.mp4"
 duration: "1:11:20"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/XePgq5Mxuz7z63JkYYRi/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e11-matt-o-dell.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e11-matt-o-dell.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e11-matt-o-dell.json"
+guid: "c2a8471c-a32e-44a2-a004-7b0c378d373d"
+feed_pubdate: "Wed, 25 Jun 2025 12:00:00 GMT"
+enclosure_bytes: 68599690
+duration_seconds: 4280
 fountain_url: "https://fountain.fm/episode/Aaa8PgEyStGsGuMHUsWu"
 guest:
   name: "Matt O'Dell"

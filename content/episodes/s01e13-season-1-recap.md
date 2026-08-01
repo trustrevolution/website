@@ -11,10 +11,16 @@ summary: |
 
   Throughout the season, Shawn engaged with a diverse group of guests, including futurists, technologists, and policy advisors, to discuss topics ranging from private AI and alternative app stores to the implications of AI on society. He emphasizes the need for citizen action and transparency to challenge existing power structures and the role of technology in reshaping business and governance.
 featured_image: "images/cover-art/s01e13.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/AUDIO---DEFAULT---b41a17ff-e313-446c-9684-f6ff00dcc2d3.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/VIDEO---DEFAULT---c662ae4e-f6ee-4241-b6bd-3b12d50ec8c4.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e13-season-1-recap.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e13-season-1-recap.mp4"
 duration: "19:35"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/OVTEOADwixiRnnd9Ji1i/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e13-season-1-recap.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e13-season-1-recap.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e13-season-1-recap.json"
+guid: "aa036637-bf94-430a-a251-4180a7fcd2dc"
+feed_pubdate: "Thu, 10 Jul 2025 12:00:00 GMT"
+enclosure_bytes: 18806276
+duration_seconds: 1175
 fountain_url: "https://fountain.fm/episode/Oe8qt5xc2XkJYhvZtxhC"
 timestamps:
 - time: "00:03"

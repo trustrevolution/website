@@ -9,10 +9,16 @@ description: "Values on the wall, dysfunction in the halls. There's a framework 
 summary: |
   Enron had “integrity” as a core value. FTX had none at all. Both collapsed. Jason Hughey argues the problem isn't whether companies state their values—it's whether those values function as actual decision-making frameworks or just motivational posters on the wall.
 featured_image: "images/cover-art/s03e02.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---PAID---b03e46c9-52d0-43e1-82d2-4b576bb5acd3.mp4/ORIGINAL.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---PAID---b03e46c9-52d0-43e1-82d2-4b576bb5acd3.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s03e02-jason-hughey.mp3"
+video_url: "https://media.trustrevolution.co/video/s03e02-jason-hughey.mp4"
 duration: "1:03:40"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/jHhldPbT4nJeycY6Pt8K/files/VIDEO---TRANSCRIPT---PAID---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s03e02-jason-hughey.srt"
+captions_url: "https://media.trustrevolution.co/captions/s03e02-jason-hughey.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s03e02-jason-hughey.json"
+guid: "93fff2dd-aece-4aeb-9e58-eab81cad83d1"
+feed_pubdate: "Fri, 30 Jan 2026 15:01:52 GMT"
+enclosure_bytes: 61127931
+duration_seconds: 3820
 fountain_url: "https://fountain.fm/episode/zvmY5AzkCF8nEIHbKoFz"
 guest:
   name: "Jason Hughey"

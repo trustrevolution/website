@@ -13,16 +13,58 @@ enableGitInfo = true
   youtube = "https://youtube.com/@trustrev"
   substack = "https://trustrevolution.substack.com"
 
-  # Fountain
-  fountain_show_url = "https://fountain.fm/show/Mk0fJte5vrfiDQ5RyCZd"
-  fountain_rss_url = "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF"
+  # Self-hosted media (Cloudflare R2)
+  media_base = "https://media.trustrevolution.co"
 
-  # Structured Data
+  # Canonical podcast feed. Directories poll this; it replaced the Fountain feed.
+  podcast_rss_url = "https://trustrevolution.co/podcast.xml"
+
+  # Fountain — retained through the post-cutover hold period so the "Listen on
+  # Fountain" CTA keeps working for existing listeners. Remove at cancellation.
+  fountain_show_url = "https://fountain.fm/show/Mk0fJte5vrfiDQ5RyCZd"
+
   [params.podcast]
     tagline = "Rethinking trust for a decentralized future"
     language = "en"
     explicit = false
     categories = ["Technology", "Business", "Culture"]
+
+    # Carried from the Fountain feed unchanged. Regenerating this would make
+    # Podcast Index treat the new feed as a different show, which is also the
+    # only thing that re-associates subscribers who have no redirect to follow.
+    guid = "a7d58130-6f1d-4ff3-9c5a-aee3b8cc07cc"
+
+    # Ownership credential. The Fountain feed carried neither of these, which is
+    # why directory ownership recovery was not self-service.
+    owner_name = "Shawn Yeager"
+    owner_email = "hello@trustrevolution.co"
+
+    cover_art = "art/cover.jpg"
+    funding_url = "https://trustrevolution.co/support/"
+    funding_text = "Support Trust Revolution"
+
+    # Apple's category vocabulary, mirroring what the Fountain feed already had
+    # accepted. "Business" and "Culture" above are the site's own loose labels
+    # and are not valid Apple categories.
+    [[params.podcast.itunes_categories]]
+      text = "Technology"
+    [[params.podcast.itunes_categories]]
+      text = "Society &amp; Culture"
+    [[params.podcast.itunes_categories]]
+      text = "Science"
+      sub = "Social Sciences"
+
+    # Lightning splits resolve to Alby addresses directly, so streaming sats
+    # keep working with no Fountain account. Their 2% recipient is dropped,
+    # taking Trust Revolution from 88% to 90%.
+    [[params.podcast.value_recipients]]
+      name = "Trust Revolution"
+      address = "trustrev@getalby.com"
+      split = 90
+    [[params.podcast.value_recipients]]
+      name = "NoGood"
+      address = "nogood@getalby.com"
+      split = 10
 
   # Email
   buttondown_username = "trustrevolution"
@@ -38,8 +80,17 @@ enableGitInfo = true
       unsafe = true
 
 [outputs]
-  home = ["HTML", "RSS", "LLMS"]
+  home = ["HTML", "RSS", "LLMS", "PODCAST"]
   section = ["HTML"]
+
+# The podcast feed Apple and Spotify poll. Distinct from the site's RSS feed,
+# which is a blog-style feed over episodes and essays with no enclosures.
+[outputFormats.PODCAST]
+  mediaType = "application/rss+xml"
+  baseName = "podcast"
+  isPlainText = false
+  rel = "alternate"
+  noUgly = true
 
 # llms.txt — machine-readable site overview for AI search engines (ChatGPT, Claude, Perplexity)
 [outputFormats.LLMS]

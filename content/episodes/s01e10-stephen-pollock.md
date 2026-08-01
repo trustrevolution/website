@@ -11,10 +11,16 @@ summary: |
 
   Background
 featured_image: "images/cover-art/s01e10.jpg"
-audio_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/AUDIO---DEFAULT---04b5c6c6-4c68-486a-b5b8-f1805506d173.mp3"
-video_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/VIDEO---DEFAULT---cfb60220-c0fd-4f13-bd06-99b2e268a945.mp4/playlist.m3u8"
+audio_url: "https://media.trustrevolution.co/audio/s01e10-stephen-pollock.mp3"
+video_url: "https://media.trustrevolution.co/video/s01e10-stephen-pollock.mp4"
 duration: "1:21:18"
-transcript_url: "https://feeds.fountain.fm/OIYZniSDb9jd3Pb78CpF/items/nQ7beQNVkfucDvplWyja/files/AUDIO---TRANSCRIPT---DEFAULT---SRT.srt"
+transcript_url: "https://media.trustrevolution.co/transcripts/s01e10-stephen-pollock.srt"
+captions_url: "https://media.trustrevolution.co/captions/s01e10-stephen-pollock.vtt"
+chapters_url: "https://media.trustrevolution.co/chapters/s01e10-stephen-pollock.json"
+guid: "38630fa0-9c1d-4093-a49b-c6e9b128984e"
+feed_pubdate: "Wed, 18 Jun 2025 12:00:00 GMT"
+enclosure_bytes: 78225891
+duration_seconds: 4878
 fountain_url: "https://fountain.fm/episode/CWuFTMBUntzZh2PZKYAh"
 guest:
   name: Stephen Pollock
