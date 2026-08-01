@@ -1,6 +1,9 @@
 [build]
   publish = "public"
-  command = "npm ci && npm run generate:og && hugo --gc --minify && npx pagefind --site public"
+  # verify:feed fails the deploy if the podcast feed's GUIDs, pubDates, or
+  # podcast:guid drift from what Fountain published. That drift would republish
+  # the whole back catalogue to every subscriber, and nothing else catches it.
+  command = "npm ci && npm run generate:og && hugo --gc --minify && npm run verify:feed && npx pagefind --site public"
 
 [build.environment]
   HUGO_VERSION = "0.154.1"

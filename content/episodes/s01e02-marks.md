@@ -17,8 +17,9 @@ duration: "56:26"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e02-marks.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e02-marks.json"
 guid: "8c1d47bd-eef6-4445-b4f7-75501da064ca"
-pubdate: "Wed, 23 Apr 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 23 Apr 2025 12:00:00 GMT"
 enclosure_bytes: 54312695
+duration_seconds: 3386
 fountain_url: "https://fountain.fm/episode/VjH1BHbUPwsd1mzcYue9"
 guest:
   name: Marks

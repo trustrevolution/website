@@ -15,8 +15,9 @@ duration: "1:09:03"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e07-fran.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e07-fran.json"
 guid: "be271a91-1875-46e6-b136-97d8ca3059bf"
-pubdate: "Wed, 28 May 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 28 May 2025 12:00:00 GMT"
 enclosure_bytes: 66403254
+duration_seconds: 4143
 fountain_url: "https://fountain.fm/episode/rrhOoP3LoVLMCitU58uw"
 guest:
   name: Fran

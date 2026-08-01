@@ -15,8 +15,9 @@ duration: "58:44"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e07-roland-bewick.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e07-roland-bewick.json"
 guid: "6c22583d-7678-488e-b907-461a737d294a"
-pubdate: "Fri, 06 Mar 2026 13:00:25 GMT"
+feed_pubdate: "Fri, 06 Mar 2026 13:00:25 GMT"
 enclosure_bytes: 56379915
+duration_seconds: 3524
 fountain_url: ""
 guest:
   name: "Roland Bewick"

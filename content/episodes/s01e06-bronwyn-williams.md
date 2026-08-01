@@ -15,8 +15,9 @@ duration: "1:04:03"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e06-bronwyn-williams.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e06-bronwyn-williams.json"
 guid: "e04297e7-f422-44df-94ae-12ea86751b07"
-pubdate: "Wed, 21 May 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 21 May 2025 12:00:00 GMT"
 enclosure_bytes: 61494241
+duration_seconds: 3843
 fountain_url: "https://fountain.fm/episode/uxNq4GhUxtuKtSVkWJCr"
 guest:
   name: Bronwyn Williams

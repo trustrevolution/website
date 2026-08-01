@@ -17,8 +17,9 @@ duration: "22:17"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e05-live-from-imagine-if-2025.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e05-live-from-imagine-if-2025.json"
 guid: "68d39605-1468-40fa-934a-dfe963be3be1"
-pubdate: "Wed, 24 Sep 2025 20:20:55 GMT"
+feed_pubdate: "Wed, 24 Sep 2025 20:20:55 GMT"
 enclosure_bytes: 10693294
+duration_seconds: 1337
 fountain_url: "https://fountain.fm/episode/DbGXWmg0KxOD81td5EOp"
 key_quote:
   text: "With broken money come broken incentives, and from that flow business models that turn us into the product."

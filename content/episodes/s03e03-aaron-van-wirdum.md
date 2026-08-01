@@ -15,8 +15,9 @@ duration: "1:04:50"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e03-aaron-van-wirdum.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e03-aaron-van-wirdum.json"
 guid: "205d46ef-091c-41a0-bad3-69e1a13f7e1f"
-pubdate: "Fri, 06 Feb 2026 13:00:26 GMT"
+feed_pubdate: "Fri, 06 Feb 2026 13:00:26 GMT"
 enclosure_bytes: 62237613
+duration_seconds: 3890
 fountain_url: "https://fountain.fm/episode/Go9j4PIZm0XIV5f2v9dV"
 guest:
   name: "Aaron van Wirdum"

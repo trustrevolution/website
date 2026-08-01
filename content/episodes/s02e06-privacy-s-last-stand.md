@@ -15,8 +15,9 @@ duration: "32:07"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e06-privacy-s-last-stand.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e06-privacy-s-last-stand.json"
 guid: "d0ececd3-2d48-4100-8944-d00e02458479"
-pubdate: "Wed, 01 Oct 2025 19:28:55 GMT"
+feed_pubdate: "Wed, 01 Oct 2025 19:28:55 GMT"
 enclosure_bytes: 15413516
+duration_seconds: 1927
 fountain_url: "https://fountain.fm/episode/UWPtOZ6SoBPUYO7DU1pc"
 key_quote:
   text: "When given a choice, most people choose free with ads over paying directly. But the question isn't replacement—it's exit."

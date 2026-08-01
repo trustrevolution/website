@@ -17,8 +17,9 @@ duration: "59:44"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e10-dan-gould.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e10-dan-gould.json"
 guid: "18c9a5b1-8c7a-432f-b052-22b3184e9003"
-pubdate: "Wed, 05 Nov 2025 13:00:25 GMT"
+feed_pubdate: "Wed, 05 Nov 2025 13:00:25 GMT"
 enclosure_bytes: 28669301
+duration_seconds: 3584
 fountain_url: "https://fountain.fm/episode/jrcWHYhorCfoI4hagzD0"
 guest:
   name: Dan Gould

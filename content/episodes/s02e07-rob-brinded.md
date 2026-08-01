@@ -17,8 +17,9 @@ duration: "1:23:22"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e07-rob-brinded.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e07-rob-brinded.json"
 guid: "97b19908-1107-4a57-aeb4-4769eda41442"
-pubdate: "Wed, 08 Oct 2025 12:00:25 GMT"
+feed_pubdate: "Wed, 08 Oct 2025 12:00:25 GMT"
 enclosure_bytes: 40020236
+duration_seconds: 5002
 fountain_url: "https://fountain.fm/episode/5ufEYmtVbctyLiFiynuO"
 guest:
   name: Rob Brinded

@@ -15,8 +15,9 @@ duration: "49:20"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e04-alex-newman.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e04-alex-newman.json"
 guid: "f4f3f4ae-ce61-4770-abf0-59f23a39de11"
-pubdate: "Wed, 17 Sep 2025 12:00:27 GMT"
+feed_pubdate: "Wed, 17 Sep 2025 12:00:27 GMT"
 enclosure_bytes: 23683257
+duration_seconds: 2960
 fountain_url: "https://fountain.fm/episode/0R1QgTzjD437kfTbjrrT"
 guest:
   name: Alex Newman

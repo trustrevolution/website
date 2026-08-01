@@ -14,8 +14,9 @@ duration: "54:03"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e09-r-u-sirius.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e09-r-u-sirius.json"
 guid: "16833efc-bdd5-455c-a122-9ed9b2c511d6"
-pubdate: "Wed, 11 Jun 2025 11:39:06 GMT"
+feed_pubdate: "Wed, 11 Jun 2025 11:39:06 GMT"
 enclosure_bytes: 52002570
+duration_seconds: 3243
 fountain_url: "https://fountain.fm/episode/o1vaaAL0VBqoKIbakDdi"
 guest:
   name: R.U. Sirius

@@ -17,8 +17,9 @@ duration: "1:06:28"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e11-stephen-delorme.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e11-stephen-delorme.json"
 guid: "c4dde0e3-0685-43c7-bf16-0dbdd36775f0"
-pubdate: "Thu, 13 Nov 2025 13:00:25 GMT"
+feed_pubdate: "Thu, 13 Nov 2025 13:00:25 GMT"
 enclosure_bytes: 31902215
+duration_seconds: 3988
 fountain_url: "https://fountain.fm/episode/N6ZXzeTlp5nSMyx4Qt66"
 guest:
   name: Stephen DeLorme

@@ -17,8 +17,9 @@ duration: "1:11:38"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e08-rishad-tobaccowala.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e08-rishad-tobaccowala.json"
 guid: "66e24bc1-5a3f-4d27-8c8f-563862058af8"
-pubdate: "Wed, 04 Jun 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 04 Jun 2025 12:00:00 GMT"
 enclosure_bytes: 68939009
+duration_seconds: 4298
 fountain_url: "https://fountain.fm/episode/Czt5CzqaXqCwvhez3JkU"
 guest:
   name: Rishad Tobaccowala

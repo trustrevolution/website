@@ -15,8 +15,9 @@ duration: "24:07"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e14-why-ads-keep-winning.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e14-why-ads-keep-winning.json"
 guid: "8b278f29-8458-482b-8fde-b4300a2f6deb"
-pubdate: "Fri, 05 Dec 2025 13:00:26 GMT"
+feed_pubdate: "Fri, 05 Dec 2025 13:00:26 GMT"
 enclosure_bytes: 11579577
+duration_seconds: 1447
 fountain_url: "https://fountain.fm/episode/nx8jCK6OGhKpTsOI85E3"
 key_quote:
   text: Your ad revenue pays the bills. Your voluntary supporters are your insurance policy.

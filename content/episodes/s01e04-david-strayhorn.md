@@ -14,8 +14,9 @@ duration: "1:10:02"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e04-david-strayhorn.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e04-david-strayhorn.json"
 guid: "48ff7eb5-7c20-48f3-9faa-6341be874ae4"
-pubdate: "Wed, 07 May 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 07 May 2025 12:00:00 GMT"
 enclosure_bytes: 67410037
+duration_seconds: 4202
 fountain_url: "https://fountain.fm/episode/KfVLgB816oUvzG4TB2vm"
 guest:
   name: David Strayhorn

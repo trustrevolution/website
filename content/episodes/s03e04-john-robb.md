@@ -15,8 +15,9 @@ duration: "1:10:49"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e04-john-robb.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e04-john-robb.json"
 guid: "74af5fc8-73e4-4b5b-bc09-f43749eb5170"
-pubdate: "Fri, 13 Feb 2026 13:00:26 GMT"
+feed_pubdate: "Fri, 13 Feb 2026 13:00:26 GMT"
 enclosure_bytes: 67979954
+duration_seconds: 4249
 fountain_url: "https://fountain.fm/episode/jCYytxpQ5gzNZWNAUimY"
 guest:
   name: "John Robb"

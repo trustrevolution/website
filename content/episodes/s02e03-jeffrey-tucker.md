@@ -15,8 +15,9 @@ duration: "1:04:48"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e03-jeffrey-tucker.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e03-jeffrey-tucker.json"
 guid: "6dfbec12-ca11-438a-8f6f-7966a40a3386"
-pubdate: "Wed, 10 Sep 2025 12:00:27 GMT"
+feed_pubdate: "Wed, 10 Sep 2025 12:00:27 GMT"
 enclosure_bytes: 31108302
+duration_seconds: 3888
 fountain_url: "https://fountain.fm/episode/wSoxigSB0d67rPpszvu7"
 guest:
   name: Jeffrey Tucker

@@ -15,8 +15,9 @@ duration: "1:07:46"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e01-oscar-merry.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e01-oscar-merry.json"
 guid: "e9ae1784-1113-41cd-b71b-9ea7dd49967d"
-pubdate: "Thu, 22 Jan 2026 13:00:26 GMT"
+feed_pubdate: "Thu, 22 Jan 2026 13:00:26 GMT"
 enclosure_bytes: 65061345
+duration_seconds: 4066
 fountain_url: "https://fountain.fm/episode/muP1tUHZyoQJkqw5WHKc"
 guest:
   name: "Oscar Merry"

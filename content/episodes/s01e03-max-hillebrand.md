@@ -15,8 +15,9 @@ duration: "1:01:39"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e03-max-hillebrand.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e03-max-hillebrand.json"
 guid: "bc82dfd8-8d92-4ffb-bcf9-07a6eeb7d123"
-pubdate: "Wed, 30 Apr 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 30 Apr 2025 12:00:00 GMT"
 enclosure_bytes: 59318303
+duration_seconds: 3699
 fountain_url: "https://fountain.fm/episode/pxkbfZaIxdKLPvXGCmBf"
 guest:
   name: Max Hillebrand

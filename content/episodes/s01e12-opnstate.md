@@ -17,8 +17,9 @@ duration: "1:05:59"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e12-opnstate.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e12-opnstate.json"
 guid: "b903dc85-8951-415f-80f3-86a6aa4bac82"
-pubdate: "Wed, 02 Jul 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 02 Jul 2025 12:00:00 GMT"
 enclosure_bytes: 63473988
+duration_seconds: 3959
 fountain_url: "https://fountain.fm/episode/3keoizzqUGz8kSq0GgxE"
 guest:
   name: OpnState

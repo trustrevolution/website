@@ -15,8 +15,9 @@ duration: "1:11:11"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e06-james-lee.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e06-james-lee.json"
 guid: "a2ced3c5-8140-46fc-a682-dc529015560e"
-pubdate: "Thu, 26 Feb 2026 13:00:26 GMT"
+feed_pubdate: "Thu, 26 Feb 2026 13:00:26 GMT"
 enclosure_bytes: 68331458
+duration_seconds: 4271
 fountain_url: "https://fountain.fm/episode/KsWKldbJjRUws620C42z"
 guest:
   name: "James Lee"

@@ -15,8 +15,9 @@ duration: "1:14:15"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e13-cory-doctorow.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e13-cory-doctorow.json"
 guid: "8214ca6a-d4d8-44f6-b2fe-c1e373e57b1a"
-pubdate: "Wed, 26 Nov 2025 13:00:25 GMT"
+feed_pubdate: "Wed, 26 Nov 2025 13:00:25 GMT"
 enclosure_bytes: 35636889
+duration_seconds: 4455
 fountain_url: "https://fountain.fm/episode/bJgdt0hJAnppEve6Qmt8"
 guest:
   name: Cory Doctorow

@@ -15,8 +15,9 @@ duration: "1:02:42"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e08-trey-sellers.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e08-trey-sellers.json"
 guid: "cd5bc045-25a3-4523-bbe3-5f49ce0c1418"
-pubdate: "Wed, 15 Oct 2025 11:58:28 GMT"
+feed_pubdate: "Wed, 15 Oct 2025 11:58:28 GMT"
 enclosure_bytes: 30098303
+duration_seconds: 3762
 fountain_url: "https://fountain.fm/episode/FHJBXSVwd3JGkqIDGfBB"
 guest:
   name: Trey Sellers

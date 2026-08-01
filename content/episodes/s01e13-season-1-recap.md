@@ -17,8 +17,9 @@ duration: "19:35"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e13-season-1-recap.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e13-season-1-recap.json"
 guid: "aa036637-bf94-430a-a251-4180a7fcd2dc"
-pubdate: "Thu, 10 Jul 2025 12:00:00 GMT"
+feed_pubdate: "Thu, 10 Jul 2025 12:00:00 GMT"
 enclosure_bytes: 18806276
+duration_seconds: 1175
 fountain_url: "https://fountain.fm/episode/Oe8qt5xc2XkJYhvZtxhC"
 timestamps:
 - time: "00:03"

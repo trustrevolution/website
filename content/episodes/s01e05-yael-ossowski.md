@@ -14,8 +14,9 @@ duration: "55:33"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e05-yael-ossowski.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e05-yael-ossowski.json"
 guid: "cd0bf2fc-0c41-4dc8-b60a-5b8154e227e2"
-pubdate: "Wed, 14 May 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 14 May 2025 12:00:00 GMT"
 enclosure_bytes: 53452400
+duration_seconds: 3333
 fountain_url: "https://fountain.fm/episode/A3KRpxSS0CEEcDENcoWO"
 guest:
   name: Yaël Ossowski

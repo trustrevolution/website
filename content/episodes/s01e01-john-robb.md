@@ -17,8 +17,9 @@ duration: "1:05:58"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e01-john-robb.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e01-john-robb.json"
 guid: "d7f3f137-d1ed-4e73-995a-a6720d6f247c"
-pubdate: "Wed, 16 Apr 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 16 Apr 2025 12:00:00 GMT"
 enclosure_bytes: 63333874
+duration_seconds: 3958
 fountain_url: "https://fountain.fm/episode/wlaiJey7Y3FxqnhNbYIE"
 guest:
   name: John Robb

@@ -14,7 +14,8 @@ duration: "1:13"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e00-season-1-trailer.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e00-season-1-trailer.json"
 guid: "2314bccf-18a5-48c4-b5f0-1ade409d4926"
-pubdate: "Mon, 10 Mar 2025 01:00:26 GMT"
+feed_pubdate: "Mon, 10 Mar 2025 01:00:26 GMT"
 enclosure_bytes: 1326954
+duration_seconds: 73
 fountain_url: "https://fountain.fm/episode/cXKk4mKAbyLICb5vbq5Q"
 ---

@@ -15,8 +15,9 @@ duration: "1:01:53"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e01-nicholas-anthony.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e01-nicholas-anthony.json"
 guid: "4811dc8b-57b2-4677-9b32-7ecf3b5d7c73"
-pubdate: "Wed, 27 Aug 2025 12:00:27 GMT"
+feed_pubdate: "Wed, 27 Aug 2025 12:00:27 GMT"
 enclosure_bytes: 29703959
+duration_seconds: 3713
 fountain_url: "https://fountain.fm/episode/CuFy9yf3HDEBUYxtzQWi"
 guest:
   name: Nicholas Anthony

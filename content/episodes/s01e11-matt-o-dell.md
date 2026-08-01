@@ -17,8 +17,9 @@ duration: "1:11:20"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e11-matt-o-dell.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e11-matt-o-dell.json"
 guid: "c2a8471c-a32e-44a2-a004-7b0c378d373d"
-pubdate: "Wed, 25 Jun 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 25 Jun 2025 12:00:00 GMT"
 enclosure_bytes: 68599690
+duration_seconds: 4280
 fountain_url: "https://fountain.fm/episode/Aaa8PgEyStGsGuMHUsWu"
 guest:
   name: "Matt O'Dell"

@@ -14,8 +14,9 @@ duration: "1:02:01"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e02-mathias-buus.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e02-mathias-buus.json"
 guid: "827e58e9-efa4-4846-9b03-a20f35305abe"
-pubdate: "Wed, 03 Sep 2025 12:00:27 GMT"
+feed_pubdate: "Wed, 03 Sep 2025 12:00:27 GMT"
 enclosure_bytes: 29765190
+duration_seconds: 3721
 fountain_url: "https://fountain.fm/episode/ZiksXcYEeqQuef7gxGUE"
 guest:
   name: Mathias Buus

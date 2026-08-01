@@ -15,8 +15,9 @@ duration: "59:57"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e12-average-gary.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e12-average-gary.json"
 guid: "5435e728-4dd7-4b57-bc74-fdc32ab6b2be"
-pubdate: "Wed, 19 Nov 2025 13:00:25 GMT"
+feed_pubdate: "Wed, 19 Nov 2025 13:00:25 GMT"
 enclosure_bytes: 28777552
+duration_seconds: 3597
 fountain_url: "https://fountain.fm/episode/wLcSOyS8mZORCpm6HTpK"
 guest:
   name: Average Gary

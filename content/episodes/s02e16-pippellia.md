@@ -15,8 +15,9 @@ duration: "1:08:58"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e16-pippellia.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e16-pippellia.json"
 guid: "7ab9d5eb-135c-4427-b4c0-04f5d3b86f28"
-pubdate: "Thu, 18 Dec 2025 13:00:26 GMT"
+feed_pubdate: "Thu, 18 Dec 2025 13:00:26 GMT"
 enclosure_bytes: 33103639
+duration_seconds: 4138
 fountain_url: "https://fountain.fm/episode/K745y4I3kdplDkqnI7D2"
 guest:
   name: Pippellia

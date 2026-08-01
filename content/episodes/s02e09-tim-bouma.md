@@ -15,8 +15,9 @@ duration: "1:25:20"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e09-tim-bouma.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e09-tim-bouma.json"
 guid: "e86b999d-bb27-42ad-8df1-8337b7eeaab6"
-pubdate: "Wed, 22 Oct 2025 12:00:25 GMT"
+feed_pubdate: "Wed, 22 Oct 2025 12:00:25 GMT"
 enclosure_bytes: 40957928
+duration_seconds: 5120
 fountain_url: "https://fountain.fm/episode/KoDQBw5S2Ga7bbUqLs7A"
 guest:
   name: Tim Bouma

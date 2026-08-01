@@ -8,11 +8,16 @@
  *
  *   guid             the item GUID, which must survive byte-identically or
  *                    every subscriber re-downloads the catalogue
- *   pubdate          the original RFC-822 publication timestamp; Hugo's own
+ *   feed_pubdate     the original RFC-822 publication timestamp; Hugo's own
  *                    `date` field is date-only, so emitting from it would shift
- *                    every episode's time and reshuffle app sort order
+ *                    every episode's time and reshuffle app sort order. Named
+ *                    `feed_pubdate` rather than `pubdate` because Hugo treats
+ *                    the latter as a reserved date key and coerces the string
+ *                    into a Go timestamp, which is not valid RSS.
  *   enclosure_bytes  the true byte size of the archived MP3 (Fountain's own
  *                    declared lengths are rounded on derived files)
+ *   duration_seconds itunes:duration verbatim, so the feed template needs no
+ *                    mm:ss parsing (Go's int cast rejects zero-padded "08")
  *   chapters_url     previously not carried in front matter at all
  *
  * Edits are line-scoped rather than a YAML round-trip on purpose: parsing and
@@ -132,8 +137,15 @@ function main() {
     // Durable feed data, anchored after the media URLs so it reads in one block.
     text = upsertAfter(text, 'chapters_url', `${MEDIA_BASE}/chapters/${slug}.json`, 'transcript_url');
     text = upsertAfter(text, 'guid', record.guid, 'chapters_url');
-    text = upsertAfter(text, 'pubdate', record.pubDate, 'guid');
-    text = upsertAfter(text, 'enclosure_bytes', record.assets.audio.bytes, 'pubdate', { raw: true });
+    text = upsertAfter(text, 'feed_pubdate', record.pubDate, 'guid');
+    text = upsertAfter(text, 'enclosure_bytes', record.assets.audio.bytes, 'feed_pubdate', { raw: true });
+
+    const seconds = record.declaredDuration || record.assets.audio.observedDuration;
+    if (!seconds) {
+      results.problems.push(`${file}: no duration available in manifest`);
+      continue;
+    }
+    text = upsertAfter(text, 'duration_seconds', seconds, 'enclosure_bytes', { raw: true });
 
     if (text === before) {
       results.skipped.push(file);

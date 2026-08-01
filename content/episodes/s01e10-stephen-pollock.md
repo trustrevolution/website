@@ -17,8 +17,9 @@ duration: "1:21:18"
 transcript_url: "https://media.trustrevolution.co/transcripts/s01e10-stephen-pollock.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s01e10-stephen-pollock.json"
 guid: "38630fa0-9c1d-4093-a49b-c6e9b128984e"
-pubdate: "Wed, 18 Jun 2025 12:00:00 GMT"
+feed_pubdate: "Wed, 18 Jun 2025 12:00:00 GMT"
 enclosure_bytes: 78225891
+duration_seconds: 4878
 fountain_url: "https://fountain.fm/episode/CWuFTMBUntzZh2PZKYAh"
 guest:
   name: Stephen Pollock

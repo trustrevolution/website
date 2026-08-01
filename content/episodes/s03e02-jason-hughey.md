@@ -15,8 +15,9 @@ duration: "1:03:40"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e02-jason-hughey.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e02-jason-hughey.json"
 guid: "93fff2dd-aece-4aeb-9e58-eab81cad83d1"
-pubdate: "Fri, 30 Jan 2026 15:01:52 GMT"
+feed_pubdate: "Fri, 30 Jan 2026 15:01:52 GMT"
 enclosure_bytes: 61127931
+duration_seconds: 3820
 fountain_url: "https://fountain.fm/episode/zvmY5AzkCF8nEIHbKoFz"
 guest:
   name: "Jason Hughey"

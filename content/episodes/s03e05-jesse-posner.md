@@ -15,8 +15,9 @@ duration: "1:21:38"
 transcript_url: "https://media.trustrevolution.co/transcripts/s03e05-jesse-posner.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s03e05-jesse-posner.json"
 guid: "68731d20-8515-4b19-8212-335943b83db5"
-pubdate: "Thu, 19 Feb 2026 13:00:26 GMT"
+feed_pubdate: "Thu, 19 Feb 2026 13:00:26 GMT"
 enclosure_bytes: 78367911
+duration_seconds: 4898
 fountain_url: "https://fountain.fm/episode/cISlqMX36DhP6F4AW4G0"
 guest:
   name: "Jesse Posner"

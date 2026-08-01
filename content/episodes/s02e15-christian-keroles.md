@@ -15,8 +15,9 @@ duration: "54:37"
 transcript_url: "https://media.trustrevolution.co/transcripts/s02e15-christian-keroles.srt"
 chapters_url: "https://media.trustrevolution.co/chapters/s02e15-christian-keroles.json"
 guid: "4ddb2a8f-c049-48a8-8068-7c3cf1a0e049"
-pubdate: "Fri, 12 Dec 2025 13:00:26 GMT"
+feed_pubdate: "Fri, 12 Dec 2025 13:00:26 GMT"
 enclosure_bytes: 26216507
+duration_seconds: 3277
 fountain_url: "https://fountain.fm/episode/UnnHucGUFMryt3ZGmRD5"
 guest:
   name: Christian Keroles
