@@ -3047,6 +3047,7 @@ noscript + main .fade-in,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
+  line-height: 1;
   text-decoration: none;
   cursor: pointer;
   transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
@@ -3064,6 +3065,23 @@ noscript + main .fade-in,
 }
 
 .tag-link--rate { min-width: var(--touch-target); }
+
+/* The one action in the accent. Same die-cut scale as its siblings so a
+   compact plate does not have to carry a hero-band button. */
+.tag-link--primary {
+  background: var(--accent-orange);
+  border-color: var(--border-heavy);
+  /* Ink on vermillion, not paper. Newsprint on this orange measures 3.46:1,
+     under the 4.5:1 floor; black clears it and reads more like a printed
+     poster besides. */
+  color: var(--text-black);
+}
+
+.tag-link--primary:hover {
+  background: var(--accent-orange-dark);
+  border-color: var(--border-heavy);
+  color: var(--bg-white);
+}
 
 /* --- timestamps become seek targets --- */
 
@@ -3125,4 +3143,101 @@ noscript + main .fade-in,
 .transport__controls[aria-disabled='true'] .tag-link {
   opacity: 0.4;
   pointer-events: none;
+}
+
+/* ============================================
+   VALUE FOR VALUE — direct Lightning support
+   A stamped plate, not a donate card. Vermillion
+   stays on the one action; the QR is ink.
+   ============================================ */
+
+.v4v {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-content);
+  border: var(--border-component) solid var(--border-heavy);
+  background: var(--bg-white);
+}
+
+.v4v__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-content);
+}
+
+.v4v__heading {
+  margin: 0 0 var(--spacing-content);
+  font-size: var(--font-size-2xl);
+  text-wrap: balance;
+}
+
+/* The address reads as a plate to be lifted: bordered, monospace, selectable.
+   Full width so a long address wraps inside its own frame rather than pushing
+   the actions onto another line. */
+.v4v__code {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  margin-bottom: var(--spacing-sm);
+  padding: var(--btn-padding-y-sm) var(--spacing-sm);
+  border: var(--border-subtle) solid var(--border-heavy);
+  background: var(--bg-subtle);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-black);
+  word-break: break-all;
+  user-select: all;
+}
+
+.v4v__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin: 0;
+}
+
+/* The QR is a die-cut stamp: ink on paper inside a hard frame. */
+.v4v__qr {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+}
+
+.v4v__qr-plate {
+  padding: var(--spacing-sm);
+  border: var(--border-component) solid var(--border-heavy);
+  background: var(--bg-white);
+  color: var(--text-black);
+  line-height: 0;
+}
+
+.v4v__qr-plate svg {
+  display: block;
+  width: 132px;
+  height: 132px;
+}
+
+.v4v__qr-caption {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+/* Desktop: pitch and stamp sit side by side, the stamp holding the right edge. */
+@media (min-width: 768px) {
+  .v4v__body {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-content);
+  }
+
+  .v4v__pitch { flex: 1 1 0; min-width: 0; }
+  .v4v__qr { flex: 0 0 auto; align-items: center; }
+  .v4v__qr-caption { text-align: center; }
 }

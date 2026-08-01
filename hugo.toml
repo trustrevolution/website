@@ -16,6 +16,12 @@ enableGitInfo = true
   # Self-hosted media (Cloudflare R2)
   media_base = "https://media.trustrevolution.co"
 
+  # Value-for-value tipping. Same address that receives 90% of the feed's
+  # podcast:value splits, so the site and the feed pay to one place.
+  # Changing this requires regenerating the QR:
+  #   LN_ADDRESS=... node scripts/generate-lightning-qr.js
+  lightning_address = "trustrev@getalby.com"
+
   # Canonical podcast feed. Directories poll this; it replaced the Fountain feed.
   podcast_rss_url = "https://trustrevolution.co/podcast.xml"
 

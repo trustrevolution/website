@@ -75,6 +75,8 @@
         </section>
         {{ end }}
 
+        {{ partial "support-v4v.html" . }}
+
         {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
 
         {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}

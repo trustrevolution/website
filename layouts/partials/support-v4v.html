@@ -1,0 +1,49 @@
+{{/*
+  Value-for-value support — direct Lightning, no intermediary.
+
+  Three ways to pay, because people arrive holding different things:
+    - a phone, and they scan the code
+    - a wallet extension, and they follow the lightning: URI
+    - some other wallet, and they copy the address
+
+  Only the copy button needs JavaScript, and the address is selectable text
+  regardless, so nothing here depends on a script running. The QR is a committed
+  SVG built by scripts/generate-lightning-qr.js rather than a runtime library.
+
+  Placed after the episode content on purpose. The sidebar stacks above the
+  title on mobile, which would put the ask before anything had been delivered.
+*/}}
+
+{{- $address := .Site.Params.lightning_address -}}
+{{- $qr := resources.Get "images/lightning-qr.svg" -}}
+
+{{- with $address }}
+<section class="v4v" aria-labelledby="v4v-heading">
+  <span class="section-label">Value for Value</span>
+
+  <div class="v4v__body">
+    <div class="v4v__pitch">
+      <h2 class="v4v__heading" id="v4v-heading">No ads.<br>No sponsors.<br>You decide what it&rsquo;s worth.</h2>
+
+      {{/* Monospace for the same reason the playhead uses it: a value that has
+           to be transcribed exactly. Given its own row so a long address never
+           competes with the buttons for width. */}}
+      <code class="v4v__code" data-v4v-address>{{ . }}</code>
+
+      <p class="v4v__actions">
+        {{/* The lightning: URI opens whatever wallet claimed the scheme, and
+             needs no script. Copy is revealed only if the clipboard API exists. */}}
+        <a class="tag-link tag-link--primary" href="lightning:{{ . }}">Send sats</a>
+        <button type="button" class="tag-link v4v__copy" data-v4v-copy hidden>Copy address</button>
+      </p>
+    </div>
+
+    {{- with $qr }}
+    <figure class="v4v__qr">
+      <div class="v4v__qr-plate">{{ .Content | safeHTML }}</div>
+      <figcaption class="v4v__qr-caption">Scan with a Lightning wallet</figcaption>
+    </figure>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
