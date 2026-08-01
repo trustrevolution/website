@@ -16,9 +16,9 @@
           {{ with .Params.duration }}· {{ . }}{{ end }}
         </p>
         {{ with .Params.summary }}
-        <div class="episode-summary">{{ . | markdownify }}</div>
+        <div class="episode-summary is-text">{{ . | markdownify }}</div>
         {{ else }}{{ with .Params.description }}
-        <div class="episode-summary">{{ . }}</div>
+        <div class="episode-summary is-text">{{ . }}</div>
         {{ end }}{{ end }}
       </div>
     </header>
@@ -26,20 +26,20 @@
     {{/* Media declares its own measure: the player is a control, the video is
          the artifact. */}}
     <div class="episode-media">
-      <div class="is-wide">{{ partial "media-player.html" (dict "context" . "only" "audio") }}</div>
-      <div class="is-full">{{ partial "media-player.html" (dict "context" . "only" "video") }}</div>
+      {{ partial "media-player.html" (dict "context" . "only" "audio") }}
+      {{ partial "media-player.html" (dict "context" . "only" "video") }}
     </div>
 
     <div class="episode-body fade-in delay-1">
       {{ with .Params.key_quote }}
-      <blockquote class="pull-quote is-wide">
+      <blockquote class="pull-quote">
         <p>{{ .text }}</p>
         {{ with .attribution }}<cite>— {{ . }}</cite>{{ end }}
       </blockquote>
       {{ end }}
 
       {{ if .Params.timestamps }}
-      <section class="episode-section is-full" id="chapters">
+      <section class="episode-section" id="chapters">
         <h2>Chapters</h2>
         <ul class="timestamps-list">
           {{ range .Params.timestamps }}
@@ -57,7 +57,7 @@
       {{ end }}
 
       {{ if .Params.resources }}
-      <section class="episode-section is-wide">
+      <section class="episode-section">
         <h2>Resources</h2>
         <ul class="resources-list">
           {{ range .Params.resources }}
@@ -67,13 +67,13 @@
       </section>
       {{ end }}
 
-      <div class="is-wide">{{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}</div>
+      <div>{{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}</div>
 
-      <div class="is-wide">{{ partial "support-v4v.html" . }}</div>
+      <div>{{ partial "support-v4v.html" . }}</div>
 
-      <div class="is-wide">{{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}</div>
+      <div>{{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}</div>
 
-      <div class="is-wide">{{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}</div>
+      <div>{{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}</div>
     </div>
   </div>
 </article>

@@ -233,18 +233,19 @@ img {
 
 /* The site sat at 1000px however wide the display, which on a large monitor
    left ~450px of dead margin each side. Step up rather than jump, so the
-   composition stays deliberate instead of merely wide. */
+   composition stays deliberate instead of merely wide. The episode page opts
+   out: it is a reading surface, and a 1148px pull quote is not a quote. */
 @media (min-width: 1280px) {
   .container {
     max-width: 1180px;
   }
-}
 
-@media (min-width: 1600px) {
-  .container {
-    max-width: var(--max-width-wide);
+  .episode-page > .container {
+    max-width: var(--max-width-content);
   }
 }
+
+
 
 .container-narrow {
   max-width: var(--max-width-narrow);
@@ -3398,31 +3399,29 @@ noscript + main .fade-in,
 
 .episode-body,
 .episode-media {
-  /* Three named measures. Every block shares the container's left edge and
-     differs only on the right, so the page has one spine instead of tracks
-     that centre independently and leave ragged edges. */
-  --measure-text: 44rem;   /* ~65-70ch of the body face */
-  --measure-wide: 50rem;  /* ~900px at this root size */
+  /* One structural width, prose the only exception. Varying block widths read
+     as unresolved rather than as hierarchy, and this system is a broadsheet:
+     dense, aligned, every edge accounted for. */
+  --measure-text: 42rem;
 }
 
 .episode-body > *,
 .episode-media > * {
-  max-width: var(--measure-text);
-}
-
-.episode-body > .is-wide,
-.episode-media > .is-wide {
-  max-width: var(--measure-wide);
-}
-
-.episode-body > .is-full,
-.episode-media > .is-full {
   max-width: none;
+}
+
+/* Prose gets the reading measure; everything else fills the reading column. */
+
+.episode-body > .is-text,
+.episode-media > .is-text,
+.episode-body .episode-content,
+.episode-body .transcript-content p {
+  max-width: var(--measure-text);
 }
 
 .episode-body > * + *,
 .episode-media > * + * {
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-content);
 }
 
 /* --- hero --- */
@@ -3430,7 +3429,7 @@ noscript + main .fade-in,
 .episode-hero {
   display: grid;
   gap: var(--spacing-content);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-content);
 }
 
 .episode-hero__art img {
@@ -3458,7 +3457,7 @@ noscript + main .fade-in,
 
 /* --- player --- */
 
-.transport--audio { margin-bottom: var(--spacing-lg); }
+.transport--audio { margin-bottom: var(--spacing-content); }
 
 .transport--audio.is-docked .transport__plate {
   position: fixed;
@@ -3527,10 +3526,85 @@ noscript + main .fade-in,
   padding-left: 0;
   padding-right: 0;
   border-top: var(--border-thin) solid var(--border-light);
-  padding-top: var(--spacing-lg);
+  padding-top: var(--spacing-content);
 }
 
 .episode-body .pull-quote {
   border-left: none;
   padding: var(--spacing-content);
+}
+
+/* The plate was 200px tall to hold a label and four controls. Tighten it: the
+   transport is furniture, not a feature panel. */
+.transport__plate {
+  padding: var(--spacing-content);
+}
+
+.transport--audio .transport__controls {
+  row-gap: var(--spacing-xs);
+}
+
+.transport--audio .transport__secondary {
+  margin-top: var(--spacing-xs);
+}
+
+.transport--audio .section-label {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Spacing is the parent's job. Children carrying their own margins is why the
+   rhythm stayed at 64px everywhere no matter what the container asked for --
+   and a uniform 64px is what made every block float free of the next. */
+.episode-body > *,
+.episode-media > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.episode-body > * + *,
+.episode-media > * + * {
+  margin-top: var(--spacing-content);
+}
+
+/* The quote is the one place that earns air, because it is a change of voice. */
+.episode-body > .pull-quote {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* The transport was 254px tall to hold a label and four buttons. It is
+   furniture; it should read as a bar, not a panel. */
+.transport--audio .transport__plate {
+  padding: var(--spacing-sm) var(--spacing-content);
+}
+
+.transport--audio .transport__play {
+  width: var(--touch-target);
+  height: var(--touch-target);
+}
+
+.transport--audio .transport__glyph--play,
+.transport--audio .transport__glyph--pause {
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  /* Controls beside the transport rather than stacked beneath it. */
+  .transport--audio .transport__controls {
+    grid-template-areas:
+      "play scrub secondary"
+      "play times secondary";
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: var(--spacing-content);
+    row-gap: var(--spacing-3xs);
+  }
+
+  .transport--audio .transport__secondary {
+    grid-area: secondary;
+    margin-top: 0;
+    flex-wrap: nowrap;
+  }
+
+  .transport--audio .transport__spacer { display: none; }
 }
