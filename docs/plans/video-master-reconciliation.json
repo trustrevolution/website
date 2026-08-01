@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-01T17:32:17.658Z",
+  "generatedAt": "2026-08-01T18:52:02.011Z",
   "videoDir": "~/Videos/Trust Revolution",
   "counts": {
-    "matched": 34,
-    "different-cut": 2,
-    "clip-only": 1
+    "matched": 35,
+    "different-cut": 2
   },
   "episodes": [
     {
@@ -149,7 +148,7 @@
         },
         "bytes": 946477650
       },
-      "otherFilesInDirectory": 1
+      "otherFilesInDirectory": 2
     },
     {
       "key": "S01E08",
@@ -231,15 +230,15 @@
       "status": "different-cut",
       "delta": 388,
       "master": {
-        "path": "~/Videos/Trust Revolution/Season 01/S01E12 OpnState/riverside_opnstate_on trust revo... magic episode _ jun 22,_trust_revolution.mp4",
+        "path": "~/Videos/Trust Revolution/Season 01/S01E12 OpnState/opnstate-reexport.mp4",
         "duration": 4347,
         "resolution": {
           "width": 1920,
           "height": 1080
         },
-        "bytes": 1110775710
+        "bytes": 1029095643
       },
-      "otherFilesInDirectory": 4
+      "otherFilesInDirectory": 5
     },
     {
       "key": "S01E13",
@@ -588,18 +587,18 @@
       "slug": "s03e03-aaron-van-wirdum",
       "file": "content/episodes/s03e03-aaron-van-wirdum.md",
       "publishedDuration": 3890,
-      "status": "clip-only",
-      "delta": null,
+      "status": "matched",
+      "delta": 0,
       "master": {
-        "path": "~/Videos/Trust Revolution/Season 03/S03E03 Aaron van Wirdum/riverside_cypherpunks__founding fathers of the internet_trust_revolution.mp4",
-        "duration": 81,
+        "path": "~/Videos/Trust Revolution/Season 03/S03E03 Aaron van Wirdum/riverside_aaron_van wirdum on tr... magic episode _ jan 30,_trust_revolution.mp4",
+        "duration": 3890,
         "resolution": {
-          "width": 1280,
-          "height": 720
+          "width": 1920,
+          "height": 1080
         },
-        "bytes": 14056389
+        "bytes": 1565948658
       },
-      "otherFilesInDirectory": 1
+      "otherFilesInDirectory": 2
     },
     {
       "key": "S03E04",
