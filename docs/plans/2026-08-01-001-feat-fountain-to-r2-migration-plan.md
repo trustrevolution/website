@@ -73,7 +73,7 @@ So the feed carries video via `podcast:alternateEnclosure` alongside the MP3 enc
 
 The one deliberate difference is the container. Fountain served an HLS ladder; this serves progressive MP4, which `alternateEnclosure` accepts equally and which is one file per episode instead of ~600 segments. Video is encoded from local Riverside masters rather than pulled from Fountain (KTD2), so the HLS ladder was never the source.
 
-**What RSS cannot carry back:** Apple Podcasts ingests video only through the Podcasts Connect API, which is what Fountain did with Shawn's uploaded key. No feed tag restores video on Apple. The feed's video reaches Podverse, Fountain, Castamatic, and other Podcasting 2.0 apps. Restoring Apple video is separate, unscoped work — see Deferred.
+Apple and Spotify video is explicitly out of scope and not a gap to revisit. Apple currently holds all 37 episodes as audio pointing at Fountain's MP3s, so nothing is lost there by moving. The archive that matters is the site and the feed.
 
 ### KTD4. Enclosure URLs may change freely; GUIDs may not
 
@@ -166,7 +166,6 @@ Slugs follow the existing `content/episodes/` naming (`s01e01`, `s03e07`), givin
 
 ### Deferred to Follow-Up Work
 
-- Publishing video to Apple Podcasts via the Podcasts Connect API (KTD3). This is the one thing Fountain did that the migration does not restore, and it is deferred because it is unscoped, not because it is unwanted.
 - Serving an adaptive-bitrate HLS ladder. Progressive MP4 carries the same video through the same feed tag; the ladder was a Fountain delivery detail, not published content.
 - Download analytics. If wanted later, a Cloudflare Worker in front of R2 can log requests.
 - Retiring `scripts/create-episode-from-rss.js` and `scripts/update-episode-data.js`, both hardcoded to the Fountain feed, along with `.github/workflows/update-latest-episode.yml`. They are inert during hiatus; leave them until the show resumes.

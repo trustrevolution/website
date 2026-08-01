@@ -37,7 +37,7 @@ enableGitInfo = true
     # Ownership credential. The Fountain feed carried neither of these, which is
     # why directory ownership recovery was not self-service.
     owner_name = "Shawn Yeager"
-    owner_email = "shawn@trustrevolution.co"
+    owner_email = "hello@trustrevolution.co"
 
     cover_art = "art/cover.jpg"
     funding_url = "https://trustrevolution.co/support/"
