@@ -3380,38 +3380,57 @@ noscript + main .fade-in,
 }
 
 /* ============================================
-   EPISODE PAGE — single column
-   The two-column grid parked a sticky rail
-   beside 82% of the page with nothing relevant
-   in it, and capped the reading measure at
-   624px however wide the screen got. One
-   column, one measure, and only the player
-   sticks.
+   EPISODE PAGE — content grid
+   ============================================
+
+   Three measures, declared once, instead of a
+   max-width on every block:
+
+     text   the reading measure, for prose
+     wide   controls and framed objects
+     full   media and the chapter index
+
+   Every child defaults to `text`; a block opts
+   up by class. This is the model the earlier
+   round lacked, which is why each fix there
+   produced the next problem.
    ============================================ */
 
-/* Only the summary and the transcript need a reading measure; chapters, media,
-   and the support block are better for having the width. Capping the whole
-   page to serve two text blocks is what made it a ribbon. */
-.episode-summary,
-.transcript-content p {
-  max-width: var(--max-width-narrow);
+.episode-body,
+.episode-media {
+  /* Three named measures. Every block shares the container's left edge and
+     differs only on the right, so the page has one spine instead of tracks
+     that centre independently and leave ragged edges. */
+  --measure-text: 44rem;   /* ~65-70ch of the body face */
+  --measure-wide: 50rem;  /* ~900px at this root size */
 }
 
-/* Chapters pay off at width: two columns of index instead of one long wall. */
-@media (min-width: 1024px) {
-  .episode-body #chapters .timestamps-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: var(--spacing-lg);
-  }
+.episode-body > *,
+.episode-media > * {
+  max-width: var(--measure-text);
 }
 
-/* --- hero: identity, once, at the top --- */
+.episode-body > .is-wide,
+.episode-media > .is-wide {
+  max-width: var(--measure-wide);
+}
+
+.episode-body > .is-full,
+.episode-media > .is-full {
+  max-width: none;
+}
+
+.episode-body > * + *,
+.episode-media > * + * {
+  margin-top: var(--spacing-lg);
+}
+
+/* --- hero --- */
 
 .episode-hero {
   display: grid;
   gap: var(--spacing-content);
-  margin-bottom: var(--spacing-content);
+  margin-bottom: var(--spacing-lg);
 }
 
 .episode-hero__art img {
@@ -3421,79 +3440,49 @@ noscript + main .fade-in,
   border: var(--border-component) solid var(--border-heavy);
 }
 
-.episode-hero h1 {
-  margin: 0 0 var(--spacing-xs);
-}
+.episode-hero h1 { margin: 0 0 var(--spacing-xs); }
 
 .episode-hero .episode-meta {
   margin: 0 0 var(--spacing-content);
   color: var(--text-secondary);
 }
 
-.episode-hero .episode-summary {
-  margin: 0;
-}
+.episode-hero .episode-summary { margin: 0; max-width: 44rem; }
 
 @media (min-width: 600px) {
   .episode-hero {
-    grid-template-columns: var(--cover-size-md) 1fr;
+    grid-template-columns: var(--cover-size-md) minmax(0, 1fr);
     align-items: start;
-    gap: var(--spacing-content);
   }
 }
 
-/* --- the player, and the bar it becomes --- */
+/* --- player --- */
 
-.transport--audio {
-  margin: 0 0 var(--spacing-content);
-}
+.transport--audio { margin-bottom: var(--spacing-lg); }
 
-/* Detached state: the plate leaves the flow and rides the bottom edge. A
-   placeholder holds its space so the page does not jump when it detaches. */
 .transport--audio.is-docked .transport__plate {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 40;
-  margin: 0;
-  border-width: var(--border-component) 0 0 0;
+  margin: 0 auto;
+  max-width: var(--measure-wide, 60rem);
+  border-width: var(--border-component);
+  border-bottom: none;
   padding: var(--spacing-sm) var(--spacing-content);
   background: var(--bg-white);
-  /* The only place this system uses a shadow at rest: the bar is lifted off
-     the page it covers, and a hard edge alone does not read as above. */
   box-shadow: 0 -4px 0 var(--text-black);
 }
 
 .transport--audio.is-docked .section-label { display: none; }
 
-@media (min-width: 768px) {
-  .transport--audio.is-docked .transport__plate {
-    /* Match the reading column rather than spanning a 1900px screen. */
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: min(var(--max-width-content), calc(100% - var(--spacing-content) * 2));
-    border-width: var(--border-component);
-    border-bottom: none;
-  }
-}
+/* A collapsed video panel is display:none but still contributed its own gap. */
+.transport--video:not(:has(.transport__video:not([hidden]))) { display: none; }
 
-/* --- body --- */
+.transport__video-element { width: 100%; }
 
-.episode-body > * + * {
-  margin-top: var(--spacing-lg);
-}
-
-/* Collapsed video is display:none and contributed a phantom gap between the
-   blocks either side of it. */
-.transport--video:not(:has(.transport__video:not([hidden]))) {
-  display: none;
-}
-
-.transport--video { margin: 0 0 var(--spacing-content); }
-
-/* --- chapters: real hit areas, readable ink --- */
+/* --- chapters --- */
 
 .timestamps-list li {
   padding: 0;
@@ -3502,21 +3491,46 @@ noscript + main .fade-in,
 
 .timestamps-list li:last-child { border-bottom: none; }
 
-.timestamp--seek,
-.timestamps-list .timestamp {
-  /* 23px tall and 3.46:1 before: under the touch minimum and under AA. */
-  min-height: var(--touch-target);
+/* Were 23px tall at 3.46:1 -- under both the touch minimum and the AA floor. */
+.timestamps-list .timestamp,
+.timestamp--seek {
   display: inline-flex;
   align-items: center;
+  min-height: var(--touch-target);
   color: var(--accent-orange-dark);
 }
 
 @media (min-width: 600px) {
   .timestamps-list li {
     display: grid;
-    grid-template-columns: 6rem 1fr;
+    grid-template-columns: 6rem minmax(0, 1fr);
     gap: var(--spacing-sm);
     align-items: center;
     min-height: var(--touch-target);
   }
+}
+
+@media (min-width: 1024px) {
+  #chapters .timestamps-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--spacing-lg);
+  }
+}
+
+/* --- the page's one framed object is the player --- */
+
+.episode-body .v4v,
+.episode-body .guest-bio {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border-top: var(--border-thin) solid var(--border-light);
+  padding-top: var(--spacing-lg);
+}
+
+.episode-body .pull-quote {
+  border-left: none;
+  padding: var(--spacing-content);
 }

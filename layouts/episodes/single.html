@@ -4,9 +4,6 @@
   <div class="container">
     {{ partial "breadcrumb.html" (dict "href" "/episodes/" "label" "All Episodes") }}
 
-    {{/* Single column. The old two-column grid parked a sticky rail beside 82%
-         of the page with nothing relevant in it, and capped the reading measure
-         at 624px on a wide screen. Identity belongs here, once, at the top. */}}
     <header class="episode-hero fade-in">
       <div class="episode-hero__art">
         {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 220 "sizes" "(max-width: 768px) 160px, 220px" "eager" true) }}
@@ -26,21 +23,23 @@
       </div>
     </header>
 
-    {{/* The player is the one thing that earns persistence, so it is the only
-         thing that sticks -- as a bar, not a column. */}}
-    {{ partial "media-player.html" (dict "context" . "only" "audio") }}
-    {{ partial "media-player.html" (dict "context" . "only" "video") }}
+    {{/* Media declares its own measure: the player is a control, the video is
+         the artifact. */}}
+    <div class="episode-media">
+      <div class="is-wide">{{ partial "media-player.html" (dict "context" . "only" "audio") }}</div>
+      <div class="is-full">{{ partial "media-player.html" (dict "context" . "only" "video") }}</div>
+    </div>
 
     <div class="episode-body fade-in delay-1">
       {{ with .Params.key_quote }}
-      <blockquote class="pull-quote">
+      <blockquote class="pull-quote is-wide">
         <p>{{ .text }}</p>
         {{ with .attribution }}<cite>— {{ . }}</cite>{{ end }}
       </blockquote>
       {{ end }}
 
       {{ if .Params.timestamps }}
-      <section class="episode-section" id="chapters">
+      <section class="episode-section is-full" id="chapters">
         <h2>Chapters</h2>
         <ul class="timestamps-list">
           {{ range .Params.timestamps }}
@@ -58,7 +57,7 @@
       {{ end }}
 
       {{ if .Params.resources }}
-      <section class="episode-section">
+      <section class="episode-section is-wide">
         <h2>Resources</h2>
         <ul class="resources-list">
           {{ range .Params.resources }}
@@ -68,15 +67,13 @@
       </section>
       {{ end }}
 
-      {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
+      <div class="is-wide">{{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}</div>
 
-      {{/* Above the transcript, so the show's own argument is not the last
-           thing under a collapsed section. */}}
-      {{ partial "support-v4v.html" . }}
+      <div class="is-wide">{{ partial "support-v4v.html" . }}</div>
 
-      {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}
+      <div class="is-wide">{{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}</div>
 
-      {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
+      <div class="is-wide">{{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}</div>
     </div>
   </div>
 </article>
