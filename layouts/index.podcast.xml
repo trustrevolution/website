@@ -13,8 +13,13 @@
   3. <enclosure length> is the true byte size from the archive, not Fountain's
      declared value, which is rounded on MP3s derived from video masters.
 
-  Audio-only by design: video lives on episode pages, not in the feed. See KTD3
-  in docs/plans/2026-08-01-001-feat-fountain-to-r2-migration-plan.md.
+  Carries video as podcast:alternateEnclosure alongside the audio enclosure,
+  matching what the Fountain feed advertised. Progressive MP4 rather than
+  Fountain's HLS ladder -- the tag takes either, and one file per episode is far
+  less to host and verify.
+
+  Note this does not put video on Apple Podcasts, which ingests video only
+  through the Podcasts Connect API, not RSS.
 */ -}}
 {{- $site := .Site -}}
 {{- $pod := $site.Params.podcast -}}
@@ -86,6 +91,16 @@
       {{- with .Params.episode }}
       <itunes:episode>{{ . }}</itunes:episode>
       <podcast:episode>{{ . }}</podcast:episode>
+      {{- end }}
+      {{- with .Params.video_url }}
+      {{- /* video_bytes is written back by the encode step in U4; the tag is
+             valid without it, so the feed stays correct before that runs. */ -}}
+      <podcast:alternateEnclosure type="video/mp4" title="Video"{{ with $.Params.video_bytes }} length="{{ . }}"{{ end }} default="false">
+        <podcast:source uri="{{ . }}" />
+        {{- with $.Params.duration_seconds }}
+        <itunes:duration>{{ . }}</itunes:duration>
+        {{- end }}
+      </podcast:alternateEnclosure>
       {{- end }}
       <itunes:image href="{{ $media }}/art/{{ $slug }}.jpg" />
       {{- with .Params.chapters_url }}

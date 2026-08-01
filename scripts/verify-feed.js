@@ -89,7 +89,8 @@ function parse(file, label) {
       enclosureUrl: attr(item, 'enclosure', 'url'),
       enclosureLength: attr(item, 'enclosure', 'length'),
       transcript: attr(item, 'podcast:transcript', 'url'),
-      chapters: attr(item, 'podcast:chapters', 'url')
+      chapters: attr(item, 'podcast:chapters', 'url'),
+      video: attr(item, 'podcast:source', 'uri')
     };
   });
 
@@ -190,6 +191,19 @@ function main() {
     }
   }
 
+  // This is an archival migration: everything Fountain published stays
+  // published. Fountain carried video, chapters, and a transcript on all 37
+  // items, so a generated feed that drops any of them is a regression, not a
+  // simplification.
+  for (const kind of ['video', 'chapters', 'transcript']) {
+    const missing = generated.items.filter((i) => !i[kind]);
+    if (missing.length) {
+      failures.push(
+        `${missing.length} item(s) lost their ${kind}: ${missing.slice(0, 3).map((i) => i.title).join(', ')}${missing.length > 3 ? ', …' : ''}`
+      );
+    }
+  }
+
   const stillOnFountain = generated.items.filter((i) => /fountain\.fm/.test(i.enclosureUrl || ''));
   if (stillOnFountain.length) {
     failures.push(`${stillOnFountain.length} enclosures still point at fountain.fm`);
@@ -200,6 +214,9 @@ function main() {
   console.log(`itunes:email:         ${generated.ownerEmail || 'MISSING'}`);
   console.log(`value splits:         ${generated.valueRecipients.map((r) => `${r.name} ${r.split}%`).join(', ') || 'none'}`);
   console.log(`enclosures migrated:  ${generated.items.length - stillOnFountain.length}/${generated.items.length}`);
+  console.log(`video retained:       ${generated.items.filter((i) => i.video).length}/${generated.items.length}`);
+  console.log(`chapters retained:    ${generated.items.filter((i) => i.chapters).length}/${generated.items.length}`);
+  console.log(`transcripts retained: ${generated.items.filter((i) => i.transcript).length}/${generated.items.length}`);
 
   if (notes.length) {
     console.log(`\nNotes (${notes.length}):`);
