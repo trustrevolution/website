@@ -19,10 +19,13 @@
       {{ partial "support-cta.html" . }}
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>
+        {{/* Each item carries its own separator as a suffix inside a
+             nowrap span, so the bullet always ends a line rather than
+             starting one, and no item breaks across lines mid-phrase. */}}
         <p class="episode-meta">
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-          {{- with .Params.guest }} · with {{ .name }}{{ end }}
-          {{- with .Params.duration }} · {{ . }}{{ end }}
+          <span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>{{ if or .Params.guest .Params.duration }} &middot;{{ end }}</span>
+          {{- with .Params.guest }} <span>with {{ .name }}{{ if $.Params.duration }} &middot;{{ end }}</span>{{ end }}
+          {{- with .Params.duration }} <span>{{ . }}</span>{{ end }}
         </p>
       </div>
       {{/* The summary is its own grid item so the phone can give it the full

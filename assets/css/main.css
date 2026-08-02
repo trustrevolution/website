@@ -134,6 +134,10 @@
      box's centre. Every term scales with the em, so one value holds at any
      size. Changing the display face invalidates it. */
   --display-cap-nudge: 0.722em;
+  /* Same correction for the monospace stack, which reserves its own unused
+     descender depth. Measured the same way: the gang's digits sat 0.39em
+     high, which read as WATCH sitting low beside them. */
+  --mono-cap-nudge: 0.78em;
   --line-height-normal: 1.5;
   --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
@@ -698,6 +702,8 @@ blockquote,
   margin: 0;
   text-wrap: balance;
 }
+
+.episode-meta span { white-space: nowrap; }
 
 .episode-meta {
   font-size: var(--font-size-sm);
@@ -2988,6 +2994,7 @@ input:focus-visible {
   font-weight: 600;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
+  padding-top: var(--mono-cap-nudge);
 }
 
 /* Collapse the shared edges so the three read as one instrument. */
