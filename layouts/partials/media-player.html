@@ -82,22 +82,36 @@
         <span class="transport__time transport__time--total" data-transport-total>{{ $duration | default "--:--" }}</span>
       </div>
 
+      {{/* Four different kinds of control used to sit here as five identical
+           boxes. They are grouped and weighted by what they actually do:
+
+             1. the nudges and the rate are one instrument, ganged into a
+                segmented control so they read as part of the scrubber;
+             2. Watch changes the medium -- the only real action in the row,
+                and the only filled control besides play;
+             3. Download is an escape hatch, so it is a quiet link.
+      */}}
       <div class="transport__secondary">
-        {{/* Signed numerals rather than rewind arrows: the arrow glyphs are not
-             in the system stack and fall back to stray carets. */}}
-        <button type="button" class="tag-link" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
-        <button type="button" class="tag-link" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
-        <button type="button" class="tag-link tag-link--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
+        <div class="transport__gang" role="group" aria-label="Playback">
+          {{/* Signed numerals rather than rewind arrows: the arrow glyphs are not
+               in the system stack and fall back to stray carets. */}}
+          <button type="button" class="transport__step" data-transport-skip="-15" aria-label="Back 15 seconds">&minus;15s</button>
+          <button type="button" class="transport__step" data-transport-skip="30" aria-label="Forward 30 seconds">&plus;30s</button>
+          <button type="button" class="transport__step transport__step--rate" data-transport-rate aria-label="Playback speed">1&times;</button>
+        </div>
+
+        <span class="transport__spacer" aria-hidden="true"></span>
+
         {{- if $ctx.Params.video_url }}
         {{/* Switches the same episode to video and carries the playhead across.
              Hidden until the script can wire it, since without JS the video is
              simply present in the page already. */}}
-        <button type="button" class="tag-link" data-transport-watch hidden aria-pressed="false">Watch</button>
+        <button type="button" class="transport__watch" data-transport-watch hidden aria-pressed="false">Watch</button>
         {{- end }}
-        <span class="transport__spacer" aria-hidden="true"></span>
+
         {{/* No transcript control here. The transcript is rendered in full
              further down this page, so a link to it is furniture. */}}
-        <a class="tag-link" href="{{ . }}" download>Download</a>
+        <a class="transport__download" href="{{ . }}" download>Download</a>
       </div>
 
       {{/* Populated by the script when the file fails to load. Without this a

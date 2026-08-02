@@ -117,6 +117,11 @@
         rateIndex = (rateIndex + 1) % RATES.length;
         audio.playbackRate = RATES[rateIndex];
         rateBtn.textContent = RATES[rateIndex] + '×';
+        /* Any rate but 1x is a state worth showing, and it is the only thing
+         * in this group that holds one. Marking it lets the filled treatment
+         * mean "speed is changed" rather than "the mouse is here". */
+        rateBtn.toggleAttribute('data-rate-changed', RATES[rateIndex] !== 1);
+        rateBtn.setAttribute('aria-label', 'Playback speed, currently ' + RATES[rateIndex] + ' times');
       });
     }
 

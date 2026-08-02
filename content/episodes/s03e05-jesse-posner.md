@@ -31,7 +31,7 @@ guest:
 guests:
 - Jesse Posner
 key_quote:
-  text: "We wanted to make self-sovereignty real -- where you can control your Bitcoin, maintain your privacy, protect yourself from physical attacks, and resist government seizure."
+  text: "We wanted to make self-sovereignty real—where you can control your Bitcoin, maintain your privacy, protect yourself from physical attacks, and resist government seizure."
   attribution: Jesse Posner
 timestamps:
 - time: "00:00"
@@ -45,7 +45,7 @@ timestamps:
 - time: "14:31"
   topic: "The $5 wrench attack problem and why it gets worse as Bitcoin appreciates"
 - time: "17:53"
-  topic: "Why a full node matters for privacy -- your wallet is leaking data"
+  topic: "Why a full node matters for privacy—your wallet is leaking data"
 - time: "22:48"
   topic: "Supply chain attacks and the case for verifiable hardware"
 - time: "27:23"
@@ -65,7 +65,7 @@ timestamps:
 - time: "1:06:02"
   topic: "Vora's product roadmap: AI product this year, Vora Vault next year"
 - time: "1:09:34"
-  topic: "Why the modern state has already collapsed -- topos and nomos"
+  topic: "Why the modern state has already collapsed—topos and nomos"
 - time: "1:14:24"
   topic: "Five-year vision: sovereign hardware, personal drones, and a renaissance of human flourishing"
 resources:

@@ -2926,23 +2926,148 @@ input:focus-visible {
 .transport__time--total { color: var(--text-secondary); }
 .transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
 
-/* Transport controls get tapped repeatedly mid-listen, and the short labels
-   ("1x", "-15s") left some only 36px wide. They already clear 44px vertically;
-   this squares them up without touching the row's spacing. */
-.transport__secondary .tag-link {
-  min-width: var(--touch-target);
-}
-
 .transport__secondary {
   grid-area: secondary;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   margin-top: var(--spacing-sm);
 }
 
 .transport__spacer { flex: 1 1 auto; }
+
+/* --- the gang: nudges and rate ------------------------------
+   One segmented control, not three peers. Shared borders and no
+   gaps say these belong to the scrubber above them; the row
+   then holds three objects instead of five.
+   ---------------------------------------------------------- */
+
+.transport__gang {
+  display: flex;
+}
+
+.transport__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  padding: 0 var(--spacing-xs);
+  border: var(--border-subtle) solid var(--border-heavy);
+  background: transparent;
+  color: var(--text-black);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+/* Collapse the shared edges so the three read as one instrument. */
+.transport__step + .transport__step {
+  border-left: none;
+}
+
+/* Hover is transient, so it stays light. A solid fill here read exactly like
+   a held state, which made the hovered button look selected. */
+.transport__step:hover {
+  background: var(--bg-subtle);
+}
+
+.transport__step:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+  z-index: 1;
+}
+
+/* The rate is the only control here that holds a value, and its label grows
+   from "1x" to "1.75x" as you cycle. Sizing it for the longest label keeps
+   the group from changing width every time the speed changes. */
+.transport__step--rate {
+  min-width: 4.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Filled means the speed is off default -- a state, not a hover. */
+.transport__step--rate[data-rate-changed] {
+  background: var(--text-black);
+  color: var(--bg-white);
+}
+
+.transport__step--rate[data-rate-changed]:hover {
+  background: var(--text-secondary);
+}
+
+/* --- watch: the one action in the row -----------------------
+   Changing the medium is the only thing here that changes what
+   you are looking at, so it is the only filled control besides
+   play. Pressed, it empties out -- the fill means "go to video".
+   ---------------------------------------------------------- */
+
+.transport__watch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  padding: 0 var(--spacing-md);
+  border: var(--border-subtle) solid var(--border-heavy);
+  background: var(--accent-orange);
+  color: var(--text-black);
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.transport__watch:hover {
+  background: var(--text-black);
+  color: var(--bg-white);
+}
+
+.transport__watch[aria-pressed='true'] {
+  background: transparent;
+  color: var(--text-black);
+}
+
+.transport__watch:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+/* --- download: an escape hatch, not a peer ------------------ */
+
+.transport__download {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  /* Underline the text, not the box. A border-bottom on a 44px-tall hit area
+     drew a rule well below the baseline, detached from the word. */
+  text-decoration: underline;
+  /* currentColor, not --border-light: at #ccc on the plate's #EFEFEF the rule
+     was invisible, leaving a link with no affordance at rest. */
+  text-decoration-color: currentColor;
+  text-decoration-thickness: var(--border-thin);
+  text-underline-offset: 5px;
+}
+
+.transport__download:hover {
+  color: var(--text-black);
+  text-decoration-color: var(--accent-orange);
+}
+
+.transport__download:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
 
 .transport__error {
   margin: var(--spacing-sm) 0 0;
@@ -2954,7 +3079,8 @@ input:focus-visible {
 
 .transport__controls[aria-disabled='true'] .transport__play,
 .transport__controls[aria-disabled='true'] .transport__scrub,
-.transport__controls[aria-disabled='true'] .tag-link { opacity: 0.4; pointer-events: none; }
+.transport__controls[aria-disabled='true'] .transport__step,
+.transport__controls[aria-disabled='true'] .transport__watch { opacity: 0.4; pointer-events: none; }
 
 @media (min-width: 768px) {
   /* One line: play, rule, controls. It is furniture, not a panel. */
@@ -3359,6 +3485,7 @@ input:focus-visible {
 
 .breadcrumb a,
 .site-logo,
+.site-nav a,
 .search-close,
 .credit-name,
 .transcript-collapse,
@@ -3370,6 +3497,7 @@ input:focus-visible {
 
 .breadcrumb a::after,
 .site-logo::after,
+.site-nav a::after,
 .search-close::after,
 .credit-name::after,
 .transcript-collapse::after,

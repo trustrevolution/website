@@ -105,9 +105,16 @@
   {{ partial "search-overlay.html" . }}
 
   <!-- JavaScript -->
-  <script src="/js/nav-toggle.js" defer></script>
+  {{/* Fingerprinted through the asset pipeline, same as the CSS. These were
+       served from static/ at /js/<name>.js, which netlify.toml caches as
+       immutable for a year -- so every returning visitor kept the old script
+       after a deploy. The hash in the filename is what makes that header
+       safe. */}}
+  {{- $navJS := resources.Get "js/nav-toggle.js" | resources.Minify | resources.Fingerprint -}}
+  <script src="{{ $navJS.RelPermalink }}" integrity="{{ $navJS.Data.Integrity }}" defer></script>
   {{- if eq .Section "episodes" }}
-  <script src="/js/media-player.js" defer></script>
+  {{- $playerJS := resources.Get "js/media-player.js" | resources.Minify | resources.Fingerprint -}}
+  <script src="{{ $playerJS.RelPermalink }}" integrity="{{ $playerJS.Data.Integrity }}" defer></script>
   {{- end }}
   <script>
   (function(){
