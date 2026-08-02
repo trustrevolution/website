@@ -17,7 +17,7 @@ hero:
 # CTA in hero
 cta:
   label: "Support the Show"
-  context: "Stream sats, subscribe, or unlock early access on Fountain."
+  context: "Straight to the show over Lightning. No platform in the middle, no cut taken."
 
 # Philosophy section
 philosophy:

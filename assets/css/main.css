@@ -1418,17 +1418,23 @@ blockquote cite {
   text-align: center;
 }
 
-.philosophy-emphasis span {
-  display: block;
+/* Flex rather than inline spans: the template emits the lines with no
+   whitespace between them, so going inline ran "You decide." straight into
+   "You pay". A row gap separates them and keeps each line unbreakable. */
+.philosophy-emphasis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
 @media (min-width: 768px) {
   .philosophy-emphasis {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4em;
     font-size: var(--font-size-2xl);
-  }
-
-  .philosophy-emphasis span {
-    display: inline;
   }
 }
 
@@ -2960,7 +2966,7 @@ noscript + main .fade-in,
 
 /* Sections that begin a new movement get a rule and more air. */
 .episode-body > .guest-bio,
-.episode-body > .v4v,
+.episode-body > .support-cta,
 .episode-body > .transcript-section,
 .episode-body > .episode-nav {
   margin-top: var(--flow-major);
@@ -3260,69 +3266,7 @@ noscript + main .fade-in,
   border-bottom: none;
 }
 
-/* --- value for value -------------------------------------- */
 
-.v4v {
-  display: grid;
-  gap: var(--flow);
-  align-items: start;
-}
-
-.v4v__qr {
-  /* Fixed and square. Sizing it to the row fed back on itself: a wider QR
-     narrowed the text column, which made the row taller, which widened the
-     QR again. The block is only as tall as its content instead. */
-  width: 140px;
-  height: 140px;
-  align-self: start;
-  padding: var(--spacing-xs);
-  border: var(--border-subtle) solid var(--border-heavy);
-  color: var(--text-black);
-  line-height: 0;
-}
-
-.v4v__qr svg { display: block; width: 100%; height: 100%; }
-
-.v4v__body { min-width: 0; }
-
-.v4v__pitch {
-  margin: 0 0 var(--spacing-sm);
-  font-family: 'DIN Condensed', sans-serif;
-  font-size: var(--font-size-xl);
-  line-height: 1.2;
-  letter-spacing: var(--tracking-normal);
-  text-transform: uppercase;
-  color: var(--text-black);
-}
-
-.v4v__pay {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--spacing-xs);
-}
-
-/* Sized to the address, never to the column. */
-.v4v__address {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  max-width: 100%;
-  min-height: var(--touch-target);
-  padding: 0 var(--spacing-sm);
-  border: var(--border-subtle) solid var(--border-heavy);
-  background: var(--bg-subtle);
-  font-family: 'SF Mono', Monaco, monospace;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: var(--text-black);
-  word-break: break-all;
-  user-select: all;
-}
-
-@media (min-width: 600px) {
-  .v4v { grid-template-columns: auto minmax(0, 1fr); }
-}
 
 /* Resources are short labels; one per line in a 968px column is a list
    pretending to be a page. Same two-column index as Chapters. */
@@ -3367,4 +3311,148 @@ noscript + main .fade-in,
    one step down at every width. */
 .episode-hero h1 {
   font-size: var(--font-size-2xl);
+}
+
+/* The homepage cover was pushed down by an optical offset meant to align its
+   top with the title's cap-height, which left it aligned to neither edge of the
+   text beside it: 32px low at the top and 30px past it at the bottom. Aligned
+   to the block instead, where the two columns finish within a couple of pixels
+   of each other. */
+@media (min-width: 768px) {
+  .latest-episode-cover {
+    margin-top: 0;
+  }
+}
+
+/* --- end-of-episode support CTA ---------------------------
+   A line of type and a button, sharing the block's left edge
+   like every other component in the body. Baseline-aligned so
+   the sentence and the button sit on one line of type rather
+   than on two centres that only look level by coincidence.
+   ---------------------------------------------------------- */
+
+.support-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--spacing-sm) var(--spacing-md);
+}
+
+.support-cta__text {
+  flex: 1 1 18rem;
+  margin: 0;
+  min-width: 0;
+  color: var(--text-secondary);
+}
+
+.support-cta .cta-button {
+  flex: 0 0 auto;
+}
+
+/* --- lightning payment (support CTA band) -----------------
+   Sits inside the vermillion band. The code gets a white
+   plate: a black QR directly on vermillion is about 3.5:1,
+   which readers refuse often enough to matter, and the quiet
+   zone is part of the spec rather than padding.
+   ---------------------------------------------------------- */
+
+.lightning-pay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.lightning-pay__scan {
+  display: none;
+  margin: 0;
+  text-align: center;
+}
+
+.lightning-pay__qr {
+  /* The caption is wider than the code, so the figure is caption-width and a
+     fixed-width block child would sit against its left edge. */
+  margin-inline: auto;
+  width: 180px;
+  height: 180px;
+  padding: var(--spacing-sm);
+  background: var(--bg-white);
+  border: var(--border-component) solid var(--bg-black);
+  color: var(--text-black);
+  line-height: 0;
+}
+
+.lightning-pay__qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lightning-pay__scan figcaption {
+  margin-top: var(--spacing-xs);
+  color: var(--bg-black);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.lightning-pay__act {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.lightning-pay__address-row {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+/* One object split by a rule, not two controls that happen to touch. */
+.lightning-pay__address {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: 0 var(--spacing-sm);
+  border: var(--border-subtle) solid var(--bg-black);
+  background: transparent;
+  color: var(--bg-black);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  word-break: break-all;
+  user-select: all;
+}
+
+.lightning-pay__copy {
+  min-height: var(--touch-target);
+  padding: 0 var(--spacing-sm);
+  border: var(--border-subtle) solid var(--bg-black);
+  border-left: none;
+  background: var(--bg-black);
+  color: var(--bg-white);
+  font-family: inherit;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  cursor: pointer;
+}
+
+.lightning-pay__copy:hover {
+  background: var(--bg-white);
+  color: var(--bg-black);
+}
+
+.lightning-pay__copy:focus-visible {
+  outline: var(--border-subtle) solid var(--bg-black);
+  outline-offset: 2px;
+}
+
+/* The code only earns its space where there is a second device to scan it
+   with. On a phone you are holding the screen you would be pointing at. */
+@media (min-width: 600px) {
+  .lightning-pay__scan { display: block; }
 }

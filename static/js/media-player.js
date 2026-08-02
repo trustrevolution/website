@@ -212,41 +212,6 @@
   }
 })();
 
-/* Copy the Lightning address. The button ships hidden and is revealed only when
- * the clipboard API is actually available, so no-JS and older browsers see the
- * selectable address rather than a button that does nothing. */
-(function () {
-  'use strict';
-
-  function init() {
-    var btn = document.querySelector('[data-v4v-copy]');
-    var code = document.querySelector('[data-v4v-address]');
-    if (!btn || !code || !navigator.clipboard) return;
-
-    btn.hidden = false;
-    var original = btn.textContent;
-    var revert;
-
-    btn.addEventListener('click', function () {
-      navigator.clipboard.writeText(code.textContent.trim()).then(function () {
-        btn.textContent = 'Copied';
-        clearTimeout(revert);
-        revert = setTimeout(function () { btn.textContent = original; }, 2000);
-      }, function () {
-        btn.textContent = 'Press Ctrl+C';
-        code.focus();
-        window.getSelection().selectAllChildren(code);
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-
 /* Dock the player to the bottom edge once the reader scrolls past it, and
  * release it when they scroll back. A placeholder holds the plate's space so
  * the page does not jump at the moment it detaches. */

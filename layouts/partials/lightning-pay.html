@@ -1,0 +1,59 @@
+{{/*
+  Lightning payment block for the support CTA band.
+
+  Three ways in, ordered by how people actually arrive. The button hands off
+  to whatever wallet has registered the lightning: scheme, which is the whole
+  path on a phone. The address is selectable text for anyone pasting into a
+  wallet by hand. The code is for the desktop case -- you scan it with the
+  phone in your other hand -- so it is hidden on narrow screens, where you
+  cannot scan the display you are holding.
+
+  Only the copy button needs script, and it ships hidden until the clipboard
+  API is confirmed present, so nothing here breaks without JavaScript.
+*/}}
+
+{{- $address := .Site.Params.lightning_address -}}
+{{- $qr := resources.Get "images/lightning-qr.svg" -}}
+
+{{- with $address }}
+<div class="lightning-pay">
+  {{- with $qr }}
+  <figure class="lightning-pay__scan">
+    <div class="lightning-pay__qr">{{ .Content | safeHTML }}</div>
+    <figcaption>Scan with a Lightning wallet</figcaption>
+  </figure>
+  {{- end }}
+
+  <div class="lightning-pay__act">
+    <a class="cta-button" href="lightning:{{ . }}">Send Sats</a>
+    <div class="lightning-pay__address-row">
+      <code class="lightning-pay__address" data-copy-address>{{ . }}</code>
+      <button type="button" class="lightning-pay__copy" data-copy-trigger hidden>Copy</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var btn = document.querySelector('[data-copy-trigger]');
+  var code = document.querySelector('[data-copy-address]');
+  if (!btn || !code || !navigator.clipboard) return;
+
+  btn.hidden = false;
+  var original = btn.textContent;
+  var revert;
+
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText(code.textContent.trim()).then(function () {
+      btn.textContent = 'Copied';
+      clearTimeout(revert);
+      revert = setTimeout(function () { btn.textContent = original; }, 2500);
+    }, function () {
+      /* Permission denied. Select the address so it can be copied by hand. */
+      window.getSelection().selectAllChildren(code);
+    });
+  });
+})();
+</script>
+{{- end }}

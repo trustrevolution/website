@@ -18,7 +18,7 @@
   <!-- CTA BAND -->
   <section class="cta-band cta-band--stacked">
     <div class="container cta-band-inner fade-in delay-2">
-      {{ partial "fountain-cta.html" (dict "context" . "variant" "cta-band" "label" .Params.cta.label) }}
+      {{ partial "lightning-pay.html" . }}
       <span class="cta-context">{{ .Params.cta.context }}</span>
     </div>
   </section>
