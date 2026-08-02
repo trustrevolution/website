@@ -7,7 +7,7 @@ season: 3
 episode: 4
 description: "John Robb maps the path from identity collapse to automated totalitarian surveillance and why most countermeasures won't work."
 summary: |
-  "All it takes is the political will or the political mistake to turn it on. And it's there." John Robb maps the path from post-national identity collapse to automated totalitarian surveillance--and explains why most of the tools people are counting on won't stop it.
+  "All it takes is the political will or the political mistake to turn it on. And it's there." John Robb maps the path from post-national identity collapse to automated totalitarian surveillance—and explains why most of the tools people are counting on won't stop it.
 featured_image: "images/cover-art/s03e04.jpg"
 audio_url: "https://media.trustrevolution.co/audio/s03e04-john-robb.mp3"
 video_url: "https://media.trustrevolution.co/video/s03e04-john-robb.mp4"

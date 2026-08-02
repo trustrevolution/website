@@ -7,7 +7,7 @@ season: 3
 episode: 6
 description: "Identity Theft Resource Center president James Lee on why Social Security numbers are worthless but driver's licenses cost $200."
 summary: |
-  "You cannot have data compromised that you do not have." James Lee has spent two decades watching breach transparency collapse--from near-total disclosure in 2020 to just 30 percent today. The president of the nation's leading identity crime nonprofit breaks down why your Social Security number is worthless on the black market. Why your driver's license isn't and what individuals can actually do when the system designed to protect them has already failed.
+  "You cannot have data compromised that you do not have." James Lee has spent two decades watching breach transparency collapse—from near-total disclosure in 2020 to just 30 percent today. The president of the Identity Theft Resource Center breaks down why your Social Security number is worthless on the black market, why your driver's license isn't, and what you can actually do once the system built to protect you has already failed.
 featured_image: "images/cover-art/s03e06.jpg"
 audio_url: "https://media.trustrevolution.co/audio/s03e06-james-lee.mp3"
 video_url: "https://media.trustrevolution.co/video/s03e06-james-lee.mp4"

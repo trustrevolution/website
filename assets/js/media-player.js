@@ -210,7 +210,20 @@
   function init() {
     var plate = document.querySelector('[data-transport]');
     if (!plate) return;
-    setupTimestamps(setupTransport(plate));
+
+    /* The native player is hidden at first paint under .js, so if wiring fails
+     * the reader would be left with a custom transport that does nothing. Put
+     * the native one back instead -- a working player beats a pretty dead one. */
+    try {
+      var transport = setupTransport(plate);
+      if (!transport) throw new Error('transport did not initialise');
+      setupTimestamps(transport);
+    } catch (err) {
+      var audio = plate.querySelector('[data-transport-audio]');
+      if (audio) audio.setAttribute('controls', '');
+      var section = plate.closest('.transport') || plate;
+      section.classList.add('transport--fallback');
+    }
   }
 
   if (document.readyState === 'loading') {

@@ -2828,8 +2828,29 @@ input:focus-visible {
   background: var(--bg-subtle);
 }
 
+/* Without scripting the native player IS the player, so it ships visible and
+   with its controls attribute intact.
+
+   With scripting the custom transport replaces it a frame or two later, and
+   swapping only once the script had run meant every page load flashed the
+   native chrome first. The .js flag is set inline in <head>, so gating on it
+   makes the swap happen at first paint instead -- nothing to see mid-flight.
+
+   .transport--fallback is the escape hatch: if wiring throws, the script puts
+   the native player back rather than leaving a custom UI that does nothing. */
 .transport__audio { display: block; width: 100%; }
-.transport__plate:has([data-transport-ui]:not([hidden])) .transport__audio { display: none; }
+
+/* The custom UI ships with the hidden attribute, but the author display rule
+   on .transport__controls outranks the UA styling for [hidden], so without
+   this the dead transport rendered underneath the native player whenever the
+   script did not run. Declared before the .js rule so that one still wins. */
+.transport__controls[hidden] { display: none; }
+
+.js .transport__audio { display: none; }
+.js .transport__controls { display: grid; }
+
+.js .transport--fallback .transport__audio { display: block; }
+.js .transport--fallback .transport__controls { display: none; }
 
 /* The timecode spans the full row rather than sitting in the scrubber's
    column. Tucked beside the play button it started 65px in, giving the plate
