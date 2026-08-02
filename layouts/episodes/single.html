@@ -8,7 +8,7 @@
     {{/* Identity: the artwork, the title, what it is. Once, at the top. */}}
     <header class="episode-hero">
       <div class="episode-hero__art">
-        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 560 "sizes" "(max-width: 599px) 100vw, 280px" "eager" true) }}
+        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 599px) 100vw, 300px" "eager" true) }}
       </div>
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>

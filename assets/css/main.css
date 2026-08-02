@@ -2930,7 +2930,10 @@ noscript + main .fade-in,
   .episode-hero {
     /* Fixed square. Sizing the art to the row made it grow with the
        summary, which squeezed the headline until it wrapped. */
-    grid-template-columns: var(--cover-size-lg) minmax(0, 1fr);
+    /* 340px, not 280: at 280 the art was 71px shorter than the text beside it
+       and all the slack pooled underneath it. At 340 the two columns finish
+       within a dozen pixels of each other and the block reads as one. */
+    grid-template-columns: 300px minmax(0, 1fr);
     align-items: start;
     gap: var(--flow-major);
   }
@@ -3039,10 +3042,21 @@ noscript + main .fade-in,
 
 .transport__scrub:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
-.transport__scrub::-webkit-slider-runnable-track,
+/* The track fills the 44px hit area and paints the 6px rule centred inside it.
+   A 6px-tall track sits at the top of the input box, which left the thumb
+   floating above the timecode instead of riding the rule. */
+.transport__scrub::-webkit-slider-runnable-track {
+  height: var(--touch-target);
+  background:
+    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress))
+    center / 100% var(--border-accent) no-repeat;
+}
+
 .transport__scrub::-moz-range-track {
-  height: var(--border-accent);
-  background: linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
+  height: var(--touch-target);
+  background:
+    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress))
+    center / 100% var(--border-accent) no-repeat;
 }
 
 .transport__scrub::-webkit-slider-thumb {
@@ -3050,7 +3064,7 @@ noscript + main .fade-in,
   appearance: none;
   width: var(--spacing-sm);
   height: var(--spacing-sm);
-  margin-top: calc((var(--border-accent) - var(--spacing-sm)) / 2);
+  margin-top: calc((var(--touch-target) - var(--spacing-sm)) / 2);
   background: var(--text-black);
   border: var(--border-subtle) solid var(--bg-subtle);
 }
@@ -3134,7 +3148,7 @@ noscript + main .fade-in,
 
 .section-label {
   display: inline-block;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-content);
   padding-bottom: var(--spacing-3xs);
   border-bottom: var(--border-subtle) solid var(--accent-orange);
   color: var(--text-secondary);
@@ -3190,9 +3204,11 @@ noscript + main .fade-in,
 /* Were 23px tall at 3.46:1 once they became buttons. */
 .timestamps-list .timestamp,
 .timestamp--seek {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--touch-target);
+  /* inline-block rather than inline-flex: a flex container's baseline is its
+     first line box, and inline-flex here broke baseline alignment with the
+     topic beside it. Padding keeps the 44px target without a flex box. */
+  display: inline-block;
+  padding: var(--spacing-xs) 0;
   color: var(--accent-orange-dark);
 }
 
@@ -3211,12 +3227,15 @@ noscript + main .fade-in,
 .timestamp--seek:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
 @media (min-width: 600px) {
+  /* Baseline, not centre: the timecode belongs on the topic's first line.
+     Centring floated it between two lines whenever a topic wrapped. */
   .timestamps-list li {
     display: grid;
     grid-template-columns: 6rem minmax(0, 1fr);
     gap: var(--spacing-sm);
-    align-items: center;
+    align-items: baseline;
     min-height: var(--touch-target);
+    padding: var(--spacing-xs) 0;
   }
 }
 
@@ -3246,7 +3265,7 @@ noscript + main .fade-in,
 .v4v {
   display: grid;
   gap: var(--flow);
-  align-items: stretch;
+  align-items: start;
 }
 
 .v4v__qr {
@@ -3267,7 +3286,7 @@ noscript + main .fade-in,
 .v4v__body { min-width: 0; }
 
 .v4v__pitch {
-  margin: 0 0 var(--spacing-sm);
+  margin: 0 0 var(--spacing-content);
   font-family: 'DIN Condensed', sans-serif;
   font-size: var(--font-size-xl);
   line-height: 1.2;
@@ -3341,4 +3360,27 @@ noscript + main .fade-in,
   .episode-body > .guest-bio .profile-links {
     margin-left: calc(var(--guest-headshot) + var(--spacing-md));
   }
+}
+
+/* Ink on vermillion, site-wide. Newsprint on this orange measures 3.46:1 --
+   under the 4.5:1 floor -- and reads muddy at any size. Black clears it at
+   5.82:1 and is closer to a printed poster besides. */
+.cta-button,
+.cta-button.primary {
+  color: var(--text-black);
+}
+
+.cta-button:hover {
+  color: var(--bg-white);
+}
+
+.cta-button.secondary {
+  color: var(--text-black);
+}
+
+/* The hero title was set at the full page-heading size, wrapped to two lines
+   in its column, and pushed the text block past the artwork beside it. Held at
+   one step down at every width. */
+.episode-hero h1 {
+  font-size: var(--font-size-2xl);
 }
