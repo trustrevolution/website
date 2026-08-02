@@ -1,37 +1,49 @@
 {{/*
-  Lightning payment block for the support CTA band.
+  The payment plate on /support/.
 
-  Three ways in, ordered by how people actually arrive. The button hands off
-  to whatever wallet has registered the lightning: scheme, which is the whole
-  path on a phone. The address is selectable text for anyone pasting into a
-  wallet by hand. The code is for the desktop case -- you scan it with the
-  phone in your other hand -- so it is hidden on narrow screens, where you
-  cannot scan the display you are holding.
+  A solid black slab spanning the container on the vermillion field, rather
+  than a column of centred objects floating in it. Everything inside shares
+  the plate's edges: the words and the controls sit on one left edge, the
+  code occupies its own cell against the right, and a vermillion rule divides
+  them. The address is the largest thing on the plate because the address is
+  the payload -- the buttons are conveniences on top of it.
 
-  Only the copy button needs script, and it ships hidden until the clipboard
-  API is confirmed present, so nothing here breaks without JavaScript.
+  The code is only rendered at 600px and up. On a phone you are holding the
+  screen you would be pointing a camera at, so it is dead weight there and
+  the wallet handoff is the whole path.
+
+  Only the copy button needs script; it ships hidden until the clipboard API
+  is confirmed, so nothing here depends on JavaScript running.
 */}}
 
 {{- $address := .Site.Params.lightning_address -}}
 {{- $qr := resources.Get "images/lightning-qr.svg" -}}
 
 {{- with $address }}
-<div class="lightning-pay">
-  {{- with $qr }}
-  <figure class="lightning-pay__scan">
-    <div class="lightning-pay__qr">{{ .Content | safeHTML }}</div>
-    <figcaption>Scan with a Lightning wallet</figcaption>
-  </figure>
-  {{- end }}
+<section class="pay-band" aria-labelledby="pay-heading">
+  <div class="container">
+    <div class="pay">
 
-  <div class="lightning-pay__act">
-    <a class="cta-button" href="lightning:{{ . }}">Send Sats</a>
-    <div class="lightning-pay__address-row">
-      <code class="lightning-pay__address" data-copy-address>{{ . }}</code>
-      <button type="button" class="lightning-pay__copy" data-copy-trigger hidden>Copy</button>
+      <div class="pay__main">
+        <h2 class="pay__eyebrow" id="pay-heading">Send sats over Lightning</h2>
+        <code class="pay__address" data-copy-address>{{ . }}</code>
+        <div class="pay__actions">
+          <a class="pay__btn pay__btn--send" href="lightning:{{ . }}">Open Wallet</a>
+          <button type="button" class="pay__btn pay__btn--copy" data-copy-trigger hidden>Copy Address</button>
+        </div>
+        <p class="pay__note">Straight to the show. No platform in the middle, no cut taken.</p>
+      </div>
+
+      {{- with $qr }}
+      <figure class="pay__scan">
+        <div class="pay__qr">{{ .Content | safeHTML }}</div>
+        <figcaption>Scan to pay</figcaption>
+      </figure>
+      {{- end }}
+
     </div>
   </div>
-</div>
+</section>
 
 <script>
 (function () {

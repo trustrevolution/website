@@ -9,6 +9,7 @@
     <header class="episode-hero">
       <div class="episode-hero__art">
         {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 599px) 100vw, 300px" "eager" true) }}
+        {{ partial "support-cta.html" . }}
       </div>
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>
@@ -69,8 +70,6 @@
       {{ end }}
 
       {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
-
-      {{ partial "support-cta.html" . }}
 
       {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}
 

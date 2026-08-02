@@ -6,6 +6,12 @@
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="index, follow">
   <meta name="apple-mobile-web-app-title" content="TrustRev">
+  {{/* Marks the document as script-capable before the stylesheet paints. The
+       reveal animation hides .fade-in until JavaScript adds .is-visible, so
+       without this flag a reader with JS off gets a site whose content never
+       appears. Gating the hidden state on .js means no-JS simply skips the
+       animation and sees everything. Inline and first so there is no flash. */}}
+  <script>document.documentElement.classList.add('js');</script>
   {{- /* Page + social titles. Episodes: "Topic — Guest | Brand" via clean-title partial (strips legacy S##E## prefix); guestless episodes fall back to "Topic | Brand". */ -}}
   {{- $pageTitle := "" -}}
   {{- $socialTitle := "" -}}

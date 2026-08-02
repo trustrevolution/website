@@ -245,8 +245,6 @@ img {
   }
 }
 
-
-
 .container-narrow {
   max-width: var(--max-width-narrow);
 }
@@ -470,6 +468,8 @@ blockquote,
   display: inline-flex;
   align-items: center;
   min-height: var(--touch-target);
+  /* Label plus arrow; it is never long enough to earn a second line. */
+  white-space: nowrap;
   color: var(--text-black);
   font-weight: 700;
   font-size: var(--font-size-sm);
@@ -489,18 +489,6 @@ blockquote,
 .section-dark h1, .section-dark h2, .section-dark h3 { color: var(--bg-white); }
 .section-dark a { color: var(--accent-orange); }
 .section-dark a:hover { color: var(--bg-white); }
-
-.section-dark .label {
-  display: inline-block;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
-  color: var(--text-inverse-dim);
-  margin-bottom: var(--spacing-sm);
-  padding-bottom: var(--spacing-3xs);
-  border-bottom: var(--border-subtle) solid var(--accent-orange);
-}
 
 /* ============================================
    EPISODE CARDS
@@ -671,32 +659,6 @@ blockquote,
   padding: var(--spacing-content) 0 0 0;
 }
 
-.episode-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-content);
-}
-
-.episode-sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--spacing-xs);
-}
-
-.episode-cover {
-  max-width: var(--cover-size-md);
-}
-
-.episode-cover img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  border: var(--border-component) solid var(--text-black);
-  box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--accent-orange);
-}
-
 .sidebar-cta {
   width: 100%;
   max-width: var(--cover-size-md);
@@ -713,22 +675,6 @@ blockquote,
   padding: var(--spacing-xs) 0;
   border-bottom: var(--border-thin) solid var(--border-light);
   font-size: var(--font-size-sm);
-}
-
-.meta-label {
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-  font-size: var(--font-size-xs);
-}
-
-.meta-value {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.episode-main {
-  max-width: var(--max-width-narrow);
 }
 
 .episode-header {
@@ -1012,23 +958,6 @@ blockquote,
   transform: translate(-1px, -1px);
 }
 
-/* Large variant for primary outbound links */
-.tag-link--lg {
-  height: var(--touch-target);
-  padding: 0 var(--spacing-md);
-  font-family: var(--font-display);
-  font-size: var(--font-size-base);
-  letter-spacing: var(--tracking-normal);
-  border-width: var(--border-component);
-}
-
-.tag-link--lg:hover {
-  color: var(--accent-orange);
-  transform: translate(calc(-1 * var(--shadow-xs)), calc(-1 * var(--shadow-xs)));
-  box-shadow: var(--shadow-md) var(--shadow-md) 0 var(--accent-orange);
-}
-
-
 /* Guest term page */
 .episode-header + .guest-term-bio {
   margin-top: calc(-1 * var(--spacing-sm));
@@ -1127,7 +1056,6 @@ blockquote cite {
 .hero h1 .accent {
   color: var(--accent-orange);
 }
-
 
 /* ============================================
    LATEST EPISODE (Homepage Hero)
@@ -1349,7 +1277,6 @@ blockquote cite {
   margin-top: var(--spacing-md);
 }
 
-
 /* Credits Section */
 .about-credits {
   padding: var(--section-py) 0;
@@ -1401,43 +1328,6 @@ blockquote cite {
    ============================================ */
 
 /* Philosophy Section */
-.support-philosophy {
-  padding: var(--section-py) 0;
-  background: var(--bg-white);
-  text-align: center;
-}
-
-.philosophy-emphasis {
-  font-family: var(--font-display);
-  font-size: var(--font-size-lg);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-normal);
-  color: var(--text-black);
-  margin: 0;
-  text-align: center;
-}
-
-/* Flex rather than inline spans: the template emits the lines with no
-   whitespace between them, so going inline ran "You decide." straight into
-   "You pay". A row gap separates them and keeps each line unbreakable. */
-.philosophy-emphasis {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-}
-
-@media (min-width: 768px) {
-  .philosophy-emphasis {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4em;
-    font-size: var(--font-size-2xl);
-  }
-}
-
 /* Testimonials Section — Dark editorial pull quotes */
 .support-testimonials {
   padding: var(--section-py) 0;
@@ -1677,12 +1567,14 @@ blockquote cite {
  * Elements start hidden and animate when .is-visible is added
  * by the intersection observer (or immediately if JS is unavailable).
  */
-.fade-in {
+/* Gated on .js (set inline in <head>): without scripting there is no reveal
+   to wait for, so the content must never be hidden in the first place. */
+.js .fade-in {
   opacity: 0;
   transform: translateY(12px);
 }
 
-.fade-in.is-visible {
+.js .fade-in.is-visible {
   animation: fadeIn 0.4s ease-out both;
   animation-delay: calc(var(--delay, 0) * 0.1s);
 }
@@ -1745,14 +1637,9 @@ input:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
-  .fade-in { animation: none; opacity: 1; transform: none; }
-}
-
-/* Fallback: show content if JS is unavailable */
-noscript + main .fade-in,
-.no-js .fade-in {
-  opacity: 1;
-  transform: none;
+  /* Must match the .js gate's specificity or it loses the cascade and a
+     reduced-motion reader is left with permanently hidden content. */
+  .js .fade-in { animation: none; opacity: 1; transform: none; }
 }
 
 /* ============================================
@@ -1908,37 +1795,6 @@ noscript + main .fade-in,
   /* Episode page */
   .episode-page { padding: var(--spacing-lg) 0 0 0; }
 
-  .episode-layout {
-    grid-template-columns: var(--cover-size-lg) 1fr;
-    gap: var(--spacing-lg);
-    align-items: start;
-  }
-
-
-  .episode-sidebar {
-    position: sticky;
-    top: var(--spacing-md);
-    align-items: flex-start;
-    text-align: left;
-    /* Bounded so the column can never grow past the viewport and strand the
-       player below the fold. The cover-shrink rules below keep this from
-       needing a scrollbar at ordinary window heights. */
-    max-height: calc(100vh - (var(--spacing-md) * 2));
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-
-  .episode-cover {
-    --heading-size: var(--font-size-4xl);
-    max-width: none;
-    margin-top: var(--heading-top-lead);
-  }
-
-  .episode-cover img {
-    box-shadow: var(--shadow-lg) var(--shadow-lg) 0 var(--accent-orange);
-    margin-bottom: var(--spacing-md);
-  }
-
   .sidebar-cta {
     width: 100%;
     max-width: none;
@@ -2083,22 +1939,12 @@ noscript + main .fade-in,
     justify-content: flex-start;
   }
 
-  .tag-link--lg {
-    height: var(--touch-target-lg);
-    padding: 0 var(--spacing-lg);
-    font-size: var(--font-size-lg);
-  }
-
   .credits-layout {
     flex-direction: row;
     gap: var(--spacing-xl);
   }
 
   /* Support page */
-  .philosophy-emphasis {
-    font-size: var(--font-size-2xl);
-  }
-
   .testimonial-quote blockquote {
     font-size: var(--font-size-md);
   }
@@ -2179,7 +2025,6 @@ noscript + main .fade-in,
     padding: 0 var(--spacing-md);
   }
 
-
   .stat-value {
     font-size: var(--font-size-xl);
   }
@@ -2234,7 +2079,6 @@ noscript + main .fade-in,
   /* Touch feedback: active states for tap */
   .cta-button:active { transform: scale(0.98); opacity: 0.9; }
   .cta-button.secondary:active { background: var(--text-black); color: var(--bg-white); }
-  .tag-link--lg:active { background: var(--text-black); color: var(--bg-white); }
   .episode-card:active { border-color: var(--accent-orange); }
   .guest-card:active { border-color: var(--accent-orange); }
   .site-nav a:active { color: var(--accent-orange); }
@@ -2339,7 +2183,6 @@ noscript + main .fade-in,
 .search-overlay-content::-webkit-scrollbar-thumb:hover {
   background: var(--border-dark-hover);
 }
-
 
 /* Pagefind dark theme overrides */
 .search-overlay .pagefind-ui {
@@ -2583,22 +2426,7 @@ noscript + main .fade-in,
   color: var(--bg-black);
 }
 
-/* CTA Band — Stacked variant (centered with context caption) */
-.cta-band--stacked .cta-band-inner {
-  flex-direction: column;
-  text-align: center;
-  gap: var(--spacing-sm);
-}
-
-.cta-context {
-  font-size: var(--font-size-base);
-  color: var(--bg-black);
-}
-
 @media (min-width: 768px) {
-  .cta-band--stacked .cta-band-inner {
-    flex-direction: column;
-  }
 }
 
 /* Tablet+ */
@@ -2966,7 +2794,6 @@ noscript + main .fade-in,
 
 /* Sections that begin a new movement get a rule and more air. */
 .episode-body > .guest-bio,
-.episode-body > .support-cta,
 .episode-body > .transcript-section,
 .episode-body > .episode-nav {
   margin-top: var(--flow-major);
@@ -3099,6 +2926,13 @@ noscript + main .fade-in,
 .transport__time--total { color: var(--text-secondary); }
 .transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
 
+/* Transport controls get tapped repeatedly mid-listen, and the short labels
+   ("1x", "-15s") left some only 36px wide. They already clear 44px vertically;
+   this squares them up without touching the row's spacing. */
+.transport__secondary .tag-link {
+  min-width: var(--touch-target);
+}
+
 .transport__secondary {
   grid-area: secondary;
   display: flex;
@@ -3186,10 +3020,6 @@ noscript + main .fade-in,
 .tag-link:hover { border-color: var(--accent-orange); transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--accent-orange); }
 .tag-link:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
-/* Ink on vermillion: newsprint measured 3.46:1, under the floor. */
-.tag-link--primary { background: var(--accent-orange); border-color: var(--border-heavy); color: var(--text-black); }
-.tag-link--primary:hover { background: var(--accent-orange-dark); color: var(--bg-white); }
-
 /* --- quote ------------------------------------------------ */
 
 .episode-body > .pull-quote {
@@ -3266,8 +3096,6 @@ noscript + main .fade-in,
   border-bottom: none;
 }
 
-
-
 /* Resources are short labels; one per line in a 968px column is a list
    pretending to be a page. Same two-column index as Chapters. */
 @media (min-width: 600px) {
@@ -3283,8 +3111,6 @@ noscript + main .fade-in,
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-
-
 
 /* Each text block gets its own block formatting context, so it sits beside the
    floated portrait instead of flowing under it. This is the whole fix for the
@@ -3324,135 +3150,239 @@ noscript + main .fade-in,
   }
 }
 
-/* --- end-of-episode support CTA ---------------------------
-   A line of type and a button, sharing the block's left edge
-   like every other component in the body. Baseline-aligned so
-   the sentence and the button sit on one line of type rather
-   than on two centres that only look level by coincidence.
+/* --- support CTA, under the episode cover -----------------
+   Takes the artwork's full width so the two read as one
+   stacked object rather than a button parked beside a picture.
    ---------------------------------------------------------- */
 
-.support-cta {
+.episode-hero__art .support-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--spacing-sm);
+  /* The shared button padding is sized for full-width bands; in a 300px
+     art column it left too little room for the label, which wrapped onto
+     two lines. The label sets the height here, not the padding. */
+  padding-inline: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+/* --- payment plate (/support/) -----------------------------
+   A black slab on the vermillion field, spanning the container.
+   Grid rather than a centred stack: the words and controls share
+   one left edge, the code holds its own cell, and the vermillion
+   rule between them is the only divider on the plate.
+   ---------------------------------------------------------- */
+
+.pay-band {
+  background: var(--accent-orange);
+  padding: var(--section-py) 0;
+}
+
+.pay {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--bg-black);
+  border: var(--border-section) solid var(--bg-black);
+  color: var(--bg-white);
+}
+
+.pay__main {
+  padding: var(--spacing-lg);
+}
+
+/* Small caps against the plate's top-left corner: a label on the slab,
+   not a heading floating above it. */
+.pay__eyebrow {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--accent-orange);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* The address is the payload, so it is the largest thing here. Monospace
+   because it has to survive being read off a screen and retyped. */
+.pay__address {
+  display: block;
+  margin-bottom: var(--spacing-md);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--bg-white);
+  word-break: break-all;
+  user-select: all;
+}
+
+.pay__actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--spacing-sm) var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
-.support-cta__text {
-  flex: 1 1 18rem;
-  margin: 0;
-  min-width: 0;
-  color: var(--text-secondary);
-}
-
-.support-cta .cta-button {
-  flex: 0 0 auto;
-}
-
-/* --- lightning payment (support CTA band) -----------------
-   Sits inside the vermillion band. The code gets a white
-   plate: a black QR directly on vermillion is about 3.5:1,
-   which readers refuse often enough to matter, and the quiet
-   zone is part of the spec rather than padding.
-   ---------------------------------------------------------- */
-
-.lightning-pay {
-  display: flex;
-  flex-direction: column;
+.pay__btn {
+  display: inline-flex;
   align-items: center;
-  gap: var(--spacing-md);
+  justify-content: center;
+  min-height: var(--touch-target-lg);
+  padding: 0 var(--spacing-md);
+  border: var(--border-component) solid;
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.lightning-pay__scan {
+/* Vermillion marks the one action being asked for. */
+.pay__btn--send {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--text-black);
+}
+
+.pay__btn--send:hover {
+  background: var(--bg-white);
+  border-color: var(--bg-white);
+  color: var(--text-black);
+}
+
+.pay__btn--copy {
+  background: transparent;
+  border-color: var(--bg-white);
+  color: var(--bg-white);
+}
+
+.pay__btn--copy:hover {
+  background: var(--bg-white);
+  color: var(--text-black);
+}
+
+.pay__btn:focus-visible {
+  outline: var(--border-subtle) solid var(--accent-orange);
+  outline-offset: var(--spacing-3xs);
+}
+
+.pay__note {
+  margin: var(--spacing-md) 0 0;
+  max-width: var(--max-width-narrow);
+  color: var(--text-inverse-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* The code only earns its cell where a second device can read it. On a phone
+   you are holding the screen you would be pointing the camera at. */
+.pay__scan {
   display: none;
   margin: 0;
-  text-align: center;
 }
 
-.lightning-pay__qr {
-  /* The caption is wider than the code, so the figure is caption-width and a
-     fixed-width block child would sit against its left edge. */
-  margin-inline: auto;
-  width: 180px;
-  height: 180px;
+.pay__qr {
+  width: 100%;
+  aspect-ratio: 1;
   padding: var(--spacing-sm);
   background: var(--bg-white);
-  border: var(--border-component) solid var(--bg-black);
   color: var(--text-black);
   line-height: 0;
 }
 
-.lightning-pay__qr svg {
+.pay__scan figcaption {
+  padding-top: var(--spacing-sm);
+}
+
+.pay__qr svg {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.lightning-pay__scan figcaption {
-  margin-top: var(--spacing-xs);
-  color: var(--bg-black);
+.pay__scan figcaption {
+  color: var(--text-inverse-secondary);
   font-size: var(--font-size-xs);
   font-weight: 700;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: var(--tracking-widest);
 }
 
-.lightning-pay__act {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
-.lightning-pay__address-row {
-  display: flex;
-  align-items: stretch;
-  max-width: 100%;
-}
-
-/* One object split by a rule, not two controls that happen to touch. */
-.lightning-pay__address {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--touch-target);
-  padding: 0 var(--spacing-sm);
-  border: var(--border-subtle) solid var(--bg-black);
-  background: transparent;
-  color: var(--bg-black);
-  font-family: 'SF Mono', Monaco, monospace;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  word-break: break-all;
-  user-select: all;
-}
-
-.lightning-pay__copy {
-  min-height: var(--touch-target);
-  padding: 0 var(--spacing-sm);
-  border: var(--border-subtle) solid var(--bg-black);
-  border-left: none;
-  background: var(--bg-black);
-  color: var(--bg-white);
-  font-family: inherit;
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wider);
-  cursor: pointer;
-}
-
-.lightning-pay__copy:hover {
-  background: var(--bg-white);
-  color: var(--bg-black);
-}
-
-.lightning-pay__copy:focus-visible {
-  outline: var(--border-subtle) solid var(--bg-black);
-  outline-offset: 2px;
-}
-
-/* The code only earns its space where there is a second device to scan it
-   with. On a phone you are holding the screen you would be pointing at. */
 @media (min-width: 600px) {
-  .lightning-pay__scan { display: block; }
+  .pay {
+    grid-template-columns: 1fr auto;
+  }
+
+  /* No divider rule. The right cell is mostly empty black, so a rule down
+     its full height divided nothing and read as a stray orange stripe. The
+     white code block is its own edge; it just needs even space around it. */
+  .pay__scan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 200px;
+    padding: var(--spacing-lg);
+    padding-left: 0;
+  }
+
+  .pay__main {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+@media (min-width: 900px) {
+  .pay__address {
+    font-size: var(--font-size-3xl);
+  }
+
+  .pay__scan {
+    width: 260px;
+  }
+}
+
+/* --- hit-area floor ---------------------------------------
+   The design spec sets 44px as the minimum touch target, but
+   eight controls took their height from the line box and came
+   in between 17px and 42px on small screens.
+
+   A min-height would fix the size and move everything around
+   them -- these sit inside breadcrumbs, headers and inline
+   rows where the current position is the design. A centred
+   pseudo-element grows only the box that receives the pointer,
+   so the target reaches 44px and nothing shifts.
+   ---------------------------------------------------------- */
+
+.breadcrumb a,
+.site-logo,
+.search-close,
+.credit-name,
+.transcript-collapse,
+.transcript-disclosure > summary,
+.profile-links a,
+.aside a {
+  position: relative;
+}
+
+.breadcrumb a::after,
+.site-logo::after,
+.search-close::after,
+.credit-name::after,
+.transcript-collapse::after,
+.transcript-disclosure > summary::after,
+.profile-links a::after,
+.aside a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  transform: translate(-50%, -50%);
 }

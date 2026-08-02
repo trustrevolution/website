@@ -1,5 +1,8 @@
 {{ define "main" }}
 <article class="why-page seamless-to-footer">
+  {{/* The page opens on the accusations rather than a title, so the document's
+       one h1 is visually hidden -- same pattern as the homepage hero. */}}
+  <h1 class="sr-only">{{ .Title }}</h1>
 
   {{/* Accusations Section — Dark hero-like opening */}}
   <section class="why-accusations">

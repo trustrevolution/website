@@ -4,24 +4,8 @@
   <!-- HERO -->
   {{ partial "hero.html" (dict "label" .Params.hero.label "heading" .Params.hero.heading) }}
 
-  <!-- PHILOSOPHY -->
-  <section class="support-philosophy">
-    <div class="container">
-      {{ with .Params.philosophy.lines }}
-      <div class="philosophy-emphasis fade-in delay-1">
-        {{ range . }}<span>{{ . }}</span>{{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="cta-band cta-band--stacked">
-    <div class="container cta-band-inner fade-in delay-2">
-      {{ partial "lightning-pay.html" . }}
-      <span class="cta-context">{{ .Params.cta.context }}</span>
-    </div>
-  </section>
+  <!-- PAY -->
+  {{ partial "lightning-pay.html" . }}
 
   <!-- TESTIMONIALS -->
   {{ with .Params.testimonials }}

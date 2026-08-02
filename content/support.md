@@ -19,12 +19,6 @@ cta:
   label: "Support the Show"
   context: "Straight to the show over Lightning. No platform in the middle, no cut taken."
 
-# Philosophy section
-philosophy:
-  lines:
-    - "You listen. You decide."
-    - "You pay what it's worth to you."
-
 # Testimonials section
 testimonials:
   - quote: "Tired of the same guests on Bitcoin podcasts about BTC/USD NGU companies? Try Trust Revolution."

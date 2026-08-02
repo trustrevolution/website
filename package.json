@@ -8,11 +8,12 @@
   },
   "scripts": {
     "dev": "hugo server -D",
-    "build": "hugo --gc --minify && npm run verify:feed",
+    "build": "hugo --gc --minify --cleanDestinationDir && npm run verify:feed && npm run index:search",
     "verify:feed": "node scripts/verify-feed.js",
     "generate:og": "node scripts/generate-og-images.js",
     "fetch:youtube": "node scripts/fetch-youtube-stats.js",
-    "prebuild": "npm run generate:og"
+    "prebuild": "npm run generate:og",
+    "index:search": "npx --yes pagefind --site public"
   },
   "repository": {
     "type": "git",

@@ -5,9 +5,11 @@ on:
     branches: [main, master]
     paths:
       - 'content/episodes/**'
-  schedule:
-    # Run Wed-Fri at 7:30 AM CT (13:30 UTC) - after episodes publish
-    - cron: '30 13 * * 3-5'
+  # Schedule disabled: this job polls the Fountain RSS feed, and Fountain is
+  # being decommissioned. Left runnable by hand so it still works while the
+  # feed is up, but it will not fail on a cron and file issues once it goes.
+  # schedule:
+  #   - cron: '30 13 * * 3-5'
   workflow_dispatch:
 
 permissions:
