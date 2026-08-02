@@ -3592,6 +3592,20 @@ input:focus-visible {
      The controls are 44px inside a bar with 8px of padding, so they stay clear
      of the gesture strip without reserving the whole inset. */
   padding: var(--spacing-xs) var(--spacing-md);
+
+  /* Its own compositor layer while docked. An unpromoted fixed element is
+     repainted on the main thread every scroll frame, and this one carries a
+     box-shadow, so that repaint is not cheap. Promoted, both scrolling and the
+     browser's own repositioning of it during the URL-bar animation are handled
+     on the compositor with no repaint. Scoped to .is-docked so nothing is
+     promoted while the plate sits in the flow.
+
+     There is deliberately no entrance animation. It translated the bar a full
+     height on every dock -- extra movement at exactly the moment the browser is
+     already moving fixed elements to track the URL bar -- and with frames
+     starved it could hold the start keyframe and leave the bar off-screen. */
+  will-change: transform;
+
   border: none;
   border-top: var(--border-component) solid var(--border-heavy);
   background: var(--bg-subtle);
@@ -3654,13 +3668,3 @@ input:focus-visible {
   padding-bottom: var(--docked-height, 0px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .transport--audio.is-docked .transport__plate {
-    animation: dockIn 0.18s ease-out both;
-  }
-}
-
-@keyframes dockIn {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
-}
