@@ -65,16 +65,37 @@ description: "Episode hook - 2-3 sentences"
 - NO page-specific one-off styles — create reusable patterns
 - Mobile-first — base styles for mobile, enhance in media queries
 
+## Documented Solutions
+
+`docs/solutions/` is this repo's knowledge store: solved problems written up so
+the next occurrence takes minutes instead of an afternoon. Search it before
+digging into an area — by category directory, or by the `module`, `tags` and
+`problem_type` fields in each file's frontmatter.
+
+After a solved, verified problem produces a non-trivial, reusable learning,
+automatically invoke the `ce-compound` skill, passing `mode:headless` as the
+skill argument. This repository accepts `docs/solutions/` as a tracked knowledge
+store. Do it before handing the result back, not at some later "end" of the
+session — a verified fix is the trigger.
+
+The bar is a generalisable insight worth re-reading, not merely an expensive
+one-off. A typo fix is not a learning; a wrong measurement that sent three
+attempts in the wrong direction is.
+
 ## Key Files
 
 - `hugo.toml` - Site configuration
 - `layouts/index.html` - Homepage template
 - `layouts/episodes/single.html` - Episode page template
 - `layouts/episodes/list.html` - Episode archive
-- `layouts/partials/fountain-cta.html` - Listen CTA component
-- `static/css/main.css` - Design system
+- `layouts/partials/media-player.html` - Audio/video transport
+- `layouts/partials/lightning-pay.html` - Lightning payment plate (/support/)
+- `layouts/index.podcast.xml` - Podcast RSS feed
+- `assets/css/main.css` - Design system
+- `assets/js/` - Client-side JS, fingerprinted through Hugo's asset pipeline
+- `scripts/verify-feed.js` - Build gate: fails if the feed drifts from the archive
 - `netlify.toml` - Deployment config
-- `.github/workflows/update-latest-episode.yml` - RSS automation
+- `.github/workflows/update-latest-episode.yml` - Fountain RSS import, manual dispatch only
 
 ## Commands
 

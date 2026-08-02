@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ ! -x \"$CLAUDE_PROJECT_DIR/.claude/hooks/compound-reminder.sh\" ] || \"$CLAUDE_PROJECT_DIR/.claude/hooks/compound-reminder.sh\"",
+            "timeout": 5,
+            "statusMessage": "Checking for uncaptured learnings"
+          }
+        ]
+      }
+    ]
+  }
+}

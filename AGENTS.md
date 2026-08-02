@@ -41,11 +41,16 @@ layouts/           # Hugo templates
 assets/
   css/main.css     # Single CSS file (~2200 lines)
   images/          # Hugo-processed images
+  js/              # Client-side JavaScript (fingerprinted via Hugo's asset pipeline)
 static/
-  js/              # Client-side JavaScript
   fonts/           # Web fonts
 scripts/           # Build/utility scripts (Node.js, Python)
 data/              # JSON data files
+docs/
+  solutions/       # Documented solutions to past problems (bugs, best practices,
+                   # workflow patterns), organised by category with YAML frontmatter
+                   # (module, tags, problem_type). Relevant when implementing or
+                   # debugging in an area someone has already worked through.
 ```
 
 ## Testing
@@ -213,6 +218,23 @@ Hugo applies grayscale filter at build time via `layouts/partials/image.html`.
 | Background | #FAFAFA |
 | Display Font | DIN Condensed |
 | Body Font | System sans-serif |
+
+## Documented Solutions
+
+`docs/solutions/` is this repo's knowledge store: solved problems written up so
+the next occurrence takes minutes instead of an afternoon. Search it before
+digging into an area — by category directory, or by the `module`, `tags` and
+`problem_type` fields in each file's frontmatter.
+
+After a solved, verified problem produces a non-trivial, reusable learning,
+automatically invoke the `ce-compound` skill, passing `mode:headless` as the
+skill argument. This repository accepts `docs/solutions/` as a tracked knowledge
+store. Do it before handing the result back, not at some later "end" of the
+session — a verified fix is the trigger.
+
+The bar is a generalisable insight worth re-reading, not merely an expensive
+one-off. A typo fix is not a learning; a wrong measurement that sent three
+attempts in the wrong direction is.
 
 ## Key Files
 
