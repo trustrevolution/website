@@ -300,6 +300,40 @@
       } else {
         root.style.removeProperty('--docked-height');
       }
+
+      anchorToVisualViewport();
+    }
+
+    /* `position: fixed; bottom: 0` anchors to the *layout* viewport. On a phone
+     * that is not where the bottom of the screen is: the browser keeps the
+     * layout viewport frozen while the URL bar slides in and out, and only the
+     * *visual* viewport tracks what you can actually see. Chrome then
+     * repositions fixed elements against that moving target, so the bar drifts
+     * against the page during the toolbar animation.
+     *
+     * The fix production apps use: read the visual viewport and translate the
+     * bar by the difference, so it sits on the visible bottom edge rather than
+     * the layout one. The gap is zero on desktop and whenever the toolbar is at
+     * rest, so this writes an identity transform almost all of the time.
+     *
+     * transform is the right property for it -- the bar is already promoted to
+     * its own compositor layer while docked, so this costs no repaint. The
+     * visualViewport events fire per frame during the animation, which is
+     * exactly the cadence needed. */
+    function anchorToVisualViewport() {
+      var vv = window.visualViewport;
+      if (!vv) return;
+
+      /* Read the class, not the local flag: the class is what actually put the
+       * plate into fixed positioning, so it is the thing this correction has to
+       * agree with. Two sources of truth here would drift. */
+      if (!section.classList.contains('is-docked')) {
+        plate.style.transform = '';
+        return;
+      }
+
+      var gap = window.innerHeight - vv.height - vv.offsetTop;
+      plate.style.transform = gap > 0.5 ? 'translateY(' + -gap + 'px)' : '';
     }
 
     function onScroll() {
@@ -310,6 +344,12 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', anchorToVisualViewport);
+      window.visualViewport.addEventListener('scroll', anchorToVisualViewport);
+    }
+
     measure();
   }
 

@@ -43,7 +43,7 @@
     <div class="container">
       <div class="host-layout fade-in delay-2">
         <figure class="host-photo">
-          {{ partial "image.html" (dict "src" .Params.host.image "alt" (printf "Photo of %s" .Params.host.name) "width" 400 "sizes" "(max-width: 768px) 180px, 220px") }}
+          {{ partial "image.html" (dict "src" .Params.host.image "alt" (printf "Photo of %s" .Params.host.name) "width" 270 "sizes" "(max-width: 768px) 180px, 220px") }}
         </figure>
         <div class="host-content">
           <span class="host-label">{{ .Params.host.label }}</span>

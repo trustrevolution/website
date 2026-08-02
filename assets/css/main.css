@@ -1249,9 +1249,19 @@ blockquote cite {
   margin: 0;
 }
 
+/* A 3:4 portrait, not a square avatar. The source is a standing portrait, and
+   a square crop of it either shrinks the head to nothing or clips it; the
+   upright frame carries a head-and-shoulders portrait at this width and reads
+   as an author photo rather than a profile picture.
+
+   Height comes from the ratio so there is one number to change per breakpoint.
+   object-position stays at the top edge: the frame and the file agree at 3:4
+   so nothing is cropped today, but if either drifts, the crop should eat into
+   the chest rather than the top of his head. */
 .host-photo img {
   width: var(--cover-size-host);
-  height: var(--cover-size-host);
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   border: var(--border-component) solid var(--text-black);
@@ -1934,7 +1944,6 @@ input:focus-visible {
 
   .host-photo img {
     width: var(--host-photo-size);
-    height: var(--host-photo-size);
   }
 
   .host-content p {
