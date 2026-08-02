@@ -7,10 +7,16 @@
 
     {{/* Identity: the artwork, the title, what it is. Once, at the top. */}}
     <header class="episode-hero">
+      {{/* Art, CTA and text are three siblings so the grid can place them
+           differently by width: on desktop the CTA sits under the art in the
+           left column, on a phone the art shrinks beside the title and the
+           CTA runs full width beneath both. Nesting the CTA inside the art
+           forced it to the art's width, which on mobile meant a full-width
+           square cover and a player pushed below the fold. */}}
       <div class="episode-hero__art">
-        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 599px) 100vw, 300px" "eager" true) }}
-        {{ partial "support-cta.html" . }}
+        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 599px) 140px, 300px" "eager" true) }}
       </div>
+      {{ partial "support-cta.html" . }}
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>
         <p class="episode-meta">

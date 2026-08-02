@@ -812,8 +812,8 @@ blockquote,
 
 .timestamps-list li {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
+  align-items: baseline;
+  gap: var(--spacing-sm);
   padding: var(--spacing-xs) 0;
   border-bottom: var(--border-thin) solid var(--border-light);
 }
@@ -821,13 +821,15 @@ blockquote,
 .timestamps-list li:last-child { border-bottom: none; }
 
 .timestamp {
+  flex: 0 0 auto;
+  min-width: 6ch;
   font-family: 'SF Mono', Monaco, monospace;
   font-size: var(--font-size-sm);
   font-weight: 600;
   color: var(--accent-orange);
 }
 
-.timestamp-topic { color: var(--text-primary); }
+.timestamp-topic { min-width: 0; color: var(--text-primary); }
 
 .resources-list {
   list-style: none;
@@ -1806,14 +1808,6 @@ input:focus-visible {
   /* episode-header h1 size set in grouped page-title rule */
   .episode-summary { font-size: var(--font-size-lg); }
 
-  .timestamps-list li {
-    flex-direction: row;
-    align-items: baseline;
-    gap: var(--spacing-sm);
-  }
-
-  .timestamp { min-width: 6ch; }
-
   .episode-nav {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
@@ -2732,11 +2726,23 @@ input:focus-visible {
 
 /* --- hero ------------------------------------------------- */
 
+/* Mobile: a small cover beside the title, CTA full width under both. The
+   cover used to run the full column as a square, which alone put the player
+   36px below an iPhone's fold. */
 .episode-hero {
   display: grid;
-  gap: var(--flow);
+  grid-template-columns: 140px minmax(0, 1fr);
+  grid-template-areas:
+    "art  text"
+    "cta  cta";
+  align-items: start;
+  gap: var(--spacing-sm) var(--flow);
   margin-bottom: var(--flow-major);
 }
+
+.episode-hero__art  { grid-area: art; }
+.episode-hero__text { grid-area: text; }
+.episode-hero .support-cta { grid-area: cta; }
 
 .episode-hero__art img {
   display: block;
@@ -2764,12 +2770,12 @@ input:focus-visible {
   .episode-hero {
     /* Fixed square. Sizing the art to the row made it grow with the
        summary, which squeezed the headline until it wrapped. */
-    /* 340px, not 280: at 280 the art was 71px shorter than the text beside it
-       and all the slack pooled underneath it. At 340 the two columns finish
-       within a dozen pixels of each other and the block reads as one. */
     grid-template-columns: 300px minmax(0, 1fr);
-    align-items: start;
-    gap: var(--flow-major);
+    grid-template-areas:
+      "art  text"
+      "cta  text";
+    align-content: start;
+    gap: var(--spacing-sm) var(--flow-major);
   }
 }
 
@@ -2989,20 +2995,18 @@ input:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
-/* Filled means the speed is off default -- a state, not a hover. */
-.transport__step--rate[data-rate-changed] {
-  background: var(--text-black);
-  color: var(--bg-white);
-}
+/* No extra treatment for a changed speed. The label already reads "1.25x",
+   which says it exactly, and an inverted fill here landed next to the black
+   Watch button as a second black block meaning something else. */
 
-.transport__step--rate[data-rate-changed]:hover {
-  background: var(--text-secondary);
-}
-
-/* --- watch: the one action in the row -----------------------
-   Changing the medium is the only thing here that changes what
-   you are looking at, so it is the only filled control besides
-   play. Pressed, it empties out -- the fill means "go to video".
+/* --- watch: raised, but under the play button ---------------
+   Vermillion is already spent on play, which is the action in
+   this bar. A second vermillion block competed with it and won,
+   which is backwards. Black fill puts Watch one step above the
+   outlined gang and one step below play, without taking the
+   accent. Pressed -- video showing, label reads "Listen" -- it
+   empties out, so the fill always means "switch to the other
+   medium" rather than "you are here".
    ---------------------------------------------------------- */
 
 .transport__watch {
@@ -3010,12 +3014,12 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
   min-height: var(--touch-target);
-  padding: 0 var(--spacing-md);
-  border: var(--border-subtle) solid var(--border-heavy);
-  background: var(--accent-orange);
-  color: var(--text-black);
+  padding: 0 var(--spacing-sm);
+  border: var(--border-subtle) solid var(--text-black);
+  background: var(--text-black);
+  color: var(--bg-white);
   font-family: var(--font-display);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
@@ -3024,8 +3028,9 @@ input:focus-visible {
 }
 
 .transport__watch:hover {
-  background: var(--text-black);
-  color: var(--bg-white);
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--text-black);
 }
 
 .transport__watch[aria-pressed='true'] {
@@ -3100,7 +3105,13 @@ input:focus-visible {
 
 /* Video is a mode of the same player, revealed by Watch. Collapsed it is
    display:none and must not leave its gap behind. */
-.transport--video:not(:has(.transport__video:not([hidden]))) { display: none; }
+/* Collapsed until Watch is pressed. The gate is .js, set inline in <head>,
+   so the panel is hidden at first paint instead of being hidden by a script
+   that runs after it -- which is what made the video pop in and, when the
+   script was slow, stay. Without JS there is no Watch button, so the video
+   stays in the page as its own player. */
+.js .transport__video:not([data-watching]) { display: none; }
+.js .transport--video:not(:has([data-watching])) { display: none; }
 
 .transport__video-element {
   display: block;
@@ -3225,17 +3236,6 @@ input:focus-visible {
 /* Resources are short labels; one per line in a 968px column is a list
    pretending to be a page. Same two-column index as Chapters. */
 @media (min-width: 600px) {
-  .episode-body .resources-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--flow-major);
-  }
-}
-
-@media (min-width: 1024px) {
-  .episode-body .resources-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 /* Each text block gets its own block formatting context, so it sits beside the
@@ -3281,7 +3281,7 @@ input:focus-visible {
    stacked object rather than a button parked beside a picture.
    ---------------------------------------------------------- */
 
-.episode-hero__art .support-cta {
+.episode-hero .support-cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3513,4 +3513,14 @@ input:focus-visible {
   min-width: var(--touch-target);
   min-height: var(--touch-target);
   transform: translate(-50%, -50%);
+}
+
+/* Prev/next stack on a phone with only the line box between them, so an
+   expanded hit area would have had each link overlapping the other and
+   stealing its taps. These take real height instead -- they sit in their own
+   row, so growing them pushes them apart rather than over anything. */
+.episode-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
 }

@@ -133,12 +133,15 @@
     var video = videoPanel ? videoPanel.querySelector('video') : null;
 
     if (watchBtn && video && videoPanel) {
-      videoPanel.hidden = true;
+      /* The panel's visibility is owned by CSS keyed on [data-watching], so it
+       * is already collapsed at first paint. Setting .hidden here instead made
+       * the video flash in before this ran. */
+      videoPanel.removeAttribute('data-watching');
       watchBtn.hidden = false;
 
       watchBtn.addEventListener('click', function () {
-        var watching = videoPanel.hidden;
-        videoPanel.hidden = !watching;
+        var watching = !videoPanel.hasAttribute('data-watching');
+        videoPanel.toggleAttribute('data-watching', watching);
         watchBtn.setAttribute('aria-pressed', String(watching));
         watchBtn.textContent = watching ? 'Listen' : 'Watch';
 
