@@ -2789,15 +2789,36 @@ input:focus-visible {
 }
 
 @media (min-width: 600px) {
+  /* Float rather than grid. In a two-column grid the art and the title share
+     row 1, so that row is as tall as the 300px cover and the summary below it
+     could not start until 300px down -- a 200px void under the meta. A float
+     takes the art out of the right column's flow entirely, so the title, meta
+     and summary stack against each other at their natural spacing however
+     tall the cover is. */
   .episode-hero {
-    /* Fixed square. Sizing the art to the row made it grow with the
-       summary, which squeezed the headline until it wrapped. */
-    grid-template-columns: 300px minmax(0, 1fr);
-    grid-template-areas:
-      "art  text"
-      "cta  sum";
-    align-content: start;
-    gap: var(--spacing-sm) var(--flow-major);
+    display: block;
+  }
+
+  .episode-hero::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .episode-hero__art,
+  .episode-hero .support-cta {
+    float: left;
+    clear: left;
+    width: 300px;
+  }
+
+  .episode-hero .support-cta {
+    margin-top: var(--spacing-sm);
+  }
+
+  .episode-hero__text,
+  .episode-hero .episode-summary {
+    margin-left: calc(300px + var(--flow-major));
   }
 }
 
@@ -3333,7 +3354,10 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* No width here. This block sits later in the file than the desktop rule,
+     so any width stated here won it: 100% made the float full-bleed, auto
+     shrink-wrapped it to 257px under a 300px cover. The grid cell sizes it on
+     a phone, the float's own width sizes it on desktop. */
   margin-top: var(--spacing-sm);
   /* The shared button padding is sized for full-width bands; in a 300px
      art column it left too little room for the label, which wrapped onto
