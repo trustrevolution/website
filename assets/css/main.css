@@ -131,14 +131,6 @@
      more air between the two halves of one phrase than the title above it
      had between its own lines. */
   --line-height-meta: 1.35;
-  /* Optical correction for DIN Condensed. The face reserves descender depth
-     that an all-caps label never uses, so centring the line box leaves the
-     caps sitting 0.361em high in a fixed-height control -- measured from the
-     laid-out baseline against the cap ink, not estimated. Flex centres within
-     the content box, so a top pad of twice that offset lands the caps on the
-     box's centre. Every term scales with the em, so one value holds at any
-     size. Changing the display face invalidates it. */
-  --display-cap-nudge: 0.722em;
   --line-height-normal: 1.5;
   --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
@@ -3391,7 +3383,6 @@ input:focus-visible {
   text-decoration: none;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
-  padding-top: var(--display-cap-nudge);
 }
 
 /* Vermillion marks the one action being asked for. */
