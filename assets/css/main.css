@@ -122,6 +122,18 @@
 
   /* Line heights */
   --line-height-tight: 1.2;
+  /* Headings are DIN Condensed in uppercase: no descenders and a short
+     cap-height against the em, so 1.2 opened a visible gap between lines on
+     any heading that wrapped. Condensed display type sets tighter than that. */
+  --line-height-display: 1.05;
+  /* Optical correction for DIN Condensed. The face reserves descender depth
+     that an all-caps label never uses, so centring the line box leaves the
+     caps sitting 0.361em high in a fixed-height control -- measured from the
+     laid-out baseline against the cap ink, not estimated. Flex centres within
+     the content box, so a top pad of twice that offset lands the caps on the
+     box's centre. Every term scales with the em, so one value holds at any
+     size. Changing the display face invalidates it. */
+  --display-cap-nudge: 0.722em;
   --line-height-normal: 1.5;
   --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
@@ -158,7 +170,7 @@
 
   /* Alignment offsets — set --heading-size at point of use */
   --label-height: calc(var(--font-size-sm) * var(--line-height-relaxed) + var(--spacing-3xs));
-  --heading-top-lead: calc(var(--heading-size, 0px) * (var(--line-height-tight) - 1) / 2);
+  --heading-top-lead: calc(var(--heading-size, 0px) * (var(--line-height-display) - 1) / 2);
   --labeled-heading-offset: calc(var(--label-height) + var(--heading-top-lead));
 }
 
@@ -194,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: var(--tracking-normal);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-display);
   color: var(--text-black);
   text-transform: uppercase;
 }
@@ -718,7 +730,7 @@ blockquote,
 
 .episode-summary {
   font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.55;
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
@@ -2821,15 +2833,20 @@ input:focus-visible {
 .transport__audio { display: block; width: 100%; }
 .transport__plate:has([data-transport-ui]:not([hidden])) .transport__audio { display: none; }
 
+/* The timecode spans the full row rather than sitting in the scrubber's
+   column. Tucked beside the play button it started 65px in, giving the plate
+   two competing left edges -- the label, the button and the controls on one,
+   the timecode on another. Everything shares the plate's edge now; only the
+   scrubber is inset, because it sits beside the play button. */
 .transport__controls {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-areas:
     "play scrub"
-    "play times"
+    "times times"
     "secondary secondary";
   column-gap: var(--spacing-sm);
-  row-gap: var(--spacing-3xs);
+  row-gap: var(--spacing-xs);
   align-items: center;
 }
 
@@ -3028,6 +3045,7 @@ input:focus-visible {
   letter-spacing: var(--tracking-wide);
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
+  padding-top: var(--display-cap-nudge);
 }
 
 .transport__watch:hover {
@@ -3368,6 +3386,7 @@ input:focus-visible {
   text-decoration: none;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
+  padding-top: var(--display-cap-nudge);
 }
 
 /* Vermillion marks the one action being asked for. */
@@ -3560,23 +3579,37 @@ input:focus-visible {
   display: none;
 }
 
+/* One row, four items, each in its own cell. Putting the readout in the
+   scrubber's cell stacked them on top of each other and left the timecode
+   jammed under the rule with the scrubber running to the bar's edge. */
 .transport--audio.is-docked .transport__controls {
-  grid-template-areas: "play scrub secondary";
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  display: flex;
   align-items: center;
-  column-gap: var(--spacing-md);
-  row-gap: 0;
-}
-
-/* The timecode rides under the scrubber it describes rather than taking a
-   row of its own, which would double the bar's height. */
-.transport--audio.is-docked .transport__readout {
-  grid-area: scrub;
-  align-self: end;
+  gap: var(--spacing-md);
 }
 
 .transport--audio.is-docked .transport__scrub {
-  align-self: start;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.transport--audio.is-docked .transport__readout {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.transport--audio.is-docked .transport__play {
+  flex: 0 0 auto;
+}
+
+.transport--audio.is-docked .transport__secondary {
+  flex: 0 0 auto;
+  margin: 0;
 }
 
 /* Narrow screens have no room for the secondary row beside a scrubber, and a
