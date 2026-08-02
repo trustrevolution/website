@@ -134,10 +134,6 @@
      box's centre. Every term scales with the em, so one value holds at any
      size. Changing the display face invalidates it. */
   --display-cap-nudge: 0.722em;
-  /* Same correction for the monospace stack, which reserves its own unused
-     descender depth. Measured the same way: the gang's digits sat 0.39em
-     high, which read as WATCH sitting low beside them. */
-  --mono-cap-nudge: 0.78em;
   --line-height-normal: 1.5;
   --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
@@ -548,7 +544,6 @@ blockquote,
 .episode-card h2,
 .episode-card h3 {
   font-size: var(--font-size-md);
-  line-height: var(--line-height-tight);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -698,7 +693,6 @@ blockquote,
 }
 
 .episode-header h1 {
-  line-height: var(--line-height-tight);
   margin: 0;
   text-wrap: balance;
 }
@@ -1069,7 +1063,7 @@ blockquote cite {
 
 .hero h1 {
   font-size: var(--font-size-4xl);
-  line-height: 1.05;
+  line-height: var(--line-height-display);
   margin: 0;
   color: var(--bg-white);
 }
@@ -1125,7 +1119,7 @@ blockquote cite {
 
 .latest-episode-title {
   font-size: var(--font-size-xl);
-  line-height: 1.1;
+  line-height: var(--line-height-display);
   margin: 0 0 var(--spacing-3xs);
   color: var(--text-inverse);
   text-wrap: balance;
@@ -2349,7 +2343,7 @@ input:focus-visible {
   font-size: var(--font-size-2xl);
   color: var(--accent-orange);
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: var(--line-height-display);
   letter-spacing: var(--tracking-tight);
   margin: 0;
 }
@@ -2375,7 +2369,7 @@ input:focus-visible {
   font-size: var(--font-size-lg);
   color: var(--text-black);
   text-transform: uppercase;
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-display);
   margin: 0 0 var(--spacing-content);
 }
 
@@ -2421,7 +2415,7 @@ input:focus-visible {
   font-size: var(--font-size-xl);
   text-transform: uppercase;
   letter-spacing: var(--tracking-tight);
-  line-height: 1.1;
+  line-height: var(--line-height-display);
   color: var(--bg-black);
 }
 
@@ -2534,7 +2528,6 @@ input:focus-visible {
 
 .essay-card h2 {
   font-size: var(--font-size-lg);
-  line-height: var(--line-height-tight);
   margin: 0 0 var(--spacing-xs);
   transition: color var(--transition-fast);
 }
@@ -2575,7 +2568,6 @@ input:focus-visible {
 
 .essay-header h1 {
   font-size: var(--font-size-2xl);
-  line-height: var(--line-height-tight);
   margin: 0 0 var(--spacing-xs);
   text-wrap: balance;
 }
@@ -2994,7 +2986,6 @@ input:focus-visible {
   font-weight: 600;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
-  padding-top: var(--mono-cap-nudge);
 }
 
 /* Collapse the shared edges so the three read as one instrument. */
@@ -3052,7 +3043,6 @@ input:focus-visible {
   letter-spacing: var(--tracking-wide);
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast);
-  padding-top: var(--display-cap-nudge);
 }
 
 .transport__watch:hover {
