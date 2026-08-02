@@ -1,150 +1,122 @@
 ---
-title: "All-caps button labels sit high in fixed-height controls"
+title: "A baseline probe returns the wrong answer inside a flex container"
 date: 2026-08-02
 category: ui-bugs
 problem_type: ui_bug
 module: css
 component: buttons
-tags: ["typography", "css", "vertical-alignment", "flexbox", "fonts", "measurement"]
-symptoms: ["button labels look too high inside their box", "one button looks low next to its neighbours", "labels shift when a correction is applied to only some controls"]
-root_cause: "Flex centring centres the line box, and a line box reserves descender depth that an all-caps label never uses, so the caps sit high by half that depth"
-resolution_type: css_fix
+tags: ["typography", "css", "vertical-alignment", "flexbox", "measurement", "instrumentation"]
+symptoms: ["measured text offset disagrees with what the screenshot shows", "a correction sized from measurement overshoots badly", "button labels end up visibly low after being 'centred'"]
+root_cause: "A zero-size inline-block with vertical-align:baseline only reports the baseline inside an inline formatting context; appended to a flex container it becomes a flex item and reports the flex alignment position instead"
+resolution_type: reverted
 ---
 
-# All-caps button labels sit high in fixed-height controls
+# A baseline probe returns the wrong answer inside a flex container
 
 ## Problem
 
-Every button on the site rendered its label 4.5–6px above the vertical centre of
-its own box. The effect is uniform, so nothing looks broken until one control is
-"fixed" in isolation — at which point the corrected one reads as sitting low next
-to its uncorrected neighbours.
+Button labels on this site sit very slightly above the vertical centre of their
+box. An attempt to correct that overshot by more than three times and left every
+label visibly *low* — a real regression shipped to production, from a measurement
+that was confidently wrong.
 
 ## Symptoms
 
-- Labels in `.cta-button`, `.support-cta`, `.profile-links a`, `.transport__step`,
-  `.transport__watch` and `.pay__btn` all sat high in their boxes.
-- After nudging only `.transport__watch`, that button read as *low* beside the
-  three seek/rate buttons next to it, which were untouched.
-- After nudging only `.pay__btn`, those two buttons became the odd ones out
-  against every other button on the site.
+- The instrument reported labels sitting 4.5–6.5px high. The true figure is
+  0.2–1.9px depending on the control.
+- A correction sized from the bad figure moved labels 6.3px when 1.9px was
+  needed, landing them ~4.4px low.
+- A magnified screenshot showed the caps low while the numbers claimed centred.
+  **The screenshot was right and was overruled.**
 
 ## What Didn't Work
 
-**Estimating the offset from canvas font metrics.** Computing the baseline from
-`fontBoundingBoxAscent`/`fontBoundingBoxDescent` and comparing it to a cap height
-reported the error as ~1px. The real error was 6.5px. A correction sized from that
-estimate did essentially nothing, which made it look like the CSS was not applying
-at all and sent the investigation in the wrong direction.
+**Estimating from canvas font metrics.** Computing the baseline from
+`fontBoundingBoxAscent`/`Descent` reported ~1px against a real offset several
+times larger. Abandoned for pixel-scanning.
 
-**Measuring the wrong string.** A later pixel-scan measured `element.textContent`
-directly. Because these labels are cased in the markup and uppercased with
-`text-transform`, the canvas rendered *"Open Wallet"* rather than *"OPEN WALLET"* —
-the lowercase `p` contributed a descender that did not exist on screen and skewed
-the ink box downward. The measurement must apply the element's computed
+**Pixel-scanning ink without applying `text-transform`.** These labels are cased
+in markup and uppercased in CSS, so the canvas rendered "Open Wallet" and its
+lowercase descender skewed the ink box. Fixed by applying the computed
 `text-transform` before rendering.
 
-**Changing `line-height`.** The offset measured 6.5px at `line-height: 1`, at
-`normal` and at `1.2` alike. The reason is that line-height cancels out of the
-final glyph position:
-
-```
-baseline = boxCentre − lineHeight/2 + (lineHeight − (A + D))/2 + A
-         = boxCentre + (A − D)/2
-```
-
-Only the font's own ascent and descent survive, so no leading value fixes it.
-
-**Correcting a subset of controls.** Twice. Fixing one control in a row, or two
-controls on one page, converts a uniform site-wide offset into a visible local
-misalignment — strictly worse than leaving it alone.
-
-## Solution
-
-Shift the text down by `S` where `S = 0.35em`, measured per font (see below).
-Offset from the border-box centre is `(padding-top − padding-bottom) / 2`, so the
-difference between the two paddings must widen by `2S`.
-
-Two forms, because the arithmetic differs by whether there is padding to give back:
-
-```css
-:root { --cap-shift: 0.35em; }
-
-/* Symmetric vertical padding: take from the bottom, give to the top, so the
-   total is unchanged and the box keeps its exact height. */
-.cta-button {
-  padding-block:
-    calc(var(--btn-padding-y) + var(--cap-shift))
-    calc(var(--btn-padding-y) - var(--cap-shift));
-}
-
-/* No vertical padding to give back: the whole 2S goes on top. Height comes
-   from min-height, which is far larger than one line plus this padding. */
-.pay__btn,
-.transport__step,
-.transport__watch {
-  padding-top: calc(var(--cap-shift) * 2);
-}
-```
-
-**Repeat the correction for every variant that sets its own padding.**
-`.cta-button.primary` (specificity 0,2,0) overrides the base `.cta-button` rule
-(0,1,0), so a correction written only against `.cta-button` silently never reaches
-the primary buttons. Each variant repeats the correction against the padding token
-it actually uses, so each keeps its own height.
-
-**Apply it only to controls with a visible box.** `.view-all` and
-`.transport__download` are bare text links whose `min-height` exists solely as a
-touch target. There is no box to centre within, and shifting their text moves
-their baseline — including them dragged the heading beside `.view-all` down 5px.
-
-## Why This Works
-
-A flex container with `align-items: center` centres the *line box*. A line box
-reserves the font's full ascent and descent. An all-caps label uses the ascent but
-none of the descent, so the visible glyphs sit high by half the descent. The
-correction is a constant of the typeface, not of the control, so one value scales
-across every size via `em`.
-
-Measured by pixel-scanning rendered ink against the laid-out baseline:
-
-| Font stack | Measured shift |
-|---|---|
-| System sans (`-apple-system`, …) | 0.345em |
-| DIN Condensed (display face) | 0.353em |
-| Monospace (`SF Mono`, …) | 0.368em |
-
-One value of `0.35em` covers all three to within a quarter-pixel, verified at
-13px, 18px and 28px.
-
-## Prevention
-
-**Measure ink, do not estimate it.** The reliable method reads the baseline from
-layout and the ink bounds from rendered pixels:
+**The baseline probe itself — the one that actually caused the damage.** The
+standard trick is a zero-size inline-block with `vertical-align: baseline`, whose
+bottom edge sits on the text baseline:
 
 ```js
-// baseline: a zero-width inline sits on it, so its bottom IS the baseline
 const m = document.createElement('span');
 m.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline';
 el.appendChild(m);
-const baseline = m.getBoundingClientRect().bottom;
-m.remove();
-
-// ink: render what actually displays, honouring text-transform, then scan pixels
-let t = el.textContent.trim();
-const cs = getComputedStyle(el);
-if (cs.textTransform === 'uppercase') t = t.toUpperCase();
-// ...draw at 8x on a canvas, scan rows for the first/last non-transparent pixel
+const baseline = m.getBoundingClientRect().bottom;   // WRONG inside a flex box
 ```
 
-**Two guards worth keeping in an automated check:**
+That only holds in an **inline formatting context**. These buttons are
+`display: inline-flex`, so the appended span became a *flex item*. `vertical-align`
+does not apply to flex items, so the element was placed by `align-items: center`
+and its bottom reported the **flex centre**, not the baseline — off by 4.47px here,
+in the direction that made labels look high when they were nearly centred.
 
-1. Every control with a border or background must have its ink centre within 1px
-   of its box centre. This is what catches a partial correction.
-2. Render each page with `--cap-shift: 0em` and again at its real value, and diff
-   every element's box. The correction must change *no* geometry — that check is
-   what caught the `.view-all` baseline regression before it shipped.
+The failure is silent. There is no error; the number is just wrong, and it is
+stable and reproducible, which is precisely what makes it convincing.
 
-**When a uniform flaw is found, fix it uniformly or not at all.** A site-wide
-offset that is consistent reads as intentional. Correcting part of it is a
-regression even though each individual control is objectively more correct.
+## Solution
+
+Put the marker inside an inline wrapper so it participates in a line box:
+
+```js
+const orig = el.innerHTML;
+el.innerHTML = '<span>' + orig +
+  '<span data-mark style="display:inline-block;width:0;height:0;vertical-align:baseline"></span></span>';
+const baseline = el.querySelector('[data-mark]').getBoundingClientRect().bottom;
+el.innerHTML = orig;
+```
+
+**Then validate the instrument before trusting a single reading from it:**
+
+1. **Internal consistency.** `spaceAbove + inkHeight + spaceBelow` must equal the
+   box height. If it does not, the reading is nonsense.
+2. **Line-box arithmetic.** The probe's own rect should be exactly the used
+   `line-height`, and `ascent + descent` should sum to it. The broken probe put
+   the "baseline" at exactly half the line box — the tell-tale of a centred item
+   rather than a baseline.
+3. **Font fidelity.** Canvas may silently fall back to a different font than the
+   DOM. Compare `measureText(t).width + letterSpacing * t.length` against the
+   DOM's `Range` width; they should agree within a pixel.
+4. **Corroborate against a screenshot.** A magnified render with a guide line at
+   the box centre is the ground truth. When it disagrees with the number, the
+   number is wrong.
+
+The correction itself was **reverted**. With a working instrument the real offsets
+are 0.2–1.9px across every control — below the threshold of perception, and
+uniform enough that no control looks wrong beside its neighbours. There is
+nothing here worth the risk of another regression.
+
+## Why This Works
+
+`vertical-align` applies to inline-level boxes and table cells. A flex container
+blows away the inline formatting context of its children: every child becomes a
+flex item positioned by `align-items`/`align-self`. The probe silently changes
+meaning from "where is the baseline" to "where does this container align its
+items", and with `align-items: center` those differ by roughly half the leading.
+
+## Prevention
+
+**A measurement that contradicts a screenshot is a broken measurement.** Reconcile
+before acting on it. This cost three shipped regressions because a reproducible
+number felt more authoritative than an image.
+
+**Reproducibility is not correctness.** The broken probe returned an identical
+value on every run. Stability only proves determinism.
+
+**Check the formatting context before using any inline-alignment trick.**
+`vertical-align`, baseline alignment and line-box reasoning all quietly stop
+meaning what you think inside `display: flex` or `display: grid`.
+
+**Sanity-check magnitude against the CSS.** A discrepancy that happens to equal a
+value you introduced — here, exactly the `0.35em` shift — is a strong hint you are
+measuring stale styles or your own change rather than the underlying condition.
+
+**Reload after rebuilding before measuring.** One reading here was taken against a
+page loaded before the rebuild, producing a fourth, different number and nearly
+sending the investigation off again.
