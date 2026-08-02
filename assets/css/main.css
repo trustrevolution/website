@@ -752,7 +752,8 @@ blockquote,
 }
 
 .episode-page > .container > .breadcrumb {
-  text-align: center;
+  text-align: left;
+  margin-bottom: var(--spacing-content);
 }
 
 .breadcrumb a,
@@ -1907,10 +1908,6 @@ noscript + main .fade-in,
     align-items: start;
   }
 
-  .episode-page > .container > .breadcrumb {
-    margin-left: calc(var(--cover-size-lg) + var(--spacing-lg));
-    text-align: left;
-  }
 
   .episode-sidebar {
     position: sticky;
@@ -3187,7 +3184,7 @@ noscript + main .fade-in,
 }
 
 .v4v__heading {
-  margin: 0 0 var(--spacing-content);
+  margin: 0 0 var(--spacing-sm);
   font-size: var(--font-size-2xl);
   text-wrap: balance;
 }
@@ -3196,7 +3193,11 @@ noscript + main .fade-in,
    Full width so a long address wraps inside its own frame rather than pushing
    the actions onto another line. */
 .v4v__code {
-  display: flex;
+  /* Sized to the address, not to the column. A 20-character string in a
+     1240px field is the same mistake the player made. */
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
   align-items: center;
   min-height: var(--touch-target);
   margin-bottom: var(--spacing-sm);
@@ -3523,8 +3524,11 @@ noscript + main .fade-in,
 .episode-body .guest-bio {
   border: none;
   background: transparent;
+  /* Padding left from when these were cards; without the frame it reads as
+     dead space rather than as breathing room. */
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
   border-top: var(--border-thin) solid var(--border-light);
   padding-top: var(--spacing-content);
 }
@@ -3607,4 +3611,30 @@ noscript + main .fade-in,
   }
 
   .transport--audio .transport__spacer { display: none; }
+}
+
+/* The cover was 200px against a ~230px text block beside it, so it read as a
+   thumbnail rather than as the artwork. Give it the full height of the row and
+   let it set the hero's scale. No cropping: the art carries the guest name and
+   episode number, and object-fit would cut them. */
+@media (min-width: 600px) {
+  /* The art is square and fills the row exactly: its height is the row height
+     and the column sizes to it, so neither side leaves a gap under the other.
+     No object-fit crop -- the art carries the guest name and episode number. */
+  .episode-hero {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .episode-hero__art {
+    display: block;
+    height: 100%;
+  }
+
+  .episode-hero__art img {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    max-width: none;
+  }
 }

@@ -6,7 +6,7 @@
 
     <header class="episode-hero fade-in">
       <div class="episode-hero__art">
-        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 220 "sizes" "(max-width: 768px) 160px, 220px" "eager" true) }}
+        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 600px) 100vw, 340px" "eager" true) }}
       </div>
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>
