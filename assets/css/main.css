@@ -3148,7 +3148,7 @@ noscript + main .fade-in,
 
 .section-label {
   display: inline-block;
-  margin-bottom: var(--spacing-content);
+  margin-bottom: var(--spacing-sm);
   padding-bottom: var(--spacing-3xs);
   border-bottom: var(--border-subtle) solid var(--accent-orange);
   color: var(--text-secondary);
@@ -3286,7 +3286,7 @@ noscript + main .fade-in,
 .v4v__body { min-width: 0; }
 
 .v4v__pitch {
-  margin: 0 0 var(--spacing-content);
+  margin: 0 0 var(--spacing-sm);
   font-family: 'DIN Condensed', sans-serif;
   font-size: var(--font-size-xl);
   line-height: 1.2;
@@ -3360,22 +3360,6 @@ noscript + main .fade-in,
   .episode-body > .guest-bio .profile-links {
     margin-left: calc(var(--guest-headshot) + var(--spacing-md));
   }
-}
-
-/* Ink on vermillion, site-wide. Newsprint on this orange measures 3.46:1 --
-   under the 4.5:1 floor -- and reads muddy at any size. Black clears it at
-   5.82:1 and is closer to a printed poster besides. */
-.cta-button,
-.cta-button.primary {
-  color: var(--text-black);
-}
-
-.cta-button:hover {
-  color: var(--bg-white);
-}
-
-.cta-button.secondary {
-  color: var(--text-black);
 }
 
 /* The hero title was set at the full page-heading size, wrapped to two lines
