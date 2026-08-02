@@ -3322,3 +3322,23 @@ noscript + main .fade-in,
 }
 
 
+
+/* Each text block gets its own block formatting context, so it sits beside the
+   floated portrait instead of flowing under it. This is the whole fix for the
+   wrap; the photo, its float, and its sizing are left exactly as the component
+   defines them. Every previous attempt failed because it also touched the
+   photo, and a floated container with no intrinsic width collapses. */
+.episode-body > .guest-bio h2,
+.episode-body > .guest-bio p,
+.episode-body > .guest-bio .profile-links {
+  overflow: hidden;
+}
+
+/* The links usually fall past the bottom of the float, so they would return to
+   the block's left edge while every line above them sits in the text column.
+   Hold them in that column. */
+@media (min-width: 600px) {
+  .episode-body > .guest-bio .profile-links {
+    margin-left: calc(var(--guest-headshot) + var(--spacing-md));
+  }
+}
