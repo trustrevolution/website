@@ -131,6 +131,17 @@
      more air between the two halves of one phrase than the title above it
      had between its own lines. */
   --line-height-meta: 1.35;
+  /* Optical cap centring. A flex box centres the line box, but a line box
+     reserves descender depth that an all-caps label never uses, so the caps
+     sit high by half that depth. Offset from the border-box centre is
+     (padding-top - padding-bottom) / 2, so shifting the text down by S means
+     widening that difference by 2S.
+
+     S measured by scanning rendered pixels for the ink bounds against the
+     laid-out baseline: 0.345em in the system stack, 0.353em in DIN Condensed,
+     0.368em in the monospace stack. One value covers all three to within a
+     quarter-pixel. Font metrics scale with the em, so it holds at any size. */
+  --cap-shift: 0.35em;
   --line-height-normal: 1.5;
   --line-height-reading: 1.6;   /* long-form body — comfortable leading for essays */
   --line-height-relaxed: 1.7;
@@ -3636,4 +3647,63 @@ input:focus-visible {
 @keyframes dockIn {
   from { transform: translateY(100%); }
   to   { transform: translateY(0); }
+}
+
+/* --- optical cap centring ----------------------------------
+   Applied to every fixed-height control carrying an all-caps
+   label. Two forms, because the arithmetic differs:
+
+   Controls that already have symmetric vertical padding give
+   the shift from the bottom and take it on the top, so the sum
+   is unchanged and the box keeps its exact height.
+   ---------------------------------------------------------- */
+
+.cta-button {
+  padding-block:
+    calc(var(--btn-padding-y) + var(--cap-shift))
+    calc(var(--btn-padding-y) - var(--cap-shift));
+}
+
+/* .cta-button.primary sets its own padding at a higher specificity, so the
+   base rule above never reached it. Each variant repeats the correction
+   against the token it actually uses, so every one keeps its own height. */
+.cta-button.primary {
+  padding-block:
+    calc(var(--spacing-sm) + var(--cap-shift))
+    calc(var(--spacing-sm) - var(--cap-shift));
+}
+
+.cta-band .cta-button {
+  padding-block:
+    calc(var(--btn-padding-y-lg) + var(--cap-shift))
+    calc(var(--btn-padding-y-lg) - var(--cap-shift));
+}
+
+@media (min-width: 768px) {
+  .cta-button.primary {
+    padding-block:
+      calc(var(--btn-padding-y-lg) + var(--cap-shift))
+      calc(var(--btn-padding-y-lg) - var(--cap-shift));
+  }
+}
+
+.profile-links a {
+  padding-block:
+    calc(var(--btn-padding-y-sm) + var(--cap-shift))
+    calc(var(--btn-padding-y-sm) - var(--cap-shift));
+}
+
+/* Controls with no vertical padding have nothing to give back, so the whole
+   2S goes on top. Their height comes from min-height, which is far larger
+   than one line plus this padding, so the box does not grow.
+
+   Only controls with a visible box are corrected. .view-all and
+   .transport__download are bare text links whose min-height exists solely as
+   a touch target -- there is no box to centre within, and shifting their text
+   moves their baseline, which dragged the heading beside .view-all down 5px
+   when they were included. */
+.pay__btn,
+.transport__step,
+.transport__watch {
+  padding-top: calc(var(--cap-shift) * 2);
 }
