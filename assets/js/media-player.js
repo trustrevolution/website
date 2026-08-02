@@ -249,6 +249,7 @@
     spacer.style.display = 'none';
     section.appendChild(spacer);
 
+    var RELEASE = 24;   // px of travel required before a docked bar lets go
     var docked = false;
     var queued = false;
 
@@ -258,7 +259,16 @@
        * holds a position in the document; undocked, the plate is the section's
        * content. Either way this is the top of where the player belongs. */
       var anchor = docked ? spacer : plate;
-      var passed = anchor.getBoundingClientRect().bottom < 0;
+      var bottom = anchor.getBoundingClientRect().bottom;
+
+      /* A deadband, not a single threshold. The first upward scroll on a phone
+       * is also when the browser's URL bar animates back in, which changes the
+       * viewport height and therefore every rect read mid-gesture. With one
+       * threshold that wobble flips the state back and forth across a couple of
+       * frames -- felt as a jerk exactly on that first scroll-up. Docking needs
+       * the anchor fully off the top; releasing needs it clearly back on
+       * screen, and viewport noise between the two changes nothing. */
+      var passed = docked ? bottom < RELEASE : bottom < 0;
       if (passed === docked) return;
 
       if (passed) spacer.style.height = plate.offsetHeight + 'px';
