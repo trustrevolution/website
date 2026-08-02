@@ -126,6 +126,11 @@
      cap-height against the em, so 1.2 opened a visible gap between lines on
      any heading that wrapped. Condensed display type sets tighter than that. */
   --line-height-display: 1.05;
+  /* Metadata lines -- date, guest, runtime -- are captions, not prose. They
+     inherited the body's 1.7, which on a short line that wraps to two put
+     more air between the two halves of one phrase than the title above it
+     had between its own lines. */
+  --line-height-meta: 1.35;
   /* Optical correction for DIN Condensed. The face reserves descender depth
      that an all-caps label never uses, so centring the line box leaves the
      caps sitting 0.361em high in a fixed-height control -- measured from the
@@ -703,6 +708,7 @@ blockquote,
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   margin-top: var(--spacing-xs);
+  line-height: var(--line-height-meta);
 }
 
 .breadcrumb {
@@ -1133,6 +1139,7 @@ blockquote cite {
   font-size: var(--font-size-sm);
   color: var(--text-inverse-muted);
   margin: 0;
+  line-height: var(--line-height-meta);
 }
 
 .latest-episode-desc {
@@ -2575,6 +2582,7 @@ input:focus-visible {
 .essay-meta {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
+  line-height: var(--line-height-meta);
 }
 
 .essay-meta time {
