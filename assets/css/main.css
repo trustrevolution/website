@@ -2860,18 +2860,112 @@ noscript + main .fade-in,
   margin-top: 0;
 }
 
-/* ============================================
-   TRANSPORT PLATE — episode media player
-   Custom audio transport, because the native
-   audio widget is a rounded grey pill and sits
-   in the page as furniture. Video keeps native
-   controls: they live on the artifact and carry
-   fullscreen, PiP, and caption selection.
-   ============================================ */
+/* ============================================================
+   EPISODE PAGE
+   ============================================================
 
-.transport {
-  margin: var(--spacing-lg) 0;
+   One implementation, written once. The previous version was
+   patches on patches, which is why each fix broke the block
+   beside it.
+
+   Two rules hold the whole thing together:
+
+   1. The flow owns all vertical spacing. Components carry no
+      outer margin, so nothing compounds and nothing leaks.
+   2. Blocks share the container's left edge and differ only on
+      the right. Prose is capped; structure is not.
+
+   ============================================================ */
+
+.episode-page {
+  --flow: var(--spacing-content);
+  --flow-major: var(--spacing-lg);
+  --prose: 42rem;
 }
+
+/* The episode page is a reading surface, so it holds the reading
+   width while the grids and homepage take the wider container. */
+@media (min-width: 1280px) {
+  .episode-page > .container {
+    max-width: var(--max-width-content);
+  }
+}
+
+.episode-page > .container > .breadcrumb {
+  text-align: left;
+  margin: 0 0 var(--flow);
+}
+
+/* --- hero ------------------------------------------------- */
+
+.episode-hero {
+  display: grid;
+  gap: var(--flow);
+  margin-bottom: var(--flow-major);
+}
+
+.episode-hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border: var(--border-component) solid var(--border-heavy);
+}
+
+.episode-hero h1 {
+  margin: 0 0 var(--spacing-xs);
+}
+
+.episode-hero .episode-meta {
+  margin: 0 0 var(--flow);
+  color: var(--text-secondary);
+}
+
+.episode-hero .episode-summary {
+  margin: 0;
+  max-width: var(--prose);
+}
+
+@media (min-width: 600px) {
+  .episode-hero {
+    /* Fixed square. Sizing the art to the row made it grow with the
+       summary, which squeezed the headline until it wrapped. */
+    grid-template-columns: var(--cover-size-lg) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--flow-major);
+  }
+}
+
+/* --- flow ------------------------------------------------- */
+
+.episode-body > * {
+  margin: 0;
+  max-width: none;
+}
+
+.episode-body > * + * {
+  margin-top: var(--flow);
+}
+
+/* Prose is the only thing that needs a measure. */
+.episode-body .episode-summary,
+.episode-body .episode-content,
+.episode-body .guest-bio p,
+.transcript-content p {
+  max-width: var(--prose);
+}
+
+/* Sections that begin a new movement get a rule and more air. */
+.episode-body > .guest-bio,
+.episode-body > .v4v,
+.episode-body > .transcript-section,
+.episode-body > .episode-nav {
+  margin-top: var(--flow-major);
+  padding-top: var(--flow);
+  border-top: var(--border-thin) solid var(--border-light);
+}
+
+/* --- transport -------------------------------------------- */
 
 .transport__plate {
   padding: var(--spacing-content);
@@ -2879,42 +2973,19 @@ noscript + main .fade-in,
   background: var(--bg-subtle);
 }
 
-/* No-JS fallback: the native element stays visible and usable. */
-.transport__audio {
-  display: block;
-  width: 100%;
-}
+.transport__audio { display: block; width: 100%; }
+.transport__plate:has([data-transport-ui]:not([hidden])) .transport__audio { display: none; }
 
-.transport__plate:has([data-transport-ui]:not([hidden])) .transport__audio {
-  display: none;
-}
-
-/* Mobile: play plate and rule on one line, timecode beneath, controls last. */
 .transport__controls {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   grid-template-areas:
     "play scrub"
     "play times"
     "secondary secondary";
   column-gap: var(--spacing-sm);
-  row-gap: var(--spacing-xs);
+  row-gap: var(--spacing-3xs);
   align-items: center;
-}
-
-/* Section label — the broadsheet's section dingbat, per DESIGN.md. Declared as
-   a shared component because DESIGN.md names it as one; the dark-section
-   variant sets its own colour. */
-.section-label {
-  display: inline-block;
-  margin-bottom: var(--spacing-sm);
-  padding-bottom: var(--spacing-3xs);
-  border-bottom: var(--border-subtle) solid var(--accent-orange);
-  color: var(--text-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-widest);
 }
 
 .transport__play {
@@ -2922,29 +2993,19 @@ noscript + main .fade-in,
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
   width: var(--touch-target-lg);
   height: var(--touch-target-lg);
   padding: 0;
   background: var(--accent-orange);
   border: var(--border-component) solid var(--accent-orange);
   cursor: pointer;
-  transition: background var(--transition-fast), border-color var(--transition-fast);
+  transition: background var(--transition-fast);
 }
 
-.transport__play:hover {
-  background: var(--accent-orange-dark);
-  border-color: var(--accent-orange-dark);
-}
+.transport__play:hover { background: var(--accent-orange-dark); border-color: var(--accent-orange-dark); }
+.transport__play:focus-visible { outline: var(--border-subtle) solid var(--text-black); outline-offset: var(--spacing-3xs); }
 
-.transport__play:focus-visible {
-  outline: var(--border-subtle) solid var(--text-black);
-  outline-offset: var(--spacing-3xs);
-}
-
-/* Solid geometry cut from the same ink as the plate: a triangle and two bars.
-   Shaped with clip-path and flex rather than border tricks so the glyphs are
-   real boxes that scale with the type scale. */
+/* Solid geometry, not an icon font. */
 .transport__glyph--play {
   width: var(--spacing-md);
   height: var(--spacing-md);
@@ -2953,12 +3014,7 @@ noscript + main .fade-in,
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.transport__glyph--pause {
-  display: none;
-  gap: var(--spacing-3xs);
-  height: var(--spacing-md);
-}
-
+.transport__glyph--pause { display: none; gap: var(--spacing-3xs); height: var(--spacing-md); }
 .transport__glyph--pause::before,
 .transport__glyph--pause::after {
   content: '';
@@ -2966,28 +3022,8 @@ noscript + main .fade-in,
   height: 100%;
   background: var(--bg-white);
 }
-
 .is-playing .transport__glyph--play { display: none; }
 .is-playing .transport__glyph--pause { display: flex; }
-
-.transport__readout {
-  grid-area: times;
-  display: flex;
-  align-items: baseline;
-  gap: var(--spacing-xs);
-  font-family: 'SF Mono', Monaco, monospace;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-}
-
-/* Ink, not accent. The playhead is a reading, not an action -- vermillion on the
-   plate measured 3.17:1 at this size, under the 4.5:1 floor, and the accent is
-   already carrying the scrub fill and the play block. */
-.transport__time--elapsed { color: var(--text-black); }
-.transport__time--total { color: var(--text-secondary); }
-.transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
-
-/* --- scrub rule --- */
 
 .transport__scrub {
   grid-area: scrub;
@@ -3001,22 +3037,12 @@ noscript + main .fade-in,
   cursor: pointer;
 }
 
-.transport__scrub:focus-visible {
-  outline: var(--border-subtle) solid var(--accent-orange);
-  outline-offset: var(--spacing-3xs);
-}
+.transport__scrub:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
-/* A hard rule, filled to the playhead. No track radius, no gradient softening. */
-.transport__scrub::-webkit-slider-runnable-track {
-  height: var(--border-accent);
-  background:
-    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
-}
-
+.transport__scrub::-webkit-slider-runnable-track,
 .transport__scrub::-moz-range-track {
   height: var(--border-accent);
-  background:
-    linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
+  background: linear-gradient(to right, var(--accent-orange) var(--progress), var(--border-heavy) var(--progress));
 }
 
 .transport__scrub::-webkit-slider-thumb {
@@ -3037,99 +3063,64 @@ noscript + main .fade-in,
   border: var(--border-subtle) solid var(--bg-subtle);
 }
 
-/* --- die-cut secondary controls --- */
+.transport__readout {
+  grid-area: times;
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* Ink, not accent: the playhead is a reading, and vermillion here
+   measured 3.17:1 against the plate. */
+.transport__time--elapsed { color: var(--text-black); }
+.transport__time--total { color: var(--text-secondary); }
+.transport__time--total::before { content: '/'; margin-right: var(--spacing-xs); color: var(--text-muted); }
 
 .transport__secondary {
   grid-area: secondary;
-  margin-top: var(--spacing-sm);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
 .transport__spacer { flex: 1 1 auto; }
 
-/* Tag link — the signature die-cut small component, per DESIGN.md. Shared so
-   the next component that needs one does not reinvent it. */
-.tag-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-3xs);
-  min-height: var(--touch-target);
-  padding: var(--btn-padding-y-sm) var(--spacing-sm);
-  background: var(--bg-white);
-  border: var(--border-subtle) solid var(--border-heavy);
-  color: var(--text-black);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.tag-link:hover {
-  border-color: var(--accent-orange);
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0 var(--accent-orange);
-}
-
-.tag-link:focus-visible {
-  outline: var(--border-subtle) solid var(--accent-orange);
-  outline-offset: var(--spacing-3xs);
-}
-
-.tag-link--rate { min-width: var(--touch-target); }
-
-/* The one action in the accent. Same die-cut scale as its siblings so a
-   compact plate does not have to carry a hero-band button. */
-.tag-link--primary {
-  background: var(--accent-orange);
-  border-color: var(--border-heavy);
-  /* Ink on vermillion, not paper. Newsprint on this orange measures 3.46:1,
-     under the 4.5:1 floor; black clears it and reads more like a printed
-     poster besides. */
-  color: var(--text-black);
-}
-
-.tag-link--primary:hover {
-  background: var(--accent-orange-dark);
-  border-color: var(--border-heavy);
-  color: var(--bg-white);
-}
-
-/* --- timestamps become seek targets --- */
-
-.timestamp--seek {
-  padding: 0;
-  background: none;
-  border: none;
-  border-bottom: var(--border-thin) solid transparent;
-  font-family: 'SF Mono', Monaco, monospace;
+.transport__error {
+  margin: var(--spacing-sm) 0 0;
+  padding: var(--spacing-sm);
+  border: var(--border-subtle) solid var(--accent-orange);
   font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: var(--accent-orange);
-  text-align: left;
-  cursor: pointer;
-  transition: border-color var(--transition-fast);
+}
+.transport__error a { color: var(--accent-orange-dark); }
+
+.transport__controls[aria-disabled='true'] .transport__play,
+.transport__controls[aria-disabled='true'] .transport__scrub,
+.transport__controls[aria-disabled='true'] .tag-link { opacity: 0.4; pointer-events: none; }
+
+@media (min-width: 768px) {
+  /* One line: play, rule, controls. It is furniture, not a panel. */
+  .transport__plate { padding: var(--spacing-sm) var(--spacing-content); }
+
+  .transport__controls {
+    grid-template-areas:
+      "play scrub secondary"
+      "play times secondary";
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: var(--spacing-content);
+  }
+
+  .transport__secondary { margin-top: 0; flex-wrap: nowrap; }
+  .transport__spacer { display: none; }
 }
 
-.timestamp--seek:hover { border-bottom-color: var(--accent-orange); }
-
-.timestamp--seek:focus-visible {
-  outline: var(--border-subtle) solid var(--accent-orange);
-  outline-offset: var(--spacing-3xs);
-}
-
-/* --- video, shown outright --- */
-
-.transport__video {
-  margin-top: var(--spacing-lg);
-}
+/* Video is a mode of the same player, revealed by Watch. Collapsed it is
+   display:none and must not leave its gap behind. */
+.transport--video:not(:has(.transport__video:not([hidden]))) { display: none; }
 
 .transport__video-element {
   display: block;
@@ -3139,359 +3130,64 @@ noscript + main .fade-in,
   border: var(--border-component) solid var(--border-heavy);
 }
 
-/* Desktop: the plate reads as one horizontal instrument. */
-@media (min-width: 768px) {
-  .transport__controls {
-    column-gap: var(--spacing-content);
-  }
-}
+/* --- shared small components ------------------------------ */
 
-/* Media error: stated plainly, with a way out. */
-.transport__error {
-  margin: var(--spacing-sm) 0 0;
-  padding: var(--spacing-sm);
-  border: var(--border-subtle) solid var(--accent-orange);
-  font-size: var(--font-size-sm);
-  color: var(--text-primary);
-}
-
-.transport__error a { color: var(--accent-orange); }
-
-.transport__controls[aria-disabled='true'] .transport__play,
-.transport__controls[aria-disabled='true'] .transport__scrub,
-.transport__controls[aria-disabled='true'] .tag-link {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* ============================================
-   VALUE FOR VALUE — direct Lightning support
-   A stamped plate, not a donate card. Vermillion
-   stays on the one action; the QR is ink.
-   ============================================ */
-
-.v4v {
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-content);
-  border: var(--border-component) solid var(--border-heavy);
-  background: var(--bg-white);
-}
-
-.v4v__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-content);
-}
-
-.v4v__heading {
-  margin: 0 0 var(--spacing-sm);
-  font-size: var(--font-size-2xl);
-  text-wrap: balance;
-}
-
-/* The address reads as a plate to be lifted: bordered, monospace, selectable.
-   Full width so a long address wraps inside its own frame rather than pushing
-   the actions onto another line. */
-.v4v__code {
-  /* Sized to the address, not to the column. A 20-character string in a
-     1240px field is the same mistake the player made. */
-  display: inline-flex;
-  width: fit-content;
-  max-width: 100%;
-  align-items: center;
-  min-height: var(--touch-target);
+.section-label {
+  display: inline-block;
   margin-bottom: var(--spacing-sm);
-  padding: var(--btn-padding-y-sm) var(--spacing-sm);
-  border: var(--border-subtle) solid var(--border-heavy);
-  background: var(--bg-subtle);
-  font-family: 'SF Mono', Monaco, monospace;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  color: var(--text-black);
-  word-break: break-all;
-  user-select: all;
-}
-
-.v4v__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--spacing-xs);
-  margin: 0;
-}
-
-/* The QR is a die-cut stamp: ink on paper inside a hard frame. */
-.v4v__qr {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--spacing-xs);
-}
-
-.v4v__qr-plate {
-  padding: var(--spacing-sm);
-  border: var(--border-component) solid var(--border-heavy);
-  background: var(--bg-white);
-  color: var(--text-black);
-  line-height: 0;
-}
-
-.v4v__qr-plate svg {
-  display: block;
-  width: 132px;
-  height: 132px;
-}
-
-.v4v__qr-caption {
+  padding-bottom: var(--spacing-3xs);
+  border-bottom: var(--border-subtle) solid var(--accent-orange);
+  color: var(--text-secondary);
   font-size: var(--font-size-xs);
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+}
+
+.tag-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  padding: var(--btn-padding-y-sm) var(--spacing-sm);
+  background: var(--bg-white);
+  border: var(--border-subtle) solid var(--border-heavy);
+  color: var(--text-black);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
-  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-/* Desktop: pitch and stamp sit side by side, the stamp holding the right edge. */
-@media (min-width: 768px) {
-  .v4v__body {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: var(--spacing-content);
-  }
+.tag-link:hover { border-color: var(--accent-orange); transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--accent-orange); }
+.tag-link:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
-  .v4v__pitch { flex: 1 1 0; min-width: 0; }
-  .v4v__qr { flex: 0 0 auto; align-items: center; }
-  .v4v__qr-caption { text-align: center; }
-}
+/* Ink on vermillion: newsprint measured 3.46:1, under the floor. */
+.tag-link--primary { background: var(--accent-orange); border-color: var(--border-heavy); color: var(--text-black); }
+.tag-link--primary:hover { background: var(--accent-orange-dark); color: var(--bg-white); }
 
-/* ============================================
-   TRANSPORT IN THE SIDEBAR
-   The audio plate rides in the sticky column on
-   desktop so it stays reachable through the
-   timestamps and transcript.
-   ============================================ */
+/* --- quote ------------------------------------------------ */
 
-.episode-sidebar .transport--audio {
-  width: 100%;
-  margin: var(--spacing-content) 0 0;
-}
-
-/* The sidebar centres its children on mobile; the plate is a block, not a
-   centred object, and its inner text must stay left-aligned. */
-.episode-sidebar .transport__plate {
-  text-align: left;
-  padding: var(--spacing-sm);
-}
-
-/* At 280px the play block and rule still share a line, but the die-cut controls
-   need the full width to wrap into. */
-@media (min-width: 768px) {
-  .episode-sidebar .transport__controls {
-    column-gap: var(--spacing-sm);
-  }
-
-  .episode-sidebar .transport__secondary {
-    gap: var(--spacing-3xs);
-  }
-
-  /* The spacer pushes Download to the far edge on a wide plate; in a narrow
-     column that strands it on a line of its own. */
-  .episode-sidebar .transport__spacer {
-    display: none;
-  }
-}
-
-/* A sticky column taller than the viewport strands the controls below the fold,
-   which is the one thing this placement exists to prevent. On a short screen the
-   cover yields space; it is identification, and the plate is the reason the
-   column sticks. */
-@media (min-width: 768px) and (max-height: 820px) {
-  .episode-sidebar .episode-cover {
-    max-width: var(--cover-size-host);
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 768px) and (max-height: 680px) {
-  .episode-sidebar .episode-cover {
-    max-width: var(--cover-size-sm);
-  }
-
-  .episode-sidebar .episode-duration {
-    display: none;
-  }
-}
-
-/* ============================================
-   EPISODE PAGE — one framed object
-   The page was a stack of seven competing
-   containers. The player is the only thing that
-   earns a frame; everything else sits on the
-   page and is separated typographically.
-   ============================================ */
-
-/* The quote is a voice, not a callout. DESIGN.md bans side-stripe borders, and
-   the black plate already carries all the emphasis it needs. */
-.episode-body .pull-quote {
+.episode-body > .pull-quote {
+  margin-top: var(--flow-major);
+  margin-bottom: var(--flow-major);
   border-left: none;
   padding: var(--spacing-content);
-  margin: var(--spacing-lg) 0;
 }
 
-/* Support sits on the page like the sections around it, marked by its label
-   rather than by a box. */
-.episode-body .v4v {
-  padding: 0;
-  border: none;
-  background: transparent;
-  border-top: var(--border-thin) solid var(--border-light);
-  padding-top: var(--spacing-lg);
-}
-
-/* The bio is a person, not a card. */
-.episode-body .guest-bio {
-  border: none;
-  background: transparent;
-  border-top: var(--border-thin) solid var(--border-light);
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* The video panel is content, not a module: no label, no frame of its own
-   beyond the picture's edge. */
-.transport--video {
-  margin: var(--spacing-lg) 0;
-}
-
-.transport--video .transport__video { margin-top: 0; }
-
-/* Chapters read as an index tied to the player, so the rows are quiet and the
-   times carry the weight. */
-.episode-body .timestamps-list li {
-  padding: var(--spacing-sm) 0;
-}
-
-@media (min-width: 768px) {
-  .episode-body .timestamps-list li {
-    display: grid;
-    grid-template-columns: 5.5rem 1fr;
-    gap: var(--spacing-sm);
-    align-items: baseline;
-  }
-}
-
-/* ============================================
-   EPISODE PAGE — content grid
-   ============================================
-
-   Three measures, declared once, instead of a
-   max-width on every block:
-
-     text   the reading measure, for prose
-     wide   controls and framed objects
-     full   media and the chapter index
-
-   Every child defaults to `text`; a block opts
-   up by class. This is the model the earlier
-   round lacked, which is why each fix there
-   produced the next problem.
-   ============================================ */
-
-.episode-body,
-.episode-media {
-  /* One structural width, prose the only exception. Varying block widths read
-     as unresolved rather than as hierarchy, and this system is a broadsheet:
-     dense, aligned, every edge accounted for. */
-  --measure-text: 42rem;
-}
-
-.episode-body > *,
-.episode-media > * {
-  max-width: none;
-}
-
-/* Prose gets the reading measure; everything else fills the reading column. */
-
-.episode-body > .is-text,
-.episode-media > .is-text,
-.episode-body .episode-content,
-.episode-body .transcript-content p {
-  max-width: var(--measure-text);
-}
-
-.episode-body > * + *,
-.episode-media > * + * {
-  margin-top: var(--spacing-content);
-}
-
-/* --- hero --- */
-
-.episode-hero {
-  display: grid;
-  gap: var(--spacing-content);
-  margin-bottom: var(--spacing-content);
-}
-
-.episode-hero__art img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: var(--border-component) solid var(--border-heavy);
-}
-
-.episode-hero h1 { margin: 0 0 var(--spacing-xs); }
-
-.episode-hero .episode-meta {
-  margin: 0 0 var(--spacing-content);
-  color: var(--text-secondary);
-}
-
-.episode-hero .episode-summary { margin: 0; max-width: 44rem; }
-
-@media (min-width: 600px) {
-  .episode-hero {
-    grid-template-columns: var(--cover-size-md) minmax(0, 1fr);
-    align-items: start;
-  }
-}
-
-/* --- player --- */
-
-.transport--audio { margin-bottom: var(--spacing-content); }
-
-.transport--audio.is-docked .transport__plate {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 40;
-  margin: 0 auto;
-  max-width: var(--measure-wide, 60rem);
-  border-width: var(--border-component);
-  border-bottom: none;
-  padding: var(--spacing-sm) var(--spacing-content);
-  background: var(--bg-white);
-  box-shadow: 0 -4px 0 var(--text-black);
-}
-
-.transport--audio.is-docked .section-label { display: none; }
-
-/* A collapsed video panel is display:none but still contributed its own gap. */
-.transport--video:not(:has(.transport__video:not([hidden]))) { display: none; }
-
-.transport__video-element { width: 100%; }
-
-/* --- chapters --- */
+/* --- chapters --------------------------------------------- */
 
 .timestamps-list li {
   padding: 0;
   border-bottom: var(--border-thin) solid var(--border-light);
 }
-
 .timestamps-list li:last-child { border-bottom: none; }
 
-/* Were 23px tall at 3.46:1 -- under both the touch minimum and the AA floor. */
+/* Were 23px tall at 3.46:1 once they became buttons. */
 .timestamps-list .timestamp,
 .timestamp--seek {
   display: inline-flex;
@@ -3499,6 +3195,20 @@ noscript + main .fade-in,
   min-height: var(--touch-target);
   color: var(--accent-orange-dark);
 }
+
+.timestamp--seek {
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: var(--border-thin) solid transparent;
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.timestamp--seek:hover { border-bottom-color: var(--accent-orange); }
+.timestamp--seek:focus-visible { outline: var(--border-subtle) solid var(--accent-orange); outline-offset: var(--spacing-3xs); }
 
 @media (min-width: 600px) {
   .timestamps-list li {
@@ -3514,127 +3224,99 @@ noscript + main .fade-in,
   #chapters .timestamps-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--spacing-lg);
+    column-gap: var(--flow-major);
   }
 }
 
-/* --- the page's one framed object is the player --- */
+/* --- guest ------------------------------------------------ */
 
-.episode-body .v4v,
-.episode-body .guest-bio {
-  border: none;
+/* Two columns, not a float: a float let long bios wrap under the
+   headshot, so the last line began at the far-left margin. */
+.episode-body > .guest-bio {
   background: transparent;
-  /* Padding left from when these were cards; without the frame it reads as
-     dead space rather than as breathing room. */
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
-  border-top: var(--border-thin) solid var(--border-light);
-  padding-top: var(--spacing-content);
-}
-
-.episode-body .pull-quote {
   border-left: none;
-  padding: var(--spacing-content);
+  border-right: none;
+  border-bottom: none;
 }
 
-/* The plate was 200px tall to hold a label and four controls. Tighten it: the
-   transport is furniture, not a feature panel. */
-.transport__plate {
-  padding: var(--spacing-content);
-}
+.episode-body > .guest-bio::after { content: none; }
 
-.transport--audio .transport__controls {
-  row-gap: var(--spacing-xs);
-}
-
-.transport--audio .transport__secondary {
-  margin-top: var(--spacing-xs);
-}
-
-.transport--audio .section-label {
-  margin-bottom: var(--spacing-xs);
-}
-
-/* Spacing is the parent's job. Children carrying their own margins is why the
-   rhythm stayed at 64px everywhere no matter what the container asked for --
-   and a uniform 64px is what made every block float free of the next. */
-.episode-body > *,
-.episode-media > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.episode-body > * + *,
-.episode-media > * + * {
-  margin-top: var(--spacing-content);
-}
-
-/* The quote is the one place that earns air, because it is a change of voice. */
-.episode-body > .pull-quote {
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-}
-
-/* The transport was 254px tall to hold a label and four buttons. It is
-   furniture; it should read as a bar, not a panel. */
-.transport--audio .transport__plate {
-  padding: var(--spacing-sm) var(--spacing-content);
-}
-
-.transport--audio .transport__play {
-  width: var(--touch-target);
-  height: var(--touch-target);
-}
-
-.transport--audio .transport__glyph--play,
-.transport--audio .transport__glyph--pause {
-  width: var(--spacing-sm);
-  height: var(--spacing-sm);
-}
-
-@media (min-width: 768px) {
-  /* Controls beside the transport rather than stacked beneath it. */
-  .transport--audio .transport__controls {
-    grid-template-areas:
-      "play scrub secondary"
-      "play times secondary";
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    column-gap: var(--spacing-content);
-    row-gap: var(--spacing-3xs);
-  }
-
-  .transport--audio .transport__secondary {
-    grid-area: secondary;
-    margin-top: 0;
-    flex-wrap: nowrap;
-  }
-
-  .transport--audio .transport__spacer { display: none; }
-}
-
-/* The cover was 200px against a ~230px text block beside it, so it read as a
-   thumbnail rather than as the artwork. Give it the full height of the row and
-   let it set the hero's scale. No cropping: the art carries the guest name and
-   episode number, and object-fit would cut them. */
 @media (min-width: 600px) {
-  /* The art is square and fills the row exactly: its height is the row height
-     and the column sizes to it, so neither side leaves a gap under the other.
-     No object-fit crop -- the art carries the guest name and episode number. */
-  .episode-hero {
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: stretch;
+  .episode-body > .guest-bio {
+    display: grid;
+    grid-template-columns: var(--guest-headshot) minmax(0, 1fr);
+    column-gap: var(--flow);
+    row-gap: var(--spacing-sm);
+    align-items: start;
   }
 
-  .episode-hero__art {
-    display: block;
-    height: 100%;
-  }
+  .episode-body > .guest-bio .guest-headshot { float: none; margin: 0; grid-row: span 3; }
+  .episode-body > .guest-bio .guest-headshot + h2,
+  .episode-body > .guest-bio .guest-headshot + p { margin-top: 0; }
+  .episode-body > .guest-bio h2,
+  .episode-body > .guest-bio p,
+  .episode-body > .guest-bio .profile-links { grid-column: 2; }
+}
 
-  .episode-hero__art img {
-    height: 100%;
-    width: auto;
-    aspect-ratio: 1;
-    max-width: none;
-  }
+/* --- value for value -------------------------------------- */
+
+.v4v {
+  display: grid;
+  gap: var(--flow);
+  align-items: center;
+}
+
+.v4v__qr {
+  width: 116px;
+  height: 116px;
+  padding: var(--spacing-xs);
+  border: var(--border-subtle) solid var(--border-heavy);
+  color: var(--text-black);
+  line-height: 0;
+}
+
+.v4v__qr svg { display: block; width: 100%; height: 100%; }
+
+.v4v__body { min-width: 0; }
+
+.v4v__pitch {
+  margin: 0 0 var(--spacing-sm);
+  font-family: 'DIN Condensed', sans-serif;
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-normal);
+  text-transform: uppercase;
+  color: var(--text-black);
+}
+
+.v4v__pay {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Sized to the address, never to the column. */
+.v4v__address {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: var(--touch-target);
+  padding: 0 var(--spacing-sm);
+  border: var(--border-subtle) solid var(--border-heavy);
+  background: var(--bg-subtle);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-black);
+  word-break: break-all;
+  user-select: all;
+}
+
+@media (min-width: 600px) {
+  .v4v { grid-template-columns: auto minmax(0, 1fr); }
 }

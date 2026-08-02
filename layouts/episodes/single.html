@@ -2,35 +2,38 @@
 {{- $cleanTitle := partial "episode-title-clean.html" .Title -}}
 <article class="episode-page" data-pagefind-body>
   <div class="container">
+
     {{ partial "breadcrumb.html" (dict "href" "/episodes/" "label" "All Episodes") }}
 
-    <header class="episode-hero fade-in">
+    {{/* Identity: the artwork, the title, what it is. Once, at the top. */}}
+    <header class="episode-hero">
       <div class="episode-hero__art">
-        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 680 "sizes" "(max-width: 600px) 100vw, 340px" "eager" true) }}
+        {{ partial "image.html" (dict "src" (.Params.featured_image | default "images/cover-art/default.jpg") "alt" (.Params.featured_image_alt | default (printf "Cover art for %s" $cleanTitle)) "width" 560 "sizes" "(max-width: 599px) 100vw, 280px" "eager" true) }}
       </div>
       <div class="episode-hero__text">
         <h1>{{ $cleanTitle }}</h1>
         <p class="episode-meta">
           <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-          {{ with .Params.guest }}· with {{ .name }}{{ end }}
-          {{ with .Params.duration }}· {{ . }}{{ end }}
+          {{- with .Params.guest }} · with {{ .name }}{{ end }}
+          {{- with .Params.duration }} · {{ . }}{{ end }}
         </p>
         {{ with .Params.summary }}
-        <div class="episode-summary is-text">{{ . | markdownify }}</div>
+        <div class="episode-summary">{{ . | markdownify }}</div>
         {{ else }}{{ with .Params.description }}
-        <div class="episode-summary is-text">{{ . }}</div>
+        <div class="episode-summary">{{ . }}</div>
         {{ end }}{{ end }}
       </div>
     </header>
 
-    {{/* Media declares its own measure: the player is a control, the video is
-         the artifact. */}}
-    <div class="episode-media">
+    {{/* Every child below is a partial's own root element. Nothing is wrapped:
+         a wrapper absorbs the flow spacing and leaves the component's own
+         margins intact, which is what leaked voids through the previous
+         version. Components own no outer margin; the flow owns all of it. */}}
+    <div class="episode-body">
+
       {{ partial "media-player.html" (dict "context" . "only" "audio") }}
       {{ partial "media-player.html" (dict "context" . "only" "video") }}
-    </div>
 
-    <div class="episode-body fade-in delay-1">
       {{ with .Params.key_quote }}
       <blockquote class="pull-quote">
         <p>{{ .text }}</p>
@@ -52,9 +55,7 @@
       </section>
       {{ end }}
 
-      {{ with .Content }}
-      <div class="episode-content">{{ . }}</div>
-      {{ end }}
+      {{ with .Content }}<div class="episode-content">{{ . }}</div>{{ end }}
 
       {{ if .Params.resources }}
       <section class="episode-section">
@@ -67,13 +68,13 @@
       </section>
       {{ end }}
 
-      <div>{{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}</div>
+      {{ partial "guest-bio.html" (dict "guest" .Params.guest "showHeader" true) }}
 
-      <div>{{ partial "support-v4v.html" . }}</div>
+      {{ partial "support-v4v.html" . }}
 
-      <div>{{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}</div>
+      {{ partial "transcript.html" (dict "slug" .File.ContentBaseName) }}
 
-      <div>{{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}</div>
+      {{ partial "prev-next-nav.html" (dict "page" . "label" "Episode navigation" "cleanTitle" true) }}
     </div>
   </div>
 </article>
