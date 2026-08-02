@@ -3562,9 +3562,15 @@ input:focus-visible {
   bottom: 0;
   z-index: 60;
   max-width: none;
+  /* Symmetric, and deliberately free of env(safe-area-inset-bottom). The page
+     sets viewport-fit=cover, so that inset is live on Android -- around 26px of
+     gesture-nav area, added on top of the padding. It made the bar permanently
+     taller than it needed to be, and because the inset changes while the URL
+     bar animates in and out during a scroll, the bar's height changed with it:
+     an interim state where it popped into place carrying extra space beneath.
+     The controls are 44px inside a bar with 8px of padding, so they stay clear
+     of the gesture strip without reserving the whole inset. */
   padding: var(--spacing-xs) var(--spacing-md);
-  /* Clears the home indicator on a phone and is 0 everywhere else. */
-  padding-bottom: calc(var(--spacing-xs) + env(safe-area-inset-bottom, 0px));
   border: none;
   border-top: var(--border-component) solid var(--border-heavy);
   background: var(--bg-subtle);
