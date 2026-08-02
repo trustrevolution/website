@@ -221,33 +221,73 @@
 })();
 
 /* Dock the player to the bottom edge once the reader scrolls past it, and
- * release it when they scroll back. A placeholder holds the plate's space so
- * the page does not jump at the moment it detaches. */
+ * release it when they scroll back, so the controls stay reachable while you
+ * are down in the chapters or the transcript.
+ *
+ * A plain scroll check rather than IntersectionObserver: the observer version
+ * needed a sentinel element, and a zero-area sentinel never reports an
+ * intersection change, so it fired once and never again. Comparing the
+ * plate's own position is the same decision with none of that, and it behaves
+ * the same in every browser. The read is batched into a rAF so a fast scroll
+ * does not force layout on every event.
+ *
+ * The docked appearance lives in CSS under .is-docked. The class and that rule
+ * are a pair: without the rule the spacer still reserved the plate's height
+ * while the plate never left the flow, which left a player-sized hole in the
+ * middle of the page.
+ */
 (function () {
   'use strict';
 
   function init() {
     var section = document.querySelector('.transport--audio');
     var plate = section ? section.querySelector('.transport__plate') : null;
-    if (!section || !plate || !('IntersectionObserver' in window)) return;
+    if (!section || !plate) return;
 
     var spacer = document.createElement('div');
     spacer.setAttribute('aria-hidden', 'true');
     spacer.style.display = 'none';
     section.appendChild(spacer);
 
-    var sentinel = document.createElement('div');
-    sentinel.setAttribute('aria-hidden', 'true');
-    section.parentNode.insertBefore(sentinel, section);
+    var docked = false;
+    var queued = false;
 
-    new IntersectionObserver(function (entries) {
-      var passed = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
-      if (passed === section.classList.contains('is-docked')) return;
+    function measure() {
+      queued = false;
+      /* While docked the plate is out of flow, so the section is what still
+       * holds a position in the document; undocked, the plate is the section's
+       * content. Either way this is the top of where the player belongs. */
+      var anchor = docked ? spacer : plate;
+      var passed = anchor.getBoundingClientRect().bottom < 0;
+      if (passed === docked) return;
 
-      spacer.style.height = passed ? plate.offsetHeight + 'px' : '';
+      if (passed) spacer.style.height = plate.offsetHeight + 'px';
       spacer.style.display = passed ? 'block' : 'none';
       section.classList.toggle('is-docked', passed);
-    }, { threshold: 0 }).observe(sentinel);
+      if (!passed) spacer.style.height = '';
+      docked = passed;
+
+      /* Reserve the bar's height at the foot of the document, or the bar sits
+       * over the footer once you reach the bottom of the page. Measured after
+       * the class lands, since the docked bar is slimmer than the plate. */
+      var root = document.documentElement;
+      root.classList.toggle('is-player-docked', passed);
+      if (passed) {
+        root.style.setProperty('--docked-height', plate.offsetHeight + 'px');
+      } else {
+        root.style.removeProperty('--docked-height');
+      }
+    }
+
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(measure);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    measure();
   }
 
   if (document.readyState === 'loading') {

@@ -24,12 +24,15 @@
           {{- with .Params.guest }} · with {{ .name }}{{ end }}
           {{- with .Params.duration }} · {{ . }}{{ end }}
         </p>
-        {{ with .Params.summary }}
-        <div class="episode-summary">{{ . | markdownify }}</div>
-        {{ else }}{{ with .Params.description }}
-        <div class="episode-summary">{{ . }}</div>
-        {{ end }}{{ end }}
       </div>
+      {{/* The summary is its own grid item so the phone can give it the full
+           width. Beside a 140px cover it had a 198px measure and broke into
+           three-word lines. */}}
+      {{ with .Params.summary }}
+      <div class="episode-summary">{{ . | markdownify }}</div>
+      {{ else }}{{ with .Params.description }}
+      <div class="episode-summary">{{ . }}</div>
+      {{ end }}{{ end }}
     </header>
 
     {{/* Every child below is a partial's own root element. Nothing is wrapped:
@@ -51,7 +54,13 @@
       {{ if .Params.timestamps }}
       <section class="episode-section" id="chapters">
         <h2>Chapters</h2>
-        <ul class="timestamps-list">
+        {{/* Size the timecode gutter to the longest stamp in this episode.
+             A fixed 6ch fitted "00:00" but not "1:21:37", so any episode
+             running past an hour had its topics start at two different
+             offsets and the column read as jagged. */}}
+        {{- $tcw := 5 -}}
+        {{- range .Params.timestamps }}{{ $l := len .time }}{{ if gt $l $tcw }}{{ $tcw = $l }}{{ end }}{{ end -}}
+        <ul class="timestamps-list" style="--timecode-width: {{ $tcw }}ch">
           {{ range .Params.timestamps }}
           <li>
             <span class="timestamp">{{ .time }}</span>

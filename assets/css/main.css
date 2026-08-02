@@ -822,7 +822,8 @@ blockquote,
 
 .timestamp {
   flex: 0 0 auto;
-  min-width: 6ch;
+  /* Set per episode from the longest timecode; see layouts/episodes/single.html. */
+  min-width: var(--timecode-width, 5ch);
   font-family: 'SF Mono', Monaco, monospace;
   font-size: var(--font-size-sm);
   font-weight: 600;
@@ -2734,6 +2735,7 @@ input:focus-visible {
   grid-template-columns: 140px minmax(0, 1fr);
   grid-template-areas:
     "art  text"
+    "sum  sum"
     "cta  cta";
   align-items: start;
   gap: var(--spacing-sm) var(--flow);
@@ -2742,6 +2744,7 @@ input:focus-visible {
 
 .episode-hero__art  { grid-area: art; }
 .episode-hero__text { grid-area: text; }
+.episode-hero .episode-summary { grid-area: sum; margin-bottom: 0; }
 .episode-hero .support-cta { grid-area: cta; }
 
 .episode-hero__art img {
@@ -2773,7 +2776,7 @@ input:focus-visible {
     grid-template-columns: 300px minmax(0, 1fr);
     grid-template-areas:
       "art  text"
-      "cta  text";
+      "cta  sum";
     align-content: start;
     gap: var(--spacing-sm) var(--flow-major);
   }
@@ -3523,4 +3526,85 @@ input:focus-visible {
   display: inline-flex;
   align-items: center;
   min-height: var(--touch-target);
+}
+
+/* --- docked player ----------------------------------------
+   Scroll past the plate and it pins to the bottom edge, so the
+   controls stay reachable down in the chapters and transcript.
+   Paired with .is-docked in media-player.js: the script also
+   shows a spacer holding the plate's former height, so the page
+   does not jump at the moment it detaches.
+
+   Slimmed while docked. A persistent bar earns much less of the
+   viewport than a block sitting in the article, so the section
+   label goes and the row collapses to one line.
+   ---------------------------------------------------------- */
+
+.transport--audio.is-docked .transport__plate {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  max-width: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  /* Clears the home indicator on a phone and is 0 everywhere else. */
+  padding-bottom: calc(var(--spacing-xs) + env(safe-area-inset-bottom, 0px));
+  border: none;
+  border-top: var(--border-component) solid var(--border-heavy);
+  background: var(--bg-subtle);
+  box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.transport--audio.is-docked .section-label {
+  display: none;
+}
+
+.transport--audio.is-docked .transport__controls {
+  grid-template-areas: "play scrub secondary";
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--spacing-md);
+  row-gap: 0;
+}
+
+/* The timecode rides under the scrubber it describes rather than taking a
+   row of its own, which would double the bar's height. */
+.transport--audio.is-docked .transport__readout {
+  grid-area: scrub;
+  align-self: end;
+}
+
+.transport--audio.is-docked .transport__scrub {
+  align-self: start;
+}
+
+/* Narrow screens have no room for the secondary row beside a scrubber, and a
+   two-line bar covers too much of the page. Play and seek are what a docked
+   bar is for; the rest is a scroll away. */
+@media (max-width: 767px) {
+  .transport--audio.is-docked .transport__secondary {
+    display: none;
+  }
+
+  .transport--audio.is-docked .transport__play {
+    width: var(--touch-target);
+    height: var(--touch-target);
+  }
+}
+
+/* Keeps the footer clear of the bar at the bottom of the page. */
+.is-player-docked body {
+  padding-bottom: var(--docked-height, 0px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .transport--audio.is-docked .transport__plate {
+    animation: dockIn 0.18s ease-out both;
+  }
+}
+
+@keyframes dockIn {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
 }
