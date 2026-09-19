@@ -25,7 +25,7 @@ node scripts/update-episode-data.js
 
 - **Hugo** v0.154.1+ (static site generator)
 - **Node.js** 20+ (build scripts)
-- **Netlify** (hosting, auto-deploys on push to main/master)
+- **Vercel** (hosting, auto-deploys on push to main/master)
 - **Pagefind** (search, generated at build time)
 - **sharp** (image processing for OG images)
 
@@ -245,7 +245,7 @@ attempts in the wrong direction is.
 | `layouts/partials/image.html` | Responsive image processing |
 | `layouts/episodes/single.html` | Episode page template |
 | `scripts/generate-og-images.js` | OG image generation |
-| `netlify.toml` | Deployment config |
+| `vercel.json` | Deployment config |
 
 ## Common Tasks
 

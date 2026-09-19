@@ -4,7 +4,7 @@ register: brand
 
 ## Product Purpose
 
-Trust Revolution is a Hugo-powered podcast website deployed on Netlify. The site serves as a content hub for show notes, guest information, and written content, with prominent CTAs driving listeners to Fountain for sat streaming support. Tagline: "Stream sats, not ads." It is a brand-register surface end-to-end — the design IS the product. There are no app UI, dashboard, or admin surfaces.
+Trust Revolution is a Hugo-powered podcast website deployed on Vercel. The site serves as a content hub for show notes, guest information, and written content, with prominent CTAs driving listeners to Fountain for sat streaming support. Tagline: "Stream sats, not ads." It is a brand-register surface end-to-end — the design IS the product. There are no app UI, dashboard, or admin surfaces.
 
 ## Design Context
 

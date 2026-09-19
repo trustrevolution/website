@@ -4,12 +4,12 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 ## Overview
 
-Trust Revolution is a Hugo-powered podcast website deployed on Netlify. The site serves as a content hub for show notes, guest information, and written content, with prominent CTAs driving listeners to Fountain for sat streaming support.
+Trust Revolution is a Hugo-powered podcast website deployed on Vercel. The site serves as a content hub for show notes, guest information, and written content, with prominent CTAs driving listeners to Fountain for sat streaming support.
 
 ## Technology Stack
 
 - **Hugo**: Static site generator (v0.154.1+)
-- **Netlify**: Hosting and deployment
+- **Vercel**: Hosting and deployment
 - **Buttondown**: Email subscriptions
 - **Fountain**: Primary listening platform (sat streaming)
 
@@ -94,7 +94,7 @@ attempts in the wrong direction is.
 - `assets/css/main.css` - Design system
 - `assets/js/` - Client-side JS, fingerprinted through Hugo's asset pipeline
 - `scripts/verify-feed.js` - Build gate: fails if the feed drifts from the archive
-- `netlify.toml` - Deployment config
+- `vercel.json` - Deployment config
 - `.github/workflows/update-latest-episode.yml` - Fountain RSS import, manual dispatch only
 
 ## Commands
@@ -135,7 +135,7 @@ After running, review the generated file and commit.
 
 ## Deployment
 
-Deploys automatically on push to master/main branch via Netlify.
+Deploys automatically on push to master/main branch via Vercel.
 
 ## Guest Headshots
 
