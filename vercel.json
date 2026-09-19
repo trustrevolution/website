@@ -1,0 +1,39 @@
+{
+  "framework": "hugo",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run generate:og && hugo --gc --minify && npm run verify:feed && npx pagefind --site public",
+  "outputDirectory": "public",
+  "redirects": [
+    {"source": "/podcast", "destination": "/episodes/", "statusCode": 301},
+    {"source": "/podcast/", "destination": "/episodes/", "statusCode": 301},
+    {"source": "/nostr", "destination": "https://primal.net/p/nprofile1qqs937g9lksy25es6h5c502d78shc3f2knq76ey0xu03qqj5g77fcygf09a6v", "statusCode": 301},
+    {"source": "/nostr/", "destination": "https://primal.net/p/nprofile1qqs937g9lksy25es6h5c502d78shc3f2knq76ey0xu03qqj5g77fcygf09a6v", "statusCode": 301},
+    {"source": "/.well-known/lnurlp/sats", "destination": "https://getalby.com/.well-known/lnurlp/trustrev", "statusCode": 301},
+    {"source": "/.well-known/lnurlp/zaps", "destination": "https://getalby.com/.well-known/lnurlp/trustrev", "statusCode": 301},
+    {"source": "/", "has": [{"type": "host", "value": "podcast.trustrevolution.co"}], "destination": "https://trustrevolution.co/podcast.xml", "statusCode": 301},
+    {"source": "/:path*", "has": [{"type": "host", "value": "podcast.trustrevolution.co"}], "destination": "https://trustrevolution.co/podcast.xml", "statusCode": 301}
+  ],
+  "rewrites": [
+    {"source": "/rss", "destination": "/index.xml"},
+    {"source": "/rss/", "destination": "/index.xml"}
+  ],
+  "headers": [
+    {"source": "/(.*)", "headers": [
+      {"key": "X-Frame-Options", "value": "DENY"},
+      {"key": "X-Content-Type-Options", "value": "nosniff"},
+      {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+      {"key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload"},
+      {"key": "X-Permitted-Cross-Domain-Policies", "value": "none"},
+      {"key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()"}
+    ]},
+    {"source": "/:path*.html", "headers": [{"key": "Cache-Control", "value": "public, max-age=600"}]},
+    {"source": "/js/:path*", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/css/:path*", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/.well-known/:path*", "headers": [{"key": "Access-Control-Allow-Origin", "value": "*"}]},
+    {"source": "/fonts/:path*", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/images/:path*", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/:path*.jpg", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/:path*.png", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/:path*.webp", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]}
+  ]
+}
