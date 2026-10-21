@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/trustrevolution/website#readme",
   "dependencies": {
-    "gray-matter": "^4.0.3",
+    "js-yaml": "^5.5.0",
     "rss-parser": "^3.13.0",
     "sharp": "^0.35.0"
   }
