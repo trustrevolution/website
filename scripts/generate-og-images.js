@@ -1,7 +1,7 @@
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
+const yaml = require('js-yaml');
 
 const OG_WIDTH = 1200;
 const OG_HEIGHT = 630;
@@ -17,9 +17,17 @@ if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+function readFrontmatter(content) {
+  const text = content.replace(/^\uFEFF/, '');
+  const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return {};
+  const data = yaml.load(match[1]);
+  return data && typeof data === 'object' ? data : {};
+}
+
 async function generateOgImage(episodePath) {
   const content = fs.readFileSync(episodePath, 'utf-8');
-  const { data } = matter(content);
+  const data = readFrontmatter(content);
 
   const episodeId = `s${String(data.season).padStart(2, '0')}e${String(data.episode).padStart(2, '0')}`;
   const coverPath = path.join(COVER_DIR, `${episodeId}.jpg`);
